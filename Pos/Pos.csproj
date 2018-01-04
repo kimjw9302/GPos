@@ -52,6 +52,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmClientView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmClientView.Designer.cs">
+      <DependentUpon>frmClientView.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmCustRegister.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -129,6 +135,9 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmClientView.resx">
+      <DependentUpon>frmClientView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmCustRegister.resx">
       <DependentUpon>frmCustRegister.cs</DependentUpon>
     </EmbeddedResource>
@@ -165,20 +174,11 @@
     <EmbeddedResource Include="frmView.resx">
       <DependentUpon>frmView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Properties\frmClientView.resx">
-      <DependentUpon>frmClientView.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <Compile Include="Properties\frmClientView.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Properties\frmClientView.Designer.cs">
-      <DependentUpon>frmClientView.cs</DependentUpon>
-    </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
