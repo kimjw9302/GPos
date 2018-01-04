@@ -52,6 +52,7 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+<<<<<<< HEAD
     <Compile Include="frmCard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -64,6 +65,8 @@
     <Compile Include="frmCash.Designer.cs">
       <DependentUpon>frmCash.cs</DependentUpon>
     </Compile>
+=======
+>>>>>>> master
     <Compile Include="frmClientView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -118,11 +121,19 @@
     <Compile Include="frmPayment.Designer.cs">
       <DependentUpon>frmPayment.cs</DependentUpon>
     </Compile>
+<<<<<<< HEAD
     <Compile Include="frmPoint.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmPoint.Designer.cs">
       <DependentUpon>frmPoint.cs</DependentUpon>
+=======
+    <Compile Include="frmProductSelect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmProductSelect.Designer.cs">
+      <DependentUpon>frmProductSelect.cs</DependentUpon>
+>>>>>>> master
     </Compile>
     <Compile Include="frmRevenue.cs">
       <SubType>Form</SubType>
@@ -147,12 +158,15 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+<<<<<<< HEAD
     <EmbeddedResource Include="frmCard.resx">
       <DependentUpon>frmCard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmCash.resx">
       <DependentUpon>frmCash.cs</DependentUpon>
     </EmbeddedResource>
+=======
+>>>>>>> master
     <EmbeddedResource Include="frmClientView.resx">
       <DependentUpon>frmClientView.cs</DependentUpon>
     </EmbeddedResource>
@@ -180,8 +194,13 @@
     <EmbeddedResource Include="frmPayment.resx">
       <DependentUpon>frmPayment.cs</DependentUpon>
     </EmbeddedResource>
+<<<<<<< HEAD
     <EmbeddedResource Include="frmPoint.resx">
       <DependentUpon>frmPoint.cs</DependentUpon>
+=======
+    <EmbeddedResource Include="frmProductSelect.resx">
+      <DependentUpon>frmProductSelect.cs</DependentUpon>
+>>>>>>> master
     </EmbeddedResource>
     <EmbeddedResource Include="frmRevenue.resx">
       <DependentUpon>frmRevenue.cs</DependentUpon>
@@ -192,20 +211,11 @@
     <EmbeddedResource Include="frmView.resx">
       <DependentUpon>frmView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Properties\frmClientView.resx">
-      <DependentUpon>frmClientView.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <Compile Include="Properties\frmClientView.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Properties\frmClientView.Designer.cs">
-      <DependentUpon>frmClientView.cs</DependentUpon>
-    </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>

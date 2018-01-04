@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+<<<<<<< HEAD
             this.btnCancle = new System.Windows.Forms.Button();
             this.btnPay = new System.Windows.Forms.Button();
             this.btnDel = new System.Windows.Forms.Button();
@@ -296,5 +297,13 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+=======
+            this.components = new System.ComponentModel.Container();
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Text = "frmCash";
+        }
+
+        #endregion
+>>>>>>> master
     }
 }

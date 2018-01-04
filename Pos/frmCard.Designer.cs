@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+<<<<<<< HEAD
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -382,5 +383,13 @@
         private System.Windows.Forms.Button btn1;
         private System.Windows.Forms.Button btnPay;
         private System.Windows.Forms.Button btnCancle;
+=======
+            this.components = new System.ComponentModel.Container();
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Text = "frmCard";
+        }
+
+        #endregion
+>>>>>>> master
     }
 }
