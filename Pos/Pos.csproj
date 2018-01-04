@@ -52,6 +52,36 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmCustRegister.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCustRegister.Designer.cs">
+      <DependentUpon>frmCustRegister.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEmloyeesInquiry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEmloyeesInquiry.Designer.cs">
+      <DependentUpon>frmEmloyeesInquiry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEmployeeRotaion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEmployeeRotaion.Designer.cs">
+      <DependentUpon>frmEmployeeRotaion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEmployeeSchedule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEmployeeSchedule.Designer.cs">
+      <DependentUpon>frmEmployeeSchedule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEmployeesRegister.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEmployeesRegister.Designer.cs">
+      <DependentUpon>frmEmployeesRegister.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -76,6 +106,12 @@
     <Compile Include="frmRevenue.Designer.cs">
       <DependentUpon>frmRevenue.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmSalesinquiry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSalesinquiry.Designer.cs">
+      <DependentUpon>frmSalesinquiry.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -86,6 +122,21 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCustRegister.resx">
+      <DependentUpon>frmCustRegister.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEmloyeesInquiry.resx">
+      <DependentUpon>frmEmloyeesInquiry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEmployeeRotaion.resx">
+      <DependentUpon>frmEmployeeRotaion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEmployeeSchedule.resx">
+      <DependentUpon>frmEmployeeSchedule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEmployeesRegister.resx">
+      <DependentUpon>frmEmployeesRegister.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
@@ -99,14 +150,26 @@
     <EmbeddedResource Include="frmRevenue.resx">
       <DependentUpon>frmRevenue.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmSalesinquiry.resx">
+      <DependentUpon>frmSalesinquiry.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmView.resx">
       <DependentUpon>frmView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\frmClientView.resx">
+      <DependentUpon>frmClientView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <Compile Include="Properties\frmClientView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Properties\frmClientView.Designer.cs">
+      <DependentUpon>frmClientView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
