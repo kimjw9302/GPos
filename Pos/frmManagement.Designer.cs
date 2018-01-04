@@ -36,7 +36,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(12, 12);
+            this.button1.Location = new System.Drawing.Point(12, 30);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(113, 104);
             this.button1.TabIndex = 0;
@@ -45,7 +45,7 @@
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(251, 12);
+            this.button7.Location = new System.Drawing.Point(251, 30);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(114, 104);
             this.button7.TabIndex = 8;
@@ -54,27 +54,27 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(371, 12);
+            this.button3.Location = new System.Drawing.Point(371, 30);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(114, 104);
             this.button3.TabIndex = 7;
-            this.button3.Text = "직원업무 스케줄";
+            this.button3.Text = "직원업무 스케줄   (근태현황)";
             this.button3.UseVisualStyleBackColor = true;
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(131, 12);
+            this.button2.Location = new System.Drawing.Point(131, 30);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(114, 104);
             this.button2.TabIndex = 9;
-            this.button2.Text = "담당자 교대";
+            this.button2.Text = "직원 교대";
             this.button2.UseVisualStyleBackColor = true;
             // 
             // frmManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(576, 427);
+            this.ClientSize = new System.Drawing.Size(511, 193);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.button3);
