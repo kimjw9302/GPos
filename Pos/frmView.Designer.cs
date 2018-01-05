@@ -33,6 +33,7 @@
             this.button5 = new System.Windows.Forms.Button();
             this.btnStockSelect = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button2
@@ -80,11 +81,21 @@
             this.button1.Text = "상품 조회";
             this.button1.UseVisualStyleBackColor = true;
             // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(275, 181);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(114, 104);
+            this.button3.TabIndex = 6;
+            this.button3.Text = "로그 조회";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
             // frmView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(508, 454);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.btnStockSelect);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
@@ -102,5 +113,6 @@
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button btnStockSelect;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button3;
     }
 }

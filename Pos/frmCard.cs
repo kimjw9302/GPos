@@ -16,5 +16,13 @@ namespace Pos
         {
             InitializeComponent();
         }
+<<<<<<< HEAD
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+=======
+>>>>>>> master
     }
 }

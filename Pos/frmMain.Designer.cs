@@ -70,6 +70,13 @@
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.button25 = new System.Windows.Forms.Button();
+<<<<<<< HEAD
+=======
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+>>>>>>> e924fbef75bdaf0c6a83ff58381231390ad81d16
             this.button26 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -194,12 +201,19 @@
             // label5
             // 
             this.label5.AutoSize = true;
+<<<<<<< HEAD
             this.label5.Font = new System.Drawing.Font("굴림", 15F);
             this.label5.Location = new System.Drawing.Point(162, 11);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(87, 25);
+=======
+            this.label5.Font = new System.Drawing.Font("굴림", 13F);
+            this.label5.Location = new System.Drawing.Point(155, 11);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(74, 18);
+>>>>>>> e924fbef75bdaf0c6a83ff58381231390ad81d16
             this.label5.TabIndex = 14;
-            this.label5.Text = "담당자";
+            this.label5.Text = "담당자 :";
             // 
             // label6
             // 
@@ -207,9 +221,13 @@
             this.label6.Font = new System.Drawing.Font("굴림", 15F);
             this.label6.Location = new System.Drawing.Point(23, 11);
             this.label6.Name = "label6";
+<<<<<<< HEAD
             this.label6.Size = new System.Drawing.Size(62, 25);
+=======
+            this.label6.Size = new System.Drawing.Size(55, 20);
+>>>>>>> e924fbef75bdaf0c6a83ff58381231390ad81d16
             this.label6.TabIndex = 15;
-            this.label6.Text = "시간";
+            this.label6.Text = "pos :";
             // 
             // button1
             // 
@@ -486,6 +504,7 @@
             // 
             // button25
             // 
+<<<<<<< HEAD
             this.button25.Location = new System.Drawing.Point(933, 238);
             this.button25.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button25.Name = "button25";
@@ -502,14 +521,77 @@
             this.button26.Size = new System.Drawing.Size(160, 86);
             this.button26.TabIndex = 41;
             this.button26.Text = "종료";
+=======
+            this.button25.Location = new System.Drawing.Point(817, 340);
+            this.button25.Name = "button25";
+            this.button25.Size = new System.Drawing.Size(140, 69);
+            this.button25.TabIndex = 40;
+            this.button25.Text = "폐기";
+            this.button25.UseVisualStyleBackColor = true;
+            this.button25.Click += new System.EventHandler(this.button25_Click);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(81, 16);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(38, 12);
+            this.label8.TabIndex = 9;
+            this.label8.Text = "label8";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(234, 17);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(38, 12);
+            this.label9.TabIndex = 41;
+            this.label9.Text = "label9";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(928, 16);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(44, 12);
+            this.label10.TabIndex = 43;
+            this.label10.Text = "label10";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("굴림", 13F);
+            this.label11.Location = new System.Drawing.Point(813, 10);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(56, 18);
+            this.label11.TabIndex = 42;
+            this.label11.Text = "날짜 :";
+            // 
+            // button26
+            // 
+            this.button26.Location = new System.Drawing.Point(965, 40);
+            this.button26.Name = "button26";
+            this.button26.Size = new System.Drawing.Size(132, 69);
+            this.button26.TabIndex = 44;
+            this.button26.Text = "매장정보변경";
+>>>>>>> e924fbef75bdaf0c6a83ff58381231390ad81d16
             this.button26.UseVisualStyleBackColor = true;
             // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+<<<<<<< HEAD
             this.ClientSize = new System.Drawing.Size(1282, 920);
             this.Controls.Add(this.button26);
+=======
+            this.ClientSize = new System.Drawing.Size(1122, 736);
+            this.Controls.Add(this.button26);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.label8);
+>>>>>>> e924fbef75bdaf0c6a83ff58381231390ad81d16
             this.Controls.Add(this.button25);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.textBox8);
@@ -598,6 +680,13 @@
         private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button button25;
+<<<<<<< HEAD
+=======
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
+>>>>>>> e924fbef75bdaf0c6a83ff58381231390ad81d16
         private System.Windows.Forms.Button button26;
     }
 }
