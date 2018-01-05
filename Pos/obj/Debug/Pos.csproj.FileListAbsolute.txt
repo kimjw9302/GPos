@@ -40,3 +40,4 @@ C:\Users\gd3-2\Documents\GPos\Pos\obj\Debug\Pos.frmView.resources
 C:\Users\gd3-2\Documents\GPos\Pos\obj\Debug\Pos.Properties.Resources.resources
 C:\Users\gd3-2\Documents\GPos\Pos\obj\Debug\Pos.csproj.GenerateResource.Cache
 C:\Users\gd3-2\Documents\GPos\Pos\obj\Debug\Pos.csproj.CoreCompileInputs.cache
+C:\Users\gd3-2\Documents\GPos\Pos\obj\Debug\Pos.csprojResolveAssemblyReference.cache

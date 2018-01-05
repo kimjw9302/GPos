@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -49,15 +49,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(343, 328);
             this.dataGridView1.TabIndex = 0;
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(256, 23);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(99, 40);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "직원 등록하기";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // Column1
             // 
             this.Column1.HeaderText = "직원명";
@@ -73,11 +64,20 @@
             this.Column3.HeaderText = "직급";
             this.Column3.Name = "Column3";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(256, 23);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(99, 40);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "직원 등록하기";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // frmEmloyeesInquiry
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(373, 432);
+            this.ClientSize = new System.Drawing.Size(386, 432);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
             this.Name = "frmEmloyeesInquiry";
