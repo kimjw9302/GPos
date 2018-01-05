@@ -16,10 +16,6 @@ namespace Pos
         {
             InitializeComponent();
         }
-
-        private void button25_Click(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }
