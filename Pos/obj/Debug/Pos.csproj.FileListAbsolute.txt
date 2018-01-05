@@ -6,7 +6,6 @@ C:\Users\gd3-1\Documents\GPos\Pos\obj\Debug\Pos.Form1.resources
 C:\Users\gd3-1\Documents\GPos\Pos\obj\Debug\Pos.frmCustRegister.resources
 C:\Users\gd3-1\Documents\GPos\Pos\obj\Debug\Pos.frmEmloyeesInquiry.resources
 C:\Users\gd3-1\Documents\GPos\Pos\obj\Debug\Pos.frmEmployeeRotaion.resources
-C:\Users\gd3-1\Documents\GPos\Pos\obj\Debug\Pos.frmEmployeeRotationCheck.resources
 C:\Users\gd3-1\Documents\GPos\Pos\obj\Debug\Pos.frmEmployeesRegister.resources
 C:\Users\gd3-1\Documents\GPos\Pos\obj\Debug\Pos.frmMain.resources
 C:\Users\gd3-1\Documents\GPos\Pos\obj\Debug\Pos.frmManagement.resources
@@ -40,3 +39,8 @@ C:\Users\gd3-2\Documents\GPos\Pos\obj\Debug\Pos.frmView.resources
 C:\Users\gd3-2\Documents\GPos\Pos\obj\Debug\Pos.Properties.Resources.resources
 C:\Users\gd3-2\Documents\GPos\Pos\obj\Debug\Pos.csproj.GenerateResource.Cache
 C:\Users\gd3-2\Documents\GPos\Pos\obj\Debug\Pos.csproj.CoreCompileInputs.cache
+C:\Users\gd3-2\Documents\GPos\Pos\obj\Debug\Pos.csprojResolveAssemblyReference.cache
+C:\Users\gd3-1\Documents\GPos\Pos\obj\Debug\Pos.Properties.frmClientView.resources
+C:\Users\gd3-1\Documents\GPos\Pos\obj\Debug\Pos.frmEmployeeSchedule.resources
+C:\Users\gd3-1\Documents\GPos\Pos\obj\Debug\Pos.frmProductSelect.resources
+C:\Users\gd3-1\Documents\GPos\Pos\obj\Debug\Pos.frmSalesinquiry.resources
