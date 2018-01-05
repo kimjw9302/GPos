@@ -10,19 +10,11 @@ using System.Windows.Forms;
 
 namespace Pos
 {
-    public partial class frmCard : Form
+    public partial class frmOrder : Form
     {
-        public frmCard()
+        public frmOrder()
         {
             InitializeComponent();
         }
-<<<<<<< HEAD
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-=======
->>>>>>> master
     }
 }
