@@ -44,3 +44,14 @@ C:\Users\gd3-1\Documents\GPos\Pos\obj\Debug\Pos.Properties.frmClientView.resourc
 C:\Users\gd3-1\Documents\GPos\Pos\obj\Debug\Pos.frmEmployeeSchedule.resources
 C:\Users\gd3-1\Documents\GPos\Pos\obj\Debug\Pos.frmProductSelect.resources
 C:\Users\gd3-1\Documents\GPos\Pos\obj\Debug\Pos.frmSalesinquiry.resources
+C:\Users\김재웅\Documents\GPos\Pos\obj\Debug\Pos.csprojResolveAssemblyReference.cache
+C:\Users\김재웅\Documents\GPos\Pos\obj\Debug\Pos.Form1.resources
+C:\Users\김재웅\Documents\GPos\Pos\obj\Debug\Pos.frmMain.resources
+C:\Users\김재웅\Documents\GPos\Pos\obj\Debug\Pos.csproj.GenerateResource.Cache
+C:\Users\김재웅\Documents\GPos\Pos\obj\Debug\Pos.csproj.CoreCompileInputs.cache
+C:\Users\김재웅\Documents\GPos\Pos\obj\Debug\Pos.exe
+C:\Users\김재웅\Documents\GPos\Pos\obj\Debug\Pos.pdb
+C:\Users\김재웅\Documents\GPos\Pos\bin\Debug\Pos.exe.config
+C:\Users\김재웅\Documents\GPos\Pos\bin\Debug\Pos.exe
+C:\Users\김재웅\Documents\GPos\Pos\bin\Debug\Pos.pdb
+C:\Users\김재웅\Documents\GPos\Pos\obj\Debug\Pos.Properties.Resources.resources

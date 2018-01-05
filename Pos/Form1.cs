@@ -16,10 +16,15 @@ namespace Pos
         {
             InitializeComponent();
         }
-        
+        //종료버튼 클릭
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
+        //로그인버튼 클릭
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            new frmMain().Show();
+
         }
     }
 }

@@ -20,7 +20,7 @@
             base.Dispose(disposing);
         }
 
-        #region Windows Form Designer generated code
+
 
         /// <summary>
         /// Required method for Designer support - do not modify
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-<<<<<<< HEAD
+
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -353,7 +353,7 @@
 
         }
 
-        #endregion
+  
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
@@ -383,13 +383,6 @@
         private System.Windows.Forms.Button btn1;
         private System.Windows.Forms.Button btnPay;
         private System.Windows.Forms.Button btnCancle;
-=======
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Text = "frmCard";
-        }
 
-        #endregion
->>>>>>> master
     }
 }
