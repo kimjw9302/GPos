@@ -166,8 +166,56 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmCard.resx">
+      <DependentUpon>frmCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCash.resx">
+      <DependentUpon>frmCash.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmClientView.resx">
+      <DependentUpon>frmClientView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCustRegister.resx">
+      <DependentUpon>frmCustRegister.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEmloyeesInquiry.resx">
+      <DependentUpon>frmEmloyeesInquiry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEmployeeRotaion.resx">
+      <DependentUpon>frmEmployeeRotaion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEmployeeSchedule.resx">
+      <DependentUpon>frmEmployeeSchedule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEmployeesRegister.resx">
+      <DependentUpon>frmEmployeesRegister.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmManagement.resx">
+      <DependentUpon>frmManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmOrder.resx">
+      <DependentUpon>frmOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPayment.resx">
+      <DependentUpon>frmPayment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPoint.resx">
+      <DependentUpon>frmPoint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmProductSelect.resx">
+      <DependentUpon>frmProductSelect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRevenue.resx">
+      <DependentUpon>frmRevenue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSalesinquiry.resx">
+      <DependentUpon>frmSalesinquiry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmView.resx">
+      <DependentUpon>frmView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

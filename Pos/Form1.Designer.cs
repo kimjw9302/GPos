@@ -29,8 +29,8 @@
         private void InitializeComponent()
         { 
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.tboxID = new System.Windows.Forms.TextBox();
+            this.tboxPw = new System.Windows.Forms.TextBox();
             this.btnLogin = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
@@ -50,22 +50,22 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "직원ID";
             // 
-            // textBox1
+            // tboxID
             // 
-            this.textBox1.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox1.Location = new System.Drawing.Point(183, 77);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(151, 34);
-            this.textBox1.TabIndex = 2;
+            this.tboxID.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.tboxID.Location = new System.Drawing.Point(183, 77);
+            this.tboxID.Name = "tboxID";
+            this.tboxID.Size = new System.Drawing.Size(151, 34);
+            this.tboxID.TabIndex = 2;
             // 
-            // textBox2
+            // tboxPw
             // 
-            this.textBox2.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox2.Location = new System.Drawing.Point(183, 141);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.PasswordChar = '*';
-            this.textBox2.Size = new System.Drawing.Size(151, 34);
-            this.textBox2.TabIndex = 3;
+            this.tboxPw.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.tboxPw.Location = new System.Drawing.Point(183, 141);
+            this.tboxPw.Name = "tboxPw";
+            this.tboxPw.PasswordChar = '*';
+            this.tboxPw.Size = new System.Drawing.Size(151, 34);
+            this.tboxPw.TabIndex = 3;
             // 
             // btnLogin
             // 
@@ -137,8 +137,8 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnLogin);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.tboxPw);
+            this.Controls.Add(this.tboxID);
             this.Controls.Add(this.label1);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Form1";
@@ -153,8 +153,8 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox tboxID;
+        private System.Windows.Forms.TextBox tboxPw;
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Label label2;
