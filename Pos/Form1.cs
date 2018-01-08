@@ -17,46 +17,61 @@ namespace Pos
         {
             InitializeComponent();
         }
+
         //종료버튼 클릭
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Dispose();
-        }
+        } 
+
         //로그인버튼 클릭
         private void btnLogin_Click(object sender, EventArgs e)
         {
+            // MakeBarcode mb = new MakeBarcode();
+            // Bitmap b = mb.Barcode(tboxID.Text);
+            //pictureBox2.Image= b;
+            // pictureBox2.Height = b.Height;
+            // pictureBox2.Width = b.Width;
             string employeeID = tboxID.Text;
             string storePw = tboxPw.Text;
             //유효성 검사
             if (Check(employeeID, storePw))
             {
                 //우선쿼리로 제작(직원 아이디로 접근 )
-                using (var con = DBcontroller.Instance())
-                {
-                    
-                    //Employees 테이블 
-                    //
-                    string query = "select count(empNum) from dbo.Employees where empNum =123 ";
-                    using (var cmd = new SqlCommand(query, con))
-                    {
-                        con.Open();
-                        var sdr = cmd.ExecuteScalar();
-                        MessageBox.Show("1");
-                        if (sdr.ToString().Contains("1"))
-                        {
-                
-                        }
-                        else
-                        {
-                            MessageBox.Show("다시입력");
-                            con.Close();
-                            return;
-                        }
+                var con = DBcontroller.Instance();
 
+                //Employees 테이블 
+                //
+
+                using (var cmd = new SqlCommand("FirstLoginSelect", con))
+                {
+                    con.Open();
+                
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@EmployeeID",int.Parse(employeeID));
+                    cmd.Parameters.AddWithValue("@StorePW", int.Parse(storePw));
+                    var sdr = cmd.ExecuteScalar();
+
+                    if (sdr.ToString() == "1")
+                    {
+                        con.Close();
+                        this.Visible = false;
+                        new frmMain().ShowDialog();
+                    }
+                    else
+                    {
+                        MessageBox.Show("다시입력해주세요");
+                        tboxID.Text = "";
+                        tboxPw.Text = "";
+                        tboxID.Focus();
+                        con.Close();
+                        return;
                     }
 
                 }
+
             }
+
             else
             {
                 MessageBox.Show("다시 입력해주세요.");
@@ -82,6 +97,14 @@ namespace Pos
             return true;
 
 
+        }
+
+        private void tboxPw_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnLogin_Click(sender, e);
+            }
         }
     }
 }
