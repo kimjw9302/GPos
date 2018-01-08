@@ -54,6 +54,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmCalculator.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCalculator.Designer.cs">
+      <DependentUpon>frmCalculator.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmCard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -102,6 +108,12 @@
     <Compile Include="frmEmployeesRegister.Designer.cs">
       <DependentUpon>frmEmployeesRegister.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmImportantModify.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmImportantModify.Designer.cs">
+      <DependentUpon>frmImportantModify.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -119,6 +131,18 @@
     </Compile>
     <Compile Include="frmOrder.Designer.cs">
       <DependentUpon>frmOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmOrderRequest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOrderRequest.Designer.cs">
+      <DependentUpon>frmOrderRequest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmOrderSelect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOrderSelect.Designer.cs">
+      <DependentUpon>frmOrderSelect.cs</DependentUpon>
     </Compile>
     <Compile Include="frmPayment.cs">
       <SubType>Form</SubType>
@@ -167,6 +191,9 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmCalculator.resx">
+      <DependentUpon>frmCalculator.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmCard.resx">
       <DependentUpon>frmCard.cs</DependentUpon>
     </EmbeddedResource>
@@ -191,6 +218,9 @@
     <EmbeddedResource Include="frmEmployeesRegister.resx">
       <DependentUpon>frmEmployeesRegister.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmImportantModify.resx">
+      <DependentUpon>frmImportantModify.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
@@ -199,6 +229,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmOrder.resx">
       <DependentUpon>frmOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmOrderRequest.resx">
+      <DependentUpon>frmOrderRequest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmOrderSelect.resx">
+      <DependentUpon>frmOrderSelect.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPayment.resx">
       <DependentUpon>frmPayment.cs</DependentUpon>

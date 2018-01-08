@@ -495,6 +495,7 @@
             this.button25.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button25.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button25.Location = new System.Drawing.Point(430, 372);
+            this.button25.Location = new System.Drawing.Point(435, 371);
             this.button25.Name = "button25";
             this.button25.Size = new System.Drawing.Size(140, 69);
             this.button25.TabIndex = 40;
