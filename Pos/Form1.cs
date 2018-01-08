@@ -73,8 +73,8 @@ namespace Pos
                 return false;
             }
             return true;
-
-
+            
         }
+        
     }
 }

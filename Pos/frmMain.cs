@@ -17,9 +17,18 @@ namespace Pos
             InitializeComponent();
         }
 
+        private void frmMain_Load(object sender, EventArgs e)
+        {
+            
+        }
+
         private void btnClose_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("종료하시겠습니까?", "알림", MessageBoxButtons.OKCancel);
+            var result = MessageBox.Show("종료하시겠습니까?", "알림", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+            if(result == DialogResult.OK)
+            {
+                this.Close();
+            }
         }
         private void btnTotalView_Click(object sender, EventArgs e)
         {
@@ -44,5 +53,7 @@ namespace Pos
         {
             new frmPoint().ShowDialog();
         }
+
+        
     }
 }
