@@ -33,6 +33,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
@@ -46,11 +47,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DBcontroller.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCalculator.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCalculator.Designer.cs">
+      <DependentUpon>frmCalculator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCard.Designer.cs">
+      <DependentUpon>frmCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCash.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCash.Designer.cs">
+      <DependentUpon>frmCash.cs</DependentUpon>
     </Compile>
     <Compile Include="frmClientView.cs">
       <SubType>Form</SubType>
@@ -88,6 +108,12 @@
     <Compile Include="frmEmployeesRegister.Designer.cs">
       <DependentUpon>frmEmployeesRegister.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmImportantModify.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmImportantModify.Designer.cs">
+      <DependentUpon>frmImportantModify.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -100,11 +126,35 @@
     <Compile Include="frmManagement.Designer.cs">
       <DependentUpon>frmManagement.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOrder.Designer.cs">
+      <DependentUpon>frmOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmOrderRequest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOrderRequest.Designer.cs">
+      <DependentUpon>frmOrderRequest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmOrderSelect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOrderSelect.Designer.cs">
+      <DependentUpon>frmOrderSelect.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmPayment.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmPayment.Designer.cs">
       <DependentUpon>frmPayment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPoint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPoint.Designer.cs">
+      <DependentUpon>frmPoint.cs</DependentUpon>
     </Compile>
     <Compile Include="frmProductSelect.cs">
       <SubType>Form</SubType>
@@ -132,8 +182,22 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCalculator.resx">
+      <DependentUpon>frmCalculator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCard.resx">
+      <DependentUpon>frmCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCash.resx">
+      <DependentUpon>frmCash.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmClientView.resx">
       <DependentUpon>frmClientView.cs</DependentUpon>
@@ -153,14 +217,29 @@
     <EmbeddedResource Include="frmEmployeesRegister.resx">
       <DependentUpon>frmEmployeesRegister.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmImportantModify.resx">
+      <DependentUpon>frmImportantModify.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmManagement.resx">
       <DependentUpon>frmManagement.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmOrder.resx">
+      <DependentUpon>frmOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmOrderRequest.resx">
+      <DependentUpon>frmOrderRequest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmOrderSelect.resx">
+      <DependentUpon>frmOrderSelect.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmPayment.resx">
       <DependentUpon>frmPayment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPoint.resx">
+      <DependentUpon>frmPoint.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmProductSelect.resx">
       <DependentUpon>frmProductSelect.cs</DependentUpon>
@@ -177,24 +256,13 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
-    <None Include="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-    </None>
-    <Compile Include="Properties\Settings.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Settings.settings</DependentUpon>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\goodeelogo.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
