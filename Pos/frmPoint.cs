@@ -10,12 +10,11 @@ using System.Windows.Forms;
 
 namespace Pos
 {
-    public partial class frmMain : Form
+    public partial class frmPoint : Form
     {
-        public frmMain()
+        public frmPoint()
         {
             InitializeComponent();
         }
-        
     }
 }
