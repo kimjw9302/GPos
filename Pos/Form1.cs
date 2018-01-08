@@ -95,9 +95,9 @@ namespace Pos
                 return false;
             }
             return true;
-
-
+            
         }
+<<<<<<< HEAD
 
         private void tboxPw_KeyDown(object sender, KeyEventArgs e)
         {
@@ -106,5 +106,8 @@ namespace Pos
                 btnLogin_Click(sender, e);
             }
         }
+=======
+        
+>>>>>>> ui5
     }
 }

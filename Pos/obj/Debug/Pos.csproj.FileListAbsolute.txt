@@ -72,6 +72,7 @@ C:\Users\김재웅\Documents\GPos\Pos\obj\Debug\Pos.frmRevenue.resources
 C:\Users\김재웅\Documents\GPos\Pos\obj\Debug\Pos.frmSalesinquiry.resources
 C:\Users\김재웅\Documents\GPos\Pos\obj\Debug\Pos.frmView.resources
 <<<<<<< HEAD
+<<<<<<< HEAD
 C:\Users\gd3-8\Documents\GPos\Pos\bin\Debug\Pos.exe.config
 C:\Users\gd3-8\Documents\GPos\Pos\bin\Debug\Pos.exe
 C:\Users\gd3-8\Documents\GPos\Pos\bin\Debug\Pos.pdb
@@ -132,3 +133,9 @@ C:\Users\gdn3-15\Documents\GPos\Pos\obj\Debug\Pos.frmCalculator.resources
 C:\Users\gdn3-15\Documents\GPos\Pos\obj\Debug\Pos.frmImportantModify.resources
 C:\Users\gdn3-15\Documents\GPos\Pos\obj\Debug\Pos.frmOrderRequest.resources
 >>>>>>> 051ddef060493a9b5f942700e92d1ce612d35386
+=======
+C:\Users\gd3-1\Documents\GPos\Pos\obj\Debug\Pos.frmCard.resources
+C:\Users\gd3-1\Documents\GPos\Pos\obj\Debug\Pos.frmCash.resources
+C:\Users\gd3-1\Documents\GPos\Pos\obj\Debug\Pos.frmOrder.resources
+C:\Users\gd3-1\Documents\GPos\Pos\obj\Debug\Pos.frmPoint.resources
+>>>>>>> ui5
