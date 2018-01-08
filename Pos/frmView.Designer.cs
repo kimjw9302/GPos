@@ -94,7 +94,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(508, 454);
+            this.ClientSize = new System.Drawing.Size(435, 378);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.btnStockSelect);
             this.Controls.Add(this.button5);

@@ -35,6 +35,7 @@ namespace Pos
                 {
                     
                     //Employees 테이블 
+                    //
                     string query = "select count(empNum) from dbo.Employees where empNum =123 ";
                     using (var cmd = new SqlCommand(query, con))
                     {
@@ -43,7 +44,7 @@ namespace Pos
                         MessageBox.Show("1");
                         if (sdr.ToString().Contains("1"))
                         {
-                            MessageBox.Show("커몬");
+                
                         }
                         else
                         {
@@ -62,6 +63,12 @@ namespace Pos
             }
 
         }
+        /// <summary>
+        /// 입력한값이 유효성에 맞는지 부터 검사를 시작함.
+        /// </summary>
+        /// <param name="a"></param>
+        /// <param name="b"></param>
+        /// <returns></returns>
         public bool Check(string a, string b)
         {
             if (a.Length > 5 || a == "")
