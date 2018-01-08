@@ -43,30 +43,30 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label1.Location = new System.Drawing.Point(76, 62);
+            this.label1.Font = new System.Drawing.Font("맑은 고딕", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label1.Location = new System.Drawing.Point(66, 62);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(57, 21);
+            this.label1.Size = new System.Drawing.Size(88, 32);
             this.label1.TabIndex = 0;
             this.label1.Text = "직원ID";
             // 
             // tboxID
             // 
-            this.tboxID.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.tboxID.Location = new System.Drawing.Point(160, 62);
+            this.tboxID.Font = new System.Drawing.Font("맑은 고딕", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.tboxID.Location = new System.Drawing.Point(160, 61);
             this.tboxID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tboxID.Name = "tboxID";
-            this.tboxID.Size = new System.Drawing.Size(133, 29);
+            this.tboxID.Size = new System.Drawing.Size(133, 39);
             this.tboxID.TabIndex = 2;
             // 
             // tboxPw
             // 
-            this.tboxPw.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.tboxPw.Location = new System.Drawing.Point(160, 113);
+            this.tboxPw.Font = new System.Drawing.Font("맑은 고딕", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.tboxPw.Location = new System.Drawing.Point(160, 112);
             this.tboxPw.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tboxPw.Name = "tboxPw";
             this.tboxPw.PasswordChar = '*';
-            this.tboxPw.Size = new System.Drawing.Size(133, 29);
+            this.tboxPw.Size = new System.Drawing.Size(133, 39);
             this.tboxPw.TabIndex = 3;
             this.tboxPw.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tboxPw_KeyDown);
             // 
@@ -106,10 +106,10 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label2.Location = new System.Drawing.Point(76, 113);
+            this.label2.Font = new System.Drawing.Font("맑은 고딕", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label2.Location = new System.Drawing.Point(52, 113);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(66, 21);
+            this.label2.Size = new System.Drawing.Size(102, 32);
             this.label2.TabIndex = 6;
             this.label2.Text = "매장PW";
             // 

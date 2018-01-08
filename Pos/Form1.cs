@@ -17,17 +17,21 @@ namespace Pos
         {
             InitializeComponent();
         }
+
         //종료버튼 클릭
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Dispose();
-        }
+        } 
 
-
-    
         //로그인버튼 클릭
         private void btnLogin_Click(object sender, EventArgs e)
         {
+            // MakeBarcode mb = new MakeBarcode();
+            // Bitmap b = mb.Barcode(tboxID.Text);
+            //pictureBox2.Image= b;
+            // pictureBox2.Height = b.Height;
+            // pictureBox2.Width = b.Width;
             string employeeID = tboxID.Text;
             string storePw = tboxPw.Text;
             //유효성 검사
@@ -38,14 +42,21 @@ namespace Pos
 
                 //Employees 테이블 
                 //
-                string query = "select count(empNum) from dbo.Employees where empNum =123 ";
-                using (var cmd = new SqlCommand(query, con))
+
+                using (var cmd = new SqlCommand("FirstLoginSelect", con))
                 {
                     con.Open();
+                
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@EmployeeID",int.Parse(employeeID));
+                    cmd.Parameters.AddWithValue("@StorePW", int.Parse(storePw));
                     var sdr = cmd.ExecuteScalar();
-                    if (sdr.ToString().Contains("1"))
-                    {
 
+                    if (sdr.ToString() == "1")
+                    {
+                        con.Close();
+                        this.Visible = false;
+                        new frmMain().ShowDialog();
                     }
                     else
                     {
