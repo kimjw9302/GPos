@@ -71,3 +71,7 @@ C:\Users\김재웅\Documents\GPos\Pos\obj\Debug\Pos.frmProductSelect.resources
 C:\Users\김재웅\Documents\GPos\Pos\obj\Debug\Pos.frmRevenue.resources
 C:\Users\김재웅\Documents\GPos\Pos\obj\Debug\Pos.frmSalesinquiry.resources
 C:\Users\김재웅\Documents\GPos\Pos\obj\Debug\Pos.frmView.resources
+C:\Users\gd3-1\Documents\GPos\Pos\obj\Debug\Pos.frmCard.resources
+C:\Users\gd3-1\Documents\GPos\Pos\obj\Debug\Pos.frmCash.resources
+C:\Users\gd3-1\Documents\GPos\Pos\obj\Debug\Pos.frmOrder.resources
+C:\Users\gd3-1\Documents\GPos\Pos\obj\Debug\Pos.frmPoint.resources
