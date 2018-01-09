@@ -16,5 +16,15 @@ namespace Pos
         {
             InitializeComponent();
         }
+
+        private void btnOrder_Click(object sender, EventArgs e)
+        {
+            new frmOrderRequest().ShowDialog();
+        }
+
+        private void btnOrderView_Click(object sender, EventArgs e)
+        {
+            new frmOrderSelect().ShowDialog();
+        }
     }
 }

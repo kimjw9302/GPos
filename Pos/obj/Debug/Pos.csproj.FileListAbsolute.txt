@@ -6,7 +6,6 @@ C:\Users\gd3-1\Documents\GPos\Pos\obj\Debug\Pos.Form1.resources
 C:\Users\gd3-1\Documents\GPos\Pos\obj\Debug\Pos.frmCalculator.resources
 C:\Users\gd3-1\Documents\GPos\Pos\obj\Debug\Pos.frmCard.resources
 C:\Users\gd3-1\Documents\GPos\Pos\obj\Debug\Pos.frmCash.resources
-C:\Users\gd3-1\Documents\GPos\Pos\obj\Debug\Pos.Properties.frmClientView.resources
 C:\Users\gd3-1\Documents\GPos\Pos\obj\Debug\Pos.frmCustRegister.resources
 C:\Users\gd3-1\Documents\GPos\Pos\obj\Debug\Pos.frmEmloyeesInquiry.resources
 C:\Users\gd3-1\Documents\GPos\Pos\obj\Debug\Pos.frmEmployeeRotaion.resources
@@ -29,3 +28,4 @@ C:\Users\gd3-1\Documents\GPos\Pos\obj\Debug\Pos.csproj.GenerateResource.Cache
 C:\Users\gd3-1\Documents\GPos\Pos\obj\Debug\Pos.csproj.CoreCompileInputs.cache
 C:\Users\gd3-1\Documents\GPos\Pos\obj\Debug\Pos.exe
 C:\Users\gd3-1\Documents\GPos\Pos\obj\Debug\Pos.pdb
+C:\Users\gd3-1\Documents\GPos\Pos\obj\Debug\Pos.frmEtc.resources

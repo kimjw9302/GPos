@@ -16,5 +16,25 @@ namespace Pos
         {
             InitializeComponent();
         }
+
+        private void btnStockSelect_Click(object sender, EventArgs e)
+        {
+            new frmProductSelect().ShowDialog();
+        }
+
+        private void btnSell_Click(object sender, EventArgs e)
+        {
+            new frmSalesinquiry().ShowDialog();
+        }
+
+        private void btnRevenue_Click(object sender, EventArgs e)
+        {
+            new frmRevenue().ShowDialog();
+        }
+
+        private void btnCustInquiry_Click(object sender, EventArgs e)
+        {
+            new frmCustInquiry().ShowDialog();
+        }
     }
 }

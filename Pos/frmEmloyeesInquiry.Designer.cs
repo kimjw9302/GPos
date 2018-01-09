@@ -32,7 +32,6 @@
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -43,7 +42,7 @@
             this.Column1,
             this.Column2,
             this.Column3});
-            this.dataGridView1.Location = new System.Drawing.Point(12, 89);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 58);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 23;
             this.dataGridView1.Size = new System.Drawing.Size(343, 328);
@@ -64,21 +63,11 @@
             this.Column3.HeaderText = "직급";
             this.Column3.Name = "Column3";
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(256, 23);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(99, 40);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "직원 등록하기";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // frmEmloyeesInquiry
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(386, 432);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
             this.Name = "frmEmloyeesInquiry";
             this.Text = "frmEmloyeesInquiry";
@@ -90,7 +79,6 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;

@@ -22,5 +22,25 @@ namespace Pos
             this.Close();
             new frmCustRegister().ShowDialog();
         }
+
+        private void btnCustRegister_Click_1(object sender, EventArgs e)
+        {
+            new frmCustRegister().ShowDialog();
+        }
+
+        private void btnProductRegister_Click(object sender, EventArgs e)
+        {
+            //상품등록
+        }
+
+        private void btnEmployeeRegister_Click(object sender, EventArgs e)
+        {
+            new frmEmployeesRegister().ShowDialog();
+        }
+
+        private void btnEmpWork_Click(object sender, EventArgs e)
+        {
+            new frmEmployeeSchedule().ShowDialog();
+        }
     }
 }

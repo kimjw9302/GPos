@@ -54,6 +54,19 @@ namespace Pos
             new frmPoint().ShowDialog();
         }
 
-        
+        private void btnOrder_Click(object sender, EventArgs e)
+        {
+            new frmOrder().ShowDialog();
+        }
+
+        private void btnEtc_Click(object sender, EventArgs e)
+        {
+            new frmEtc().ShowDialog();
+        }
+
+        private void btnEmployeeChange_Click(object sender, EventArgs e)
+        {
+            //바코드 폼
+        }
     }
 }
