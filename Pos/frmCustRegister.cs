@@ -57,64 +57,7 @@ namespace Pos
             }
 
         }
-
-        //private string PassWord(string pw)
-        //{
-        //    using (MD5 md5Hash = MD5.Create())
-        //    {
-        //        string hash = GetMd5Hash(md5Hash, pw);
-
-        //        MessageBox.Show("비번전 " + pw + ", 후 " + hash + ".");
-
-        //        return hash;
-        //        //Console.WriteLine("Verifying the hash...");
-
-        //        //if (VerifyMd5Hash(md5Hash, password, hash))
-        //        //{
-        //        //    Console.WriteLine("The hashes are the same.");
-        //        //}
-        //        //else
-        //        //{
-        //        //    Console.WriteLine("The hashes are not same.");
-        //        //}
-        //    }
-        //}
-
-        //static string GetMd5Hash(MD5 md5Hash, string input)
-        //{
-
-        //     byte[] data = md5Hash.ComputeHash(Encoding.UTF8.GetBytes(input));
-
-        //    //바이트 수집  문자열 생성
-        //    StringBuilder sBuilder = new StringBuilder();
-
-
-        //    // 해시 된 데이터의 각 바이트를 반복합니다.각각을 16 진수 문자열로 포맷하십시오.
-        //    for (int i = 0; i < data.Length; i++)
-        //    {
-        //        sBuilder.Append(data[i].ToString("x2"));
-        //    }
-            
-        //    return sBuilder.ToString();
-        //}
-
-        //static bool VerifyMd5Hash(MD5 md5Hash, string input, string hash)
-        //{
-        //    string hashOfInput = GetMd5Hash(md5Hash, input);
-
-        //    StringComparer comparer = StringComparer.OrdinalIgnoreCase;
-
-        //    if (0 == comparer.Compare(hashOfInput, hash))
-        //    {
-        //        return true;
-        //    }
-        //    else
-        //    {
-        //        return false;
-        //    }
-        //}
-
-
+        
         /// <summary>
         /// 회원번호, 휴대전화 중복 체크
         /// </summary>
@@ -133,20 +76,36 @@ namespace Pos
                 cmd.Parameters.AddWithValue("@userNum", userNum);
                 cmd.Parameters.AddWithValue("@phone", userPhone);
                 con.Open();
-                var sdr = cmd.ExecuteReader();
-                if (sdr.HasRows)
+                var sdr = cmd.ExecuteScalar();
+
+                if (sdr.ToString() == "0")
                 {
-                    MessageBox.Show("중복");
-                    sdr.Close();
+                    MessageBox.Show("회원번호 중복");
+                    userRandomNum = new Random().Next(00000000, 99999999);
+                    txtUserNum.Text = userRandomNum.ToString();
                     con.Close();
                     return false;
                 }
-                else
+                else if (sdr.ToString() == "1")
                 {
-                    sdr.Close();
+                    MessageBox.Show("전화번호 중복");
+                    txtPhone2.Text = txtPhone3.Text = "";
                     con.Close();
+                    return false;
+                }
+                else if (sdr.ToString() == "2")
+                {
+                    MessageBox.Show("회원번호, 전화번호 중복");
+                    txtPhone2.Text = txtPhone3.Text = "";
+                    userRandomNum = new Random().Next(00000000, 99999999);
+                    txtUserNum.Text = userRandomNum.ToString();
+                    con.Close();
+                    return false;
+                }
+                else {
                     return true;
                 }
+
             }
 
 

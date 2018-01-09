@@ -22,16 +22,17 @@ namespace Pos
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Dispose();
-        } 
+        }
 
         //로그인버튼 클릭
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            // MakeBarcode mb = new MakeBarcode();
-            // Bitmap b = mb.Barcode(tboxID.Text);
-            //pictureBox2.Image= b;
-            // pictureBox2.Height = b.Height;
-            // pictureBox2.Width = b.Width;
+            //MakeBarcode mb = new MakeBarcode();
+            //Bitmap b = mb.Barcode(tboxID.Text);
+            //pictureBox2.Image = b;
+            //pictureBox2.Height = b.Height;
+            //pictureBox2.Width = b.Width;
+
             string employeeID = tboxID.Text;
             string storePw = tboxPw.Text;
             //유효성 검사
@@ -46,9 +47,9 @@ namespace Pos
                 using (var cmd = new SqlCommand("FirstLoginSelect", con))
                 {
                     con.Open();
-                
+
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@EmployeeID",int.Parse(employeeID));
+                    cmd.Parameters.AddWithValue("@EmployeeID", int.Parse(employeeID));
                     cmd.Parameters.AddWithValue("@StorePW", int.Parse(storePw));
                     var sdr = cmd.ExecuteScalar();
 
@@ -57,6 +58,7 @@ namespace Pos
                         con.Close();
                         this.Visible = false;
                         new frmMain().ShowDialog();
+                        this.Close();
                     }
                     else
                     {
@@ -95,9 +97,8 @@ namespace Pos
                 return false;
             }
             return true;
-            
+
         }
-<<<<<<< HEAD
 
         private void tboxPw_KeyDown(object sender, KeyEventArgs e)
         {
@@ -105,9 +106,8 @@ namespace Pos
             {
                 btnLogin_Click(sender, e);
             }
+
+
         }
-=======
-        
->>>>>>> ui5
     }
 }
