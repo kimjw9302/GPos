@@ -19,12 +19,12 @@ namespace Pos
 
         private void btnStockSelect_Click(object sender, EventArgs e)
         {
-
+            new frmEvent().ShowDialog();
         }
 
         private void btnLog_Click(object sender, EventArgs e)
         {
-
+            new frmLog().ShowDialog();
         }
     }
 }

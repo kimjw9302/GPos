@@ -43,7 +43,7 @@
             this.btnStockSelect.Name = "btnStockSelect";
             this.btnStockSelect.Size = new System.Drawing.Size(114, 104);
             this.btnStockSelect.TabIndex = 15;
-            this.btnStockSelect.Text = "이벤트 등록/조회";
+            this.btnStockSelect.Text = "이벤트 등록\r\n및 조회";
             this.btnStockSelect.UseVisualStyleBackColor = false;
             this.btnStockSelect.Click += new System.EventHandler(this.btnStockSelect_Click);
             // 
@@ -71,6 +71,7 @@
             this.Controls.Add(this.btnStockSelect);
             this.Controls.Add(this.btnLog);
             this.Name = "frmEtc";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmEtc";
             this.ResumeLayout(false);
 

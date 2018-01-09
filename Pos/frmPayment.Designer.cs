@@ -213,6 +213,7 @@
             this.Controls.Add(this.button8);
             this.Controls.Add(this.button2);
             this.Name = "frmPayment";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gpos";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

@@ -189,6 +189,7 @@
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
             this.Name = "frmEmployeesRegister";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "직원 등록";
             this.ResumeLayout(false);
             this.PerformLayout();

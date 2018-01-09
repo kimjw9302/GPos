@@ -61,6 +61,7 @@
             this.Controls.Add(this.btnOrderView);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmOrder";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmOrder";
             this.ResumeLayout(false);
 

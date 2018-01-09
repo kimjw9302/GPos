@@ -59,10 +59,10 @@
             this.tboxMiddleNum = new System.Windows.Forms.TextBox();
             this.tboxBigNum = new System.Windows.Forms.TextBox();
             this.gbNotice = new System.Windows.Forms.GroupBox();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
             this.gbNotice.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -371,27 +371,16 @@
             this.gbNotice.TabStop = false;
             this.gbNotice.Text = "알림!";
             // 
-            // label16
+            // label19
             // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("굴림", 12F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("굴림", 12F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
                 | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label16.Location = new System.Drawing.Point(3, 25);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(287, 16);
-            this.label16.TabIndex = 0;
-            this.label16.Text = "가격 조회를 원하는 상품의 바코드를";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("굴림", 12F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
-                | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label17.Location = new System.Drawing.Point(3, 41);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(99, 16);
-            this.label17.TabIndex = 1;
-            this.label17.Text = "스캔하세요.";
+            this.label19.Location = new System.Drawing.Point(3, 81);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(99, 16);
+            this.label19.TabIndex = 3;
+            this.label19.Text = "등록됩니다.";
             // 
             // label18
             // 
@@ -404,16 +393,27 @@
             this.label18.TabIndex = 2;
             this.label18.Text = "등록 버튼을 누르시면 조회된 상품이";
             // 
-            // label19
+            // label17
             // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("굴림", 12F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("굴림", 12F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
                 | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label19.Location = new System.Drawing.Point(3, 81);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(99, 16);
-            this.label19.TabIndex = 3;
-            this.label19.Text = "등록됩니다.";
+            this.label17.Location = new System.Drawing.Point(3, 41);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(99, 16);
+            this.label17.TabIndex = 1;
+            this.label17.Text = "스캔하세요.";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("굴림", 12F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
+                | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label16.Location = new System.Drawing.Point(3, 25);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(287, 16);
+            this.label16.TabIndex = 0;
+            this.label16.Text = "가격 조회를 원하는 상품의 바코드를";
             // 
             // frmProductSelect
             // 
@@ -452,6 +452,7 @@
             this.Controls.Add(this.tboxBarcode);
             this.Controls.Add(this.lblBarcode);
             this.Name = "frmProductSelect";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmProductSelect";
             this.gbNotice.ResumeLayout(false);
             this.gbNotice.PerformLayout();

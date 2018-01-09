@@ -67,6 +67,7 @@
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
             this.Name = "frmEmployeeRotaion";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "직원교대";
             this.ResumeLayout(false);
             this.PerformLayout();

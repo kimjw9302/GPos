@@ -328,6 +328,7 @@
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button2);
             this.Name = "frmCalculator";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmCalculator";
             this.ResumeLayout(false);
             this.PerformLayout();

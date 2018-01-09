@@ -48,11 +48,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DBcontroller.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
     <Compile Include="frmCalculator.cs">
       <SubType>Form</SubType>
@@ -114,11 +114,23 @@
     <Compile Include="frmEtc.Designer.cs">
       <DependentUpon>frmEtc.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmImportantModify.cs">
+    <Compile Include="frmEvent.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmImportantModify.Designer.cs">
-      <DependentUpon>frmImportantModify.cs</DependentUpon>
+    <Compile Include="frmEvent.Designer.cs">
+      <DependentUpon>frmEvent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEventAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEventAdd.Designer.cs">
+      <DependentUpon>frmEventAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLog.Designer.cs">
+      <DependentUpon>frmLog.cs</DependentUpon>
     </Compile>
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
@@ -186,6 +198,10 @@
     <Compile Include="frmView.Designer.cs">
       <DependentUpon>frmView.cs</DependentUpon>
     </Compile>
+    <Compile Include="IAlter.cs" />
+    <Compile Include="IDelete.cs" />
+    <Compile Include="ISearch.cs" />
+    <Compile Include="ISubmit.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -193,8 +209,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmCalculator.resx">
       <DependentUpon>frmCalculator.cs</DependentUpon>
@@ -223,8 +239,14 @@
     <EmbeddedResource Include="frmEtc.resx">
       <DependentUpon>frmEtc.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmImportantModify.resx">
-      <DependentUpon>frmImportantModify.cs</DependentUpon>
+    <EmbeddedResource Include="frmEvent.resx">
+      <DependentUpon>frmEvent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEventAdd.resx">
+      <DependentUpon>frmEventAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLog.resx">
+      <DependentUpon>frmLog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
@@ -268,6 +290,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="ClassDiagram1.cd" />
     <None Include="Resources\goodeelogo.gif" />
   </ItemGroup>
   <ItemGroup>

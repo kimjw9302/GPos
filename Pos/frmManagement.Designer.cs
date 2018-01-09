@@ -105,6 +105,7 @@
             this.Controls.Add(this.btnCustRegister);
             this.Controls.Add(this.btnProductRegister);
             this.Name = "frmManagement";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "관리";
             this.ResumeLayout(false);
 

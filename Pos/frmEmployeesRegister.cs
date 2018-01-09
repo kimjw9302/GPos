@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Pos
 {
-    public partial class frmEmployeesRegister : Form
+    public partial class frmEmployeesRegister : Form,ISubmit
     {
         public frmEmployeesRegister()
         {

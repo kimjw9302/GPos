@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Pos
 {
-    public partial class frmCustInquiry : Form
+    public partial class frmCustInquiry : Form,ISearch,IDelete,IAlter
     {
         public frmCustInquiry()
         {

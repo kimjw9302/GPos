@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Pos
 {
-    public partial class frmProductSelect : Form
+    public partial class frmProductSelect : Form ,ISearch
     {
         public frmProductSelect()
         {

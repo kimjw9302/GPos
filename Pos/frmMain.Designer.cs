@@ -75,6 +75,7 @@
             this.btnOrder = new System.Windows.Forms.Button();
             this.btnSetting = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnEmployeeChange = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.btnCalc = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
@@ -88,7 +89,6 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.btnEtc = new System.Windows.Forms.Button();
             this.btnManagement = new System.Windows.Forms.Button();
-            this.btnEmployeeChange = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gridProduct)).BeginInit();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -693,6 +693,20 @@
             this.panel2.Size = new System.Drawing.Size(1184, 62);
             this.panel2.TabIndex = 9;
             // 
+            // btnEmployeeChange
+            // 
+            this.btnEmployeeChange.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnEmployeeChange.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEmployeeChange.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnEmployeeChange.Location = new System.Drawing.Point(732, -1);
+            this.btnEmployeeChange.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnEmployeeChange.Name = "btnEmployeeChange";
+            this.btnEmployeeChange.Size = new System.Drawing.Size(109, 62);
+            this.btnEmployeeChange.TabIndex = 54;
+            this.btnEmployeeChange.Text = "담당자교대";
+            this.btnEmployeeChange.UseVisualStyleBackColor = true;
+            this.btnEmployeeChange.Click += new System.EventHandler(this.btnEmployeeChange_Click);
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -716,6 +730,7 @@
             this.btnCalc.TabIndex = 52;
             this.btnCalc.Text = "계산기";
             this.btnCalc.UseVisualStyleBackColor = true;
+            this.btnCalc.Click += new System.EventHandler(this.btnCalc_Click);
             // 
             // btnClose
             // 
@@ -845,20 +860,6 @@
             this.btnManagement.Text = "관리";
             this.btnManagement.UseVisualStyleBackColor = false;
             this.btnManagement.Click += new System.EventHandler(this.btnManagement_Click);
-            // 
-            // btnEmployeeChange
-            // 
-            this.btnEmployeeChange.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnEmployeeChange.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEmployeeChange.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnEmployeeChange.Location = new System.Drawing.Point(732, -1);
-            this.btnEmployeeChange.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnEmployeeChange.Name = "btnEmployeeChange";
-            this.btnEmployeeChange.Size = new System.Drawing.Size(109, 62);
-            this.btnEmployeeChange.TabIndex = 54;
-            this.btnEmployeeChange.Text = "담당자교대";
-            this.btnEmployeeChange.UseVisualStyleBackColor = true;
-            this.btnEmployeeChange.Click += new System.EventHandler(this.btnEmployeeChange_Click);
             // 
             // frmMain
             // 

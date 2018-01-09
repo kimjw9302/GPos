@@ -12,7 +12,7 @@ using System.Windows.Forms;
 /// </summary>
 namespace Pos
 {
-    public partial class frmSalesinquiry : Form
+    public partial class frmSalesinquiry : Form,ISearch,IDelete,IAlter
     {
         public frmSalesinquiry()
         {

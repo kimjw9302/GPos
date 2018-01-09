@@ -13,7 +13,7 @@ using System.Windows.Forms;
 namespace Pos
 {
 
-    public partial class frmCustRegister : Form
+    public partial class frmCustRegister : Form ,ISubmit
     {
         private SqlConnection con;
         private int userRandomNum = new Random().Next(00000000, 99999999);

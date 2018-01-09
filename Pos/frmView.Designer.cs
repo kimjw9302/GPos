@@ -105,6 +105,7 @@
             this.Controls.Add(this.btnSell);
             this.Controls.Add(this.btnCustInquiry);
             this.Name = "frmView";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gpos";
             this.ResumeLayout(false);
 

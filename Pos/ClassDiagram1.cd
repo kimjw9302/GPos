@@ -1,0 +1,225 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Pos.DBcontroller" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>DBcontroller.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Pos.frmLogin" Collapsed="true">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAgAACAAABAAAICAAAACAAAASAAAAIAABABAAAA=</HashCode>
+      <FileName>frmLogin.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Pos.frmCalculator" Collapsed="true">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAACAAAAADAACAAIADAMw7AEBgEAAAAAAAAAA=</HashCode>
+      <FileName>frmCalculator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Pos.frmCard" Collapsed="true">
+    <Position X="5.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAQAACAQgBQDAACIAMADAAwbAABggAAAYAAQAAA=</HashCode>
+      <FileName>frmCard.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Pos.frmCash" Collapsed="true">
+    <Position X="7.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAACAgABADAgKIAIADAAwbAABggAAAQAAQAAA=</HashCode>
+      <FileName>frmCash.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Pos.frmCustInquiry" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="9.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAACAAABAAAACAAABCAAgIAAACEAAAAQAAAAI=</HashCode>
+      <FileName>frmCustInquiry.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Pos.frmCustRegister" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="0.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>MQEAAAAQACACABQEGACAIQASAAAAAAAgAAAAAIAgAMA=</HashCode>
+      <FileName>frmCustRegister.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Pos.frmEmloyeesInquiry" Collapsed="true">
+    <Position X="2.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAACAAAACAAg4AAAAAAAAAAAAAAA=</HashCode>
+      <FileName>frmEmloyeesInquiry.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Pos.frmEmployeeRotaion" Collapsed="true">
+    <Position X="4" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAABAAAACAAAACAAAIAAAAEAAAAAAAAAA=</HashCode>
+      <FileName>frmEmployeeRotaion.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Pos.frmEmployeeSchedule" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="5.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAABASAACAAAACAAg4BwAAAAAAAAAAAAA=</HashCode>
+      <FileName>frmEmployeeSchedule.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Pos.frmEmployeesRegister" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="7.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAASAAABAQAACAAABCIAAIAAAAEAAAAAAAAAA=</HashCode>
+      <FileName>frmEmployeesRegister.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Pos.frmEtc" Collapsed="true">
+    <Position X="9.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACACAAAEAACAAAACCAAAAAAAAAAAAAIAAAA=</HashCode>
+      <FileName>frmEtc.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Pos.frmEvent" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="0.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAACAAABAAAACAAABCAEgIAAACEAAAAQAAAAI=</HashCode>
+      <FileName>frmEvent.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Pos.frmEventAdd" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="2.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAABAAAACAAAACAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>frmEventAdd.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Pos.frmLog" Collapsed="true">
+    <Position X="4" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAABAAAACAAAACAAAAAAAAEAAAAAAAAAA=</HashCode>
+      <FileName>frmLog.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Pos.frmMain" Collapsed="true">
+    <Position X="5.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>XCwQAAGjiGQACZk8EAjAIAAiAES4RwCEQICVEQBQAWg=</HashCode>
+      <FileName>frmMain.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Pos.frmManagement" Collapsed="true">
+    <Position X="7.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAApAACCAAAAAAACAAAAGAAAAAAAAAAAAEAACAAk=</HashCode>
+      <FileName>frmManagement.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Pos.frmOrder" Collapsed="true">
+    <Position X="9.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAGAAAAAAAACAAAACAAAAAAAAAAAAAAABQAg=</HashCode>
+      <FileName>frmOrder.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Pos.frmOrderRequest" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="0.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QDAAAAAAASAAABCDEACAAIFDINw7wMBgECAAYDAwAIA=</HashCode>
+      <FileName>frmOrderRequest.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Pos.frmOrderSelect" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="2.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAACAAABACAACAAABCAEg4AAAAEAAAAAAAAAA=</HashCode>
+      <FileName>frmOrderSelect.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Pos.frmPayment" Collapsed="true">
+    <Position X="4" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAABAACAAIACAMQ7AAAAAAAAAABAAAA=</HashCode>
+      <FileName>frmPayment.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Pos.frmPoint" Collapsed="true">
+    <Position X="5.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAACAAABADAACIAIADCAwbAABgEAAAwgAQAAA=</HashCode>
+      <FileName>frmPoint.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Pos.frmProductSelect" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="7.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>TgAAQAAAASAAEEEAIoDBIIQiAEAwAQWEAIAEAAIAADQ=</HashCode>
+      <FileName>frmProductSelect.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Pos.frmRevenue" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="9.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAGAACAAABAAAACAAAACAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>frmRevenue.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Pos.frmSalesinquiry" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="0.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAACACAAABACAACAIAACAAgIABAAEIAAAQAAAAI=</HashCode>
+      <FileName>frmSalesinquiry.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Pos.frmView" Collapsed="true">
+    <Position X="2.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACACAAgwAEAACAABACAAAAAAAAAAAEAAIAAAA=</HashCode>
+      <FileName>frmView.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="Pos.IAlter" Collapsed="true">
+    <Position X="0.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IAlter.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Pos.IDelete" Collapsed="true">
+    <Position X="2.25" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IDelete.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Pos.ISearch" Collapsed="true">
+    <Position X="4" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ISearch.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Pos.ISubmit" Collapsed="true">
+    <Position X="5.75" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ISubmit.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="맑은 고딕" Size="9" />
+</ClassDiagram>

@@ -68,5 +68,11 @@ namespace Pos
         {
             //바코드 폼
         }
+
+        private void btnCalc_Click(object sender, EventArgs e)
+        {
+            //계산기는 싱글톤 패턴으로
+            new frmCalculator().Show();
+        }
     }
 }
