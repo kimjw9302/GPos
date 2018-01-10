@@ -56,7 +56,6 @@
             this.cbEmp.Name = "cbEmp";
             this.cbEmp.Size = new System.Drawing.Size(121, 28);
             this.cbEmp.TabIndex = 4;
-
             // 
             // label1
             // 
@@ -128,6 +127,16 @@
             this.ClientSize = new System.Drawing.Size(812, 601);
             this.ControlBox = false;
             this.Controls.Add(this.btnClose);
+            this.Controls.Add(this.dgvWorkView);
+            this.Controls.Add(this.cbEmp);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.dtpEndDate);
+            this.Controls.Add(this.dtpStartDate);
+            this.Name = "frmEmployeeSchedule";
+            ((System.ComponentModel.ISupportInitialize)(this.dgvWorkView)).EndInit();
+            this.ResumeLayout(false);
 
         }
 
