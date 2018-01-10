@@ -174,6 +174,12 @@
     <Compile Include="frmPoint.Designer.cs">
       <DependentUpon>frmPoint.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmProductRegister.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmProductRegister.Designer.cs">
+      <DependentUpon>frmProductRegister.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmProductSelect.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -268,6 +274,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmPoint.resx">
       <DependentUpon>frmPoint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmProductRegister.resx">
+      <DependentUpon>frmProductRegister.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmProductSelect.resx">
       <DependentUpon>frmProductSelect.cs</DependentUpon>

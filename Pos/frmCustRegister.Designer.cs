@@ -50,7 +50,6 @@
             this.btnRegister = new System.Windows.Forms.Button();
             this.rbM = new System.Windows.Forms.RadioButton();
             this.rbF = new System.Windows.Forms.RadioButton();
-            this.label10 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -277,16 +276,6 @@
             this.rbF.Text = "여";
             this.rbF.UseVisualStyleBackColor = true;
             // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("맑은 고딕", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label10.Location = new System.Drawing.Point(14, 6);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(104, 30);
-            this.label10.TabIndex = 27;
-            this.label10.Text = "회원 등록";
-            // 
             // label14
             // 
             this.label14.AutoSize = true;
@@ -305,7 +294,6 @@
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(446, 556);
             this.Controls.Add(this.label14);
-            this.Controls.Add(this.label10);
             this.Controls.Add(this.rbF);
             this.Controls.Add(this.rbM);
             this.Controls.Add(this.btnRegister);
@@ -361,7 +349,6 @@
         private System.Windows.Forms.Button btnRegister;
         private System.Windows.Forms.RadioButton rbM;
         private System.Windows.Forms.RadioButton rbF;
-        private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label14;
     }
 }

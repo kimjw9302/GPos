@@ -31,3 +31,4 @@ C:\Users\gd3-1\Documents\GPos\Pos\obj\Debug\Pos.frmEvent.resources
 C:\Users\gd3-1\Documents\GPos\Pos\obj\Debug\Pos.frmLog.resources
 C:\Users\gd3-1\Documents\GPos\Pos\obj\Debug\Pos.frmEventAdd.resources
 C:\Users\gd3-1\Documents\GPos\Pos\obj\Debug\Pos.frmLogin.resources
+C:\Users\gd3-1\Documents\GPos\Pos\obj\Debug\Pos.frmProductRegister.resources
