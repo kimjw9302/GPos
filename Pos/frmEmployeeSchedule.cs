@@ -17,7 +17,7 @@ namespace Pos
         DataSet ds;
         DataTable emp, joinTable, conditionView;
         DataRowCollection rows, viewRows;
-
+        SqlConnection con;
 
         public frmEmployeeSchedule()
         {
@@ -28,7 +28,7 @@ namespace Pos
         {
             dtpStartDate.Value = DateTime.Now;
 
-            var con = DBcontroller.Instance();
+            con = DBcontroller.Instance();
             con.Open();
             using (var cmd = new SqlCommand("GetEmployeeName", con))
             {
@@ -51,14 +51,13 @@ namespace Pos
                 
                 dgvWorkView.DataSource = ds.Tables[1];
                 
-                
             }
             con.Close();
         }
 
         private void btnView_Click(object sender, EventArgs e)
         {
-            var con = DBcontroller.Instance();
+            con = DBcontroller.Instance();
             con.Open();
             using (var cmd = new SqlCommand("EmployeeSchedule", con))
             {

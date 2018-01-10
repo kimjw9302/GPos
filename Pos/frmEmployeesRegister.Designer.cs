@@ -29,8 +29,10 @@
         private void InitializeComponent()
         {
             this.cbRank = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.cbPlace = new System.Windows.Forms.GroupBox();
+            this.group = new System.Windows.Forms.GroupBox();
+            this.txtWage = new System.Windows.Forms.MaskedTextBox();
+            this.btnRegister = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -42,54 +44,74 @@
             this.label14 = new System.Windows.Forms.Label();
             this.txtEmpName = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnRegister = new System.Windows.Forms.Button();
-            this.txtWage = new System.Windows.Forms.MaskedTextBox();
-            this.cbPlace.SuspendLayout();
+            this.group.SuspendLayout();
             this.SuspendLayout();
             // 
             // cbRank
             // 
-            this.cbRank.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.cbRank.Font = new System.Drawing.Font("굴림", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.cbRank.FormattingEnabled = true;
             this.cbRank.Location = new System.Drawing.Point(130, 187);
             this.cbRank.Name = "cbRank";
             this.cbRank.Size = new System.Drawing.Size(260, 29);
             this.cbRank.TabIndex = 7;
             // 
-            // button1
+            // group
             // 
-            this.button1.Location = new System.Drawing.Point(103, 190);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(94, 37);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "등록";
-            this.button1.UseVisualStyleBackColor = true;
+            this.group.Controls.Add(this.txtWage);
+            this.group.Controls.Add(this.btnRegister);
+            this.group.Controls.Add(this.label1);
+            this.group.Controls.Add(this.label8);
+            this.group.Controls.Add(this.label10);
+            this.group.Controls.Add(this.label11);
+            this.group.Controls.Add(this.txtPhone3);
+            this.group.Controls.Add(this.txtPhone2);
+            this.group.Controls.Add(this.cbPhone1);
+            this.group.Controls.Add(this.label12);
+            this.group.Controls.Add(this.txtEmpNum);
+            this.group.Controls.Add(this.label14);
+            this.group.Controls.Add(this.txtEmpName);
+            this.group.Controls.Add(this.label16);
+            this.group.Controls.Add(this.cbRank);
+            this.group.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.group.Location = new System.Drawing.Point(32, 50);
+            this.group.Name = "group";
+            this.group.Size = new System.Drawing.Size(447, 392);
+            this.group.TabIndex = 25;
+            this.group.TabStop = false;
+            this.group.Text = "직원 등록";
             // 
-            // cbPlace
+            // txtWage
             // 
-            this.cbPlace.Controls.Add(this.txtWage);
-            this.cbPlace.Controls.Add(this.btnRegister);
-            this.cbPlace.Controls.Add(this.label1);
-            this.cbPlace.Controls.Add(this.label8);
-            this.cbPlace.Controls.Add(this.label10);
-            this.cbPlace.Controls.Add(this.label11);
-            this.cbPlace.Controls.Add(this.txtPhone3);
-            this.cbPlace.Controls.Add(this.txtPhone2);
-            this.cbPlace.Controls.Add(this.cbPhone1);
-            this.cbPlace.Controls.Add(this.label12);
-            this.cbPlace.Controls.Add(this.txtEmpNum);
-            this.cbPlace.Controls.Add(this.label14);
-            this.cbPlace.Controls.Add(this.txtEmpName);
-            this.cbPlace.Controls.Add(this.label16);
-            this.cbPlace.Controls.Add(this.cbRank);
-            this.cbPlace.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.cbPlace.Location = new System.Drawing.Point(23, 27);
-            this.cbPlace.Name = "cbPlace";
-            this.cbPlace.Size = new System.Drawing.Size(447, 392);
-            this.cbPlace.TabIndex = 25;
-            this.cbPlace.TabStop = false;
-            this.cbPlace.Text = "직원 등록";
+            this.txtWage.Font = new System.Drawing.Font("굴림", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtWage.Location = new System.Drawing.Point(130, 229);
+            this.txtWage.Name = "txtWage";
+            this.txtWage.Size = new System.Drawing.Size(261, 32);
+            this.txtWage.TabIndex = 47;
+            // 
+            // btnRegister
+            // 
+            this.btnRegister.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
+            this.btnRegister.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRegister.Font = new System.Drawing.Font("돋움", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnRegister.ForeColor = System.Drawing.Color.White;
+            this.btnRegister.Location = new System.Drawing.Point(171, 292);
+            this.btnRegister.Name = "btnRegister";
+            this.btnRegister.Size = new System.Drawing.Size(109, 55);
+            this.btnRegister.TabIndex = 46;
+            this.btnRegister.Text = "등록";
+            this.btnRegister.UseVisualStyleBackColor = false;
+            this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label1.Location = new System.Drawing.Point(33, 233);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(42, 21);
+            this.label1.TabIndex = 45;
+            this.label1.Text = "시급";
             // 
             // label8
             // 
@@ -104,42 +126,42 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label10.Location = new System.Drawing.Point(296, 151);
+            this.label10.Font = new System.Drawing.Font("굴림", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label10.Location = new System.Drawing.Point(296, 155);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(17, 21);
+            this.label10.Size = new System.Drawing.Size(18, 19);
             this.label10.TabIndex = 41;
             this.label10.Text = "-";
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label11.Location = new System.Drawing.Point(193, 153);
+            this.label11.Font = new System.Drawing.Font("굴림", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label11.Location = new System.Drawing.Point(193, 155);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(17, 21);
+            this.label11.Size = new System.Drawing.Size(18, 19);
             this.label11.TabIndex = 40;
             this.label11.Text = "-";
             // 
             // txtPhone3
             // 
-            this.txtPhone3.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtPhone3.Font = new System.Drawing.Font("굴림", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtPhone3.Location = new System.Drawing.Point(316, 152);
             this.txtPhone3.Name = "txtPhone3";
-            this.txtPhone3.Size = new System.Drawing.Size(74, 29);
+            this.txtPhone3.Size = new System.Drawing.Size(74, 32);
             this.txtPhone3.TabIndex = 39;
             // 
             // txtPhone2
             // 
-            this.txtPhone2.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtPhone2.Font = new System.Drawing.Font("굴림", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtPhone2.Location = new System.Drawing.Point(212, 151);
             this.txtPhone2.Name = "txtPhone2";
-            this.txtPhone2.Size = new System.Drawing.Size(82, 29);
+            this.txtPhone2.Size = new System.Drawing.Size(82, 32);
             this.txtPhone2.TabIndex = 38;
             // 
             // cbPhone1
             // 
-            this.cbPhone1.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.cbPhone1.Font = new System.Drawing.Font("굴림", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.cbPhone1.FormattingEnabled = true;
             this.cbPhone1.Items.AddRange(new object[] {
             "010",
@@ -163,10 +185,10 @@
             // 
             // txtEmpNum
             // 
-            this.txtEmpNum.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtEmpNum.Font = new System.Drawing.Font("굴림", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtEmpNum.Location = new System.Drawing.Point(130, 73);
             this.txtEmpNum.Name = "txtEmpNum";
-            this.txtEmpNum.Size = new System.Drawing.Size(261, 29);
+            this.txtEmpNum.Size = new System.Drawing.Size(261, 32);
             this.txtEmpNum.TabIndex = 34;
             // 
             // label14
@@ -181,10 +203,10 @@
             // 
             // txtEmpName
             // 
-            this.txtEmpName.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtEmpName.Font = new System.Drawing.Font("굴림", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtEmpName.Location = new System.Drawing.Point(130, 112);
             this.txtEmpName.Name = "txtEmpName";
-            this.txtEmpName.Size = new System.Drawing.Size(261, 29);
+            this.txtEmpName.Size = new System.Drawing.Size(261, 32);
             this.txtEmpName.TabIndex = 28;
             // 
             // label16
@@ -197,57 +219,26 @@
             this.label16.TabIndex = 27;
             this.label16.Text = "이름";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label1.Location = new System.Drawing.Point(33, 229);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(42, 21);
-            this.label1.TabIndex = 45;
-            this.label1.Text = "시급";
-            // 
-            // btnRegister
-            // 
-            this.btnRegister.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
-            this.btnRegister.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRegister.Font = new System.Drawing.Font("돋움", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnRegister.ForeColor = System.Drawing.Color.White;
-            this.btnRegister.Location = new System.Drawing.Point(171, 292);
-            this.btnRegister.Name = "btnRegister";
-            this.btnRegister.Size = new System.Drawing.Size(109, 55);
-            this.btnRegister.TabIndex = 46;
-            this.btnRegister.Text = "등록";
-            this.btnRegister.UseVisualStyleBackColor = false;
-            // 
-            // txtWage
-            // 
-            this.txtWage.Location = new System.Drawing.Point(130, 229);
-            this.txtWage.Name = "txtWage";
-            this.txtWage.Size = new System.Drawing.Size(261, 33);
-            this.txtWage.TabIndex = 47;
-            // 
             // frmEmployeesRegister
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(503, 468);
-            this.Controls.Add(this.cbPlace);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(540, 503);
+            this.Controls.Add(this.group);
             this.Name = "frmEmployeesRegister";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "직원 등록";
-            this.cbPlace.ResumeLayout(false);
-            this.cbPlace.PerformLayout();
+            this.Load += new System.EventHandler(this.frmEmployeesRegister_Load);
+            this.group.ResumeLayout(false);
+            this.group.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
         private System.Windows.Forms.ComboBox cbRank;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.GroupBox cbPlace;
+        private System.Windows.Forms.GroupBox group;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label10;
