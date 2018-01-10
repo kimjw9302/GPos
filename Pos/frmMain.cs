@@ -40,6 +40,7 @@ namespace Pos
             con.Open();
             using (var cmd = new SqlCommand("LoadCheckProducts", con))
             {
+                
 
             }
             con.Close();

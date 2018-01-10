@@ -17,7 +17,9 @@ namespace Pos
         private SqlConnection con;
         private string empName;
         private DateTime sdate;
+        private DateTime edate;
         private int empId;
+
         public frmEmployeeRotaion()
         {
             InitializeComponent();
@@ -36,17 +38,16 @@ namespace Pos
         {
             this.Dispose();
         }
-
         //변경 클릭시.
         private void btnChange_Click(object sender, EventArgs e)
         {
-
             con = DBcontroller.Instance();
             con.Open();
             int CurrentIID = 0;
             string CurrentName = "";
             int exId = 0;
             string exName = "";
+
             using (var cmd = new SqlCommand("RotationEmpSelect", con))
             {
                 cmd.CommandType = CommandType.StoredProcedure;
@@ -60,14 +61,14 @@ namespace Pos
                         frmMain fm = (frmMain)Owner; //오너 설정
                         //전번초 정보를 저장하는 변수
                         exName = fm.empName;
-                        exId = fm.empId;
-                        
+                        exId = fm.empId;                       
                         CurrentName = sdr["empName"].ToString(); //교대될 사람의 이름                      
                         CurrentIID = int.Parse(sdr["empNum"].ToString()); // 교대될 사람의 번호
                         fm.empId =CurrentIID;//fm에있는 현재번호를 교대될 번호로 바꿔줌
                         fm.empName = CurrentName;
                         EmpName = CurrentName;
-                        
+                        edate = DateTime.Now;
+                        fm.sdate = edate;
                         fm.lblEmployee.Text = CurrentName; //fm에있는 현재이름을 교대될 이름으로 바꿔줌
                     }
                     if (CurrentIID != exId)
@@ -75,7 +76,7 @@ namespace Pos
                         sdr.Close();
                         using (var ccmd = new SqlCommand("InsertRotation", con))
                         {
-                            DateTime edate = DateTime.Now;
+
                             ccmd.CommandType = CommandType.StoredProcedure;
                             ccmd.Parameters.AddWithValue("@bNum", exId);
                             ccmd.Parameters.AddWithValue("@aNum", CurrentIID);
@@ -83,7 +84,7 @@ namespace Pos
                             ccmd.Parameters.AddWithValue("@stime", sdate.TimeOfDay);
                             ccmd.Parameters.AddWithValue("@edate", edate.Date);
                             ccmd.Parameters.AddWithValue("@etime", edate.TimeOfDay);
-                            ccmd.ExecuteNonQuery();
+                            ccmd.ExecuteNonQuery();                        
                             MessageBox.Show(CurrentName + " 씨 안녕하세요!");
                             WriteLog();
                             this.Close();
@@ -97,22 +98,16 @@ namespace Pos
                         con.Close();                    
                         return;
                     }
-                    {
-
-                    }
-
                 }
                 else
                 {
                     MessageBox.Show("정보를 다시입력해주세요");
                     tboxEmpNum.Text = "";
                 }
-
             }
-  
             con.Close();
-
         }
+        //로그 남기기 위한 메소드
         public void WriteLog()
         {
 
@@ -124,7 +119,9 @@ namespace Pos
                 string str = sr.ReadToEnd();
                 StreamWriter sw = new StreamWriter(fs,Encoding.Default);
                 sw.Write(sr.ReadToEnd());
-                sw.WriteLine(DateTime.Now + " ::: 로그인 :: " + EmpName.ToString() + " 실시");
+                sw.WriteLine("관리자 : " + EmpName.ToString());
+                sw.WriteLine("날짜 : " + DateTime.Now);
+                sw.WriteLine("내용 : 근무교대를 위한 로그인 " );
                 sw.Close();
                 sr.Close();
                 fs.Close();
@@ -133,14 +130,12 @@ namespace Pos
             {
                 FileStream fs = new FileStream(Application.StartupPath + @"\gposlog.txt",FileMode.Create);
                 StreamWriter sw = new StreamWriter(fs, Encoding.Default);
-                sw.WriteLine(DateTime.Now + " ::: 로그인 :: " + EmpName.ToString() + " 실시");
+                sw.WriteLine("관리자 : " + EmpName.ToString());
+                sw.WriteLine("날짜 : " + DateTime.Now);
+                sw.WriteLine("내용 : 근무교대를 위한 로그인 ");
                 sw.Close();
                 fs.Close();
             }
-    
-
-
-
         }
     }
 }
