@@ -81,32 +81,26 @@ namespace Pos
         {
             new frmManagement().ShowDialog();
         }
-
         private void btnCard_Click(object sender, EventArgs e)
         {
             new frmCard().ShowDialog();
         }
-
         private void btnCash_Click(object sender, EventArgs e)
         {
             new frmCash().ShowDialog();
         }
-
         private void btnPoint_Click(object sender, EventArgs e)
         {
             new frmPoint().ShowDialog();
         }
-
         private void btnOrder_Click(object sender, EventArgs e)
         {
             new frmOrder().ShowDialog();
         }
-
         private void btnEtc_Click(object sender, EventArgs e)
         {
             new frmEtc().ShowDialog();
         }
-
         //담당자 변경 클릭시 -> 
         private void btnEmployeeChange_Click(object sender, EventArgs e)
         {
@@ -117,7 +111,6 @@ namespace Pos
             fer.ShowDialog();
 
         }
-
         private void btnCalc_Click(object sender, EventArgs e)
         {
             //계산기는 싱글톤 패턴으로
@@ -139,10 +132,10 @@ namespace Pos
             {
                 con = DBcontroller.Instance();
                 con.Open();
-                //using (var cmd = new SqlCommand("",con))
-                //{
-                MessageBox.Show("엔터눌러썽");
-                //}
+                using (var cmd = new SqlCommand("", con))
+                {
+
+                }
                 con.Close();
                 txtQuantity.Focus();
             }

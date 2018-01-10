@@ -73,6 +73,7 @@
             this.dgvItem.Name = "dgvItem";
             this.dgvItem.ReadOnly = true;
             this.dgvItem.RowTemplate.Height = 23;
+            this.dgvItem.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvItem.Size = new System.Drawing.Size(529, 150);
             this.dgvItem.TabIndex = 2;
             // 

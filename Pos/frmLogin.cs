@@ -42,6 +42,7 @@ namespace Pos
                 sw.WriteLine("관리자 : " + EmpName.ToString());
                 sw.WriteLine("날짜 : " + DateTime.Now);
                 sw.WriteLine("내용 : 프로그램 시작 첫 로그인 ");
+                sw.Flush();
                 sw.Close();
                 sr.Close();
                 fs.Close();
@@ -53,6 +54,7 @@ namespace Pos
                 sw.WriteLine("관리자 : " + EmpName.ToString());
                 sw.WriteLine("날짜 : " + DateTime.Now);
                 sw.WriteLine("내용 : 프로그램 시작 첫 로그인 ");
+                sw.Flush();
                 sw.Close();
                 fs.Close();
             }
