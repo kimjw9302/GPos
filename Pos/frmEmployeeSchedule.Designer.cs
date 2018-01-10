@@ -56,6 +56,7 @@
             this.cbEmp.Name = "cbEmp";
             this.cbEmp.Size = new System.Drawing.Size(121, 28);
             this.cbEmp.TabIndex = 4;
+
             // 
             // label1
             // 
@@ -127,20 +128,6 @@
             this.ClientSize = new System.Drawing.Size(812, 601);
             this.ControlBox = false;
             this.Controls.Add(this.btnClose);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.dtpStartDate);
-            this.Controls.Add(this.dtpEndDate);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.cbEmp);
-            this.Controls.Add(this.dgvWorkView);
-            this.Name = "frmEmployeeSchedule";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "직원 근태 조회";
-            this.Load += new System.EventHandler(this.frmEmployeeSchedule_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvWorkView)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 

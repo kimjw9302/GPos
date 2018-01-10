@@ -505,8 +505,8 @@
             this.txtReceive.Margin = new System.Windows.Forms.Padding(0);
             this.txtReceive.Name = "txtReceive";
             this.txtReceive.Size = new System.Drawing.Size(317, 61);
-            this.txtReceive.TabIndex = 7;
-            this.txtReceive.Text = "10,000";
+            this.txtReceive.TabIndex = 3;
+            this.txtReceive.Text = "0";
             this.txtReceive.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // txtReceived
@@ -517,19 +517,21 @@
             this.txtReceived.Margin = new System.Windows.Forms.Padding(0);
             this.txtReceived.Name = "txtReceived";
             this.txtReceived.Size = new System.Drawing.Size(317, 61);
-            this.txtReceived.TabIndex = 7;
-            this.txtReceived.Text = "10,000";
+            this.txtReceived.TabIndex = 4;
+            this.txtReceived.Text = "0";
             this.txtReceived.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtReceived.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtReceived_KeyDown);
             // 
             // txtChange
             // 
             this.txtChange.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.txtChange.Font = new System.Drawing.Font("맑은 고딕", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtChange.ForeColor = System.Drawing.Color.Red;
             this.txtChange.Location = new System.Drawing.Point(127, 240);
             this.txtChange.Margin = new System.Windows.Forms.Padding(0);
             this.txtChange.Name = "txtChange";
             this.txtChange.Size = new System.Drawing.Size(317, 61);
-            this.txtChange.TabIndex = 9;
+            this.txtChange.TabIndex = 5;
             this.txtChange.Text = "0";
             this.txtChange.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -541,9 +543,10 @@
             this.txtQuantity.Margin = new System.Windows.Forms.Padding(0);
             this.txtQuantity.Name = "txtQuantity";
             this.txtQuantity.Size = new System.Drawing.Size(317, 61);
-            this.txtQuantity.TabIndex = 3;
-            this.txtQuantity.Text = "3";
+            this.txtQuantity.TabIndex = 2;
+            this.txtQuantity.Text = "0";
             this.txtQuantity.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtQuantity.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtQuantity_KeyDown);
             // 
             // txtProduct
             // 
@@ -553,9 +556,10 @@
             this.txtProduct.Margin = new System.Windows.Forms.Padding(0);
             this.txtProduct.Name = "txtProduct";
             this.txtProduct.Size = new System.Drawing.Size(317, 61);
-            this.txtProduct.TabIndex = 3;
-            this.txtProduct.Text = "0001101";
+            this.txtProduct.TabIndex = 1;
+            this.txtProduct.Text = "0";
             this.txtProduct.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtProduct.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtProduct_KeyDown);
             // 
             // button35
             // 
@@ -955,7 +959,6 @@
         private System.Windows.Forms.TextBox txtQuantity;
         private System.Windows.Forms.TextBox txtProduct;
         private System.Windows.Forms.Label lblDate;
-        private System.Windows.Forms.Label lblEmployee;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label lblPosNum;
         private System.Windows.Forms.Label label7;
@@ -975,5 +978,6 @@
         private System.Windows.Forms.Button btnEtc;
         private System.Windows.Forms.Button btnManagement;
         private System.Windows.Forms.Button btnEmployeeChange;
+        public System.Windows.Forms.Label lblEmployee;
     }
 }

@@ -26,5 +26,10 @@ namespace Pos
         {
             new frmLog().ShowDialog();
         }
+
+        private void btnMail_Click(object sender, EventArgs e)
+        {
+            new frmMail().ShowDialog();
+        }
     }
 }
