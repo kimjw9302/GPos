@@ -43,7 +43,6 @@
             // label1
             // 
             this.label1.AutoSize = true;
-
             this.label1.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label1.Location = new System.Drawing.Point(76, 62);
             this.label1.Name = "label1";
@@ -111,7 +110,6 @@
             this.label2.Location = new System.Drawing.Point(76, 113);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(66, 21);
-
             this.label2.TabIndex = 6;
             this.label2.Text = "매장PW";
             // 
@@ -135,7 +133,7 @@
             this.pictureBox2.TabIndex = 8;
             this.pictureBox2.TabStop = false;
             // 
-            // Form1
+            // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -149,7 +147,7 @@
             this.Controls.Add(this.tboxPw);
             this.Controls.Add(this.tboxID);
             this.Controls.Add(this.label1);
-            this.Name = "Form1";
+            this.Name = "frmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gpos";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

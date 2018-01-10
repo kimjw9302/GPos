@@ -65,6 +65,7 @@
             this.btnCancle.TabIndex = 103;
             this.btnCancle.Text = "취소";
             this.btnCancle.UseVisualStyleBackColor = true;
+            this.btnCancle.Click += new System.EventHandler(this.btnCancle_Click);
             // 
             // btnPAccum
             // 
@@ -75,6 +76,7 @@
             this.btnPAccum.TabIndex = 102;
             this.btnPAccum.Text = "포인트 적립";
             this.btnPAccum.UseVisualStyleBackColor = true;
+            this.btnPAccum.Click += new System.EventHandler(this.btnPAccum_Click);
             // 
             // tboxPhone
             // 
@@ -143,6 +145,7 @@
             this.btnPUse.TabIndex = 104;
             this.btnPUse.Text = "포인트 사용";
             this.btnPUse.UseVisualStyleBackColor = true;
+            this.btnPUse.Click += new System.EventHandler(this.btnPUse_Click);
             // 
             // button1
             // 

@@ -5,27 +5,15 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Pos
 {
-    public partial class frmCard : Form
+    public partial class frmMail : Form
     {
-        public frmCard()
+        public frmMail()
         {
             InitializeComponent();
-        }
-
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnPay_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

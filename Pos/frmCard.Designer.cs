@@ -196,6 +196,7 @@
             this.btnPay.TabIndex = 53;
             this.btnPay.Text = "결제";
             this.btnPay.UseVisualStyleBackColor = true;
+            this.btnPay.Click += new System.EventHandler(this.btnPay_Click);
             // 
             // btnCancle
             // 

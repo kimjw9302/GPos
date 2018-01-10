@@ -16,5 +16,20 @@ namespace Pos
         {
             InitializeComponent();
         }
+
+        private void btnPAccum_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnPUse_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCancle_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
