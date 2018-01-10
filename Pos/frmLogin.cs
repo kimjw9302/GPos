@@ -18,6 +18,7 @@ namespace Pos
             InitializeComponent();
         }
 
+
         //종료버튼 클릭
         private void btnClose_Click(object sender, EventArgs e)
         {
@@ -27,14 +28,10 @@ namespace Pos
         //로그인버튼 클릭
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            //MakeBarcode mb = new MakeBarcode();
-            //Bitmap b = mb.Barcode(tboxID.Text);
-            //pictureBox2.Image = b;
-            //pictureBox2.Height = b.Height;
-            //pictureBox2.Width = b.Width;
 
             string employeeID = tboxID.Text;
             string storePw = tboxPw.Text;
+
             //유효성 검사
             if (Check(employeeID, storePw))
             {
@@ -53,11 +50,13 @@ namespace Pos
                     cmd.Parameters.AddWithValue("@StorePW", int.Parse(storePw));
                     var sdr = cmd.ExecuteScalar();
 
-                    if (sdr.ToString() == "1")
+                    if (sdr.ToString() != "0")
                     {
+
                         con.Close();
                         this.Visible = false;
-                        new frmMain().ShowDialog();
+                        frmMain main = new frmMain(sdr.ToString(),tboxID.Text);
+                        main.ShowDialog();
                         this.Close();
                     }
                     else
@@ -71,7 +70,6 @@ namespace Pos
                     }
 
                 }
-
             }
 
             else
@@ -99,7 +97,11 @@ namespace Pos
             return true;
 
         }
-
+        /// <summary>
+        /// 엔터키 눌리면 넘어감
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void tboxPw_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
