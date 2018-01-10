@@ -40,13 +40,31 @@ namespace Pos
             con.Open();
             using (var cmd = new SqlCommand("LoadCheckProducts", con))
             {
-                
+                cmd.CommandType = CommandType.StoredProcedure;
 
+  
+                    DataSet ds = new DataSet();
+                    SqlDataAdapter sda = new SqlDataAdapter();
+                
+                    sda.SelectCommand = cmd;
+                    sda.Fill(ds);
+                if (ds.Tables[0].Rows.Count == 0)
+                {
+                    con.Close();
+                }
+                else
+                {
+                    this.Visible = true;
+                    con.Close();
+                    frmNotice fn = new frmNotice(ds.Tables[0]);
+                    fn.ShowDialog();
+                }
+             
             }
-            con.Close();
+       
         }
 
-        //종료버튼
+        //종료버튼.
         private void btnClose_Click(object sender, EventArgs e)
         {
             var result = MessageBox.Show("종료하시겠습니까?", "알림", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
