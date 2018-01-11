@@ -7,6 +7,7 @@ using System.Drawing;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -17,6 +18,14 @@ namespace Pos
     {
         private SqlConnection con;
         private int userRandomNum = new Random().Next(10000000, 99999999);
+        private string searchResult;
+
+        public string SearchResult
+        {
+            get { return searchResult; }
+            set { searchResult = value; }
+        }
+
         public frmCustRegister()
         {
             InitializeComponent();
@@ -107,9 +116,9 @@ namespace Pos
                     return true;
                 }
             }
-            
+
         }
-        
+
         /// <summary>
         /// 유효성 검사
         /// </summary>
@@ -180,5 +189,63 @@ namespace Pos
 
             }
         }
+
+        private void btnAddrSearch_Click(object sender, EventArgs e)
+        {
+            string addr = this.txtAddress.Text.Trim();
+            
+            if (addr == "")
+            {
+                MessageBox.Show(" 주소를 입력해주세요. ", "알림", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }else if (addr.Length > 0 )
+            {
+                if(SqlCheck(addr))
+                {
+                    MessageBox.Show(addr + " 입력 불가", "알림", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else if(SpecialCheck(addr))
+                {
+                    MessageBox.Show(addr + " 입력 불가", "알림", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    frmAddrSearch addrSearch = new frmAddrSearch(addr);
+                    addrSearch.Owner = this;
+                    addrSearch.ShowDialog();
+                    txtAddress.Text = SearchResult;
+                }
+                
+            }
+            
+        }
+
+        private bool SqlCheck(string addr)
+        {
+            //걸러야할것
+            string[] sPattern =  {
+            "OR", "SELECT", "INSERT", "DELETE", "UPDATE", "CREATE", "DROP", "EXEC",
+                    "UNION",  "FETCH", "DECLARE", "TRUNCATE"
+            };
+
+            foreach (string s in sPattern)
+            {
+                Regex.IsMatch(addr, s, RegexOptions.IgnoreCase);
+                break;
+            }
+            return true;
+          
+        }
+
+        //특수문자, 특정문자열(sql예약어의 앞뒤공백포함) 제거
+        private bool SpecialCheck(string addr)
+        {
+            //특수문자인경우
+            string str = @"[~!@\#$%^&*\()\=+|\\/:;?""<>']";
+            Regex rex = new Regex(str);
+            rex.IsMatch(addr);
+                
+            return true;
+        }
+
     }
 }

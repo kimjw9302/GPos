@@ -21,7 +21,8 @@ namespace Pos
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
-            if (checkPK() && ValidityCheck())
+            //if (checkPK() && ValidityCheck())
+            if (ValidityCheck())
             {
                 string proName = txtProductName.Text.Trim().Replace(" ", "");
                 int barCode = int.Parse(txtBarcode.Text.Trim().Replace(" ", ""));
@@ -73,14 +74,14 @@ namespace Pos
 
         }
 
-        private bool checkPK()
-        {
-            con = DBcontroller.Instance();
-            using (var cmd = new SqlCommand("",con))
-            {
+        //private bool checkPK()
+        //{
+        //    con = DBcontroller.Instance();
+        //    using (var cmd = new SqlCommand("",con))
+        //    {
 
-            }
-        }
+        //    }
+        //}
 
         private bool ValidityCheck()
         {

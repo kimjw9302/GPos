@@ -33,3 +33,4 @@ C:\Users\gd3-1\Documents\GPos\Pos\obj\Debug\Pos.csproj.CoreCompileInputs.cache
 C:\Users\gd3-1\Documents\GPos\Pos\obj\Debug\Pos.exe
 C:\Users\gd3-1\Documents\GPos\Pos\obj\Debug\Pos.pdb
 C:\Users\gd3-1\Documents\GPos\Pos\obj\Debug\Pos.csprojResolveAssemblyReference.cache
+C:\Users\gd3-1\Documents\GPos\Pos\obj\Debug\Pos.frmAddrSearch.resources
