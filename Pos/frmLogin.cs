@@ -111,6 +111,10 @@ namespace Pos
 
             else
             {
+                tboxID.Text = "";
+                tboxPw.Text = "";
+                tboxID.Focus();
+            
                 MessageBox.Show("다시 입력해주세요.");
             }
 

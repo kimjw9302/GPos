@@ -37,22 +37,13 @@ namespace Pos
             dgvItem.Columns[1].Width = 130;
             dgvItem.Columns[2].Width = 100;
             dgvItem.Columns[3].Width = 80;
-            dgvItem.Columns[4].Width = 80;
         }
         public void ColumnsNaming()
         {
-            dataTable.Columns[0].ColumnName = "상품번호";
-            dataTable.Columns[1].ColumnName = "바코드번호";
-            
-            dataTable.Columns[2].ColumnName = "상품명";
-       
-            dataTable.Columns[3].ColumnName = "실재고";
-      
-            dataTable.Columns[4].ColumnName = "현재고";
-            
-
-
-
+            dataTable.Columns[0].ColumnName = "바코드번호";
+            dataTable.Columns[1].ColumnName = "상품명";            
+            dataTable.Columns[2].ColumnName = "실재고";    
+            dataTable.Columns[3].ColumnName = "현재고";
         }
 
         private void btnGo_Click(object sender, EventArgs e)
