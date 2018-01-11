@@ -151,9 +151,7 @@ namespace Pos
                 {
                     gender = "여자";
                 }
-
-                //주소검색 api 이용  // key : U01TX0FVVEgyMDE4MDEwODE2MDgzNTEwNzU5OTY=
-
+                
                 var con = DBcontroller.Instance();
 
 
@@ -221,7 +219,7 @@ namespace Pos
 
         private bool SqlCheck(string addr)
         {
-            //걸러야할것
+            //걸러야할 문자
             string[] sPattern =  {
             "OR", "SELECT", "INSERT", "DELETE", "UPDATE", "CREATE", "DROP", "EXEC",
                     "UNION",  "FETCH", "DECLARE", "TRUNCATE"
@@ -236,10 +234,9 @@ namespace Pos
           
         }
 
-        //특수문자, 특정문자열(sql예약어의 앞뒤공백포함) 제거
+        //특수문자 제거
         private bool SpecialCheck(string addr)
         {
-            //특수문자인경우
             string str = @"[~!@\#$%^&*\()\=+|\\/:;?""<>']";
             Regex rex = new Regex(str);
             rex.IsMatch(addr);

@@ -34,8 +34,6 @@
             this.cbPlace = new System.Windows.Forms.ComboBox();
             this.btnRegister = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.cbEvent = new System.Windows.Forms.ComboBox();
             this.cbCategory = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -71,8 +69,6 @@
             this.group.Controls.Add(this.cbPlace);
             this.group.Controls.Add(this.btnRegister);
             this.group.Controls.Add(this.label7);
-            this.group.Controls.Add(this.label6);
-            this.group.Controls.Add(this.cbEvent);
             this.group.Controls.Add(this.cbCategory);
             this.group.Controls.Add(this.label5);
             this.group.Controls.Add(this.label4);
@@ -95,7 +91,7 @@
             // 
             this.cbPlace.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.cbPlace.FormattingEnabled = true;
-            this.cbPlace.Location = new System.Drawing.Point(152, 297);
+            this.cbPlace.Location = new System.Drawing.Point(152, 257);
             this.cbPlace.Name = "cbPlace";
             this.cbPlace.Size = new System.Drawing.Size(278, 33);
             this.cbPlace.TabIndex = 16;
@@ -118,30 +114,11 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label7.Location = new System.Drawing.Point(25, 300);
+            this.label7.Location = new System.Drawing.Point(25, 260);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(69, 25);
             this.label7.TabIndex = 12;
             this.label7.Text = "거래처";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label6.Location = new System.Drawing.Point(25, 259);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(69, 25);
-            this.label6.TabIndex = 11;
-            this.label6.Text = "이벤트";
-            // 
-            // cbEvent
-            // 
-            this.cbEvent.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.cbEvent.FormattingEnabled = true;
-            this.cbEvent.Location = new System.Drawing.Point(152, 259);
-            this.cbEvent.Name = "cbEvent";
-            this.cbEvent.Size = new System.Drawing.Size(278, 33);
-            this.cbEvent.TabIndex = 10;
             // 
             // cbCategory
             // 
@@ -247,8 +224,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.MaskedTextBox txtBarcode;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox cbEvent;
         private System.Windows.Forms.Button btnRegister;
         private System.Windows.Forms.ComboBox cbPlace;
     }
