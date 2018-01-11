@@ -241,13 +241,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-<<<<<<< HEAD
-    <Compile Include="Sell.cs" />
-=======
+
     <EmbeddedResource Include="frmAddrSearch.resx">
       <DependentUpon>frmAddrSearch.cs</DependentUpon>
     </EmbeddedResource>
->>>>>>> form
+
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
