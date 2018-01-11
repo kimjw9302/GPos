@@ -121,8 +121,8 @@ namespace Pos
                 adapter.Fill(ds);
 
                 cate1Table = ds.Tables[0];
-                cate2Table = ds.Tables[1];
-                placeTable = ds.Tables[2];
+                
+                placeTable = ds.Tables[3];
                 c1Row = cate1Table.Rows;
                 c2Row = cate2Table.Rows;
                 pRow = placeTable.Rows;
@@ -132,21 +132,21 @@ namespace Pos
                     if(item[0].ToString() == "F")
                     {
                         cbCate1.Items.Add("식품");
+                        cate2Table = ds.Tables[1];
+                        foreach (DataRow c2 in c2Row)
+                        {
+                            cbCate2.Items.Add(c2[0]);
+                        }
                     }
                     else if(item[0].ToString() == "NF")
                     {
                         cbCate1.Items.Add("비식품");
+                        cate2Table = ds.Tables[2];
+                        foreach (DataRow c2 in pRow)
+                        {
+                            cbPlace.Items.Add(c2[0]);
+                        }
                     }
-                    
-                }
-                foreach (DataRow item in c2Row)
-                {
-                    cbCate2.Items.Add(item[0]);
-                }
-               
-                foreach (DataRow item in pRow)
-                {
-                    cbPlace.Items.Add(item[0]);
                 }
             }
             con.Close();
