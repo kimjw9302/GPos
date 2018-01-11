@@ -16,5 +16,10 @@ namespace Pos
         {
             InitializeComponent();
         }
+
+        private void frmOrderRequest_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

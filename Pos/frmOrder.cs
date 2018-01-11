@@ -19,7 +19,15 @@ namespace Pos
 
         private void btnOrder_Click(object sender, EventArgs e)
         {
-            new frmOrderRequest().ShowDialog();
+            //if()
+            //{
+                new frmOrderRequest().ShowDialog();
+            //}
+            //else 
+            //{
+            //    MessageBox.Show("접근 불가", "알림");
+            //}
+           
         }
 
         private void btnOrderView_Click(object sender, EventArgs e)

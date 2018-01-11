@@ -15,9 +15,9 @@ namespace Pos
     {
         SqlConnection con;
         SqlDataAdapter adapter;
-        DataTable cateTable, placeTable;
+        DataTable cate1Table, cate2Table, placeTable;
         DataSet ds;
-        DataRowCollection cRow, pRow;
+        DataRowCollection c1Row, c2Row, pRow;
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
@@ -28,7 +28,7 @@ namespace Pos
                 decimal unitPrice = decimal.Parse(txtUnitPrice.Text.Trim().Replace(" ", ""));
                 decimal costPrice = decimal.Parse(txtCostPrice.Text.Trim().Replace(" ", ""));
 
-                int categoryNum = cbCategory.SelectedIndex + 1;
+                int categoryNum = cbCate1.SelectedIndex + 1;
                 int placeNum = cbPlace.SelectedIndex + 1;
 
                 con = DBcontroller.Instance();
@@ -92,7 +92,7 @@ namespace Pos
 
         private bool ValidityCheck()
         {
-            if (txtBarcode.Text == "" || txtProductName.Text == "" || txtUnitPrice.Text == "" || txtCostPrice.Text == "" || cbCategory.Text == "" || cbPlace.Text == "")
+            if (txtBarcode.Text == "" || txtProductName.Text == "" || txtUnitPrice.Text == "" || txtCostPrice.Text == "" || cbCate1.Text == "" || cbPlace.Text == "")
             {
                 MessageBox.Show("입력해주세요", "알림", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
@@ -120,14 +120,28 @@ namespace Pos
                 adapter.SelectCommand = cmd;
                 adapter.Fill(ds);
 
-                cateTable = ds.Tables[0];
-                placeTable = ds.Tables[1];
-                cRow = cateTable.Rows;
+                cate1Table = ds.Tables[0];
+                cate2Table = ds.Tables[1];
+                placeTable = ds.Tables[2];
+                c1Row = cate1Table.Rows;
+                c2Row = cate2Table.Rows;
                 pRow = placeTable.Rows;
 
-                foreach (DataRow item in cRow)
+                foreach (DataRow item in c1Row)
                 {
-                    cbCategory.Items.Add(item[0]);
+                    if(item[0].ToString() == "F")
+                    {
+                        cbCate1.Items.Add("식품");
+                    }
+                    else if(item[0].ToString() == "NF")
+                    {
+                        cbCate1.Items.Add("비식품");
+                    }
+                    
+                }
+                foreach (DataRow item in c2Row)
+                {
+                    cbCate2.Items.Add(item[0]);
                 }
                
                 foreach (DataRow item in pRow)
