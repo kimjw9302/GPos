@@ -18,6 +18,12 @@ namespace Pos
         DataTable cate1Table, cate2Table, placeTable;
         DataSet ds;
         DataRowCollection c1Row, c2Row, pRow;
+
+        private void lbPlace_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+
+        }
+
         public frmOrderRequest()
         {
             InitializeComponent();

@@ -201,6 +201,7 @@
             this.lbPlace.Name = "lbPlace";
             this.lbPlace.Size = new System.Drawing.Size(181, 604);
             this.lbPlace.TabIndex = 62;
+            this.lbPlace.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lbPlace_MouseDoubleClick);
             // 
             // tableLayoutPanel1
             // 
