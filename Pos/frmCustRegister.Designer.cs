@@ -50,8 +50,8 @@
             this.btnRegister = new System.Windows.Forms.Button();
             this.rbM = new System.Windows.Forms.RadioButton();
             this.rbF = new System.Windows.Forms.RadioButton();
-            this.label10 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
+            this.btnAddrSearch = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -205,7 +205,7 @@
             this.txtAddress.Font = new System.Drawing.Font("맑은 고딕", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtAddress.Location = new System.Drawing.Point(135, 266);
             this.txtAddress.Name = "txtAddress";
-            this.txtAddress.Size = new System.Drawing.Size(261, 30);
+            this.txtAddress.Size = new System.Drawing.Size(260, 30);
             this.txtAddress.TabIndex = 18;
             // 
             // label8
@@ -277,16 +277,6 @@
             this.rbF.Text = "여";
             this.rbF.UseVisualStyleBackColor = true;
             // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("맑은 고딕", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label10.Location = new System.Drawing.Point(14, 6);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(104, 30);
-            this.label10.TabIndex = 27;
-            this.label10.Text = "회원 등록";
-            // 
             // label14
             // 
             this.label14.AutoSize = true;
@@ -298,14 +288,27 @@
             this.label14.TabIndex = 31;
             this.label14.Text = "* 초기 비밀번호는 생일입니다.";
             // 
+            // btnAddrSearch
+            // 
+            this.btnAddrSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
+            this.btnAddrSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddrSearch.ForeColor = System.Drawing.Color.White;
+            this.btnAddrSearch.Location = new System.Drawing.Point(401, 266);
+            this.btnAddrSearch.Name = "btnAddrSearch";
+            this.btnAddrSearch.Size = new System.Drawing.Size(89, 30);
+            this.btnAddrSearch.TabIndex = 32;
+            this.btnAddrSearch.Text = "주소검색";
+            this.btnAddrSearch.UseVisualStyleBackColor = false;
+            this.btnAddrSearch.Click += new System.EventHandler(this.btnAddrSearch_Click);
+            // 
             // frmCustRegister
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(446, 556);
+            this.ClientSize = new System.Drawing.Size(554, 592);
+            this.Controls.Add(this.btnAddrSearch);
             this.Controls.Add(this.label14);
-            this.Controls.Add(this.label10);
             this.Controls.Add(this.rbF);
             this.Controls.Add(this.rbM);
             this.Controls.Add(this.btnRegister);
@@ -354,14 +357,14 @@
         private System.Windows.Forms.TextBox txtPhone3;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox txtAddress;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtDetailAddress;
         private System.Windows.Forms.Button btnRegister;
         private System.Windows.Forms.RadioButton rbM;
         private System.Windows.Forms.RadioButton rbF;
-        private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Button btnAddrSearch;
+        internal System.Windows.Forms.TextBox txtAddress;
     }
 }

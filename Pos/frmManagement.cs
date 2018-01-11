@@ -30,7 +30,7 @@ namespace Pos
 
         private void btnProductRegister_Click(object sender, EventArgs e)
         {
-            //상품등록
+            new frmProductRegister().ShowDialog();
         }
 
         private void btnEmployeeRegister_Click(object sender, EventArgs e)
@@ -41,6 +41,11 @@ namespace Pos
         private void btnEmpWork_Click(object sender, EventArgs e)
         {
             new frmEmployeeSchedule().ShowDialog();
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

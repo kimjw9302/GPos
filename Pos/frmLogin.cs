@@ -152,5 +152,15 @@ namespace Pos
 
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            new frmEmployeeSchedule().ShowDialog();
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            new frmCustRegister().ShowDialog();
+        }
     }
 }

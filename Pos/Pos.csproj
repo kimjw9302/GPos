@@ -50,6 +50,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DBcontroller.cs" />
+    <Compile Include="frmAddrSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddrSearch.Designer.cs">
+      <DependentUpon>frmAddrSearch.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -188,6 +194,12 @@
     <Compile Include="frmPoint.Designer.cs">
       <DependentUpon>frmPoint.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmProductRegister.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmProductRegister.Designer.cs">
+      <DependentUpon>frmProductRegister.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmProductSelect.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -229,7 +241,13 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+<<<<<<< HEAD
     <Compile Include="Sell.cs" />
+=======
+    <EmbeddedResource Include="frmAddrSearch.resx">
+      <DependentUpon>frmAddrSearch.cs</DependentUpon>
+    </EmbeddedResource>
+>>>>>>> form
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -295,6 +313,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmPoint.resx">
       <DependentUpon>frmPoint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmProductRegister.resx">
+      <DependentUpon>frmProductRegister.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmProductSelect.resx">
       <DependentUpon>frmProductSelect.cs</DependentUpon>

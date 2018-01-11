@@ -32,6 +32,7 @@
             this.btnCustRegister = new System.Windows.Forms.Button();
             this.btnEmployeeRegister = new System.Windows.Forms.Button();
             this.btnEmpWork = new System.Windows.Forms.Button();
+            this.btnClose = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnProductRegister
@@ -41,7 +42,7 @@
             this.btnProductRegister.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnProductRegister.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold);
             this.btnProductRegister.ForeColor = System.Drawing.Color.White;
-            this.btnProductRegister.Location = new System.Drawing.Point(151, 140);
+            this.btnProductRegister.Location = new System.Drawing.Point(162, 141);
             this.btnProductRegister.Name = "btnProductRegister";
             this.btnProductRegister.Size = new System.Drawing.Size(114, 104);
             this.btnProductRegister.TabIndex = 12;
@@ -56,7 +57,7 @@
             this.btnCustRegister.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCustRegister.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold);
             this.btnCustRegister.ForeColor = System.Drawing.Color.White;
-            this.btnCustRegister.Location = new System.Drawing.Point(31, 140);
+            this.btnCustRegister.Location = new System.Drawing.Point(42, 141);
             this.btnCustRegister.Name = "btnCustRegister";
             this.btnCustRegister.Size = new System.Drawing.Size(114, 104);
             this.btnCustRegister.TabIndex = 13;
@@ -71,7 +72,7 @@
             this.btnEmployeeRegister.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEmployeeRegister.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold);
             this.btnEmployeeRegister.ForeColor = System.Drawing.Color.White;
-            this.btnEmployeeRegister.Location = new System.Drawing.Point(271, 140);
+            this.btnEmployeeRegister.Location = new System.Drawing.Point(282, 141);
             this.btnEmployeeRegister.Name = "btnEmployeeRegister";
             this.btnEmployeeRegister.Size = new System.Drawing.Size(114, 104);
             this.btnEmployeeRegister.TabIndex = 14;
@@ -86,7 +87,7 @@
             this.btnEmpWork.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEmpWork.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold);
             this.btnEmpWork.ForeColor = System.Drawing.Color.White;
-            this.btnEmpWork.Location = new System.Drawing.Point(391, 140);
+            this.btnEmpWork.Location = new System.Drawing.Point(402, 141);
             this.btnEmpWork.Name = "btnEmpWork";
             this.btnEmpWork.Size = new System.Drawing.Size(114, 104);
             this.btnEmpWork.TabIndex = 15;
@@ -94,12 +95,25 @@
             this.btnEmpWork.UseVisualStyleBackColor = false;
             this.btnEmpWork.Click += new System.EventHandler(this.btnEmpWork_Click);
             // 
+            // btnClose
+            // 
+            this.btnClose.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnClose.Location = new System.Drawing.Point(496, 12);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(50, 47);
+            this.btnClose.TabIndex = 16;
+            this.btnClose.Text = "x";
+            this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
             // frmManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(540, 336);
+            this.ClientSize = new System.Drawing.Size(558, 382);
+            this.ControlBox = false;
+            this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnEmpWork);
             this.Controls.Add(this.btnEmployeeRegister);
             this.Controls.Add(this.btnCustRegister);
@@ -117,5 +131,6 @@
         private System.Windows.Forms.Button btnCustRegister;
         private System.Windows.Forms.Button btnEmployeeRegister;
         private System.Windows.Forms.Button btnEmpWork;
+        private System.Windows.Forms.Button btnClose;
     }
 }
