@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,6 +14,7 @@ namespace Pos
 {
     public partial class frmLogin : Form
     {
+        private string EmpName;
         public frmLogin()
         {
             InitializeComponent();
@@ -25,6 +27,38 @@ namespace Pos
             this.Dispose();
         }
 
+        //로그 남기기 위한 메소드
+        public void WriteLog()
+        {
+
+            FileInfo s = new FileInfo(Application.StartupPath + @"\gposlog.txt");
+            if (s.Exists)
+            {
+                FileStream fs = new FileStream(Application.StartupPath + @"\gposlog.txt", FileMode.Open);
+                StreamReader sr = new StreamReader(fs, Encoding.Default);
+                string str = sr.ReadToEnd();
+                StreamWriter sw = new StreamWriter(fs, Encoding.Default);
+                sw.Write(sr.ReadToEnd());
+                sw.WriteLine("관리자 : " + EmpName.ToString());
+                sw.WriteLine("날짜 : " + DateTime.Now);
+                sw.WriteLine("내용 : 프로그램 시작 첫 로그인 ");
+                sw.Flush();
+                sw.Close();
+                sr.Close();
+                fs.Close();
+            }
+            else
+            {
+                FileStream fs = new FileStream(Application.StartupPath + @"\gposlog.txt", FileMode.Create);
+                StreamWriter sw = new StreamWriter(fs, Encoding.Default);
+                sw.WriteLine("관리자 : " + EmpName.ToString());
+                sw.WriteLine("날짜 : " + DateTime.Now);
+                sw.WriteLine("내용 : 프로그램 시작 첫 로그인 ");
+                sw.Flush();
+                sw.Close();
+                fs.Close();
+            }
+        }
         //로그인버튼 클릭
         private void btnLogin_Click(object sender, EventArgs e)
         {
@@ -54,7 +88,10 @@ namespace Pos
                     {
 
                         con.Close();
+
                         this.Visible = false;
+                        EmpName = sdr.ToString();
+                        WriteLog();
                         frmMain main = new frmMain(sdr.ToString(),tboxID.Text);
                         main.ShowDialog();
                         this.Close();
@@ -74,6 +111,10 @@ namespace Pos
 
             else
             {
+                tboxID.Text = "";
+                tboxPw.Text = "";
+                tboxID.Focus();
+            
                 MessageBox.Show("다시 입력해주세요.");
             }
 

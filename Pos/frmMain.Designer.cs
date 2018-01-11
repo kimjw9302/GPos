@@ -29,14 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.gridProduct = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvProduct = new System.Windows.Forms.DataGridView();
             this.btnOutgo = new System.Windows.Forms.Button();
             this.btnTotalView = new System.Windows.Forms.Button();
             this.btnCard = new System.Windows.Forms.Button();
@@ -63,8 +56,8 @@
             this.txtReceive = new System.Windows.Forms.TextBox();
             this.txtReceived = new System.Windows.Forms.TextBox();
             this.txtChange = new System.Windows.Forms.TextBox();
-            this.txtQuantity = new System.Windows.Forms.TextBox();
             this.txtProduct = new System.Windows.Forms.TextBox();
+            this.txtQuantity = new System.Windows.Forms.TextBox();
             this.button35 = new System.Windows.Forms.Button();
             this.txtPaymentList = new System.Windows.Forms.TextBox();
             this.btnRefund = new System.Windows.Forms.Button();
@@ -75,6 +68,7 @@
             this.btnOrder = new System.Windows.Forms.Button();
             this.btnSetting = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.lblDate2 = new System.Windows.Forms.Label();
             this.btnEmployeeChange = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.btnCalc = new System.Windows.Forms.Button();
@@ -89,65 +83,25 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.btnEtc = new System.Windows.Forms.Button();
             this.btnManagement = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.gridProduct)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProduct)).BeginInit();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // gridProduct
+            // dgvProduct
             // 
-            this.gridProduct.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.gridProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridProduct.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column3,
-            this.Column4,
-            this.Column5,
-            this.Column6,
-            this.Column7});
-            this.gridProduct.Location = new System.Drawing.Point(10, 78);
-            this.gridProduct.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.gridProduct.Name = "gridProduct";
-            this.gridProduct.RowTemplate.Height = 23;
-            this.gridProduct.Size = new System.Drawing.Size(1006, 347);
-            this.gridProduct.TabIndex = 0;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "No";
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "상품명";
-            this.Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "단가";
-            this.Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "수량";
-            this.Column4.Name = "Column4";
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "금액";
-            this.Column5.Name = "Column5";
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "할인";
-            this.Column6.Name = "Column6";
-            // 
-            // Column7
-            // 
-            this.Column7.HeaderText = "비고";
-            this.Column7.Name = "Column7";
+            this.dgvProduct.AllowUserToAddRows = false;
+            this.dgvProduct.AllowUserToDeleteRows = false;
+            this.dgvProduct.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dgvProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvProduct.Location = new System.Drawing.Point(10, 78);
+            this.dgvProduct.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgvProduct.Name = "dgvProduct";
+            this.dgvProduct.ReadOnly = true;
+            this.dgvProduct.RowTemplate.Height = 23;
+            this.dgvProduct.Size = new System.Drawing.Size(1006, 347);
+            this.dgvProduct.TabIndex = 0;
             // 
             // btnOutgo
             // 
@@ -161,6 +115,7 @@
             this.btnOutgo.TabIndex = 11;
             this.btnOutgo.Text = "외출";
             this.btnOutgo.UseVisualStyleBackColor = false;
+            this.btnOutgo.Click += new System.EventHandler(this.btnOutgo_Click);
             // 
             // btnTotalView
             // 
@@ -204,6 +159,7 @@
             this.btnEight.TabIndex = 17;
             this.btnEight.Text = "8";
             this.btnEight.UseVisualStyleBackColor = false;
+            this.btnEight.Click += new System.EventHandler(this.btnEight_Click);
             // 
             // btnNine
             // 
@@ -219,6 +175,7 @@
             this.btnNine.TabIndex = 17;
             this.btnNine.Text = "9";
             this.btnNine.UseVisualStyleBackColor = false;
+            this.btnNine.Click += new System.EventHandler(this.btnNine_Click);
             // 
             // btnSix
             // 
@@ -234,6 +191,7 @@
             this.btnSix.TabIndex = 20;
             this.btnSix.Text = "6";
             this.btnSix.UseVisualStyleBackColor = false;
+            this.btnSix.Click += new System.EventHandler(this.btnSix_Click);
             // 
             // btnFive
             // 
@@ -249,6 +207,7 @@
             this.btnFive.TabIndex = 19;
             this.btnFive.Text = "5";
             this.btnFive.UseVisualStyleBackColor = false;
+            this.btnFive.Click += new System.EventHandler(this.btnFive_Click);
             // 
             // btnFour
             // 
@@ -264,6 +223,7 @@
             this.btnFour.TabIndex = 18;
             this.btnFour.Text = "4";
             this.btnFour.UseVisualStyleBackColor = false;
+            this.btnFour.Click += new System.EventHandler(this.btnFour_Click);
             // 
             // btnThree
             // 
@@ -279,6 +239,7 @@
             this.btnThree.TabIndex = 23;
             this.btnThree.Text = "3";
             this.btnThree.UseVisualStyleBackColor = false;
+            this.btnThree.Click += new System.EventHandler(this.btnThree_Click);
             // 
             // btnTwo
             // 
@@ -294,6 +255,7 @@
             this.btnTwo.TabIndex = 22;
             this.btnTwo.Text = "2";
             this.btnTwo.UseVisualStyleBackColor = false;
+            this.btnTwo.Click += new System.EventHandler(this.btnTwo_Click);
             // 
             // btnOne
             // 
@@ -309,6 +271,7 @@
             this.btnOne.TabIndex = 21;
             this.btnOne.Text = "1";
             this.btnOne.UseVisualStyleBackColor = false;
+            this.btnOne.Click += new System.EventHandler(this.btnOne_Click);
             // 
             // btnUp
             // 
@@ -323,6 +286,7 @@
             this.btnUp.TabIndex = 26;
             this.btnUp.Text = "▲";
             this.btnUp.UseVisualStyleBackColor = false;
+            this.btnUp.Click += new System.EventHandler(this.btnUp_Click);
             // 
             // btnHundred
             // 
@@ -338,6 +302,7 @@
             this.btnHundred.TabIndex = 25;
             this.btnHundred.Text = "00";
             this.btnHundred.UseVisualStyleBackColor = false;
+            this.btnHundred.Click += new System.EventHandler(this.btnHundred_Click);
             // 
             // btnZero
             // 
@@ -353,6 +318,7 @@
             this.btnZero.TabIndex = 24;
             this.btnZero.Text = "0";
             this.btnZero.UseVisualStyleBackColor = false;
+            this.btnZero.Click += new System.EventHandler(this.btnZero_Click);
             // 
             // btnCash
             // 
@@ -407,8 +373,8 @@
             this.tableLayoutPanel1.Controls.Add(this.txtReceive, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.txtReceived, 1, 3);
             this.tableLayoutPanel1.Controls.Add(this.txtChange, 1, 4);
-            this.tableLayoutPanel1.Controls.Add(this.txtQuantity, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.txtProduct, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.txtQuantity, 1, 1);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(377, -1);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -434,6 +400,7 @@
             this.button34.Name = "button34";
             this.button34.Size = new System.Drawing.Size(127, 61);
             this.button34.TabIndex = 48;
+            this.button34.TabStop = false;
             this.button34.Text = "거스름돈";
             this.button34.UseVisualStyleBackColor = false;
             // 
@@ -449,6 +416,7 @@
             this.button33.Name = "button33";
             this.button33.Size = new System.Drawing.Size(127, 60);
             this.button33.TabIndex = 47;
+            this.button33.TabStop = false;
             this.button33.Text = "받은금액";
             this.button33.UseVisualStyleBackColor = false;
             // 
@@ -464,6 +432,7 @@
             this.button32.Name = "button32";
             this.button32.Size = new System.Drawing.Size(127, 60);
             this.button32.TabIndex = 46;
+            this.button32.TabStop = false;
             this.button32.Text = "받을금액";
             this.button32.UseVisualStyleBackColor = false;
             // 
@@ -479,6 +448,7 @@
             this.button31.Name = "button31";
             this.button31.Size = new System.Drawing.Size(127, 60);
             this.button31.TabIndex = 45;
+            this.button31.TabStop = false;
             this.button31.Text = "수량";
             this.button31.UseVisualStyleBackColor = false;
             // 
@@ -494,20 +464,28 @@
             this.button30.Name = "button30";
             this.button30.Size = new System.Drawing.Size(127, 60);
             this.button30.TabIndex = 44;
+            this.button30.TabStop = false;
             this.button30.Text = "상품등록";
             this.button30.UseVisualStyleBackColor = false;
             // 
             // txtReceive
             // 
-            this.txtReceive.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.txtReceive.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.txtReceive.Cursor = System.Windows.Forms.Cursors.Default;
             this.txtReceive.Font = new System.Drawing.Font("맑은 고딕", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtReceive.ImeMode = System.Windows.Forms.ImeMode.On;
             this.txtReceive.Location = new System.Drawing.Point(127, 120);
             this.txtReceive.Margin = new System.Windows.Forms.Padding(0);
             this.txtReceive.Name = "txtReceive";
+            this.txtReceive.ReadOnly = true;
+            this.txtReceive.ShortcutsEnabled = false;
             this.txtReceive.Size = new System.Drawing.Size(317, 61);
             this.txtReceive.TabIndex = 3;
+            this.txtReceive.TabStop = false;
             this.txtReceive.Text = "0";
             this.txtReceive.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtReceive.WordWrap = false;
+            this.txtReceive.Click += new System.EventHandler(this.txtReceive_Click);
             // 
             // txtReceived
             // 
@@ -520,7 +498,7 @@
             this.txtReceived.TabIndex = 4;
             this.txtReceived.Text = "0";
             this.txtReceived.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.txtReceived.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtReceived_KeyDown);
+            this.txtReceived.Click += new System.EventHandler(this.txtReceived_Click);
             // 
             // txtChange
             // 
@@ -530,23 +508,11 @@
             this.txtChange.Location = new System.Drawing.Point(127, 240);
             this.txtChange.Margin = new System.Windows.Forms.Padding(0);
             this.txtChange.Name = "txtChange";
+            this.txtChange.ReadOnly = true;
             this.txtChange.Size = new System.Drawing.Size(317, 61);
             this.txtChange.TabIndex = 5;
             this.txtChange.Text = "0";
             this.txtChange.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // txtQuantity
-            // 
-            this.txtQuantity.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.txtQuantity.Font = new System.Drawing.Font("맑은 고딕", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.txtQuantity.Location = new System.Drawing.Point(127, 60);
-            this.txtQuantity.Margin = new System.Windows.Forms.Padding(0);
-            this.txtQuantity.Name = "txtQuantity";
-            this.txtQuantity.Size = new System.Drawing.Size(317, 61);
-            this.txtQuantity.TabIndex = 2;
-            this.txtQuantity.Text = "0";
-            this.txtQuantity.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.txtQuantity.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtQuantity_KeyDown);
             // 
             // txtProduct
             // 
@@ -559,7 +525,22 @@
             this.txtProduct.TabIndex = 1;
             this.txtProduct.Text = "0";
             this.txtProduct.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtProduct.Click += new System.EventHandler(this.txtProduct_Click);
             this.txtProduct.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtProduct_KeyDown);
+            // 
+            // txtQuantity
+            // 
+            this.txtQuantity.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.txtQuantity.Cursor = System.Windows.Forms.Cursors.Default;
+            this.txtQuantity.Font = new System.Drawing.Font("맑은 고딕", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtQuantity.Location = new System.Drawing.Point(127, 60);
+            this.txtQuantity.Margin = new System.Windows.Forms.Padding(0);
+            this.txtQuantity.Name = "txtQuantity";
+            this.txtQuantity.Size = new System.Drawing.Size(317, 61);
+            this.txtQuantity.TabIndex = 2;
+            this.txtQuantity.Text = "0";
+            this.txtQuantity.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtQuantity.Click += new System.EventHandler(this.txtQuantity_Click);
             // 
             // button35
             // 
@@ -573,6 +554,7 @@
             this.button35.Name = "button35";
             this.button35.Size = new System.Drawing.Size(51, 314);
             this.button35.TabIndex = 46;
+            this.button35.TabStop = false;
             this.button35.Text = "결제내역";
             this.button35.UseVisualStyleBackColor = false;
             // 
@@ -622,6 +604,7 @@
             this.btnCancel.TabIndex = 36;
             this.btnCancel.Text = "<-";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnInit
             // 
@@ -636,6 +619,7 @@
             this.btnInit.TabIndex = 35;
             this.btnInit.Text = "초기화";
             this.btnInit.UseVisualStyleBackColor = false;
+            this.btnInit.Click += new System.EventHandler(this.btnInit_Click);
             // 
             // btnDown
             // 
@@ -650,6 +634,7 @@
             this.btnDown.TabIndex = 37;
             this.btnDown.Text = "▼";
             this.btnDown.UseVisualStyleBackColor = false;
+            this.btnDown.Click += new System.EventHandler(this.btnDown_Click);
             // 
             // btnOrder
             // 
@@ -680,6 +665,7 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.lblDate2);
             this.panel2.Controls.Add(this.btnEmployeeChange);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.btnCalc);
@@ -696,6 +682,17 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1184, 62);
             this.panel2.TabIndex = 9;
+            // 
+            // lblDate2
+            // 
+            this.lblDate2.AutoSize = true;
+            this.lblDate2.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblDate2.ForeColor = System.Drawing.Color.Black;
+            this.lblDate2.Location = new System.Drawing.Point(596, 20);
+            this.lblDate2.Name = "lblDate2";
+            this.lblDate2.Size = new System.Drawing.Size(106, 21);
+            this.lblDate2.TabIndex = 55;
+            this.lblDate2.Text = "17:28:33 (금)";
             // 
             // btnEmployeeChange
             // 
@@ -757,18 +754,18 @@
             this.lblDate.AutoSize = true;
             this.lblDate.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblDate.ForeColor = System.Drawing.Color.Black;
-            this.lblDate.Location = new System.Drawing.Point(498, 20);
+            this.lblDate.Location = new System.Drawing.Point(467, 20);
             this.lblDate.Name = "lblDate";
-            this.lblDate.Size = new System.Drawing.Size(198, 21);
+            this.lblDate.Size = new System.Drawing.Size(96, 21);
             this.lblDate.TabIndex = 50;
-            this.lblDate.Text = "2018-01-05 17:28:33 (금)";
+            this.lblDate.Text = "2018-01-05";
             // 
             // lblEmployee
             // 
             this.lblEmployee.AutoSize = true;
             this.lblEmployee.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblEmployee.ForeColor = System.Drawing.Color.Black;
-            this.lblEmployee.Location = new System.Drawing.Point(402, 20);
+            this.lblEmployee.Location = new System.Drawing.Point(389, 20);
             this.lblEmployee.Name = "lblEmployee";
             this.lblEmployee.Size = new System.Drawing.Size(58, 21);
             this.lblEmployee.TabIndex = 48;
@@ -779,7 +776,7 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label10.ForeColor = System.Drawing.Color.Black;
-            this.label10.Location = new System.Drawing.Point(340, 20);
+            this.label10.Location = new System.Drawing.Point(327, 20);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(74, 21);
             this.label10.TabIndex = 47;
@@ -832,10 +829,12 @@
             this.btnSeven.TabIndex = 43;
             this.btnSeven.Text = "7";
             this.btnSeven.UseVisualStyleBackColor = false;
+            this.btnSeven.Click += new System.EventHandler(this.btnSeven_Click);
             // 
             // timer1
             // 
             this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // btnEtc
             // 
@@ -897,7 +896,7 @@
             this.Controls.Add(this.btnCard);
             this.Controls.Add(this.btnTotalView);
             this.Controls.Add(this.btnOutgo);
-            this.Controls.Add(this.gridProduct);
+            this.Controls.Add(this.dgvProduct);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -905,7 +904,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "포스";
             this.Load += new System.EventHandler(this.frmMain_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.gridProduct)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProduct)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
@@ -918,7 +917,7 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView gridProduct;
+        private System.Windows.Forms.DataGridView dgvProduct;
         private System.Windows.Forms.Button btnOutgo;
         private System.Windows.Forms.Button btnTotalView;
         private System.Windows.Forms.Button btnCard;
@@ -944,13 +943,6 @@
         private System.Windows.Forms.Button btnOrder;
 
         private System.Windows.Forms.Button btnSetting;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TextBox txtReceive;
@@ -979,5 +971,6 @@
         private System.Windows.Forms.Button btnManagement;
         private System.Windows.Forms.Button btnEmployeeChange;
         public System.Windows.Forms.Label lblEmployee;
+        private System.Windows.Forms.Label lblDate2;
     }
 }

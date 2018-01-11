@@ -65,3 +65,5 @@ C:\Users\gd3-8\Documents\GPos\Pos\obj\Debug\Pos.csproj.CoreCompileInputs.cache
 C:\Users\gd3-8\Documents\GPos\Pos\obj\Debug\Pos.exe
 C:\Users\gd3-8\Documents\GPos\Pos\obj\Debug\Pos.pdb
 C:\Users\gd3-8\Documents\GPos\Pos\obj\Debug\Pos.frmMail.resources
+C:\Users\gd3-8\Documents\GPos\Pos\obj\Debug\Pos.frmNotice.resources
+C:\Users\gd3-8\Documents\GPos\Pos\obj\Debug\Pos.frmWait.resources
