@@ -288,7 +288,7 @@ namespace Pos
                         foreach (DataRow sellrow in sellTable.Rows)
                         {
                             int rowIndex = 0;
-                            string specifier;
+                            //string specifier;
                             for (int i = 0; i < sellrow.ItemArray.Length; i++)
                             {
                                 if (sellrow.ItemArray[i].ToString() == row["barcode"].ToString())

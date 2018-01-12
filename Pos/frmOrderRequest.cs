@@ -32,10 +32,10 @@ namespace Pos
         private void frmOrderRequest_Load(object sender, EventArgs e)
         {
             //공통
-            string orderNum;
-            DateTime now;
-            int placeNum;
-            int empNum;
+            //string orderNum;
+            //DateTime now;
+            //int placeNum;
+            //int empNum;
 
             // 상품정보       
             //   @productNum int,
