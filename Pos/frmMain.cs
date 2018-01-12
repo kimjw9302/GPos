@@ -307,10 +307,6 @@ namespace Pos
 
 
 
-
-
-
-
                     #region 코드고칠거임
 
                     //foreach (DataRow row in ds.Tables[0].Rows)
