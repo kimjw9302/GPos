@@ -125,6 +125,7 @@ namespace Pos
             new frmEtc().ShowDialog();
         }
         //담당자 변경 클릭시 -> 
+
         private void btnEmployeeChange_Click(object sender, EventArgs e)
         {
             frmEmployeeRotaion fer = new frmEmployeeRotaion(sdate);
@@ -288,7 +289,6 @@ namespace Pos
                         foreach (DataRow sellrow in sellTable.Rows)
                         {
                             int rowIndex = 0;
-                            string specifier;
                             for (int i = 0; i < sellrow.ItemArray.Length; i++)
                             {
                                 if (sellrow.ItemArray[i].ToString() == row["barcode"].ToString())
@@ -299,14 +299,9 @@ namespace Pos
                                     updateRow[rowIndex]["수량"] = proCount;
                                     updateRow[rowIndex]["금액"] = decimal.Parse(row["unitPrice"].ToString()) * proCount;
                                     txtQuantity.Text = proCount.ToString();
-
                                     string tot = (int.Parse(Math.Round(decimal.Parse(row["unitPrice"].ToString()) * proCount).ToString()) + int.Parse(txtReceive.Text)).ToString();
                                     string pretot = Math.Round(decimal.Parse(row["unitPrice"].ToString())).ToString();
-                       
-
                                     txtReceive.Text = (int.Parse(tot) - (int.Parse(pretot) * (proCount - 1))).ToString();
-
-
                                     con.Close();
                                     return;
                                 }
@@ -325,6 +320,14 @@ namespace Pos
                         addrow[3] = row["unitPrice"].ToString();
                         addrow[4] = 1;
                         addrow[5] = (decimal.Parse(row["unitPrice"].ToString()) * 1).ToString();
+                        addrow[6] = row["contents"].ToString();
+                        //1+1 이벤트 존재
+                        if (row["contents"].ToString() == "1+1")
+                        {
+
+
+                        }
+                  
                         sellrowindex++;
                         sellTable.Rows.Add(addrow);
                         txtQuantity.Text = proCount.ToString();
