@@ -45,6 +45,7 @@
             this.txtUnitPrice = new System.Windows.Forms.MaskedTextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtBarcode = new System.Windows.Forms.MaskedTextBox();
+            this.cbPlaceTemp = new System.Windows.Forms.ComboBox();
             this.group.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -69,6 +70,7 @@
             // 
             // group
             // 
+            this.group.Controls.Add(this.cbPlaceTemp);
             this.group.Controls.Add(this.cbCate2Temp);
             this.group.Controls.Add(this.label6);
             this.group.Controls.Add(this.label5);
@@ -230,6 +232,16 @@
             this.txtBarcode.Size = new System.Drawing.Size(333, 33);
             this.txtBarcode.TabIndex = 3;
             // 
+            // cbPlaceTemp
+            // 
+            this.cbPlaceTemp.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.cbPlaceTemp.FormattingEnabled = true;
+            this.cbPlaceTemp.Location = new System.Drawing.Point(113, 308);
+            this.cbPlaceTemp.Name = "cbPlaceTemp";
+            this.cbPlaceTemp.Size = new System.Drawing.Size(333, 33);
+            this.cbPlaceTemp.TabIndex = 21;
+            this.cbPlaceTemp.Visible = false;
+            // 
             // frmProductRegister
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -265,5 +277,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox cbCate2Temp;
+        private System.Windows.Forms.ComboBox cbPlaceTemp;
     }
 }

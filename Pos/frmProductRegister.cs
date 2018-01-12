@@ -37,7 +37,7 @@ namespace Pos
                 //MessageBox.Show(cbCate2Temp.Items[cbCate2.SelectedIndex].ToString());
                 int cate2 = int.Parse(cbCate2Temp.Items[cbCate2.SelectedIndex].ToString());
 
-                int placeNum = cbPlace.SelectedIndex + 1;
+                int placeNum = int.Parse(cbPlaceTemp.Items[cbPlace.SelectedIndex].ToString());
 
                 con = DBcontroller.Instance();
 
@@ -160,6 +160,7 @@ namespace Pos
                 foreach (DataRow item in pRow)
                 {
                     cbPlace.Items.Add(item[0]);
+                    cbPlaceTemp.Items.Add(item[1]);
                 }
 
                 foreach (DataRow item in c1Row)
