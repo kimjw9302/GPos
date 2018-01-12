@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvProduct = new System.Windows.Forms.DataGridView();
             this.btnOutgo = new System.Windows.Forms.Button();
             this.btnTotalView = new System.Windows.Forms.Button();
@@ -47,6 +48,7 @@
             this.btnCash = new System.Windows.Forms.Button();
             this.btnPoint = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtPaymentList = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.button34 = new System.Windows.Forms.Button();
             this.button33 = new System.Windows.Forms.Button();
@@ -59,7 +61,6 @@
             this.txtProduct = new System.Windows.Forms.TextBox();
             this.txtQuantity = new System.Windows.Forms.TextBox();
             this.button35 = new System.Windows.Forms.Button();
-            this.txtPaymentList = new System.Windows.Forms.TextBox();
             this.btnRefund = new System.Windows.Forms.Button();
             this.btnTotalCancel = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
@@ -95,6 +96,14 @@
             this.dgvProduct.AllowUserToDeleteRows = false;
             this.dgvProduct.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgvProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvProduct.DefaultCellStyle = dataGridViewCellStyle1;
             this.dgvProduct.Location = new System.Drawing.Point(10, 78);
             this.dgvProduct.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvProduct.Name = "dgvProduct";
@@ -351,14 +360,24 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.txtPaymentList);
             this.panel1.Controls.Add(this.tableLayoutPanel1);
             this.panel1.Controls.Add(this.button35);
-            this.panel1.Controls.Add(this.txtPaymentList);
             this.panel1.Location = new System.Drawing.Point(12, 516);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(822, 300);
             this.panel1.TabIndex = 31;
+            // 
+            // txtPaymentList
+            // 
+            this.txtPaymentList.Font = new System.Drawing.Font("굴림", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtPaymentList.Location = new System.Drawing.Point(50, -1);
+            this.txtPaymentList.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtPaymentList.Multiline = true;
+            this.txtPaymentList.Name = "txtPaymentList";
+            this.txtPaymentList.Size = new System.Drawing.Size(322, 300);
+            this.txtPaymentList.TabIndex = 0;
             // 
             // tableLayoutPanel1
             // 
@@ -557,15 +576,6 @@
             this.button35.TabStop = false;
             this.button35.Text = "결제내역";
             this.button35.UseVisualStyleBackColor = false;
-            // 
-            // txtPaymentList
-            // 
-            this.txtPaymentList.Location = new System.Drawing.Point(-1, -1);
-            this.txtPaymentList.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtPaymentList.Multiline = true;
-            this.txtPaymentList.Name = "txtPaymentList";
-            this.txtPaymentList.Size = new System.Drawing.Size(382, 311);
-            this.txtPaymentList.TabIndex = 0;
             // 
             // btnRefund
             // 
