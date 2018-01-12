@@ -15,9 +15,48 @@ namespace Pos
     {
         SqlConnection con;
         SqlDataAdapter adapter;
-        DataTable cate1Table, cateF, cateNF, placeTable ,productTable;
+        DataTable cate1Table, cateF, cateNF, placeTable ,productTable , orderTable;
         DataSet ds;
         DataRowCollection c1Row, cFRow, cNFRow, pRow;
+        int noIndex =1, qua=1;
+        private void btnAllClear_Click(object sender, EventArgs e)
+        {
+            dgvOrder.Refresh();
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            dgvOrder.Refresh();
+            
+            foreach (DataGridViewRow row in dgvProducts.SelectedRows)
+            {
+
+                DataRow orderRow = orderTable.NewRow();
+                orderRow[0] = noIndex; noIndex++;//no 
+                orderRow[1] = row.Cells[0].Value; //상품명
+                orderRow[2] = row.Cells[1].Value; //단가
+                orderRow[3] = row.Cells[2].Value; //원가
+                orderRow[4] = qua; //수량
+                orderRow[5] = decimal.Parse(row.Cells[2].Value.ToString()) * qua; //총금액
+                orderRow[6] = row.Cells[3].Value; //거래처
+                orderTable.Rows.Add(orderRow);
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow item in dgvOrder.SelectedRows)
+            {
+                this.dgvOrder.Rows.Remove(item);
+            }
+            
+        }
+        
 
         private void btnPSearch_Click(object sender, EventArgs e)
         {
@@ -92,10 +131,7 @@ namespace Pos
             con.Close();
         }
 
-        private void lbPlace_MouseDoubleClick(object sender, MouseEventArgs e)
-        {
-            //거래처 더블클릭하면 거래처 상품 띄워주면됨
-        }
+       
 
         public frmOrderRequest()
         {
@@ -116,7 +152,11 @@ namespace Pos
             //   @costPrice decimal,
             //   @price decimal,
             //   @empNum int
-
+           
+            OrderTableMake();
+            ProductTableMake();
+            dgvProducts.DataSource = productTable;
+            dgvOrder.DataSource = orderTable;
             con = DBcontroller.Instance();
 
             using (var cmd = new SqlCommand("GetProRegInfo", con))
@@ -138,7 +178,7 @@ namespace Pos
                 {
                     cbPlace.Items.Add(item[0]);
                 }
-
+                
                 foreach (DataRow item in c1Row)
                 {
                     switch ((string)item[0])
@@ -157,8 +197,32 @@ namespace Pos
                     }
                 }
             }
+
+            con.Close();
+        }
+
+        private void OrderTableMake()
+        {
+            orderTable = new DataTable();
+
+            orderTable.Columns.Add("No");
+            orderTable.Columns.Add("상품명");
+            orderTable.Columns.Add("단가");
+            orderTable.Columns.Add("원가");
+            orderTable.Columns.Add("수량");
+            orderTable.Columns.Add("총금액");
+            orderTable.Columns.Add("거래처");
             
-                con.Close();
+        }
+        private void ProductTableMake()
+        {
+            productTable = new DataTable();
+            
+            productTable.Columns.Add("상품명");
+            productTable.Columns.Add("단가");
+            productTable.Columns.Add("원가");
+            productTable.Columns.Add("거래처");
+
         }
     }
 }
