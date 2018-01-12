@@ -17,6 +17,7 @@ namespace Pos
         private string EmpName;
         public frmLogin()
         {
+            new frmOrderRequest().ShowDialog();
             InitializeComponent();
         }
 
@@ -162,5 +163,6 @@ namespace Pos
         {
             new frmCustRegister().ShowDialog();
         }
+
     }
 }

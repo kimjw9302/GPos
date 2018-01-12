@@ -34,16 +34,17 @@
             this.txtTotalQua = new System.Windows.Forms.TextBox();
             this.txtTotalPay = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnSearch = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
             this.cbCate1 = new System.Windows.Forms.ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.cbCate2 = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.lbPlace = new System.Windows.Forms.ListBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.button3 = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
-            this.btnSearch = new System.Windows.Forms.Button();
             this.btnOrder = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -59,7 +60,6 @@
             this.btnFour = new System.Windows.Forms.Button();
             this.btnNine = new System.Windows.Forms.Button();
             this.btnEight = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrder)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -103,7 +103,7 @@
             // txtTotalQua
             // 
             this.txtTotalQua.Font = new System.Drawing.Font("맑은 고딕", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.txtTotalQua.Location = new System.Drawing.Point(212, 0);
+            this.txtTotalQua.Location = new System.Drawing.Point(211, 0);
             this.txtTotalQua.Margin = new System.Windows.Forms.Padding(0);
             this.txtTotalQua.Name = "txtTotalQua";
             this.txtTotalQua.Size = new System.Drawing.Size(73, 46);
@@ -112,7 +112,7 @@
             // txtTotalPay
             // 
             this.txtTotalPay.Font = new System.Drawing.Font("맑은 고딕", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.txtTotalPay.Location = new System.Drawing.Point(285, 0);
+            this.txtTotalPay.Location = new System.Drawing.Point(284, 0);
             this.txtTotalPay.Margin = new System.Windows.Forms.Padding(0);
             this.txtTotalPay.Name = "txtTotalPay";
             this.txtTotalPay.Size = new System.Drawing.Size(212, 46);
@@ -133,6 +133,21 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "상품으로 검색";
             // 
+            // btnSearch
+            // 
+            this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
+            this.btnSearch.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearch.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnSearch.ForeColor = System.Drawing.Color.White;
+            this.btnSearch.Location = new System.Drawing.Point(459, 25);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(56, 52);
+            this.btnSearch.TabIndex = 67;
+            this.btnSearch.Text = "찾기";
+            this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -143,6 +158,15 @@
             this.label7.TabIndex = 62;
             this.label7.Text = "대분류 :";
             // 
+            // cbCate1
+            // 
+            this.cbCate1.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.cbCate1.FormattingEnabled = true;
+            this.cbCate1.Location = new System.Drawing.Point(93, 35);
+            this.cbCate1.Name = "cbCate1";
+            this.cbCate1.Size = new System.Drawing.Size(99, 33);
+            this.cbCate1.TabIndex = 59;
+            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -152,15 +176,6 @@
             this.label8.Size = new System.Drawing.Size(68, 21);
             this.label8.TabIndex = 61;
             this.label8.Text = "소분류 :";
-            // 
-            // cbCate1
-            // 
-            this.cbCate1.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.cbCate1.FormattingEnabled = true;
-            this.cbCate1.Location = new System.Drawing.Point(93, 35);
-            this.cbCate1.Name = "cbCate1";
-            this.cbCate1.Size = new System.Drawing.Size(99, 33);
-            this.cbCate1.TabIndex = 59;
             // 
             // cbCate2
             // 
@@ -208,7 +223,7 @@
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 74.38271F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.61728F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 211F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 212F));
             this.tableLayoutPanel1.Controls.Add(this.button3, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.txtTotalPay, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.txtTotalQua, 1, 0);
@@ -219,6 +234,21 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(497, 46);
             this.tableLayoutPanel1.TabIndex = 63;
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
+            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("맑은 고딕", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button3.ForeColor = System.Drawing.SystemColors.Control;
+            this.button3.Location = new System.Drawing.Point(0, 0);
+            this.button3.Margin = new System.Windows.Forms.Padding(0);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(211, 46);
+            this.button3.TabIndex = 85;
+            this.button3.Text = "총수량/ 총금액";
+            this.button3.UseVisualStyleBackColor = false;
             // 
             // btnClose
             // 
@@ -232,20 +262,6 @@
             this.btnClose.TabIndex = 66;
             this.btnClose.Text = "X";
             this.btnClose.UseVisualStyleBackColor = false;
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
-            this.btnSearch.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
-            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSearch.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnSearch.ForeColor = System.Drawing.Color.White;
-            this.btnSearch.Location = new System.Drawing.Point(459, 25);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(56, 52);
-            this.btnSearch.TabIndex = 67;
-            this.btnSearch.Text = "찾기";
-            this.btnSearch.UseVisualStyleBackColor = false;
             // 
             // btnOrder
             // 
@@ -466,21 +482,6 @@
             this.btnEight.TabIndex = 71;
             this.btnEight.Text = "8";
             this.btnEight.UseVisualStyleBackColor = false;
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
-            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("맑은 고딕", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button3.ForeColor = System.Drawing.SystemColors.Control;
-            this.button3.Location = new System.Drawing.Point(0, 0);
-            this.button3.Margin = new System.Windows.Forms.Padding(0);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(212, 46);
-            this.button3.TabIndex = 85;
-            this.button3.Text = "총수량/ 총금액";
-            this.button3.UseVisualStyleBackColor = false;
             // 
             // frmOrderRequest
             // 

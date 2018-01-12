@@ -19,8 +19,15 @@ namespace Pos
         DataSet ds;
         DataRowCollection c1Row, c2Row, pRow;
 
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            //데이터그리드뷰에 cate1, cate2와 일치하는 상품 띄워주면됨,
+            
+        }
+
         private void lbPlace_MouseDoubleClick(object sender, MouseEventArgs e)
         {
+            //거래처 더블클릭하면 거래처 상품 띄워주면됨
 
         }
 

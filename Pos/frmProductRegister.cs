@@ -15,20 +15,28 @@ namespace Pos
     {
         SqlConnection con;
         SqlDataAdapter adapter;
-        DataTable cate1Table, cate2Table, placeTable;
+        DataTable cate1Table, cateF, cateNF, placeTable;
         DataSet ds;
-        DataRowCollection c1Row, c2Row, pRow;
+        DataRowCollection c1Row, cFRow, cNFRow, pRow;
+       
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
             if (ValidityCheck() && checkPK())
             {
                 string proName = txtProductName.Text.Trim().Replace(" ", "");
-                int barCode = int.Parse(txtBarcode.Text.Trim().Replace(" ", ""));
+                string barCode = txtBarcode.Text.Trim().Replace(" ", "");
                 decimal unitPrice = decimal.Parse(txtUnitPrice.Text.Trim().Replace(" ", ""));
                 decimal costPrice = decimal.Parse(txtCostPrice.Text.Trim().Replace(" ", ""));
+                string cate1 = "F";
+                if (cbCate1.SelectedIndex == 1)
+                {
+                    cate1 = "NF";
+                }
 
-                int categoryNum = cbCate1.SelectedIndex + 1;
+                //MessageBox.Show(cbCate2Temp.Items[cbCate2.SelectedIndex].ToString());
+                int cate2 = int.Parse(cbCate2Temp.Items[cbCate2.SelectedIndex].ToString());
+
                 int placeNum = cbPlace.SelectedIndex + 1;
 
                 con = DBcontroller.Instance();
@@ -40,7 +48,8 @@ namespace Pos
                     cmd.Parameters.AddWithValue("@productName", proName);
                     cmd.Parameters.AddWithValue("@unitPrice", unitPrice);
                     cmd.Parameters.AddWithValue("@costPrice", costPrice);
-                    cmd.Parameters.AddWithValue("@categoryNum", categoryNum);
+                    cmd.Parameters.AddWithValue("@cate1", cate1);
+                    cmd.Parameters.AddWithValue("@cate2", cate2);
                     cmd.Parameters.AddWithValue("@placeNum", placeNum);
 
                     con.Open();
@@ -60,6 +69,28 @@ namespace Pos
                 } 
             }
 
+        }
+
+        private void cbCate1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cbCate2.Items.Clear();
+            if(cbCate1.SelectedIndex == 0 )
+            {
+                foreach (DataRow item in cFRow)
+                {
+                    cbCate2.Items.Add(item[0]);
+                    cbCate2Temp.Items.Add(item[1]);
+                }
+
+            }
+            else if(cbCate1.SelectedIndex == 1)
+            {
+                foreach (DataRow item in cNFRow)
+                {
+                    cbCate2.Items.Add(item[0]);
+                    cbCate2Temp.Items.Add(item[1]);
+                }
+            }
         }
 
         private bool checkPK()
@@ -124,28 +155,28 @@ namespace Pos
                 
                 placeTable = ds.Tables[3];
                 c1Row = cate1Table.Rows;
-                c2Row = cate2Table.Rows;
+                
                 pRow = placeTable.Rows;
+                foreach (DataRow item in pRow)
+                {
+                    cbPlace.Items.Add(item[0]);
+                }
 
                 foreach (DataRow item in c1Row)
                 {
-                    if(item[0].ToString() == "F")
+                    switch ((string)item[0])
                     {
-                        cbCate1.Items.Add("식품");
-                        cate2Table = ds.Tables[1];
-                        foreach (DataRow c2 in c2Row)
-                        {
-                            cbCate2.Items.Add(c2[0]);
-                        }
-                    }
-                    else if(item[0].ToString() == "NF")
-                    {
-                        cbCate1.Items.Add("비식품");
-                        cate2Table = ds.Tables[2];
-                        foreach (DataRow c2 in pRow)
-                        {
-                            cbPlace.Items.Add(c2[0]);
-                        }
+                        case "F":
+                            cbCate1.Items.Add("식품");
+                            cateF = ds.Tables[1];
+                            cFRow = cateF.Rows;
+                            break;
+                        case "NF":
+                            cbCate1.Items.Add("비식품");
+                            cateNF = ds.Tables[2];
+                            cNFRow = cateNF.Rows;
+                            break;
+
                     }
                 }
             }
