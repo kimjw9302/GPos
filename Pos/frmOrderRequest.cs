@@ -26,11 +26,10 @@ namespace Pos
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            dgvOrder.Refresh();
             
             foreach (DataGridViewRow row in dgvProducts.SelectedRows)
             {
-
+                
                 DataRow orderRow = orderTable.NewRow();
                 orderRow[0] = noIndex; noIndex++;//no 
                 orderRow[1] = row.Cells[0].Value; //상품명
@@ -39,8 +38,20 @@ namespace Pos
                 orderRow[4] = qua; //수량
                 orderRow[5] = decimal.Parse(row.Cells[2].Value.ToString()) * qua; //총금액
                 orderRow[6] = row.Cells[3].Value; //거래처
-                orderTable.Rows.Add(orderRow);
+                DataRow[] updateRow = orderTable.Select("상품명='" + row.Cells[0].Value + "'");
+
+                if (updateRow.Length == 1)
+                {
+                    updateRow[0]["수량"] = int.Parse(updateRow[0]["수량"].ToString())+1; //수량
+                }
+                else
+                {
+                    orderTable.Rows.Add(orderRow);
+                  
+                }
+       
             }
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
