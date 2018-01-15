@@ -17,7 +17,6 @@ namespace Pos
         private string EmpName;
         public frmLogin()
         {
-            new frmOrderRequest().ShowDialog();
             InitializeComponent();
         }
 

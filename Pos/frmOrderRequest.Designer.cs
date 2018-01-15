@@ -75,11 +75,13 @@
             // dgvProducts
             // 
             this.dgvProducts.AllowUserToAddRows = false;
+            this.dgvProducts.AllowUserToDeleteRows = false;
             this.dgvProducts.AllowUserToResizeRows = false;
             this.dgvProducts.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvProducts.BackgroundColor = System.Drawing.Color.White;
             this.dgvProducts.Location = new System.Drawing.Point(1, 179);
             this.dgvProducts.Name = "dgvProducts";
+            this.dgvProducts.ReadOnly = true;
             this.dgvProducts.RowTemplate.Height = 23;
             this.dgvProducts.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvProducts.Size = new System.Drawing.Size(463, 537);
@@ -88,11 +90,13 @@
             // dgvOrder
             // 
             this.dgvOrder.AllowUserToAddRows = false;
+            this.dgvOrder.AllowUserToDeleteRows = false;
             this.dgvOrder.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvOrder.BackgroundColor = System.Drawing.Color.White;
             this.dgvOrder.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvOrder.Location = new System.Drawing.Point(513, 179);
             this.dgvOrder.Name = "dgvOrder";
+            this.dgvOrder.ReadOnly = true;
             this.dgvOrder.RowTemplate.Height = 23;
             this.dgvOrder.Size = new System.Drawing.Size(641, 424);
             this.dgvOrder.TabIndex = 39;
@@ -187,7 +191,7 @@
             // 
             this.cbCate2Temp.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.cbCate2Temp.FormattingEnabled = true;
-            this.cbCate2Temp.Location = new System.Drawing.Point(756, 38);
+            this.cbCate2Temp.Location = new System.Drawing.Point(821, 38);
             this.cbCate2Temp.Name = "cbCate2Temp";
             this.cbCate2Temp.Size = new System.Drawing.Size(164, 33);
             this.cbCate2Temp.TabIndex = 68;
@@ -200,7 +204,7 @@
             this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSearch.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnSearch.ForeColor = System.Drawing.Color.White;
-            this.btnSearch.Location = new System.Drawing.Point(943, 28);
+            this.btnSearch.Location = new System.Drawing.Point(1018, 28);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(90, 52);
             this.btnSearch.TabIndex = 67;
@@ -212,7 +216,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label7.Location = new System.Drawing.Point(497, 44);
+            this.label7.Location = new System.Drawing.Point(508, 44);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(68, 21);
             this.label7.TabIndex = 62;
@@ -222,7 +226,7 @@
             // 
             this.cbCate1.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.cbCate1.FormattingEnabled = true;
-            this.cbCate1.Location = new System.Drawing.Point(571, 38);
+            this.cbCate1.Location = new System.Drawing.Point(582, 38);
             this.cbCate1.Name = "cbCate1";
             this.cbCate1.Size = new System.Drawing.Size(99, 33);
             this.cbCate1.TabIndex = 59;
@@ -232,7 +236,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label8.Location = new System.Drawing.Point(682, 44);
+            this.label8.Location = new System.Drawing.Point(747, 44);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(68, 21);
             this.label8.TabIndex = 61;
@@ -242,7 +246,7 @@
             // 
             this.cbCate2.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.cbCate2.FormattingEnabled = true;
-            this.cbCate2.Location = new System.Drawing.Point(756, 38);
+            this.cbCate2.Location = new System.Drawing.Point(821, 38);
             this.cbCate2.Name = "cbCate2";
             this.cbCate2.Size = new System.Drawing.Size(164, 33);
             this.cbCate2.TabIndex = 60;

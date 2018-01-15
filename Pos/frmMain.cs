@@ -118,7 +118,8 @@ namespace Pos
         }
         private void btnOrder_Click(object sender, EventArgs e)
         {
-            new frmOrder().ShowDialog();
+            //지혜 - 수정
+            new frmOrder(empId).ShowDialog();
         }
         private void btnEtc_Click(object sender, EventArgs e)
         {

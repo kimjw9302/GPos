@@ -22,12 +22,22 @@ namespace Pos
         int noIndex = 1, qua = 1;
         static int quaTemp;
         static decimal payTemp;
+        private int empID;
 
+        public int EmpID
+        {
+            get { return empID; }
+            set { empID = value; }
+        }
+        
         public frmOrderRequest()
         {
             InitializeComponent();
         }
-
+        public frmOrderRequest(int empID) : this()
+        {
+            this.EmpID = empID;
+        }
         private void btnAllClear_Click(object sender, EventArgs e)
         {
             dgvOrder.Refresh();
@@ -194,23 +204,33 @@ namespace Pos
 
                         if (i != 1)
                         {
-                            MessageBox.Show("상품등록 실패");
+                            MessageBox.Show("수량증가 실패");
                         }
                     }
                     con.Close();
                 }
-                MessageBox.Show(" 날짜 : " + DateTime.Now.ToShortDateString() + " [ 발주 성공] ");
+                MessageBox.Show("수량 증가 성공");
+
+                using (var cmd = new SqlCommand("OrdersInsert", con))
+                {
+
+                }
+                //MessageBox.Show(" 날짜 : " + DateTime.Now.ToShortDateString() + " [ 발주 성공] ");
             }
             else
             {
                 MessageBox.Show("발주할 상품을 선택해주세요.");
             }
+
+
+
+
         }
 
 
         private void frmOrderRequest_Load(object sender, EventArgs e)
         {
-           
+            MessageBox.Show(EmpID.ToString());
             OrderTableMake();
             ProductTableMake();
             dgvProducts.DataSource = productTable;

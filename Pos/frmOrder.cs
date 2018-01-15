@@ -12,21 +12,26 @@ namespace Pos
 {
     public partial class frmOrder : Form
     {
+        private int empIdSend;
+
+        public int EmpIdSend
+        {
+            get { return empIdSend; }
+            set { empIdSend = value; }
+        }
+
         public frmOrder()
         {
             InitializeComponent();
         }
 
+        public frmOrder(int empid) : this()
+        {
+            this.empIdSend = empid;
+        }
         private void btnOrder_Click(object sender, EventArgs e)
         {
-            //if()
-            //{
-                new frmOrderRequest().ShowDialog();
-            //}
-            //else 
-            //{
-            //    MessageBox.Show("접근 불가", "알림");
-            //}
+            new frmOrderRequest(EmpIdSend).ShowDialog();
            
         }
 

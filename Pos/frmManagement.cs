@@ -16,7 +16,7 @@ namespace Pos
         {
             InitializeComponent();
         }
-
+        
         private void btnCustRegister_Click(object sender, EventArgs e)
         {
             this.Close();
