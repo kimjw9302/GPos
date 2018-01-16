@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,6 +13,8 @@ namespace Pos
 {
     public partial class frmPoint : Form
     {
+        SqlConnection con;
+
         public frmPoint()
         {
             InitializeComponent();
@@ -28,6 +31,17 @@ namespace Pos
         }
 
         private void btnCancle_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnEnter_Click(object sender, EventArgs e)
+        {
+            con = DBcontroller.Instance();
+         
+        }
+
+        private void frmPoint_Load(object sender, EventArgs e)
         {
 
         }

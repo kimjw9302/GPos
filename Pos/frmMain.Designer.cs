@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvProduct = new System.Windows.Forms.DataGridView();
             this.btnOutgo = new System.Windows.Forms.Button();
             this.btnTotalView = new System.Windows.Forms.Button();
@@ -84,6 +84,7 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.btnEtc = new System.Windows.Forms.Button();
             this.btnManagement = new System.Windows.Forms.Button();
+            this.btnPointSave = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProduct)).BeginInit();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -96,14 +97,14 @@
             this.dgvProduct.AllowUserToDeleteRows = false;
             this.dgvProduct.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgvProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvProduct.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvProduct.DefaultCellStyle = dataGridViewCellStyle1;
             this.dgvProduct.Location = new System.Drawing.Point(11, 99);
             this.dgvProduct.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvProduct.Name = "dgvProduct";
@@ -351,9 +352,9 @@
             this.btnPoint.Location = new System.Drawing.Point(370, 536);
             this.btnPoint.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnPoint.Name = "btnPoint";
-            this.btnPoint.Size = new System.Drawing.Size(170, 104);
+            this.btnPoint.Size = new System.Drawing.Size(171, 104);
             this.btnPoint.TabIndex = 29;
-            this.btnPoint.Text = "포인트 적립/사용";
+            this.btnPoint.Text = "포인트 사용\r\n/할인";
             this.btnPoint.UseVisualStyleBackColor = false;
             this.btnPoint.Click += new System.EventHandler(this.btnPoint_Click);
             // 
@@ -583,7 +584,7 @@
             this.btnRefund.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(67)))), ((int)(((byte)(22)))));
             this.btnRefund.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRefund.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnRefund.Location = new System.Drawing.Point(547, 536);
+            this.btnRefund.Location = new System.Drawing.Point(899, 534);
             this.btnRefund.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnRefund.Name = "btnRefund";
             this.btnRefund.Size = new System.Drawing.Size(170, 104);
@@ -596,7 +597,7 @@
             this.btnTotalCancel.BackColor = System.Drawing.Color.Snow;
             this.btnTotalCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTotalCancel.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnTotalCancel.Location = new System.Drawing.Point(725, 536);
+            this.btnTotalCancel.Location = new System.Drawing.Point(723, 534);
             this.btnTotalCancel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnTotalCancel.Name = "btnTotalCancel";
             this.btnTotalCancel.Size = new System.Drawing.Size(170, 104);
@@ -877,6 +878,20 @@
             this.btnManagement.UseVisualStyleBackColor = false;
             this.btnManagement.Click += new System.EventHandler(this.btnManagement_Click);
             // 
+            // btnPointSave
+            // 
+            this.btnPointSave.BackColor = System.Drawing.Color.Snow;
+            this.btnPointSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPointSave.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnPointSave.Location = new System.Drawing.Point(547, 534);
+            this.btnPointSave.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnPointSave.Name = "btnPointSave";
+            this.btnPointSave.Size = new System.Drawing.Size(171, 104);
+            this.btnPointSave.TabIndex = 48;
+            this.btnPointSave.Text = "포인트 적립";
+            this.btnPointSave.UseVisualStyleBackColor = false;
+            this.btnPointSave.Click += new System.EventHandler(this.btnPointSave_Click);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -884,6 +899,7 @@
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(1353, 1047);
             this.ControlBox = false;
+            this.Controls.Add(this.btnPointSave);
             this.Controls.Add(this.btnEtc);
             this.Controls.Add(this.btnSeven);
             this.Controls.Add(this.btnOrder);
@@ -959,7 +975,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TextBox txtDiscount;
-        private System.Windows.Forms.TextBox txtReceived;
         private System.Windows.Forms.TextBox txtChange;
         private System.Windows.Forms.TextBox txtTotal;
         private System.Windows.Forms.TextBox txtProduct;
@@ -985,5 +1000,7 @@
         public System.Windows.Forms.Label lblEmployee;
         private System.Windows.Forms.Label lblDate2;
         private System.Windows.Forms.Button button1;
+        public System.Windows.Forms.TextBox txtReceived;
+        private System.Windows.Forms.Button btnPointSave;
     }
 }
