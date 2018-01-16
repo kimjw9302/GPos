@@ -31,6 +31,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtProductName = new System.Windows.Forms.MaskedTextBox();
             this.group = new System.Windows.Forms.GroupBox();
+            this.cbPlaceTemp = new System.Windows.Forms.ComboBox();
             this.cbCate2Temp = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -45,7 +46,7 @@
             this.txtUnitPrice = new System.Windows.Forms.MaskedTextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtBarcode = new System.Windows.Forms.MaskedTextBox();
-            this.cbPlaceTemp = new System.Windows.Forms.ComboBox();
+            this.btnClose = new System.Windows.Forms.Button();
             this.group.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -88,12 +89,22 @@
             this.group.Controls.Add(this.label1);
             this.group.Controls.Add(this.txtProductName);
             this.group.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.group.Location = new System.Drawing.Point(23, 23);
+            this.group.Location = new System.Drawing.Point(22, 92);
             this.group.Name = "group";
             this.group.Size = new System.Drawing.Size(483, 524);
             this.group.TabIndex = 2;
             this.group.TabStop = false;
             this.group.Text = "상품 등록";
+            // 
+            // cbPlaceTemp
+            // 
+            this.cbPlaceTemp.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.cbPlaceTemp.FormattingEnabled = true;
+            this.cbPlaceTemp.Location = new System.Drawing.Point(113, 308);
+            this.cbPlaceTemp.Name = "cbPlaceTemp";
+            this.cbPlaceTemp.Size = new System.Drawing.Size(333, 33);
+            this.cbPlaceTemp.TabIndex = 21;
+            this.cbPlaceTemp.Visible = false;
             // 
             // cbCate2Temp
             // 
@@ -232,25 +243,29 @@
             this.txtBarcode.Size = new System.Drawing.Size(333, 33);
             this.txtBarcode.TabIndex = 3;
             // 
-            // cbPlaceTemp
+            // btnClose
             // 
-            this.cbPlaceTemp.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.cbPlaceTemp.FormattingEnabled = true;
-            this.cbPlaceTemp.Location = new System.Drawing.Point(113, 308);
-            this.cbPlaceTemp.Name = "cbPlaceTemp";
-            this.cbPlaceTemp.Size = new System.Drawing.Size(333, 33);
-            this.cbPlaceTemp.TabIndex = 21;
-            this.cbPlaceTemp.Visible = false;
+            this.btnClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnClose.ForeColor = System.Drawing.Color.White;
+            this.btnClose.Location = new System.Drawing.Point(379, 26);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(126, 60);
+            this.btnClose.TabIndex = 22;
+            this.btnClose.Text = "닫기";
+            this.btnClose.UseVisualStyleBackColor = false;
             // 
             // frmProductRegister
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(545, 571);
+            this.ClientSize = new System.Drawing.Size(533, 638);
+            this.ControlBox = false;
+            this.Controls.Add(this.btnClose);
             this.Controls.Add(this.group);
             this.Name = "frmProductRegister";
-            this.Text = "상품등록";
             this.Load += new System.EventHandler(this.frmProductRegister_Load);
             this.group.ResumeLayout(false);
             this.group.PerformLayout();
@@ -278,5 +293,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox cbCate2Temp;
         private System.Windows.Forms.ComboBox cbPlaceTemp;
+        private System.Windows.Forms.Button btnClose;
     }
 }

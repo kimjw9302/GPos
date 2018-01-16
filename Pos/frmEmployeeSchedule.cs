@@ -24,7 +24,17 @@ namespace Pos
             InitializeComponent();
         }
 
+        private void btnAll_Click(object sender, EventArgs e)
+        {
+            Inquiry();
+        }
+
         private void frmEmployeeSchedule_Load(object sender, EventArgs e)
+        {
+            Inquiry();
+        }
+
+        private void Inquiry()
         {
             dtpStartDate.Value = DateTime.Now;
 
@@ -39,7 +49,7 @@ namespace Pos
 
                 emp = ds.Tables[0];
                 joinTable = ds.Tables[1];
-                
+
                 rows = emp.Rows;
                 viewRows = joinTable.Rows;
 
@@ -49,14 +59,13 @@ namespace Pos
                     cbEmp.Items.Add(item[1].ToString());
                 }
                 
-                dgvWorkView.DataSource = ds.Tables[1];
-                
             }
             con.Close();
         }
 
         private void btnView_Click(object sender, EventArgs e)
         {
+            //tab 컨트롤 눌렀을 때마다 다른거 조회
             con = DBcontroller.Instance();
             con.Open();
             using (var cmd = new SqlCommand("EmployeeSchedule", con))

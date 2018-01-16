@@ -59,8 +59,7 @@ namespace Pos
                 orderRow[6] = decimal.Parse(row.Cells[3].Value.ToString()) * qua; //총금액
                 orderRow[7] = row.Cells[4].Value; //거래처
 
-
-                //바코드로 변경해야됨
+                
                 DataRow[] updateRow = orderTable.Select("바코드='" + row.Cells[0].Value + "'");
 
                 if (updateRow.Length == 1)
@@ -181,8 +180,7 @@ namespace Pos
 
             if (dgvOrder.Rows.Count > 0)
             {
-                orderNum = DateTime.Now.Year + DateTime.Now.Month + DateTime.Now.Day + new Random().Next(100, 900);
-                MessageBox.Show(orderNum.ToString());
+                orderNum = int.Parse(DateTime.Now.Year.ToString() + DateTime.Now.Month.ToString() + DateTime.Now.Day.ToString() + new Random().Next(100, 900));
 
                 con = DBcontroller.Instance();
                 con.Open();
@@ -193,14 +191,11 @@ namespace Pos
 
                     using (var cmd = new SqlCommand("OrderProductUpdate", con))
                     {
-
-
                         cmd.CommandType = CommandType.StoredProcedure;
                         cmd.Parameters.AddWithValue("@barcode", barcode);
                         cmd.Parameters.AddWithValue("@actualInven", Inven);
                         cmd.Parameters.AddWithValue("@presentInven", Inven);
-
-
+                        
                         int i = cmd.ExecuteNonQuery();
 
                         if (i != 1)
@@ -212,7 +207,6 @@ namespace Pos
 
                     //con.Close();
                 }
-                MessageBox.Show("수량 증가 성공");
 
                 using (var cmd = new SqlCommand("OrdersInsert", con))
                 {
@@ -243,12 +237,10 @@ namespace Pos
                 foreach (DataGridViewRow row in dgvOrder.Rows)
                 {
                     string barcode = row.Cells[1].Value.ToString();
-                    MessageBox.Show(barcode);
                     int Inven = int.Parse(row.Cells[5].Value.ToString());
                     string placeName = row.Cells[7].Value.ToString();
                     decimal costPrice = decimal.Parse(row.Cells[4].Value.ToString());
-
-
+                    
                     using (var cmd = new SqlCommand("OrderDetailInsert", con))
                     {
                         cmd.CommandType = CommandType.StoredProcedure;
@@ -261,7 +253,6 @@ namespace Pos
                         int i = cmd.ExecuteNonQuery();
                         if (i == 1)
                         {
-                            MessageBox.Show("발주 상세 성공");
                         }
                         else
                         {
