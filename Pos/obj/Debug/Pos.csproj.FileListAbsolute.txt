@@ -22,7 +22,6 @@ C:\Users\gd3-1\Documents\GPos\Pos\obj\Debug\Pos.frmManagement.resources
 C:\Users\gd3-1\Documents\GPos\Pos\obj\Debug\Pos.frmNotice.resources
 C:\Users\gd3-1\Documents\GPos\Pos\obj\Debug\Pos.frmOrder.resources
 C:\Users\gd3-1\Documents\GPos\Pos\obj\Debug\Pos.frmOrderRequest.resources
-C:\Users\gd3-1\Documents\GPos\Pos\obj\Debug\Pos.frmOrderSelect.resources
 C:\Users\gd3-1\Documents\GPos\Pos\obj\Debug\Pos.frmPayment.resources
 C:\Users\gd3-1\Documents\GPos\Pos\obj\Debug\Pos.frmPoint.resources
 C:\Users\gd3-1\Documents\GPos\Pos\obj\Debug\Pos.frmProductRegister.resources

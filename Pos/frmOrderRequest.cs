@@ -46,32 +46,37 @@ namespace Pos
             quaTemp = 0;
             payTemp = 0;
 
-            foreach (DataGridViewRow row in dgvProducts.SelectedRows)
+
+            for (int i = 0; i < dgvProducts.RowCount; i++)
             {
-
-                DataRow orderRow = orderTable.NewRow();
-                orderRow[0] = noIndex; noIndex++;//no 
-                orderRow[1] = row.Cells[0].Value; // 바코드
-                orderRow[2] = row.Cells[1].Value; //상품명
-                orderRow[3] = row.Cells[2].Value; //단가
-                orderRow[4] = row.Cells[3].Value; //원가
-                orderRow[5] = qua; //수량
-                orderRow[6] = decimal.Parse(row.Cells[3].Value.ToString()) * qua; //총금액
-                orderRow[7] = row.Cells[4].Value; //거래처
-
-                
-                DataRow[] updateRow = orderTable.Select("바코드='" + row.Cells[0].Value + "'");
-
-                if (updateRow.Length == 1)
+                //선택된거
+                if ((string)dgvProducts.Rows[i].Cells[0].Value == "1")
                 {
-                    updateRow[0]["수량"] = int.Parse(updateRow[0]["수량"].ToString()) + 1; //수량
-                }
-                else
-                {
-                    orderTable.Rows.Add(orderRow);
-                }
+                    DataRow orderRow = orderTable.NewRow();
+                    orderRow[0] = noIndex; noIndex++;//no 
+                    orderRow[1] = dgvProducts.Rows[i].Cells[1].Value; // 바코드
+                    orderRow[2] = dgvProducts.Rows[i].Cells[2].Value; //상품명
+                    orderRow[3] = dgvProducts.Rows[i].Cells[3].Value; //단가
+                    orderRow[4] = dgvProducts.Rows[i].Cells[4].Value; //원가
+                    orderRow[5] = qua; //수량
+                    orderRow[6] = decimal.Parse(dgvProducts.Rows[i].Cells[4].Value.ToString()) * qua; //총금액
+                    orderRow[7] = dgvProducts.Rows[i].Cells[5].Value; //거래처
 
+
+                    DataRow[] updateRow = orderTable.Select("바코드='" + dgvProducts.Rows[i].Cells[1].Value + "'");
+
+                    if (updateRow.Length == 1)
+                    {
+                        updateRow[0]["수량"] = int.Parse(updateRow[0]["수량"].ToString()) + 1; //수량
+                    }
+                    else
+                    {
+                        orderTable.Rows.Add(orderRow);
+                    }
+
+                }
             }
+
             foreach (DataGridViewRow row in dgvOrder.Rows)
             {
                 quaTemp += int.Parse(row.Cells[5].Value.ToString());
@@ -195,7 +200,7 @@ namespace Pos
                         cmd.Parameters.AddWithValue("@barcode", barcode);
                         cmd.Parameters.AddWithValue("@actualInven", Inven);
                         cmd.Parameters.AddWithValue("@presentInven", Inven);
-                        
+
                         int i = cmd.ExecuteNonQuery();
 
                         if (i != 1)
@@ -240,7 +245,7 @@ namespace Pos
                     int Inven = int.Parse(row.Cells[5].Value.ToString());
                     string placeName = row.Cells[7].Value.ToString();
                     decimal costPrice = decimal.Parse(row.Cells[4].Value.ToString());
-                    
+
                     using (var cmd = new SqlCommand("OrderDetailInsert", con))
                     {
                         cmd.CommandType = CommandType.StoredProcedure;
@@ -277,7 +282,6 @@ namespace Pos
 
         private void frmOrderRequest_Load(object sender, EventArgs e)
         {
-            MessageBox.Show(EmpID.ToString());
             OrderTableMake();
             ProductTableMake();
             dgvProducts.DataSource = productTable;
@@ -328,6 +332,12 @@ namespace Pos
 
         private void OrderTableMake()
         {
+            DataGridViewCheckBoxColumn check = new DataGridViewCheckBoxColumn();
+            check.HeaderText = "선택";
+            check.FalseValue = "0";
+            check.TrueValue = "1";
+            dgvProducts.Columns.Insert(0, check);
+
             orderTable = new DataTable();
 
             orderTable.Columns.Add("No");

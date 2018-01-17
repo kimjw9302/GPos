@@ -49,6 +49,7 @@
             // dgvWorkView
             // 
             this.dgvWorkView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvWorkView.BackgroundColor = System.Drawing.Color.White;
             this.dgvWorkView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvWorkView.Location = new System.Drawing.Point(16, 196);
             this.dgvWorkView.Name = "dgvWorkView";
@@ -189,6 +190,7 @@
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.dgvWorkView);
             this.Name = "frmEmployeeSchedule";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.frmEmployeeSchedule_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvWorkView)).EndInit();
             this.tabControl1.ResumeLayout(false);
