@@ -34,6 +34,10 @@
             this.bindingSourceSend = new System.Windows.Forms.BindingSource(this.components);
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.button4 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnPNameSearch = new System.Windows.Forms.Button();
+            this.txtProName = new System.Windows.Forms.TextBox();
             this.btnSeven = new System.Windows.Forms.Button();
             this.btnDown = new System.Windows.Forms.Button();
             this.btnUp = new System.Windows.Forms.Button();
@@ -66,10 +70,12 @@
             this.dgvProducts = new System.Windows.Forms.DataGridView();
             this.dgvOrder = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.txtProName = new System.Windows.Forms.TextBox();
-            this.btnPNameSearch = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
+            this.date = new System.Windows.Forms.DateTimePicker();
+            this.dgvSpec = new System.Windows.Forms.DataGridView();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.cbOrderNum = new System.Windows.Forms.ComboBox();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceSend)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -77,6 +83,8 @@
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrder)).BeginInit();
+            this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSpec)).BeginInit();
             this.SuspendLayout();
             // 
             // label10
@@ -112,6 +120,7 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1125, 743);
             this.tabControl1.TabIndex = 87;
+            this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
             // tabPage1
             // 
@@ -146,6 +155,53 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "발주 신청";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.OrangeRed;
+            this.button4.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button4.ForeColor = System.Drawing.Color.White;
+            this.button4.Location = new System.Drawing.Point(911, 17);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(177, 77);
+            this.button4.TabIndex = 102;
+            this.button4.Text = "발주 신청";
+            this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.btnOrder_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label1.Location = new System.Drawing.Point(17, 597);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(81, 25);
+            this.label1.TabIndex = 101;
+            this.label1.Text = "상품명 :";
+            // 
+            // btnPNameSearch
+            // 
+            this.btnPNameSearch.BackColor = System.Drawing.Color.OrangeRed;
+            this.btnPNameSearch.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.btnPNameSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPNameSearch.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnPNameSearch.ForeColor = System.Drawing.Color.White;
+            this.btnPNameSearch.Location = new System.Drawing.Point(366, 590);
+            this.btnPNameSearch.Name = "btnPNameSearch";
+            this.btnPNameSearch.Size = new System.Drawing.Size(80, 42);
+            this.btnPNameSearch.TabIndex = 72;
+            this.btnPNameSearch.Text = "찾기";
+            this.btnPNameSearch.UseVisualStyleBackColor = false;
+            // 
+            // txtProName
+            // 
+            this.txtProName.Font = new System.Drawing.Font("굴림", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtProName.Location = new System.Drawing.Point(104, 590);
+            this.txtProName.Name = "txtProName";
+            this.txtProName.Size = new System.Drawing.Size(257, 41);
+            this.txtProName.TabIndex = 72;
             // 
             // btnSeven
             // 
@@ -360,7 +416,7 @@
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 74.38271F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.61728F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 219F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 220F));
             this.tableLayoutPanel1.Controls.Add(this.txtTotalQua, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.button3, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.txtTotalPay, 2, 0);
@@ -378,7 +434,7 @@
             this.txtTotalQua.Location = new System.Drawing.Point(304, 0);
             this.txtTotalQua.Margin = new System.Windows.Forms.Padding(0);
             this.txtTotalQua.Name = "txtTotalQua";
-            this.txtTotalQua.Size = new System.Drawing.Size(105, 46);
+            this.txtTotalQua.Size = new System.Drawing.Size(104, 46);
             this.txtTotalQua.TabIndex = 43;
             // 
             // button3
@@ -399,7 +455,7 @@
             // txtTotalPay
             // 
             this.txtTotalPay.Font = new System.Drawing.Font("맑은 고딕", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.txtTotalPay.Location = new System.Drawing.Point(409, 0);
+            this.txtTotalPay.Location = new System.Drawing.Point(408, 0);
             this.txtTotalPay.Margin = new System.Windows.Forms.Padding(0);
             this.txtTotalPay.Name = "txtTotalPay";
             this.txtTotalPay.Size = new System.Drawing.Size(220, 46);
@@ -567,60 +623,75 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.button1);
+            this.tabPage2.Controls.Add(this.label4);
+            this.tabPage2.Controls.Add(this.cbOrderNum);
+            this.tabPage2.Controls.Add(this.label3);
+            this.tabPage2.Controls.Add(this.dgvSpec);
+            this.tabPage2.Controls.Add(this.date);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1117, 693);
+            this.tabPage2.Size = new System.Drawing.Size(1117, 717);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "거래명세서";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // txtProName
+            // date
             // 
-            this.txtProName.Font = new System.Drawing.Font("굴림", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.txtProName.Location = new System.Drawing.Point(104, 590);
-            this.txtProName.Name = "txtProName";
-            this.txtProName.Size = new System.Drawing.Size(257, 41);
-            this.txtProName.TabIndex = 72;
+            this.date.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.date.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.date.Location = new System.Drawing.Point(74, 28);
+            this.date.Name = "date";
+            this.date.Size = new System.Drawing.Size(200, 26);
+            this.date.TabIndex = 0;
             // 
-            // btnPNameSearch
+            // dgvSpec
             // 
-            this.btnPNameSearch.BackColor = System.Drawing.Color.OrangeRed;
-            this.btnPNameSearch.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
-            this.btnPNameSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPNameSearch.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnPNameSearch.ForeColor = System.Drawing.Color.White;
-            this.btnPNameSearch.Location = new System.Drawing.Point(366, 590);
-            this.btnPNameSearch.Name = "btnPNameSearch";
-            this.btnPNameSearch.Size = new System.Drawing.Size(80, 42);
-            this.btnPNameSearch.TabIndex = 72;
-            this.btnPNameSearch.Text = "찾기";
-            this.btnPNameSearch.UseVisualStyleBackColor = false;
+            this.dgvSpec.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSpec.Location = new System.Drawing.Point(3, 78);
+            this.dgvSpec.Name = "dgvSpec";
+            this.dgvSpec.RowTemplate.Height = 23;
+            this.dgvSpec.Size = new System.Drawing.Size(1108, 628);
+            this.dgvSpec.TabIndex = 2;
             // 
-            // label1
+            // label3
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label1.Location = new System.Drawing.Point(17, 597);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(81, 25);
-            this.label1.TabIndex = 101;
-            this.label1.Text = "상품명 :";
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("맑은 고딕", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label3.Location = new System.Drawing.Point(20, 33);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(48, 20);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "날짜 :";
             // 
-            // button4
+            // label4
             // 
-            this.button4.BackColor = System.Drawing.Color.OrangeRed;
-            this.button4.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(911, 17);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(177, 77);
-            this.button4.TabIndex = 102;
-            this.button4.Text = "발주 신청";
-            this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.EventHandler(this.btnOrder_Click);
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("맑은 고딕", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label4.Location = new System.Drawing.Point(292, 29);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(83, 20);
+            this.label4.TabIndex = 5;
+            this.label4.Text = "발주 목록 :";
+            // 
+            // cbOrderNum
+            // 
+            this.cbOrderNum.Font = new System.Drawing.Font("굴림", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.cbOrderNum.FormattingEnabled = true;
+            this.cbOrderNum.Location = new System.Drawing.Point(381, 28);
+            this.cbOrderNum.Name = "cbOrderNum";
+            this.cbOrderNum.Size = new System.Drawing.Size(153, 27);
+            this.cbOrderNum.TabIndex = 4;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(573, 17);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(96, 49);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "검색";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // frmOrderRequest
             // 
@@ -643,6 +714,9 @@
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrder)).EndInit();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSpec)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -689,5 +763,11 @@
         private System.Windows.Forms.TextBox txtProName;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.DataGridView dgvSpec;
+        private System.Windows.Forms.DateTimePicker date;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox cbOrderNum;
+        private System.Windows.Forms.Button button1;
     }
 }

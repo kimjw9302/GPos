@@ -38,6 +38,29 @@ namespace Pos
             dgvOrder.Refresh();
         }
 
+        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(tabControl1.SelectedIndex == 1)
+            {
+                con = DBcontroller.Instance();
+                using (var cmd = new SqlCommand("OrderNum",con))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("CommitDate", date.Value.ToShortDateString());
+
+                    con.Open();
+
+                    SqlDataReader sqd = cmd.ExecuteReader();
+
+                    while (sqd.Read())
+                    {
+                        cbOrderNum.Items.Add(sqd.GetString);
+                    }
+                }
+
+            }
+        }
+
 
 
         // 상품추가  productTable ---> orderTable
@@ -180,9 +203,9 @@ namespace Pos
         }
 
         //dgvOrder 다돌려서 있는값 수량 가져와서 값 넘겨주기
+        //발주신청 누르는 버튼
         private void btnOrder_Click(object sender, EventArgs e)
         {
-
             if (dgvOrder.Rows.Count > 0)
             {
                 orderNum = int.Parse(DateTime.Now.Year.ToString() + DateTime.Now.Month.ToString() + DateTime.Now.Day.ToString() + new Random().Next(100, 900));
