@@ -33,6 +33,7 @@ namespace Pos
             {
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@phone",tboxPhone.Text);
+                cmd.Parameters.AddWithValue("@pwd", DBNull.Value);
                 var sdr = cmd.ExecuteReader();
                 if (sdr.HasRows)
                 {

@@ -38,14 +38,12 @@ namespace Pos
                 MessageBox.Show("1" + s.Cashmoney);
                 s.Cashmoney =s.Cashmoney+ int.Parse(tboxReceive.Text);
                 MessageBox.Show("2"+s.Cashmoney);
-
-
                 fm.T1.Text ="0";
                 fm.T2.Text = "0"; //payList
                 fm.T3.Text = "0";
                 fm.T4.Text = "0";
                 fm.T5.Text = "0";
-                fm.Ss.Clear();
+            
 
                 con.Open();
                 using (var cmd= new SqlCommand("InsertSell",con))
@@ -72,11 +70,45 @@ namespace Pos
                     cmd.ExecuteNonQuery();
                 }
                 fm.T2.Text = "************이전 정보 \r\n";
-                fm.T2.Text += "현금 결제 : " + s.Cashmoney + "원\r\n";
+                fm.T2.Text += "현금 결제 : " + tboxTotal.Text + "원\r\n";
                 fm.T2.Text += "카드 결제 : " + s.Cardmoeny + "원\r\n";
                 fm.T2.Text += "포인트 결제 : " + s.Pointmoney + "원\r\n";
                 con.Close();
+                con.Open();
+                foreach (DataRow row in fm.Ss.Rows)
+                {
+                    using (var ccmd = new SqlCommand("InsertSellInfo",con))
+                {
+       
+                    ccmd.CommandType = CommandType.StoredProcedure;
+                   
+               
+                        decimal salesquantity = 0;
+                        decimal tot = -1*decimal.Parse(row["할인"].ToString());
+                        salesquantity = tot / decimal.Parse(row["단가"].ToString());
+                        ccmd.Parameters.AddWithValue("@barcode",row["바코드"].ToString());
+                        ccmd.Parameters.AddWithValue("@quantity",row["수량"].ToString());
+                        ccmd.Parameters.AddWithValue("@salesquantity", tot);
+                        ccmd.ExecuteNonQuery();
 
+                    }
+                }
+                if (s.ClientID != null)
+                {
+                    using (var ccmd = new SqlCommand("UpdatePoint", con))
+                    {
+
+
+                        ccmd.CommandType = CommandType.StoredProcedure;
+                        ccmd.Parameters.AddWithValue("@phone", s.ClientID);
+                        ccmd.ExecuteNonQuery();
+                    }
+                }
+
+
+                Sell.Clear();
+                fm.Ss.Clear();
+                con.Close();
                 this.Dispose();
             }
             //복합결제
@@ -86,7 +118,7 @@ namespace Pos
 
                fm.T5.Text = (int.Parse(fm.T5.Text) - int.Parse(tboxReceive.Text)).ToString();
                 fm.T2.Text = "************이전 정보 \r\n";
-                fm.T2.Text += "현금 결제 : " + tboxReceive.Text + "원\r\n";
+                fm.T2.Text += "현금 결제 : " + s.Cashmoney + "원\r\n";
                 fm.T2.Text += "카드 결제 : " + s.Cardmoeny +"원\r\n";
                 fm.T2.Text += "포인트 결제 : " + s.Pointmoney + "원\r\n";
                 this.Dispose();

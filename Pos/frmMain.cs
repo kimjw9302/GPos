@@ -134,7 +134,7 @@ namespace Pos
                 s.Sale = int.Parse(txtDiscount.Text);
                 s.Changemoney = (s.Tot - decimal.Parse(s.Sale.ToString()));
 
-                frmPayment fp = new frmPayment(txtReceived.Text);
+                frmPayment fp = new frmPayment(txtReceived.Text,0);
                 fp.Owner = this;
                 MessageBox.Show(fp.ShowDialog().ToString());
             }
@@ -153,7 +153,7 @@ namespace Pos
                 s.Sale = int.Parse(txtDiscount.Text);
                 s.Changemoney = (s.Tot - decimal.Parse(s.Sale.ToString()));
 
-                frmPayment fp = new frmPayment(txtReceived.Text);
+                frmPayment fp = new frmPayment(txtReceived.Text,1);
                 fp.Owner = this;
                 fp.ShowDialog().ToString();                   
             }
@@ -448,7 +448,7 @@ namespace Pos
                                                                                                   //4. 바코드 없고, 이벤트 번호 x
 
                             //DateTime startDate = (DateTime)sdr["startDate"];
-                            //DateTime endDate = (DateTime)sdr["endDate"];
+                            //DateTime endDate = (DateTi    me)sdr["endDate"];
                             //int sdateCompare = DateTime.Compare(startDate, DateTime.Now);
                             //if (sdateCompare >= 0)
                             //{
@@ -477,7 +477,6 @@ namespace Pos
                                     txtPaymentList.Text += "상품명 : " + sdr["productName"].ToString() + "\r\n";
                                     txtPaymentList.Text += "이벤트 내용 : " + sdr["content"].ToString() + "\r\n";
                                     txtPaymentList.Text += "이벤트 상품 : ";
-                                    MessageBox.Show("!11111!!!"+eventList.Count.ToString());
                                     for (int i = 0; i < eventList.Count-1; i++)
                                     {
                                         txtPaymentList.Text += eventList[i].ToString();
@@ -610,11 +609,8 @@ namespace Pos
                                 txtTotal.Text = (int.Parse(txtTotal.Text) + decimal.Parse(sdr["unitPrice"].ToString())).ToString();
                                 totCount += 1;
                                 if (sdr["content"].ToString() == "없음")
-                                {
-                                    MessageBox.Show("밥");
+                                {                               
                                     txtReceived.Text = (int.Parse(txtTotal.Text) + int.Parse(txtDiscount.Text)).ToString();
-
-
                                 }
                                 //1+1인경우
                                 else if (sdr["content"].ToString() == "1+1")
@@ -759,6 +755,14 @@ namespace Pos
                 MessageBox.Show("바코드를 찍어주세요");
 
             }
+        }
+
+        private void btnTotalCancel_Click(object sender, EventArgs e)
+        {
+            sellTable.Rows.Clear();
+            txtPaymentList.Text = "";
+            Sell.Clear();
+            Init();
         }
 
         private void txtTotal_Click(object sender, EventArgs e)

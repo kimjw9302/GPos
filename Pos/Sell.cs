@@ -8,15 +8,15 @@ namespace Pos
     class Sell
     {
         static private Sell sell = null;
-        static private decimal cardmoeny;
-        static private decimal cashmoney;
-        static private decimal pointmoney;
+        static private decimal cardmoeny = 0;
+        static private decimal cashmoney = 0;
+        static private decimal pointmoney = 0;
         static private string clientID =null;
-        static private int ages;
-        static private decimal tot;
-        static private int sale;
-        static private decimal changemoney;
-        static private int savePoint;
+        static private int ages = 0;
+        static private decimal tot = 0;
+        static private int sale = 0;
+        static private decimal changemoney = 0;
+        static private int savePoint = 0;
         private Sell()
         {
 
@@ -29,6 +29,18 @@ namespace Pos
                 sell = new Sell();
             }
             return sell;
+        }
+        static public void Clear()
+        {
+            cardmoeny=0;
+            cashmoney = 0;
+            pointmoney = 0;
+            clientID = null;
+             ages = 0;
+            tot = 0;
+             sale = 0;
+            changemoney = 0;
+             savePoint = 0;
         }
 
         public decimal Cardmoeny { get => cardmoeny; set => cardmoeny = value; }

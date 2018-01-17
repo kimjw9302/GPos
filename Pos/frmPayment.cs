@@ -17,6 +17,7 @@ namespace Pos
         string sendMoney;
         DataGridView dataGridView;
         DataTable ss;
+        int type;
         public string SendStr { get => sendStr; set => sendStr = value; }
         TextBox t1, t2, t3, t4,t5;
         public DataGridView DataGridView { get => dataGridView; set => dataGridView = value; }
@@ -32,9 +33,10 @@ namespace Pos
             InitializeComponent();
         }
 
-        public frmPayment(string text):this()
+        public frmPayment(string text,int a):this()
         {
             sendMoney = text;
+            type = a;
         }
 
         private void frmPayment_Load(object sender, EventArgs e)
@@ -49,23 +51,43 @@ namespace Pos
 
             Sell s = Sell.Load();
 
-      
 
 
-            s.Ages = int.Parse(click.Name.Substring(3, click.Name.Length - 3));
-            this.Visible = false;
-            frmCash fc = new frmCash(sendMoney);
-            frmMain fm = (frmMain)Owner;
-            dataGridView = fm.DataGridView;
-            t1 = fm.T1;
-            t2 = fm.T2;
-            t3 = fm.T3;
-            t4 = fm.T4;
-            t5 = fm.T5;
-            ss = fm.SellTable1;
-            fc.Owner = this;
-             fc.ShowDialog();
-            this.Dispose();
+            if (type == 1)
+            {
+                s.Ages = int.Parse(click.Name.Substring(3, click.Name.Length - 3));
+                this.Visible = false;
+                frmCash fc = new frmCash(sendMoney);
+                frmMain fm = (frmMain)Owner;
+                dataGridView = fm.DataGridView;
+                t1 = fm.T1;
+                t2 = fm.T2;
+                t3 = fm.T3;
+                t4 = fm.T4;
+                t5 = fm.T5;
+                ss = fm.SellTable1;
+                fc.Owner = this;
+                fc.ShowDialog();
+                this.Dispose();
+            }
+            else
+            {
+
+                s.Ages = int.Parse(click.Name.Substring(3, click.Name.Length - 3));
+                this.Visible = false;
+                frmCard fc = new frmCard(sendMoney);
+                frmMain fm = (frmMain)Owner;
+                dataGridView = fm.DataGridView;
+                t1 = fm.T1;
+                t2 = fm.T2;
+                t3 = fm.T3;
+                t4 = fm.T4;
+                t5 = fm.T5;
+                ss = fm.SellTable1;
+                fc.Owner = this;
+                fc.ShowDialog();
+                this.Dispose();
+            }
         }
     }
 }

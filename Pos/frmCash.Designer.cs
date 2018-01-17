@@ -87,6 +87,7 @@
             this.tboxChange.Name = "tboxChange";
             this.tboxChange.Size = new System.Drawing.Size(249, 42);
             this.tboxChange.TabIndex = 62;
+            this.tboxChange.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.tboxChange.Click += new System.EventHandler(this.tboxChange_Click);
             // 
             // tboxReceive
@@ -97,6 +98,7 @@
             this.tboxReceive.Name = "tboxReceive";
             this.tboxReceive.Size = new System.Drawing.Size(249, 42);
             this.tboxReceive.TabIndex = 1;
+            this.tboxReceive.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.tboxReceive.Click += new System.EventHandler(this.tboxReceive_Click);
             this.tboxReceive.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tboxReceive_KeyDown);
             // 
@@ -108,6 +110,7 @@
             this.tboxTotal.Name = "tboxTotal";
             this.tboxTotal.Size = new System.Drawing.Size(249, 42);
             this.tboxTotal.TabIndex = 60;
+            this.tboxTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.tboxTotal.Click += new System.EventHandler(this.tboxTotal_Click);
             // 
             // label3
@@ -362,6 +365,7 @@
             this.tboxBit.Name = "tboxBit";
             this.tboxBit.Size = new System.Drawing.Size(249, 42);
             this.tboxBit.TabIndex = 136;
+            this.tboxBit.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.tboxBit.Click += new System.EventHandler(this.tboxBit_Click);
             // 
             // frmCash

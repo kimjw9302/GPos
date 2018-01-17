@@ -12,11 +12,15 @@ namespace Pos
 {
     public partial class frmCard : Form
     {
+        string sendMoney;
         public frmCard()
         {
             InitializeComponent();
         }
-
+        public frmCard(string sendMoney) : this()
+        {
+            this.sendMoney = sendMoney;
+        }
 
         private void label1_Click(object sender, EventArgs e)
         {
@@ -26,6 +30,11 @@ namespace Pos
         private void btnPay_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void frmCard_Load(object sender, EventArgs e)
+        {
+            tboxPay.Text = sendMoney;
         }
     }
 }

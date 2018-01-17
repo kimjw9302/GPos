@@ -604,6 +604,7 @@
             this.btnTotalCancel.TabIndex = 33;
             this.btnTotalCancel.Text = "상품 전체 취소";
             this.btnTotalCancel.UseVisualStyleBackColor = false;
+            this.btnTotalCancel.Click += new System.EventHandler(this.btnTotalCancel_Click);
             // 
             // btnCancel
             // 

@@ -52,12 +52,14 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.tboxPass = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // btnCancle
             // 
             this.btnCancle.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold);
-            this.btnCancle.Location = new System.Drawing.Point(358, 263);
+            this.btnCancle.Location = new System.Drawing.Point(357, 340);
             this.btnCancle.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnCancle.Name = "btnCancle";
             this.btnCancle.Size = new System.Drawing.Size(238, 84);
@@ -69,7 +71,7 @@
             // tboxUPoint
             // 
             this.tboxUPoint.Font = new System.Drawing.Font("굴림", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.tboxUPoint.Location = new System.Drawing.Point(198, 136);
+            this.tboxUPoint.Location = new System.Drawing.Point(201, 200);
             this.tboxUPoint.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tboxUPoint.Name = "tboxUPoint";
             this.tboxUPoint.Size = new System.Drawing.Size(249, 42);
@@ -79,7 +81,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("맑은 고딕", 18F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(12, 135);
+            this.label2.Location = new System.Drawing.Point(15, 199);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(179, 41);
             this.label2.TabIndex = 84;
@@ -88,7 +90,7 @@
             // btnPUse
             // 
             this.btnPUse.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold);
-            this.btnPUse.Location = new System.Drawing.Point(53, 263);
+            this.btnPUse.Location = new System.Drawing.Point(52, 340);
             this.btnPUse.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnPUse.Name = "btnPUse";
             this.btnPUse.Size = new System.Drawing.Size(256, 84);
@@ -293,7 +295,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("맑은 고딕", 18F, System.Drawing.FontStyle.Bold);
-            this.label3.Location = new System.Drawing.Point(63, 195);
+            this.label3.Location = new System.Drawing.Point(66, 259);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(78, 41);
             this.label3.TabIndex = 134;
@@ -302,7 +304,7 @@
             // tboxInputPoint
             // 
             this.tboxInputPoint.Font = new System.Drawing.Font("굴림", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.tboxInputPoint.Location = new System.Drawing.Point(197, 194);
+            this.tboxInputPoint.Location = new System.Drawing.Point(200, 258);
             this.tboxInputPoint.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tboxInputPoint.Name = "tboxInputPoint";
             this.tboxInputPoint.Size = new System.Drawing.Size(249, 42);
@@ -314,16 +316,16 @@
             this.tboxPhone.Location = new System.Drawing.Point(200, 69);
             this.tboxPhone.Mask = "000-9000-0000";
             this.tboxPhone.Name = "tboxPhone";
-            this.tboxPhone.Size = new System.Drawing.Size(246, 42);
+            this.tboxPhone.Size = new System.Drawing.Size(250, 42);
             this.tboxPhone.TabIndex = 1;
             // 
             // btnSearch
             // 
             this.btnSearch.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold);
-            this.btnSearch.Location = new System.Drawing.Point(452, 40);
+            this.btnSearch.Location = new System.Drawing.Point(463, 69);
             this.btnSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(166, 84);
+            this.btnSearch.Size = new System.Drawing.Size(155, 43);
             this.btnSearch.TabIndex = 137;
             this.btnSearch.Text = "검색";
             this.btnSearch.UseVisualStyleBackColor = true;
@@ -343,7 +345,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("맑은 고딕", 18F, System.Drawing.FontStyle.Bold);
-            this.label4.Location = new System.Drawing.Point(452, 195);
+            this.label4.Location = new System.Drawing.Point(455, 259);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(48, 41);
             this.label4.TabIndex = 139;
@@ -353,18 +355,40 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("맑은 고딕", 18F, System.Drawing.FontStyle.Bold);
-            this.label5.Location = new System.Drawing.Point(453, 136);
+            this.label5.Location = new System.Drawing.Point(456, 200);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(48, 41);
             this.label5.TabIndex = 140;
             this.label5.Text = "점";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("맑은 고딕", 18F, System.Drawing.FontStyle.Bold);
+            this.label6.Location = new System.Drawing.Point(29, 138);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(138, 41);
+            this.label6.TabIndex = 143;
+            this.label6.Text = "비밀번호";
+            // 
+            // tboxPass
+            // 
+            this.tboxPass.Font = new System.Drawing.Font("굴림", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.tboxPass.Location = new System.Drawing.Point(201, 135);
+            this.tboxPass.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tboxPass.Name = "tboxPass";
+            this.tboxPass.PasswordChar = '*';
+            this.tboxPass.Size = new System.Drawing.Size(249, 42);
+            this.tboxPass.TabIndex = 144;
             // 
             // frmPoint
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(962, 378);
+            this.ClientSize = new System.Drawing.Size(962, 474);
+            this.Controls.Add(this.tboxPass);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.tboxPhone);
@@ -392,7 +416,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frmPoint";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmPoint";
+            this.Text = "포인트 사용";
             this.Load += new System.EventHandler(this.frmPoint_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -425,5 +449,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox tboxPass;
     }
 }

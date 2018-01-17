@@ -30,6 +30,7 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label9 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -58,7 +59,6 @@
             this.btnCancle = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -83,6 +83,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(566, 91);
             this.panel1.TabIndex = 88;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label9.Location = new System.Drawing.Point(171, 7);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(223, 20);
+            this.label9.TabIndex = 3;
+            this.label9.Text = "고객님에게 알려주세요!";
             // 
             // label7
             // 
@@ -434,16 +444,6 @@
             this.label8.Text = "점";
             this.label8.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label9.Location = new System.Drawing.Point(171, 7);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(223, 20);
-            this.label9.TabIndex = 3;
-            this.label9.Text = "고객님에게 알려주세요!";
-            // 
             // frmPointSave
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -479,7 +479,7 @@
             this.Controls.Add(this.label1);
             this.Name = "frmPointSave";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmPointSave";
+            this.Text = "포인트 적립";
             this.Load += new System.EventHandler(this.frmPointSave_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
