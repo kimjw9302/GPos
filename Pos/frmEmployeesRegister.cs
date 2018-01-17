@@ -34,7 +34,7 @@ namespace Pos
                 con = DBcontroller.Instance();
                 using (var cmd = new SqlCommand("EmployeeRegister", con))
                 {
-                    string empNum = txtEmpNum.Text;
+                    int empNum = int.Parse(txtEmpNum.Text);
                     string empName = txtEmpName.Text.Trim().Replace(" ", "");
                     string empPosition = cbRank.Text;
                     string phone = cbPhone1.Text + txtPhone2.Text + txtPhone3.Text;
@@ -125,6 +125,11 @@ namespace Pos
                 }
             }
             
+        }
+
+        private void btnclose_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
