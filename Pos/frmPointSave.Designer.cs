@@ -30,6 +30,8 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btnSearch = new System.Windows.Forms.Button();
             this.lblName = new System.Windows.Forms.Label();
@@ -38,8 +40,6 @@
             this.tboxMoney = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.tboxSave = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.tboxPhone = new System.Windows.Forms.MaskedTextBox();
             this.btnEnter = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -54,6 +54,11 @@
             this.button9 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.btnCancle = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -66,22 +71,44 @@
             this.label1.Size = new System.Drawing.Size(168, 41);
             this.label1.TabIndex = 84;
             this.label1.Text = "핸드폰번호";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.label9);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Location = new System.Drawing.Point(80, 342);
+            this.panel1.Location = new System.Drawing.Point(76, 356);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(566, 77);
+            this.panel1.Size = new System.Drawing.Size(566, 91);
             this.panel1.TabIndex = 88;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("맑은 고딕", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label7.Location = new System.Drawing.Point(429, 30);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(101, 38);
+            this.label7.TabIndex = 2;
+            this.label7.Text = "입니다";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("맑은 고딕", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label6.Location = new System.Drawing.Point(20, 30);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(279, 38);
+            this.label6.TabIndex = 1;
+            this.label6.Text = "적립금은 주문금액의";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("맑은 고딕", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label2.Location = new System.Drawing.Point(305, 12);
+            this.label2.Location = new System.Drawing.Point(305, 27);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(132, 41);
             this.label2.TabIndex = 0;
@@ -106,7 +133,7 @@
             this.lblName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.lblName.Location = new System.Drawing.Point(130, 135);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(157, 60);
+            this.lblName.Size = new System.Drawing.Size(154, 59);
             this.lblName.TabIndex = 1;
             this.lblName.Text = "김재웅";
             this.lblName.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -127,7 +154,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("맑은 고딕", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label4.Location = new System.Drawing.Point(105, 217);
+            this.label4.Location = new System.Drawing.Point(86, 234);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(179, 41);
             this.label4.TabIndex = 1;
@@ -136,48 +163,30 @@
             // tboxMoney
             // 
             this.tboxMoney.Font = new System.Drawing.Font("굴림", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.tboxMoney.Location = new System.Drawing.Point(290, 216);
+            this.tboxMoney.Location = new System.Drawing.Point(271, 233);
             this.tboxMoney.Name = "tboxMoney";
             this.tboxMoney.Size = new System.Drawing.Size(308, 42);
             this.tboxMoney.TabIndex = 106;
+            this.tboxMoney.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("맑은 고딕", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label5.Location = new System.Drawing.Point(133, 274);
+            this.label5.Location = new System.Drawing.Point(87, 291);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(138, 41);
+            this.label5.Size = new System.Drawing.Size(168, 41);
             this.label5.TabIndex = 107;
-            this.label5.Text = "적립금액";
+            this.label5.Text = "적립포인트";
             // 
             // tboxSave
             // 
             this.tboxSave.Font = new System.Drawing.Font("굴림", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.tboxSave.Location = new System.Drawing.Point(290, 274);
+            this.tboxSave.Location = new System.Drawing.Point(271, 291);
             this.tboxSave.Name = "tboxSave";
             this.tboxSave.Size = new System.Drawing.Size(308, 42);
             this.tboxSave.TabIndex = 108;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("맑은 고딕", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label6.Location = new System.Drawing.Point(26, 15);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(279, 38);
-            this.label6.TabIndex = 1;
-            this.label6.Text = "적립금은 주문금액의";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("맑은 고딕", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label7.Location = new System.Drawing.Point(440, 15);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(101, 38);
-            this.label7.TabIndex = 2;
-            this.label7.Text = "입니다";
+            this.tboxSave.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // tboxPhone
             // 
@@ -187,6 +196,7 @@
             this.tboxPhone.Name = "tboxPhone";
             this.tboxPhone.Size = new System.Drawing.Size(246, 42);
             this.tboxPhone.TabIndex = 109;
+            this.tboxPhone.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.tboxPhone_MaskInputRejected);
             // 
             // btnEnter
             // 
@@ -379,12 +389,71 @@
             this.button2.Text = "8";
             this.button2.UseVisualStyleBackColor = false;
             // 
+            // btnSave
+            // 
+            this.btnSave.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold);
+            this.btnSave.Location = new System.Drawing.Point(676, 370);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(160, 84);
+            this.btnSave.TabIndex = 147;
+            this.btnSave.Text = "적립";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // btnCancle
+            // 
+            this.btnCancle.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold);
+            this.btnCancle.Location = new System.Drawing.Point(836, 370);
+            this.btnCancle.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnCancle.Name = "btnCancle";
+            this.btnCancle.Size = new System.Drawing.Size(160, 84);
+            this.btnCancle.TabIndex = 148;
+            this.btnCancle.Text = "취소";
+            this.btnCancle.UseVisualStyleBackColor = true;
+            this.btnCancle.Click += new System.EventHandler(this.btnCancle_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("맑은 고딕", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label3.Location = new System.Drawing.Point(585, 234);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(48, 41);
+            this.label3.TabIndex = 149;
+            this.label3.Text = "원";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("맑은 고딕", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label8.Location = new System.Drawing.Point(585, 291);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(48, 41);
+            this.label8.TabIndex = 150;
+            this.label8.Text = "점";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label9.Location = new System.Drawing.Point(171, 7);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(223, 20);
+            this.label9.TabIndex = 3;
+            this.label9.Text = "고객님에게 알려주세요!";
+            // 
             // frmPointSave
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(1004, 483);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.btnCancle);
+            this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnEnter);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.button22);
@@ -409,7 +478,9 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
             this.Name = "frmPointSave";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmPointSave";
+            this.Load += new System.EventHandler(this.frmPointSave_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -445,5 +516,10 @@
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Button btnCancle;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
     }
 }

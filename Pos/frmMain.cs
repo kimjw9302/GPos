@@ -155,7 +155,7 @@ namespace Pos
 
                 frmPayment fp = new frmPayment(txtReceived.Text);
                 fp.Owner = this;
-                MessageBox.Show(fp.ShowDialog().ToString());                   
+                fp.ShowDialog().ToString();                   
             }
             else
             {
@@ -166,7 +166,27 @@ namespace Pos
         }
         private void btnPoint_Click(object sender, EventArgs e)
         {
-            new frmPoint().ShowDialog();
+            Sell s = Sell.Load();
+            if (sellTable.Rows.Count > 0)
+            {
+                if (s.SavePoint == 0)
+                {
+                    frmPoint fpp = new frmPoint();
+                    fpp.Owner = this;
+                    fpp.ShowDialog();
+                }
+                else
+                {
+                    MessageBox.Show("적립 후 사용 불가");
+                }
+              
+            }
+            else
+            {
+                MessageBox.Show("바코드를 찍어주세요");
+
+            }
+        
         }
         private void btnOrder_Click(object sender, EventArgs e)
         {
@@ -717,11 +737,21 @@ namespace Pos
 
         private void btnPointSave_Click(object sender, EventArgs e)
         {
+            Sell s = Sell.Load();
             if (sellTable.Rows.Count > 0)
             {
-               
-                frmPointSave fp = new frmPointSave();
-                fp.ShowDialog();
+
+                if (s.Pointmoney == 0)
+                {
+                    frmPointSave fp = new frmPointSave(txtReceived.Text);
+                    fp.Owner = this;
+                    fp.ShowDialog();
+                }
+                else
+                {
+                    MessageBox.Show("사용 후 적립 불가");
+                }
+              
           
             }
             else

@@ -16,6 +16,7 @@ namespace Pos
         static private decimal tot;
         static private int sale;
         static private decimal changemoney;
+        static private int savePoint;
         private Sell()
         {
 
@@ -38,5 +39,6 @@ namespace Pos
         public decimal Tot { get => tot; set => tot = value; }
         public int Sale { get => sale; set => sale = value; }
         public decimal Changemoney { get => changemoney; set => changemoney = value; }
+        public int SavePoint { get => savePoint; set => savePoint = value; }
     }
 }
