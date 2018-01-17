@@ -1,7 +1,6 @@
 C:\Users\gd3-1\Documents\GPos\Pos\bin\Debug\Pos.exe.config
 C:\Users\gd3-1\Documents\GPos\Pos\bin\Debug\Pos.exe
 C:\Users\gd3-1\Documents\GPos\Pos\bin\Debug\Pos.pdb
-C:\Users\gd3-1\Documents\GPos\Pos\obj\Debug\Pos.csprojResolveAssemblyReference.cache
 C:\Users\gd3-1\Documents\GPos\Pos\obj\Debug\Pos.frmAddrSearch.resources
 C:\Users\gd3-1\Documents\GPos\Pos\obj\Debug\Pos.frmLogin.resources
 C:\Users\gd3-1\Documents\GPos\Pos\obj\Debug\Pos.frmCalculator.resources
@@ -24,6 +23,7 @@ C:\Users\gd3-1\Documents\GPos\Pos\obj\Debug\Pos.frmOrder.resources
 C:\Users\gd3-1\Documents\GPos\Pos\obj\Debug\Pos.frmOrderRequest.resources
 C:\Users\gd3-1\Documents\GPos\Pos\obj\Debug\Pos.frmPayment.resources
 C:\Users\gd3-1\Documents\GPos\Pos\obj\Debug\Pos.frmPoint.resources
+C:\Users\gd3-1\Documents\GPos\Pos\obj\Debug\Pos.frmPointSave.resources
 C:\Users\gd3-1\Documents\GPos\Pos\obj\Debug\Pos.frmProductRegister.resources
 C:\Users\gd3-1\Documents\GPos\Pos\obj\Debug\Pos.frmProductSelect.resources
 C:\Users\gd3-1\Documents\GPos\Pos\obj\Debug\Pos.frmRevenue.resources
