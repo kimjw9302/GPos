@@ -35,9 +35,6 @@ namespace Pos
            
         }
 
-        private void btnOrderView_Click(object sender, EventArgs e)
-        {
-            
-        }
+        
     }
 }

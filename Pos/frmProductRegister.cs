@@ -18,14 +18,18 @@ namespace Pos
         DataTable cate1Table, cateF, cateNF, placeTable;
         DataSet ds;
         DataRowCollection c1Row, cFRow, cNFRow, pRow;
-       
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
             if (ValidityCheck() && checkPK())
             {
                 string proName = txtProductName.Text.Trim().Replace(" ", "");
-                string barCode = txtBarcode.Text.Trim().Replace(" ", "");
+                string barCode = txtBarcode.Text.Trim().Replace(" ", "").Substring(0,12);
                 decimal unitPrice = decimal.Parse(txtUnitPrice.Text.Trim().Replace(" ", ""));
                 decimal costPrice = decimal.Parse(txtCostPrice.Text.Trim().Replace(" ", ""));
                 string cate1 = "F";
