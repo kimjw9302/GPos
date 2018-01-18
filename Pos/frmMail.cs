@@ -40,7 +40,7 @@ namespace Pos
                     email = tboxID.Text + "@" + cboxEmail.SelectedItem;
                     //메일전송
                     MailAddress fromAddr = new MailAddress("rlawodnd9302@naver.com", email, Encoding.UTF8);
-                    MailAddress toAddr = new MailAddress("jaewoong9302@google.com");
+                    MailAddress toAddr = new MailAddress("rlawodnd9302@naver.com");
                     SmtpClient client = new SmtpClient("smtp.naver.com", 587);
 
                     MailMessage sendmsg = new MailMessage(fromAddr, toAddr);

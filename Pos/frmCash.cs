@@ -21,7 +21,7 @@ namespace Pos
             InitializeComponent();
         }
 
-        public frmCash(string sendMoney):this()
+        public frmCash(string sendMoney) : this()
         {
             this.sendMoney = sendMoney;
         }
@@ -33,21 +33,21 @@ namespace Pos
             frmPayment fm = (frmPayment)Owner;
             if (decimal.Parse(tboxBit.Text) == 0)
             {
-             
+
                 con = DBcontroller.Instance();
                 MessageBox.Show("1" + s.Cashmoney);
-                s.Cashmoney =s.Cashmoney+ int.Parse(tboxReceive.Text);
-                MessageBox.Show("2"+s.Cashmoney);
-                fm.T1.Text ="0";
+                s.Cashmoney = s.Cashmoney + int.Parse(tboxReceive.Text);
+                MessageBox.Show("2" + s.Cashmoney);
+                fm.T1.Text = "0";
                 fm.T2.Text = "0"; //payList
                 fm.T3.Text = "0";
                 fm.T4.Text = "0";
                 fm.T5.Text = "0";
-            
+
 
                 con.Open();
-                using (var cmd= new SqlCommand("InsertSell",con))
-                {                   
+                using (var cmd = new SqlCommand("InsertSell", con))
+                {
                     cmd.CommandType = CommandType.StoredProcedure;
                     if (s.ClientID == null)
                     {
@@ -57,9 +57,9 @@ namespace Pos
                     {
                         cmd.Parameters.AddWithValue("@memberNum", s.ClientID);
                     }
-                   
-                    cmd.Parameters.AddWithValue("@sellDate",DateTime.Now);
-                    cmd.Parameters.AddWithValue("@clientNum",s.Ages);
+
+                    cmd.Parameters.AddWithValue("@sellDate", DateTime.Now);
+                    cmd.Parameters.AddWithValue("@clientNum", s.Ages);
                     cmd.Parameters.AddWithValue("@methodNum", 1);
                     cmd.Parameters.AddWithValue("@totalMoney", s.Tot);
                     cmd.Parameters.AddWithValue("@receiveCash", s.Cashmoney);
@@ -77,17 +77,17 @@ namespace Pos
                 con.Open();
                 foreach (DataRow row in fm.Ss.Rows)
                 {
-                    using (var ccmd = new SqlCommand("InsertSellInfo",con))
-                {
-       
-                    ccmd.CommandType = CommandType.StoredProcedure;
-                   
-               
+                    using (var ccmd = new SqlCommand("InsertSellInfo", con))
+                    {
+
+                        ccmd.CommandType = CommandType.StoredProcedure;
+
+
                         decimal salesquantity = 0;
-                        decimal tot = -1*decimal.Parse(row["할인"].ToString());
+                        decimal tot = -1 * decimal.Parse(row["할인"].ToString());
                         salesquantity = tot / decimal.Parse(row["단가"].ToString());
-                        ccmd.Parameters.AddWithValue("@barcode",row["바코드"].ToString());
-                        ccmd.Parameters.AddWithValue("@quantity",row["수량"].ToString());
+                        ccmd.Parameters.AddWithValue("@barcode", row["바코드"].ToString());
+                        ccmd.Parameters.AddWithValue("@quantity", row["수량"].ToString());
                         ccmd.Parameters.AddWithValue("@salesquantity", tot);
                         ccmd.ExecuteNonQuery();
 
@@ -105,7 +105,21 @@ namespace Pos
                     }
                 }
 
-
+                foreach (DataRow row in fm.Ss.Rows)
+                {
+                    using (var ccmd = new SqlCommand("UpdateProducts", con))
+                    {
+                        ccmd.CommandType = CommandType.StoredProcedure;
+                        ccmd.Parameters.AddWithValue("@barcode", row["바코드"].ToString());
+                        ccmd.Parameters.AddWithValue("@quantity", row["수량"].ToString());
+                        if (ccmd.ExecuteNonQuery() != 1)
+                        {
+                            MessageBox.Show("상품 재고 업데이트 에러");
+                        }
+                    }
+                }
+             
+               
                 Sell.Clear();
                 fm.Ss.Clear();
                 con.Close();
@@ -116,13 +130,13 @@ namespace Pos
             {
                 s.Cashmoney = int.Parse(tboxReceive.Text);
 
-               fm.T5.Text = (int.Parse(fm.T5.Text) - int.Parse(tboxReceive.Text)).ToString();
+                fm.T5.Text = (int.Parse(fm.T5.Text) - int.Parse(tboxReceive.Text)).ToString();
                 fm.T2.Text = "************이전 정보 \r\n";
                 fm.T2.Text += "현금 결제 : " + s.Cashmoney + "원\r\n";
-                fm.T2.Text += "카드 결제 : " + s.Cardmoeny +"원\r\n";
+                fm.T2.Text += "카드 결제 : " + s.Cardmoeny + "원\r\n";
                 fm.T2.Text += "포인트 결제 : " + s.Pointmoney + "원\r\n";
                 this.Dispose();
-                
+
             }
         }
 
@@ -260,7 +274,7 @@ namespace Pos
                     tboxBit.Text = "0";
                     tboxChange.Text = m.ToString();
                 }
-                   
+
             }
 
         }
@@ -275,6 +289,6 @@ namespace Pos
             tboxReceive.Focus();
             current = tboxReceive;
         }
-       
+
     }
 }
