@@ -29,7 +29,10 @@ namespace Pos
 
         private void btnMail_Click(object sender, EventArgs e)
         {
+            this.Visible = false;
             new frmMail().ShowDialog();
+      
+            this.Dispose();
         }
     }
 }

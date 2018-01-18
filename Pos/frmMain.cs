@@ -387,6 +387,7 @@ namespace Pos
 
                             eventList.Add(sdr["productName"].ToString());
                         }
+                    
                     }
                     sdr.Close();
                     con.Close();
@@ -397,6 +398,15 @@ namespace Pos
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@barcode", txtProduct.Text);
                     var sdr = cmd.ExecuteReader();
+                    if(!sdr.HasRows)
+                        {
+                        //로우가 없다는것 -> 바코드가 존재하지않음 
+                        MessageBox.Show("입력하신 바코드가 존재하지 않습니다.");
+                        txtProduct.Text = "";
+                        con.Close();
+                        sdr.Close();
+                        return;
+                    }
                     while (sdr.Read())
                     {
                         if (sdr.HasRows)
@@ -458,7 +468,6 @@ namespace Pos
 
                             if (update1.Length == 0 && update2.Length == 0)
                             {
-                                MessageBox.Show("1-1");
                                 //바코드가 없고, 이벤트번호 없고
                                 DataRow newRow = sellTable.NewRow();
                                 newRow["No"] = sellrowindex; //No.
@@ -698,15 +707,6 @@ namespace Pos
 
                             }
                         }
-                        else
-                        {
-                            //로우가 없다는것 -> 바코드가 존재하지않음 
-                            MessageBox.Show("입력하신 바코드가 존재하지 않습니다.");
-                            con.Close();
-                            sdr.Close();
-                            return;
-                        }
-
                     }
 
                     dgvProduct.DataSource = sellTable;
@@ -766,6 +766,15 @@ namespace Pos
             Init();
         }
 
+        private void btnRefund_Click(object sender, EventArgs e)
+        {
+            if (sellTable.Rows.Count <= 0)
+            {
+                frmSalesinquiry fsq = new frmSalesinquiry();
+                fsq.ShowDialog();
+            }
+        }
+
         private void txtTotal_Click(object sender, EventArgs e)
         {
             txtProduct.Focus();
@@ -788,11 +797,12 @@ namespace Pos
         }
         public void Init()
         {
-            dgvProduct.DataSource = null;
+            sellTable.Rows.Clear();
             txtTotal.Text = "0";
             txtProduct.Text = "";
             txtReceived.Text = "0";
             txtChange.Text = "0";
+            txtDiscount.Text = "0";
         }
     }
 }
