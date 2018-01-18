@@ -10,7 +10,7 @@ namespace Pos
 
         SqlConnection con;
         SqlDataAdapter adapter;
-        DataTable cate1Table, cateF, cateNF, placeTable, productTable, orderTable;
+        DataTable cate1Table, cateF, cateNF, placeTable, productTable, orderTable, orderSpecTable, detailTable;
         DataSet ds;
         DataRowCollection c1Row, cFRow, cNFRow, pRow;
         int noIndex = 1, qua = 1;
@@ -40,25 +40,126 @@ namespace Pos
 
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(tabControl1.SelectedIndex == 1)
+            SpecTableMake();
+            con = DBcontroller.Instance();
+            using (var cmd = new SqlCommand("OrderNum", con))
             {
-                con = DBcontroller.Instance();
-                using (var cmd = new SqlCommand("OrderNum",con))
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@CommitDate", date.Value.ToShortDateString());
+
+                con.Open();
+
+                var sqd = cmd.ExecuteReader();
+
+                while (sqd.Read())
                 {
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("CommitDate", date.Value.ToShortDateString());
+                    cbOrderNum.Items.Add(sqd.GetInt32(0));
+                }
+                con.Close();
+            }
+        }
 
+        private void date_ValueChanged(object sender, EventArgs e)
+        {
+            cbOrderNum.Items.Clear();
+            cbOrderNum.Text = "";
+
+            con = DBcontroller.Instance();
+            using (var cmd = new SqlCommand("OrderNum", con))
+            {
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@CommitDate", date.Value.ToShortDateString());
+
+                con.Open();
+
+                var sqd = cmd.ExecuteReader();
+
+                while (sqd.Read())
+                {
+                    cbOrderNum.Items.Add(sqd.GetInt32(0));
+                }
+                con.Close();
+            }
+
+        }
+
+        private void btnSpec_Click(object sender, EventArgs e)
+        {
+            dgvSpec.Refresh();
+            detailTable.Rows.Clear();
+            object cb = cbOrderNum.SelectedItem;
+            
+            if (cb !=null)
+            {
+                
+                con = DBcontroller.Instance();
+                using (var cmd = new SqlCommand("OrderSpec", con))
+                {
+                    int i = 1;
                     con.Open();
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@orderNum", cbOrderNum.SelectedItem);
 
-                    SqlDataReader sqd = cmd.ExecuteReader();
+                    var er = cmd.ExecuteReader();
 
-                    while (sqd.Read())
+                    while (er.Read())
                     {
-                        cbOrderNum.Items.Add(sqd.GetString);
+
+                        DataRow detailRow = detailTable.NewRow();
+
+                        detailRow[0] = i; //순번
+                        detailRow[1] = er.GetString(4); //상품코드
+                        detailRow[2] = er.GetString(5); //품명
+                        detailRow[3] = er.GetSqlInt32(6); //수량
+                        detailRow[4] = er.GetDecimal(7); //원가
+                        detailRow[5] = er.GetDecimal(8); //원가 합계
+                        detailRow[6] = er.GetString(9); //거래처
+                        i++;
+
+                        detailTable.Rows.Add(detailRow);
+                        txtSum.Text = er.GetDecimal(1).ToString();
+                        txtName.Text = er.GetString(3);
                     }
+                    er.Close();
+                }
+                dgvSpec.DataSource = detailTable;
+                using (var cmd = new SqlCommand("StoreInfo", con))
+                {
+                    var st = cmd.ExecuteReader();
+
+                    while (st.Read())
+                    {
+                        txtStoreNum.Text = st.GetInt32(0).ToString();
+                        txtStoreName.Text = st.GetString(1);
+
+                        txtAddress.Text = st.GetString(3);
+                        txtPhone.Text = st.GetString(4);
+                    }
+                    st.Close();
                 }
 
+                con.Close();
             }
+            else
+            {
+                MessageBox.Show(" 주문번호를 선택해주세요. ");
+            }
+            
+        }
+
+        private void SpecTableMake()
+        {
+            detailTable = new DataTable();
+
+            detailTable.Columns.Add("순 번");
+            detailTable.Columns.Add("상품  코드");
+            detailTable.Columns.Add("품   명");
+            detailTable.Columns.Add("수  량");
+            detailTable.Columns.Add("원  가");
+            detailTable.Columns.Add("원가 합계");
+            detailTable.Columns.Add("거래처");
+
+            dgvSpec.DataSource = detailTable;
         }
 
 
@@ -167,6 +268,7 @@ namespace Pos
             }
             else if (cbCate1.SelectedIndex == 1)
             {
+
                 foreach (DataRow item in cNFRow)
                 {
                     cbCate2.Items.Add(item[0]);

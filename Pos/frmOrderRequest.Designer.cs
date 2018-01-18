@@ -28,10 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.label10 = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
-            this.bindingSourceSend = new System.Windows.Forms.BindingSource(this.components);
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.button4 = new System.Windows.Forms.Button();
@@ -70,13 +68,25 @@
             this.dgvProducts = new System.Windows.Forms.DataGridView();
             this.dgvOrder = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.date = new System.Windows.Forms.DateTimePicker();
-            this.dgvSpec = new System.Windows.Forms.DataGridView();
-            this.label3 = new System.Windows.Forms.Label();
+            this.btnSpec = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.cbOrderNum = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceSend)).BeginInit();
+            this.label3 = new System.Windows.Forms.Label();
+            this.date = new System.Windows.Forms.DateTimePicker();
+            this.dgvSpec = new System.Windows.Forms.DataGridView();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txtStoreNum = new System.Windows.Forms.Label();
+            this.txtPhone = new System.Windows.Forms.Label();
+            this.txtStoreName = new System.Windows.Forms.Label();
+            this.txtName = new System.Windows.Forms.Label();
+            this.txtAddress = new System.Windows.Forms.Label();
+            this.txtSum = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -85,6 +95,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrder)).BeginInit();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSpec)).BeginInit();
+            this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // label10
@@ -115,10 +126,11 @@
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(15, 51);
+            this.tabControl1.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.tabControl1.Location = new System.Drawing.Point(15, 61);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1125, 743);
+            this.tabControl1.Size = new System.Drawing.Size(1125, 733);
             this.tabControl1.TabIndex = 87;
             this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
@@ -148,10 +160,10 @@
             this.tabPage1.Controls.Add(this.dgvProducts);
             this.tabPage1.Controls.Add(this.dgvOrder);
             this.tabPage1.Controls.Add(this.label10);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Location = new System.Drawing.Point(4, 30);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1117, 717);
+            this.tabPage1.Size = new System.Drawing.Size(1117, 699);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "발주 신청";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -416,7 +428,7 @@
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 74.38271F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.61728F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 220F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 221F));
             this.tableLayoutPanel1.Controls.Add(this.txtTotalQua, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.button3, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.txtTotalPay, 2, 0);
@@ -431,7 +443,7 @@
             // txtTotalQua
             // 
             this.txtTotalQua.Font = new System.Drawing.Font("맑은 고딕", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.txtTotalQua.Location = new System.Drawing.Point(304, 0);
+            this.txtTotalQua.Location = new System.Drawing.Point(303, 0);
             this.txtTotalQua.Margin = new System.Windows.Forms.Padding(0);
             this.txtTotalQua.Name = "txtTotalQua";
             this.txtTotalQua.Size = new System.Drawing.Size(104, 46);
@@ -447,7 +459,7 @@
             this.button3.Location = new System.Drawing.Point(0, 0);
             this.button3.Margin = new System.Windows.Forms.Padding(0);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(304, 46);
+            this.button3.Size = new System.Drawing.Size(303, 46);
             this.button3.TabIndex = 85;
             this.button3.Text = "총수량/ 총금액";
             this.button3.UseVisualStyleBackColor = false;
@@ -455,7 +467,7 @@
             // txtTotalPay
             // 
             this.txtTotalPay.Font = new System.Drawing.Font("맑은 고딕", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.txtTotalPay.Location = new System.Drawing.Point(408, 0);
+            this.txtTotalPay.Location = new System.Drawing.Point(407, 0);
             this.txtTotalPay.Margin = new System.Windows.Forms.Padding(0);
             this.txtTotalPay.Name = "txtTotalPay";
             this.txtTotalPay.Size = new System.Drawing.Size(220, 46);
@@ -623,75 +635,259 @@
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.button1);
+            this.tabPage2.Controls.Add(this.dgvSpec);
+            this.tabPage2.Controls.Add(this.tableLayoutPanel2);
+            this.tabPage2.Controls.Add(this.btnSpec);
             this.tabPage2.Controls.Add(this.label4);
             this.tabPage2.Controls.Add(this.cbOrderNum);
             this.tabPage2.Controls.Add(this.label3);
-            this.tabPage2.Controls.Add(this.dgvSpec);
             this.tabPage2.Controls.Add(this.date);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Location = new System.Drawing.Point(4, 30);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1117, 717);
+            this.tabPage2.Size = new System.Drawing.Size(1117, 699);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "거래명세서";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // date
+            // btnSpec
             // 
-            this.date.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.date.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.date.Location = new System.Drawing.Point(74, 28);
-            this.date.Name = "date";
-            this.date.Size = new System.Drawing.Size(200, 26);
-            this.date.TabIndex = 0;
-            // 
-            // dgvSpec
-            // 
-            this.dgvSpec.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvSpec.Location = new System.Drawing.Point(3, 78);
-            this.dgvSpec.Name = "dgvSpec";
-            this.dgvSpec.RowTemplate.Height = 23;
-            this.dgvSpec.Size = new System.Drawing.Size(1108, 628);
-            this.dgvSpec.TabIndex = 2;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("맑은 고딕", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label3.Location = new System.Drawing.Point(20, 33);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(48, 20);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "날짜 :";
+            this.btnSpec.Location = new System.Drawing.Point(547, 34);
+            this.btnSpec.Name = "btnSpec";
+            this.btnSpec.Size = new System.Drawing.Size(96, 49);
+            this.btnSpec.TabIndex = 6;
+            this.btnSpec.Text = "검색";
+            this.btnSpec.UseVisualStyleBackColor = true;
+            this.btnSpec.Click += new System.EventHandler(this.btnSpec_Click);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("맑은 고딕", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label4.Location = new System.Drawing.Point(292, 29);
+            this.label4.Location = new System.Drawing.Point(275, 46);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(83, 20);
             this.label4.TabIndex = 5;
-            this.label4.Text = "발주 목록 :";
+            this.label4.Text = "주문 번호 :";
             // 
             // cbOrderNum
             // 
             this.cbOrderNum.Font = new System.Drawing.Font("굴림", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.cbOrderNum.FormattingEnabled = true;
-            this.cbOrderNum.Location = new System.Drawing.Point(381, 28);
+            this.cbOrderNum.Location = new System.Drawing.Point(364, 43);
             this.cbOrderNum.Name = "cbOrderNum";
             this.cbOrderNum.Size = new System.Drawing.Size(153, 27);
             this.cbOrderNum.TabIndex = 4;
             // 
-            // button1
+            // label3
             // 
-            this.button1.Location = new System.Drawing.Point(573, 17);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(96, 49);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "검색";
-            this.button1.UseVisualStyleBackColor = true;
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("맑은 고딕", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label3.Location = new System.Drawing.Point(15, 46);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(48, 20);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "날짜 :";
+            // 
+            // date
+            // 
+            this.date.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.date.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.date.Location = new System.Drawing.Point(69, 44);
+            this.date.Name = "date";
+            this.date.Size = new System.Drawing.Size(200, 26);
+            this.date.TabIndex = 0;
+            this.date.ValueChanged += new System.EventHandler(this.date_ValueChanged);
+            // 
+            // dgvSpec
+            // 
+            this.dgvSpec.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvSpec.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dgvSpec.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSpec.Location = new System.Drawing.Point(6, 215);
+            this.dgvSpec.Name = "dgvSpec";
+            this.dgvSpec.RowTemplate.Height = 23;
+            this.dgvSpec.Size = new System.Drawing.Size(1098, 478);
+            this.dgvSpec.TabIndex = 2;
+            // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
+            this.tableLayoutPanel2.ColumnCount = 4;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 29.60526F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70.39474F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 177F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 313F));
+            this.tableLayoutPanel2.Controls.Add(this.txtSum, 3, 2);
+            this.tableLayoutPanel2.Controls.Add(this.txtAddress, 1, 2);
+            this.tableLayoutPanel2.Controls.Add(this.txtName, 3, 1);
+            this.tableLayoutPanel2.Controls.Add(this.txtStoreName, 1, 1);
+            this.tableLayoutPanel2.Controls.Add(this.txtPhone, 3, 0);
+            this.tableLayoutPanel2.Controls.Add(this.txtStoreNum, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.label9, 2, 0);
+            this.tableLayoutPanel2.Controls.Add(this.label18, 2, 2);
+            this.tableLayoutPanel2.Controls.Add(this.label16, 0, 2);
+            this.tableLayoutPanel2.Controls.Add(this.label14, 2, 1);
+            this.tableLayoutPanel2.Controls.Add(this.label12, 0, 1);
+            this.tableLayoutPanel2.Controls.Add(this.label5, 0, 0);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(6, 112);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 3;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 51.6129F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 48.3871F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 33F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1098, 97);
+            this.tableLayoutPanel2.TabIndex = 3;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label5.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label5.Location = new System.Drawing.Point(6, 6);
+            this.label5.Margin = new System.Windows.Forms.Padding(5);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(168, 20);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "사업자 번호";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label12.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label12.Location = new System.Drawing.Point(6, 37);
+            this.label12.Margin = new System.Windows.Forms.Padding(5);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(168, 19);
+            this.label12.TabIndex = 4;
+            this.label12.Text = "상 호";
+            this.label12.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label16.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label16.Location = new System.Drawing.Point(6, 67);
+            this.label16.Margin = new System.Windows.Forms.Padding(5);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(168, 24);
+            this.label16.TabIndex = 9;
+            this.label16.Text = "사업장 주소";
+            this.label16.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label14.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label14.Location = new System.Drawing.Point(610, 37);
+            this.label14.Margin = new System.Windows.Forms.Padding(5);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(167, 19);
+            this.label14.TabIndex = 7;
+            this.label14.Text = "발주자";
+            this.label14.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label18.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label18.Location = new System.Drawing.Point(610, 67);
+            this.label18.Margin = new System.Windows.Forms.Padding(5);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(167, 24);
+            this.label18.TabIndex = 11;
+            this.label18.Text = "합계 금액";
+            this.label18.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label9.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label9.Location = new System.Drawing.Point(610, 6);
+            this.label9.Margin = new System.Windows.Forms.Padding(5);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(167, 20);
+            this.label9.TabIndex = 13;
+            this.label9.Text = "전 화";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // txtStoreNum
+            // 
+            this.txtStoreNum.AutoSize = true;
+            this.txtStoreNum.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtStoreNum.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtStoreNum.Location = new System.Drawing.Point(185, 6);
+            this.txtStoreNum.Margin = new System.Windows.Forms.Padding(5);
+            this.txtStoreNum.Name = "txtStoreNum";
+            this.txtStoreNum.Size = new System.Drawing.Size(414, 20);
+            this.txtStoreNum.TabIndex = 20;
+            this.txtStoreNum.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // txtPhone
+            // 
+            this.txtPhone.AutoSize = true;
+            this.txtPhone.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtPhone.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtPhone.Location = new System.Drawing.Point(788, 6);
+            this.txtPhone.Margin = new System.Windows.Forms.Padding(5);
+            this.txtPhone.Name = "txtPhone";
+            this.txtPhone.Size = new System.Drawing.Size(304, 20);
+            this.txtPhone.TabIndex = 21;
+            this.txtPhone.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // txtStoreName
+            // 
+            this.txtStoreName.AutoSize = true;
+            this.txtStoreName.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtStoreName.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtStoreName.Location = new System.Drawing.Point(185, 37);
+            this.txtStoreName.Margin = new System.Windows.Forms.Padding(5);
+            this.txtStoreName.Name = "txtStoreName";
+            this.txtStoreName.Size = new System.Drawing.Size(414, 19);
+            this.txtStoreName.TabIndex = 22;
+            this.txtStoreName.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // txtName
+            // 
+            this.txtName.AutoSize = true;
+            this.txtName.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtName.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtName.Location = new System.Drawing.Point(788, 37);
+            this.txtName.Margin = new System.Windows.Forms.Padding(5);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(304, 19);
+            this.txtName.TabIndex = 23;
+            this.txtName.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // txtAddress
+            // 
+            this.txtAddress.AutoSize = true;
+            this.txtAddress.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtAddress.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtAddress.Location = new System.Drawing.Point(185, 67);
+            this.txtAddress.Margin = new System.Windows.Forms.Padding(5);
+            this.txtAddress.Name = "txtAddress";
+            this.txtAddress.Size = new System.Drawing.Size(414, 24);
+            this.txtAddress.TabIndex = 24;
+            this.txtAddress.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // txtSum
+            // 
+            this.txtSum.AutoSize = true;
+            this.txtSum.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtSum.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtSum.Location = new System.Drawing.Point(788, 67);
+            this.txtSum.Margin = new System.Windows.Forms.Padding(5);
+            this.txtSum.Name = "txtSum";
+            this.txtSum.Size = new System.Drawing.Size(304, 24);
+            this.txtSum.TabIndex = 25;
+            this.txtSum.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // frmOrderRequest
             // 
@@ -704,7 +900,6 @@
             this.Name = "frmOrderRequest";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.frmOrderRequest_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceSend)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
@@ -717,6 +912,8 @@
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSpec)).EndInit();
+            this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -724,7 +921,6 @@
         #endregion
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button btnClose;
-        private System.Windows.Forms.BindingSource bindingSourceSend;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.Button btnSeven;
@@ -763,11 +959,24 @@
         private System.Windows.Forms.TextBox txtProName;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.DataGridView dgvSpec;
         private System.Windows.Forms.DateTimePicker date;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox cbOrderNum;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnSpec;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.DataGridView dgvSpec;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label txtStoreNum;
+        private System.Windows.Forms.Label txtSum;
+        private System.Windows.Forms.Label txtAddress;
+        private System.Windows.Forms.Label txtName;
+        private System.Windows.Forms.Label txtStoreName;
+        private System.Windows.Forms.Label txtPhone;
     }
 }
