@@ -55,6 +55,7 @@
             this.cbCate1 = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.cbCate2 = new System.Windows.Forms.ComboBox();
+            this.btnReset = new System.Windows.Forms.Button();
             this.gbNotice.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).BeginInit();
             this.SuspendLayout();
@@ -325,6 +326,7 @@
             this.cbCate1.Name = "cbCate1";
             this.cbCate1.Size = new System.Drawing.Size(99, 33);
             this.cbCate1.TabIndex = 63;
+            this.cbCate1.SelectedIndexChanged += new System.EventHandler(this.cbCate1_SelectedIndexChanged);
             // 
             // label8
             // 
@@ -345,12 +347,24 @@
             this.cbCate2.Size = new System.Drawing.Size(164, 33);
             this.cbCate2.TabIndex = 64;
             // 
+            // btnReset
+            // 
+            this.btnReset.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.btnReset.Location = new System.Drawing.Point(1213, 461);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(109, 33);
+            this.btnReset.TabIndex = 67;
+            this.btnReset.Text = "상품정보 초기화";
+            this.btnReset.UseVisualStyleBackColor = false;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
+            // 
             // frmProductSelect
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(1390, 609);
+            this.Controls.Add(this.btnReset);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.cbCate1);
             this.Controls.Add(this.label8);
@@ -415,5 +429,6 @@
         private System.Windows.Forms.ComboBox cbCate1;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ComboBox cbCate2;
+        private System.Windows.Forms.Button btnReset;
     }
 }

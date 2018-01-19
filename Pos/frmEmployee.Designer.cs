@@ -30,18 +30,18 @@
         {
             this.label3 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.tboxhourlyWage = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.tboxPhone = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.tboxPosition = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnSub = new System.Windows.Forms.Button();
             this.btnDel = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Button();
             this.tboxName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvEmployees = new System.Windows.Forms.DataGridView();
-            this.label5 = new System.Windows.Forms.Label();
-            this.tboxhourlyWage = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmployees)).BeginInit();
             this.SuspendLayout();
@@ -64,7 +64,7 @@
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.tboxPosition);
             this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.btnSub);
             this.panel1.Controls.Add(this.btnDel);
             this.panel1.Controls.Add(this.btnSearch);
             this.panel1.Controls.Add(this.tboxName);
@@ -74,6 +74,25 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(734, 190);
             this.panel1.TabIndex = 6;
+            // 
+            // tboxhourlyWage
+            // 
+            this.tboxhourlyWage.Font = new System.Drawing.Font("굴림", 18F);
+            this.tboxhourlyWage.Location = new System.Drawing.Point(173, 145);
+            this.tboxhourlyWage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tboxhourlyWage.Name = "tboxhourlyWage";
+            this.tboxhourlyWage.Size = new System.Drawing.Size(172, 35);
+            this.tboxhourlyWage.TabIndex = 14;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("굴림", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label5.Location = new System.Drawing.Point(82, 150);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(60, 24);
+            this.label5.TabIndex = 13;
+            this.label5.Text = "시급";
             // 
             // tboxPhone
             // 
@@ -113,19 +132,19 @@
             this.label4.TabIndex = 9;
             this.label4.Text = "직책";
             // 
-            // button1
+            // btnSub
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
-            this.button1.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold);
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(537, 10);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(182, 80);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "수정";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnSub.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
+            this.btnSub.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold);
+            this.btnSub.ForeColor = System.Drawing.Color.White;
+            this.btnSub.Location = new System.Drawing.Point(537, 10);
+            this.btnSub.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnSub.Name = "btnSub";
+            this.btnSub.Size = new System.Drawing.Size(182, 80);
+            this.btnSub.TabIndex = 5;
+            this.btnSub.Text = "수정";
+            this.btnSub.UseVisualStyleBackColor = false;
+            this.btnSub.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnDel
             // 
@@ -188,25 +207,6 @@
             this.dgvEmployees.TabIndex = 5;
             this.dgvEmployees.Click += new System.EventHandler(this.dgvEmployees_Click);
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("굴림", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label5.Location = new System.Drawing.Point(82, 150);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(60, 24);
-            this.label5.TabIndex = 13;
-            this.label5.Text = "시급";
-            // 
-            // tboxhourlyWage
-            // 
-            this.tboxhourlyWage.Font = new System.Drawing.Font("굴림", 18F);
-            this.tboxhourlyWage.Location = new System.Drawing.Point(173, 145);
-            this.tboxhourlyWage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tboxhourlyWage.Name = "tboxhourlyWage";
-            this.tboxhourlyWage.Size = new System.Drawing.Size(172, 35);
-            this.tboxhourlyWage.TabIndex = 14;
-            // 
             // frmEmployee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -217,6 +217,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dgvEmployees);
             this.Name = "frmEmployee";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmEmployee";
             this.Load += new System.EventHandler(this.frmEmployee_Load);
             this.panel1.ResumeLayout(false);
@@ -235,7 +236,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox tboxPosition;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnSub;
         private System.Windows.Forms.Button btnDel;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.TextBox tboxName;

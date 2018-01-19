@@ -22,7 +22,7 @@ namespace Pos
         {
             
             var con = DBcontroller.Instance();
-            using (var cmd = new SqlCommand("UserAllView", con))
+            using (var cmd = new SqlCommand("MemberAllView", con))
             {
                 con.Open();
                 cmd.CommandType = CommandType.StoredProcedure;               
@@ -36,13 +36,13 @@ namespace Pos
         }
         public void search()
         {
-            int UserNum = int.Parse(tboxUser.Text);
+            int MemberNum = int.Parse(tboxMember.Text);
             var con = DBcontroller.Instance();
-            using (var cmd = new SqlCommand("UserSerch", con))
+            using (var cmd = new SqlCommand("MemberSerch", con))
             {
                 con.Open();
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@userNum", UserNum);
+                cmd.Parameters.AddWithValue("@MemberNum", MemberNum);
                 var sdr = cmd.ExecuteNonQuery();
                 if (sdr.ToString() != "0")
                 {
@@ -58,17 +58,17 @@ namespace Pos
         public void submit()
         {
 
-            string userNum = tboxUser.Text;
+            string MemberNum = tboxMember.Text;
             string Name = tboxName.Text;
             string Phone =tboxPhone.Text;
 
             var con = DBcontroller.Instance();
-            using (var cmd = new SqlCommand("UserUpdate", con))
+            using (var cmd = new SqlCommand("MemberUpdate", con))
             {
                 con.Open();
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@userNum", userNum);
-                cmd.Parameters.AddWithValue("@userName", Name);
+                cmd.Parameters.AddWithValue("@memberNum", int.Parse(MemberNum));
+                cmd.Parameters.AddWithValue("@memberName", Name);
                 cmd.Parameters.AddWithValue("@phone", Phone);
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("수정이 완료 되었습니다.");
@@ -80,32 +80,32 @@ namespace Pos
         }
         public void dataset(SqlCommand cmd)
         {
-            dgvUser.DataSource = null;
+            dgvMember.DataSource = null;
             SqlDataAdapter sda = new SqlDataAdapter();
             sda.SelectCommand = cmd;
             DataSet ds = new DataSet();
             sda.Fill(ds);
-            dgvUser.DataSource = ds.Tables[0];
+            dgvMember.DataSource = ds.Tables[0];
 
         }
         public void delete()
         {
-            //string barcode = tboxBarcode.Text;
-            //var con = DBcontroller.Instance();
-            //var result = MessageBox.Show("삭제하시겠습니까?", "알림", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
-            //if (result == DialogResult.OK)
-            //{
-            //    using (var cmd = new SqlCommand("StockDelete", con))
-            //    {
-            //        con.Open();
-            //        cmd.Parameters.AddWithValue("@barcode", barcode);
-            //        cmd.CommandType = CommandType.StoredProcedure;
-            //        cmd.ExecuteNonQuery();
-            //        con.Close();
-            //    }
-            //}
-            //textBox();
-            //frmProductSelect_Load(null, null);
+            string memberNum = tboxMember.Text;
+            var con = DBcontroller.Instance();
+            var result = MessageBox.Show("삭제하시겠습니까?", "알림", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+            if (result == DialogResult.OK)
+            {
+                using (var cmd = new SqlCommand("MemberDelete", con))
+                {
+                    con.Open();
+                    cmd.Parameters.AddWithValue("@memberNum", int.Parse(memberNum));
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.ExecuteNonQuery();
+                    con.Close();
+                }
+            }
+            textBox();
+            frmCustInquiry_Load(null, null);
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
@@ -114,17 +114,17 @@ namespace Pos
         }
         private void textBox()
         {
-            if (dgvUser.RowCount != 0)
+            if (dgvMember.RowCount != 0)
             {
-                tboxUser.Text = dgvUser.CurrentRow.Cells[0].Value.ToString();
-                tboxName.Text = dgvUser.CurrentRow.Cells[1].Value.ToString();
-                tboxPhone.Text = dgvUser.CurrentRow.Cells[3].Value.ToString();
+                tboxMember.Text = dgvMember.CurrentRow.Cells[0].Value.ToString();
+                tboxName.Text = dgvMember.CurrentRow.Cells[1].Value.ToString();
+                tboxPhone.Text = dgvMember.CurrentRow.Cells[3].Value.ToString();
 
             }
             else
             {
                 MessageBox.Show("선택하신 제품이 없습니다.");
-                tboxUser.Text = "";
+                tboxMember.Text = "";
                 tboxName.Text = "";
                 tboxPhone.Text = "";                
                 return;
@@ -132,14 +132,20 @@ namespace Pos
 
         }
 
-        private void dgvUser_Click(object sender, EventArgs e)
-        {
-            textBox();
-        }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             submit();
+        }
+
+        private void dgvMember_Click(object sender, EventArgs e)
+        {
+            textBox();
+        }
+
+        private void btnDel_Click(object sender, EventArgs e)
+        {
+            delete();
         }
     }
 }

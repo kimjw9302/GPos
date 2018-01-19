@@ -29,7 +29,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dgvUser = new System.Windows.Forms.DataGridView();
+            this.dgvMember = new System.Windows.Forms.DataGridView();
             this.btnDel = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tboxPhone = new System.Windows.Forms.TextBox();
@@ -38,26 +38,26 @@
             this.label4 = new System.Windows.Forms.Label();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Button();
-            this.tboxUser = new System.Windows.Forms.TextBox();
+            this.tboxMember = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvUser)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMember)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // dgvUser
+            // dgvMember
             // 
-            this.dgvUser.AllowUserToAddRows = false;
-            this.dgvUser.AllowUserToDeleteRows = false;
-            this.dgvUser.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dgvUser.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvUser.Location = new System.Drawing.Point(28, 219);
-            this.dgvUser.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dgvUser.Name = "dgvUser";
-            this.dgvUser.RowTemplate.Height = 27;
-            this.dgvUser.Size = new System.Drawing.Size(734, 286);
-            this.dgvUser.TabIndex = 0;
-            this.dgvUser.Click += new System.EventHandler(this.dgvUser_Click);
+            this.dgvMember.AllowUserToAddRows = false;
+            this.dgvMember.AllowUserToDeleteRows = false;
+            this.dgvMember.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dgvMember.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMember.Location = new System.Drawing.Point(28, 219);
+            this.dgvMember.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgvMember.Name = "dgvMember";
+            this.dgvMember.RowTemplate.Height = 27;
+            this.dgvMember.Size = new System.Drawing.Size(734, 286);
+            this.dgvMember.TabIndex = 0;
+            this.dgvMember.Click += new System.EventHandler(this.dgvMember_Click);
             // 
             // btnDel
             // 
@@ -71,6 +71,7 @@
             this.btnDel.TabIndex = 1;
             this.btnDel.Text = "삭제";
             this.btnDel.UseVisualStyleBackColor = false;
+            this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
             // 
             // panel1
             // 
@@ -81,7 +82,7 @@
             this.panel1.Controls.Add(this.btnUpdate);
             this.panel1.Controls.Add(this.btnDel);
             this.panel1.Controls.Add(this.btnSearch);
-            this.panel1.Controls.Add(this.tboxUser);
+            this.panel1.Controls.Add(this.tboxMember);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(28, 26);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -155,14 +156,14 @@
             this.btnSearch.UseVisualStyleBackColor = false;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
-            // tboxUser
+            // tboxMember
             // 
-            this.tboxUser.Font = new System.Drawing.Font("굴림", 18F);
-            this.tboxUser.Location = new System.Drawing.Point(173, 10);
-            this.tboxUser.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tboxUser.Name = "tboxUser";
-            this.tboxUser.Size = new System.Drawing.Size(172, 35);
-            this.tboxUser.TabIndex = 2;
+            this.tboxMember.Font = new System.Drawing.Font("굴림", 18F);
+            this.tboxMember.Location = new System.Drawing.Point(173, 10);
+            this.tboxMember.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tboxMember.Name = "tboxMember";
+            this.tboxMember.Size = new System.Drawing.Size(172, 35);
+            this.tboxMember.TabIndex = 2;
             // 
             // label1
             // 
@@ -192,12 +193,13 @@
             this.ClientSize = new System.Drawing.Size(787, 556);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.dgvUser);
+            this.Controls.Add(this.dgvMember);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmCustInquiry";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmClientView";
             this.Load += new System.EventHandler(this.frmCustInquiry_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvUser)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMember)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -207,12 +209,12 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dgvUser;
+        private System.Windows.Forms.DataGridView dgvMember;
         private System.Windows.Forms.Button btnDel;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnSearch;
-        private System.Windows.Forms.TextBox tboxUser;
+        private System.Windows.Forms.TextBox tboxMember;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox tboxName;
         private System.Windows.Forms.Label label4;
