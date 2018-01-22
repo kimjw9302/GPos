@@ -33,6 +33,7 @@
             this.btnEmployeeRegister = new System.Windows.Forms.Button();
             this.btnEmpWork = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
+            this.btnAban = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnProductRegister
@@ -72,7 +73,7 @@
             this.btnEmployeeRegister.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEmployeeRegister.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold);
             this.btnEmployeeRegister.ForeColor = System.Drawing.Color.White;
-            this.btnEmployeeRegister.Location = new System.Drawing.Point(282, 141);
+            this.btnEmployeeRegister.Location = new System.Drawing.Point(42, 251);
             this.btnEmployeeRegister.Name = "btnEmployeeRegister";
             this.btnEmployeeRegister.Size = new System.Drawing.Size(114, 104);
             this.btnEmployeeRegister.TabIndex = 14;
@@ -87,7 +88,7 @@
             this.btnEmpWork.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEmpWork.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold);
             this.btnEmpWork.ForeColor = System.Drawing.Color.White;
-            this.btnEmpWork.Location = new System.Drawing.Point(402, 141);
+            this.btnEmpWork.Location = new System.Drawing.Point(162, 251);
             this.btnEmpWork.Name = "btnEmpWork";
             this.btnEmpWork.Size = new System.Drawing.Size(114, 104);
             this.btnEmpWork.TabIndex = 15;
@@ -98,7 +99,7 @@
             // btnClose
             // 
             this.btnClose.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnClose.Location = new System.Drawing.Point(496, 12);
+            this.btnClose.Location = new System.Drawing.Point(333, 47);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(50, 47);
             this.btnClose.TabIndex = 16;
@@ -106,13 +107,29 @@
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
+            // btnAban
+            // 
+            this.btnAban.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
+            this.btnAban.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
+            this.btnAban.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAban.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold);
+            this.btnAban.ForeColor = System.Drawing.Color.White;
+            this.btnAban.Location = new System.Drawing.Point(282, 141);
+            this.btnAban.Name = "btnAban";
+            this.btnAban.Size = new System.Drawing.Size(114, 104);
+            this.btnAban.TabIndex = 17;
+            this.btnAban.Text = "폐기 등록";
+            this.btnAban.UseVisualStyleBackColor = false;
+            this.btnAban.Click += new System.EventHandler(this.btnAban_Click);
+            // 
             // frmManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(558, 382);
+            this.ClientSize = new System.Drawing.Size(435, 404);
             this.ControlBox = false;
+            this.Controls.Add(this.btnAban);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnEmpWork);
             this.Controls.Add(this.btnEmployeeRegister);
@@ -131,5 +148,6 @@
         private System.Windows.Forms.Button btnEmployeeRegister;
         private System.Windows.Forms.Button btnEmpWork;
         private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.Button btnAban;
     }
 }

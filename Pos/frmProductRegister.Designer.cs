@@ -99,7 +99,6 @@
             // txtBarcode
             // 
             this.txtBarcode.Location = new System.Drawing.Point(123, 75);
-            this.txtBarcode.Mask = "9999999999999";
             this.txtBarcode.Name = "txtBarcode";
             this.txtBarcode.PromptChar = ' ';
             this.txtBarcode.Size = new System.Drawing.Size(300, 33);

@@ -50,6 +50,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DBcontroller.cs" />
+    <Compile Include="frmAban.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAban.Designer.cs">
+      <DependentUpon>frmAban.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAbanView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAbanView.Designer.cs">
+      <DependentUpon>frmAbanView.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmAddrSearch.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -250,6 +262,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Sell.cs" />
+    <EmbeddedResource Include="frmAban.resx">
+      <DependentUpon>frmAban.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAbanView.resx">
+      <DependentUpon>frmAbanView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmAddrSearch.resx">
       <DependentUpon>frmAddrSearch.cs</DependentUpon>
     </EmbeddedResource>

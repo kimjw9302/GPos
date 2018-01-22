@@ -40,10 +40,9 @@
             this.btnStockSelect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnStockSelect.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold);
             this.btnStockSelect.ForeColor = System.Drawing.Color.White;
-            this.btnStockSelect.Location = new System.Drawing.Point(39, 84);
-            this.btnStockSelect.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnStockSelect.Location = new System.Drawing.Point(34, 67);
             this.btnStockSelect.Name = "btnStockSelect";
-            this.btnStockSelect.Size = new System.Drawing.Size(130, 130);
+            this.btnStockSelect.Size = new System.Drawing.Size(114, 104);
             this.btnStockSelect.TabIndex = 15;
             this.btnStockSelect.Text = "이벤트 등록\r\n및 조회";
             this.btnStockSelect.UseVisualStyleBackColor = false;
@@ -56,10 +55,9 @@
             this.btnLog.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLog.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold);
             this.btnLog.ForeColor = System.Drawing.Color.White;
-            this.btnLog.Location = new System.Drawing.Point(176, 84);
-            this.btnLog.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnLog.Location = new System.Drawing.Point(154, 67);
             this.btnLog.Name = "btnLog";
-            this.btnLog.Size = new System.Drawing.Size(130, 130);
+            this.btnLog.Size = new System.Drawing.Size(114, 104);
             this.btnLog.TabIndex = 14;
             this.btnLog.Text = "로그";
             this.btnLog.UseVisualStyleBackColor = false;
@@ -72,10 +70,9 @@
             this.btnMail.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMail.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold);
             this.btnMail.ForeColor = System.Drawing.Color.White;
-            this.btnMail.Location = new System.Drawing.Point(313, 84);
-            this.btnMail.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnMail.Location = new System.Drawing.Point(274, 67);
             this.btnMail.Name = "btnMail";
-            this.btnMail.Size = new System.Drawing.Size(130, 130);
+            this.btnMail.Size = new System.Drawing.Size(114, 104);
             this.btnMail.TabIndex = 16;
             this.btnMail.Text = "관리자\r\n문의메일";
             this.btnMail.UseVisualStyleBackColor = false;
@@ -83,14 +80,13 @@
             // 
             // frmEtc
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(495, 290);
+            this.ClientSize = new System.Drawing.Size(430, 223);
             this.Controls.Add(this.btnMail);
             this.Controls.Add(this.btnStockSelect);
             this.Controls.Add(this.btnLog);
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frmEtc";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmEtc";

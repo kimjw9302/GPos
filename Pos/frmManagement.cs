@@ -48,10 +48,16 @@ namespace Pos
             this.Visible = false;
             new frmEmployeeSchedule().ShowDialog();
         }
+        private void btnAban_Click(object sender, EventArgs e)
+        {
+            new frmAbanView().ShowDialog();
+        }
 
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+
+        
     }
 }
