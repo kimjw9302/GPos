@@ -162,5 +162,6 @@ namespace Pos
         {
             new frmCustRegister().ShowDialog();
         }
+
     }
 }

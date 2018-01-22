@@ -15,8 +15,8 @@ namespace Pos
     {
         SqlDataAdapter adapter;
         DataSet ds;
-        DataTable emp, joinTable, conditionView;
-        DataRowCollection rows, viewRows;
+        DataTable emp, conditionView;
+        DataRowCollection rows;
         SqlConnection con;
 
         public frmEmployeeSchedule()
@@ -26,30 +26,27 @@ namespace Pos
 
         private void frmEmployeeSchedule_Load(object sender, EventArgs e)
         {
+            TableMake();
             dtpStartDate.Value = DateTime.Now;
+            dtpEndDate.Value = DateTime.Now;
 
             con = DBcontroller.Instance();
-            con.Open();
+
             using (var cmd = new SqlCommand("GetEmployeeName", con))
             {
+                con.Open();
                 adapter = new SqlDataAdapter(cmd);
                 ds = new DataSet();
                 adapter.SelectCommand = cmd;
                 adapter.Fill(ds);
 
                 emp = ds.Tables[0];
-                joinTable = ds.Tables[1];
-                
                 rows = emp.Rows;
-                viewRows = joinTable.Rows;
 
-                //combobox에 직원이름 추가
                 foreach (DataRow item in rows)
                 {
-                    cbEmp.Items.Add(item[1].ToString());
+                    cbEmp.Items.Add(item[0]);
                 }
-                
-                dgvWorkView.DataSource = ds.Tables[1];
                 
             }
             con.Close();
@@ -57,27 +54,64 @@ namespace Pos
 
         private void btnView_Click(object sender, EventArgs e)
         {
+            dgvWorkView.Refresh();
             con = DBcontroller.Instance();
-            con.Open();
-            using (var cmd = new SqlCommand("EmployeeSchedule", con))
+            //tab 컨트롤 눌렀을 때마다 다른거 조회
+            if (tabControl1.SelectedIndex == 0)
             {
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@startDate", dtpStartDate.Value.ToShortDateString());
-                cmd.Parameters.AddWithValue("@endDate", dtpEndDate.Value.ToShortDateString());
-                cmd.Parameters.AddWithValue("@empName", cbEmp.SelectedItem);
+                using (var cmd = new SqlCommand("EmployeeSchedule", con))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@startDate", dtpStartDate.Value.ToShortDateString());
+                    cmd.Parameters.AddWithValue("@endDate", dtpEndDate.Value.ToShortDateString());
+                    con.Open();
+                    adapter = new SqlDataAdapter(cmd);
+                    ds = new DataSet();
+                    adapter.SelectCommand = cmd;
+                    adapter.Fill(ds);
 
-                adapter = new SqlDataAdapter(cmd);
-                ds = new DataSet();
-                adapter.SelectCommand = cmd;
-                adapter.Fill(ds);
-                
-                conditionView = ds.Tables[0];
+                    conditionView = ds.Tables[0];
+                    
+                    dgvWorkView.DataSource = conditionView;
+                }
+                con.Close();
 
-                dgvWorkView.Refresh();
-                dgvWorkView.DataSource = conditionView;
             }
+            else if(tabControl1.SelectedIndex == 1)
+            {
+                using (var cmd = new SqlCommand("EmpNameSchedule", con))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@empName", cbEmp.SelectedItem);
 
-            con.Close();
+                    adapter = new SqlDataAdapter(cmd);
+                    ds = new DataSet();
+                    adapter.SelectCommand = cmd;
+                    adapter.Fill(ds);
+
+                    conditionView = ds.Tables[0];
+                    
+                    dgvWorkView.DataSource = conditionView;
+                }
+                con.Close();
+            }
+          
+        }
+
+        private void TableMake()
+        {
+            conditionView = new DataTable();
+
+            conditionView.Columns.Add("직원명");
+            conditionView.Columns.Add("출근날짜");
+            conditionView.Columns.Add("출근시간");
+            conditionView.Columns.Add("퇴근날짜");
+            conditionView.Columns.Add("퇴근시간");
+            conditionView.Columns.Add("총근무시간");
+            conditionView.Columns.Add("일급");
+
+            dgvWorkView.DataSource = conditionView;
+
         }
         private void btnClose_Click(object sender, EventArgs e)
         {

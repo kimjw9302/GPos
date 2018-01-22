@@ -78,7 +78,7 @@ namespace Pos
                         {
 
                             ccmd.CommandType = CommandType.StoredProcedure;
-                            ccmd.Parameters.AddWithValue("@bNum", exId);
+ //
                             ccmd.Parameters.AddWithValue("@aNum", CurrentIID);
                             ccmd.Parameters.AddWithValue("@sdate", sdate.Date);
                             ccmd.Parameters.AddWithValue("@stime", sdate.TimeOfDay);

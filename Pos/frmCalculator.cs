@@ -12,9 +12,20 @@ namespace Pos
 {
     public partial class frmCalculator : Form
     {
-        public frmCalculator()
+        private static frmCalculator fc = null;
+        private  frmCalculator()
         {
             InitializeComponent();
+           
+        }
+        static public frmCalculator Instance()
+        {
+
+            if (fc == null)
+            {
+                fc = new frmCalculator();
+            }
+            return fc;
         }
     }
 }

@@ -16,9 +16,12 @@ namespace Pos
 
     public partial class frmCustRegister : Form, ISubmit
     {
+        frmAddrSearch addrSearch;
         private SqlConnection con;
         private int userRandomNum = new Random().Next(10000000, 99999999);
         private string searchResult;
+        string addr;
+        bool temp =false;
 
         public string SearchResult
         {
@@ -33,6 +36,7 @@ namespace Pos
 
         private void frmCustRegister_Load(object sender, EventArgs e)
         {
+            //콤보박스 데이터 집어넣기
             rbM.Checked = true;
             txtUserNum.Text = userRandomNum.ToString();
             for (int i = 1900; i <= DateTime.Now.Year; i++)
@@ -73,17 +77,17 @@ namespace Pos
         /// <returns></returns>
         private bool CheckPK()
         {
-            string userNum = this.txtUserNum.Text.Trim().Replace(" ", "");
-            string userPhone = this.cbPhone1.Text + txtPhone2.Text + txtPhone3.Text;
+            string memberNum = this.txtUserNum.Text.Trim().Replace(" ", "");
+            string memberPhone = this.cbPhone1.Text + txtPhone2.Text + txtPhone3.Text;
 
             con = DBcontroller.Instance();
 
-            using (var cmd = new SqlCommand("UserCheckPK", con))
+            using (var cmd = new SqlCommand("MemberCheckPK", con))
             {
 
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@userNum", userNum);
-                cmd.Parameters.AddWithValue("@phone", userPhone);
+                cmd.Parameters.AddWithValue("@memberNum", memberNum);
+                cmd.Parameters.AddWithValue("@phone", memberPhone);
                 con.Open();
                 var sdr = cmd.ExecuteScalar();
 
@@ -113,6 +117,7 @@ namespace Pos
                 }
                 else
                 {
+                    con.Close();
                     return true;
                 }
             }
@@ -139,32 +144,30 @@ namespace Pos
 
             if (ValidityCheck() && CheckPK())
             {
-                string userNum = txtUserNum.Text;
-                string userName = txtUserName.Text.Trim().Replace(" ", "");
+                string memberNum = txtUserNum.Text;
+                string memberName = txtUserName.Text.Trim().Replace(" ", "");
                 string birth = cbYear.Text + "-" + cbMonth.Text + "-" + cbDay.Text;
                 string phone = cbPhone1.Text + txtPhone2.Text + txtPhone3.Text;
                 string address = txtAddress.Text + txtDetailAddress.Text;
                 string passWord = cbMonth.Text + cbDay.Text;
-                int point = 0;
                 string gender = "남자";
                 if (rbF.Checked == true)
                 {
                     gender = "여자";
                 }
-                
+
                 var con = DBcontroller.Instance();
 
 
-                using (var cmd = new SqlCommand("UserRegister", con))
+                using (var cmd = new SqlCommand("MemberRegister", con))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@userNum", userNum);
-                    cmd.Parameters.AddWithValue("@userName", userName);
+                    cmd.Parameters.AddWithValue("@memberNum", memberNum);
+                    cmd.Parameters.AddWithValue("@memberName", memberName);
                     cmd.Parameters.AddWithValue("@birth", birth);
                     cmd.Parameters.AddWithValue("@phone", phone);
                     cmd.Parameters.AddWithValue("@address", address);
                     cmd.Parameters.AddWithValue("@password", passWord);
-                    cmd.Parameters.AddWithValue("@point", point);
                     cmd.Parameters.AddWithValue("@gender", gender);
 
                     con.Open();
@@ -190,31 +193,36 @@ namespace Pos
 
         private void btnAddrSearch_Click(object sender, EventArgs e)
         {
-            string addr = this.txtAddress.Text.Trim();
-            
+            addr = this.txtAddress.Text.Trim();
+
             if (addr == "")
             {
                 MessageBox.Show(" 주소를 입력해주세요. ", "알림", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }else if (addr.Length > 0 )
+            }
+            else if (addr.Length > 0)
             {
+
                 if(SqlCheck(addr))
                 {
-                    MessageBox.Show(addr + " 입력 불가", "알림", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(addr + "는 입력 할 수없습니다.", "알림", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else if(SpecialCheck(addr))
                 {
-                    MessageBox.Show(addr + " 입력 불가", "알림", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                    MessageBox.Show(addr + "는 입력 할 수없습니다.", "알림", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
                 }
-                else
-                {
-                    frmAddrSearch addrSearch = new frmAddrSearch(addr);
+                else{
+
+                    addrSearch = new frmAddrSearch(addr);
                     addrSearch.Owner = this;
                     addrSearch.ShowDialog();
                     txtAddress.Text = SearchResult;
+                    
                 }
-                
+
             }
-            
+
         }
 
         private bool SqlCheck(string addr)
@@ -227,11 +235,14 @@ namespace Pos
 
             foreach (string s in sPattern)
             {
-                Regex.IsMatch(addr, s, RegexOptions.IgnoreCase);
-                break;
+                if (Regex.IsMatch(addr, s, RegexOptions.IgnoreCase))
+                {
+                    temp = true;
+                    break;
+                }
             }
-            return true;
-          
+            return temp;
+
         }
 
         //특수문자 제거
@@ -239,10 +250,14 @@ namespace Pos
         {
             string str = @"[~!@\#$%^&*\()\=+|\\/:;?""<>']";
             Regex rex = new Regex(str);
-            rex.IsMatch(addr);
-                
-            return true;
+            //MessageBox.Show(" 특스문자 " +rex.IsMatch(addr).ToString());
+            return rex.IsMatch(addr);
+            
         }
 
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

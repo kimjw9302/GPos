@@ -32,6 +32,7 @@
             this.listAddr = new System.Windows.Forms.ListBox();
             this.btnOk = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnclose = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -48,7 +49,7 @@
             this.listAddr.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.listAddr.FormattingEnabled = true;
             this.listAddr.ItemHeight = 25;
-            this.listAddr.Location = new System.Drawing.Point(18, 104);
+            this.listAddr.Location = new System.Drawing.Point(18, 135);
             this.listAddr.Name = "listAddr";
             this.listAddr.Size = new System.Drawing.Size(542, 404);
             this.listAddr.TabIndex = 3;
@@ -76,22 +77,40 @@
             this.groupBox1.Controls.Add(this.txtAddr);
             this.groupBox1.Controls.Add(this.listAddr);
             this.groupBox1.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Location = new System.Drawing.Point(12, 71);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(583, 532);
+            this.groupBox1.Size = new System.Drawing.Size(583, 589);
             this.groupBox1.TabIndex = 53;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "주소 검색";
+            // 
+            // btnclose
+            // 
+            this.btnclose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
+            this.btnclose.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnclose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnclose.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnclose.ForeColor = System.Drawing.Color.White;
+            this.btnclose.Location = new System.Drawing.Point(489, 11);
+            this.btnclose.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnclose.Name = "btnclose";
+            this.btnclose.Size = new System.Drawing.Size(94, 55);
+            this.btnclose.TabIndex = 53;
+            this.btnclose.Text = "닫기";
+            this.btnclose.UseVisualStyleBackColor = false;
+            this.btnclose.Click += new System.EventHandler(this.btnclose_Click);
             // 
             // frmAddrSearch
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(607, 556);
+            this.ClientSize = new System.Drawing.Size(610, 672);
+            this.ControlBox = false;
+            this.Controls.Add(this.btnclose);
             this.Controls.Add(this.groupBox1);
             this.Name = "frmAddrSearch";
-            this.Text = "frmAddrSearch";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.frmAddrSearch_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -105,5 +124,6 @@
         private System.Windows.Forms.ListBox listAddr;
         private System.Windows.Forms.Button btnOk;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button btnclose;
     }
 }
