@@ -17,6 +17,8 @@ namespace Pos
         static private int sale = 0;
         static private decimal changemoney = 0;
         static private int savePoint = 0;
+        static private string cardNumber = "0";
+        static private int empId = 0;
         private Sell()
         {
 
@@ -41,6 +43,8 @@ namespace Pos
              sale = 0;
             changemoney = 0;
              savePoint = 0;
+            cardNumber = "0";
+            empId = 0;
         }
 
         public decimal Cardmoeny { get => cardmoeny; set => cardmoeny = value; }
@@ -52,5 +56,7 @@ namespace Pos
         public int Sale { get => sale; set => sale = value; }
         public decimal Changemoney { get => changemoney; set => changemoney = value; }
         public int SavePoint { get => savePoint; set => savePoint = value; }
+        public string CardNumber { get => cardNumber; set => cardNumber = value; }
+        public  int EmpId { get => empId; set => empId = value; }
     }
 }

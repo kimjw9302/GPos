@@ -35,9 +35,8 @@ namespace Pos
             {
 
                 con = DBcontroller.Instance();
-                MessageBox.Show("1" + s.Cashmoney);
                 s.Cashmoney = s.Cashmoney + int.Parse(tboxReceive.Text);
-                MessageBox.Show("2" + s.Cashmoney);
+
                 fm.T1.Text = "0";
                 fm.T2.Text = "0"; //payList
                 fm.T3.Text = "0";
@@ -66,6 +65,8 @@ namespace Pos
                     cmd.Parameters.AddWithValue("@receiveCard", s.Cardmoeny);
                     cmd.Parameters.AddWithValue("@receivePoint", s.Pointmoney);
                     cmd.Parameters.AddWithValue("@note", s.Sale.ToString());
+                    cmd.Parameters.AddWithValue("@savePoint",s.SavePoint);
+                    cmd.Parameters.AddWithValue("@empNum", s.EmpId);
                     cmd.Parameters.AddWithValue("@card", DBNull.Value);
                     cmd.ExecuteNonQuery();
                 }

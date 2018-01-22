@@ -62,16 +62,15 @@
             this.label1.Font = new System.Drawing.Font("맑은 고딕", 18F, System.Drawing.FontStyle.Bold);
             this.label1.Location = new System.Drawing.Point(66, 49);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(108, 41);
+            this.label1.Size = new System.Drawing.Size(138, 41);
             this.label1.TabIndex = 0;
-            this.label1.Text = "총금액";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.label1.Text = "결제금액";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("맑은 고딕", 18F, System.Drawing.FontStyle.Bold);
-            this.label3.Location = new System.Drawing.Point(66, 107);
+            this.label3.Location = new System.Drawing.Point(66, 112);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(138, 41);
             this.label3.TabIndex = 2;
@@ -81,7 +80,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("맑은 고딕", 18F, System.Drawing.FontStyle.Bold);
-            this.label4.Location = new System.Drawing.Point(66, 173);
+            this.label4.Location = new System.Drawing.Point(66, 178);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(138, 41);
             this.label4.TabIndex = 3;
@@ -91,7 +90,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("맑은 고딕", 18F, System.Drawing.FontStyle.Bold);
-            this.label5.Location = new System.Drawing.Point(66, 235);
+            this.label5.Location = new System.Drawing.Point(66, 240);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(138, 41);
             this.label5.TabIndex = 4;
@@ -111,18 +110,19 @@
             // tboxCardNum
             // 
             this.tboxCardNum.Font = new System.Drawing.Font("굴림", 18F);
-            this.tboxCardNum.Location = new System.Drawing.Point(200, 102);
+            this.tboxCardNum.Location = new System.Drawing.Point(200, 107);
             this.tboxCardNum.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tboxCardNum.Multiline = true;
             this.tboxCardNum.Name = "tboxCardNum";
             this.tboxCardNum.Size = new System.Drawing.Size(249, 52);
-            this.tboxCardNum.TabIndex = 7;
+            this.tboxCardNum.TabIndex = 1;
             this.tboxCardNum.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.tboxCardNum.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tboxCardNum_KeyDown);
             // 
             // tboxYear
             // 
             this.tboxYear.Font = new System.Drawing.Font("굴림", 18F);
-            this.tboxYear.Location = new System.Drawing.Point(200, 166);
+            this.tboxYear.Location = new System.Drawing.Point(200, 171);
             this.tboxYear.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tboxYear.Multiline = true;
             this.tboxYear.Name = "tboxYear";
@@ -132,7 +132,7 @@
             // tboxMonth
             // 
             this.tboxMonth.Font = new System.Drawing.Font("굴림", 18F);
-            this.tboxMonth.Location = new System.Drawing.Point(315, 167);
+            this.tboxMonth.Location = new System.Drawing.Point(315, 172);
             this.tboxMonth.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tboxMonth.Multiline = true;
             this.tboxMonth.Name = "tboxMonth";
@@ -142,18 +142,18 @@
             // tboxIMonth
             // 
             this.tboxIMonth.Font = new System.Drawing.Font("굴림", 18F);
-            this.tboxIMonth.Location = new System.Drawing.Point(200, 231);
+            this.tboxIMonth.Location = new System.Drawing.Point(200, 236);
             this.tboxIMonth.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tboxIMonth.Multiline = true;
             this.tboxIMonth.Name = "tboxIMonth";
             this.tboxIMonth.Size = new System.Drawing.Size(61, 52);
-            this.tboxIMonth.TabIndex = 10;
+            this.tboxIMonth.TabIndex = 2;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("맑은 고딕", 18F, System.Drawing.FontStyle.Bold);
-            this.label6.Location = new System.Drawing.Point(378, 173);
+            this.label6.Location = new System.Drawing.Point(378, 178);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(48, 41);
             this.label6.TabIndex = 11;
@@ -163,7 +163,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("맑은 고딕", 18F, System.Drawing.FontStyle.Bold);
-            this.label7.Location = new System.Drawing.Point(267, 173);
+            this.label7.Location = new System.Drawing.Point(267, 178);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(48, 41);
             this.label7.TabIndex = 12;
@@ -364,32 +364,34 @@
             // 
             this.btnCancle.BackColor = System.Drawing.Color.Snow;
             this.btnCancle.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold);
-            this.btnCancle.Location = new System.Drawing.Point(280, 314);
+            this.btnCancle.Location = new System.Drawing.Point(280, 319);
             this.btnCancle.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnCancle.Name = "btnCancle";
             this.btnCancle.Size = new System.Drawing.Size(205, 84);
             this.btnCancle.TabIndex = 149;
             this.btnCancle.Text = "취소";
             this.btnCancle.UseVisualStyleBackColor = false;
+            this.btnCancle.Click += new System.EventHandler(this.btnCancle_Click);
             // 
             // btnPay
             // 
             this.btnPay.BackColor = System.Drawing.Color.Snow;
             this.btnPay.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold);
-            this.btnPay.Location = new System.Drawing.Point(28, 314);
+            this.btnPay.Location = new System.Drawing.Point(28, 319);
             this.btnPay.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnPay.Name = "btnPay";
             this.btnPay.Size = new System.Drawing.Size(211, 84);
             this.btnPay.TabIndex = 148;
             this.btnPay.Text = "결제";
             this.btnPay.UseVisualStyleBackColor = false;
+            this.btnPay.Click += new System.EventHandler(this.btnPay_Click);
             // 
             // frmCard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(849, 442);
+            this.ClientSize = new System.Drawing.Size(849, 433);
             this.Controls.Add(this.btnCancle);
             this.Controls.Add(this.btnPay);
             this.Controls.Add(this.btn7);
