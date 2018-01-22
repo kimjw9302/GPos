@@ -20,7 +20,6 @@ C:\Users\gd3-1\Documents\GPos\Pos\obj\Debug\Pos.frmMail.resources
 C:\Users\gd3-1\Documents\GPos\Pos\obj\Debug\Pos.frmMain.resources
 C:\Users\gd3-1\Documents\GPos\Pos\obj\Debug\Pos.frmManagement.resources
 C:\Users\gd3-1\Documents\GPos\Pos\obj\Debug\Pos.frmNotice.resources
-C:\Users\gd3-1\Documents\GPos\Pos\obj\Debug\Pos.frmOrder.resources
 C:\Users\gd3-1\Documents\GPos\Pos\obj\Debug\Pos.frmOrderRequest.resources
 C:\Users\gd3-1\Documents\GPos\Pos\obj\Debug\Pos.frmPayment.resources
 C:\Users\gd3-1\Documents\GPos\Pos\obj\Debug\Pos.frmPoint.resources
@@ -35,3 +34,4 @@ C:\Users\gd3-1\Documents\GPos\Pos\obj\Debug\Pos.csproj.GenerateResource.Cache
 C:\Users\gd3-1\Documents\GPos\Pos\obj\Debug\Pos.csproj.CoreCompileInputs.cache
 C:\Users\gd3-1\Documents\GPos\Pos\obj\Debug\Pos.exe
 C:\Users\gd3-1\Documents\GPos\Pos\obj\Debug\Pos.pdb
+C:\Users\gd3-1\Documents\GPos\Pos\obj\Debug\Pos.frmQua.resources
