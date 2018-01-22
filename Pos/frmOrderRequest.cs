@@ -14,7 +14,7 @@ namespace Pos
         DataTable cate1Table, cateF, cateNF, placeTable, productTable, orderTable,  detailTable;
         DataSet ds;
         DataRowCollection c1Row, cFRow, cNFRow, pRow;
-        DataTable dt;
+        DataTable dt =null;
         int noIndex = 1, qua = 1;
         static int quaTemp;
         static decimal payTemp;
@@ -508,22 +508,27 @@ namespace Pos
                 }
             }
 
-            foreach (DataRow item in dt.Rows)
+            if (dt != null)
             {
-                using (var cmd = new SqlCommand("proSend", con))
+                foreach (DataRow item in dt.Rows)
                 {
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@barcode", item[0]);
+                    using (var cmd = new SqlCommand("proSend", con))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@barcode", item[0]);
 
-                    adapter = new SqlDataAdapter();
-                    ds = new DataSet();
-                    adapter.SelectCommand = cmd;
-                    adapter.Fill(ds);
+                        adapter = new SqlDataAdapter();
+                        ds = new DataSet();
+                        adapter.SelectCommand = cmd;
+                        adapter.Fill(ds);
 
-                    productTable = ds.Tables[0];
-                    dgvProducts.DataSource = productTable;
+                        productTable = ds.Tables[0];
+                        dgvProducts.DataSource = productTable;
+                    }
                 }
             }
+            
+           
             con.Close();
             
         }

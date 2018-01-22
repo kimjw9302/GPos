@@ -28,14 +28,37 @@
         /// </summary>
         private void InitializeComponent()
         {
+
+           
+        
+
             this.label10 = new System.Windows.Forms.Label();
+
+         
+   
             this.btnClose = new System.Windows.Forms.Button();
+
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.button4 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.btnPNameSearch = new System.Windows.Forms.Button();
             this.txtProName = new System.Windows.Forms.TextBox();
+
+
+            //this.btnSeven = new System.Windows.Forms.Button();
+            //this.btnDown = new System.Windows.Forms.Button();
+            //this.btnUp = new System.Windows.Forms.Button();
+            //this.btnZero = new System.Windows.Forms.Button();
+            //this.btnThree = new System.Windows.Forms.Button();
+            //this.btnTwo = new System.Windows.Forms.Button();
+            //this.btnOne = new System.Windows.Forms.Button();
+            //this.btnSix = new System.Windows.Forms.Button();
+            //this.btnFive = new System.Windows.Forms.Button();
+            //this.btnFour = new System.Windows.Forms.Button();
+            //this.btnNine = new System.Windows.Forms.Button();
+            //this.btnEight = new System.Windows.Forms.Button();
+
             this.btnProDel = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -85,6 +108,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvSpec)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
+           
             // 
             // label10
             // 
@@ -96,6 +120,39 @@
             this.label10.Size = new System.Drawing.Size(34, 17);
             this.label10.TabIndex = 60;
             this.label10.Text = "◀▶";
+
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 3;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 74.38271F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.61728F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 212F));
+            this.tableLayoutPanel1.Controls.Add(this.button3, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.txtTotalPay, 2, 0);
+            this.tableLayoutPanel1.Controls.Add(this.txtTotalQua, 1, 0);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(614, 611);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 1;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(497, 46);
+            this.tableLayoutPanel1.TabIndex = 63;
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
+            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("맑은 고딕", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button3.ForeColor = System.Drawing.SystemColors.Control;
+            this.button3.Location = new System.Drawing.Point(0, 0);
+            this.button3.Margin = new System.Windows.Forms.Padding(0);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(211, 46);
+            this.button3.TabIndex = 85;
+            this.button3.Text = "총수량/ 총금액";
+            this.button3.UseVisualStyleBackColor = false;
             // 
             // btnClose
             // 
@@ -693,6 +750,7 @@
             this.date.TabIndex = 0;
             this.date.ValueChanged += new System.EventHandler(this.date_ValueChanged);
             // 
+
             // frmOrderRequest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);

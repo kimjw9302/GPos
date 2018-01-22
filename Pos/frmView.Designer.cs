@@ -32,6 +32,7 @@
             this.btnSell = new System.Windows.Forms.Button();
             this.btnRevenue = new System.Windows.Forms.Button();
             this.btnStockSelect = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnCustInquiry
@@ -94,12 +95,28 @@
             this.btnStockSelect.UseVisualStyleBackColor = false;
             this.btnStockSelect.Click += new System.EventHandler(this.btnStockSelect_Click);
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold);
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(349, 132);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(114, 104);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "직원 조회";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // frmView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(442, 354);
+            this.ClientSize = new System.Drawing.Size(522, 364);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnStockSelect);
             this.Controls.Add(this.btnRevenue);
             this.Controls.Add(this.btnSell);
@@ -116,5 +133,6 @@
         private System.Windows.Forms.Button btnSell;
         private System.Windows.Forms.Button btnRevenue;
         private System.Windows.Forms.Button btnStockSelect;
+        private System.Windows.Forms.Button button1;
     }
 }
