@@ -100,7 +100,8 @@ namespace Pos
                 {
                     this.Visible = true;
                     con.Close();
-                    frmNotice fn = new frmNotice(ds.Tables[0]);
+                    frmNotice fn = new frmNotice(ds.Tables[0], empId);
+                    fn.Owner = this;
                     fn.ShowDialog();
                 }
 
@@ -191,7 +192,8 @@ namespace Pos
         private void btnOrder_Click(object sender, EventArgs e)
         {
             //지혜 - 수정
-            new frmOrder(empId).ShowDialog();
+            new frmOrderRequest(empId).ShowDialog();
+            //new frmOrder(empId).ShowDialog();
         }
         private void btnEtc_Click(object sender, EventArgs e)
         {
