@@ -29,31 +29,35 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvMember = new System.Windows.Forms.DataGridView();
             this.btnDel = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.tboxPhone = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.tboxName = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tboxMember = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMember)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dgvMember
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(28, 219);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 27;
-            this.dataGridView1.Size = new System.Drawing.Size(734, 286);
-            this.dataGridView1.TabIndex = 0;
+            this.dgvMember.AllowUserToAddRows = false;
+            this.dgvMember.AllowUserToDeleteRows = false;
+            this.dgvMember.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dgvMember.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMember.Location = new System.Drawing.Point(28, 219);
+            this.dgvMember.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgvMember.Name = "dgvMember";
+            this.dgvMember.RowTemplate.Height = 27;
+            this.dgvMember.Size = new System.Drawing.Size(734, 286);
+            this.dgvMember.TabIndex = 0;
+            this.dgvMember.Click += new System.EventHandler(this.dgvMember_Click);
             // 
             // btnDel
             // 
@@ -67,17 +71,18 @@
             this.btnDel.TabIndex = 1;
             this.btnDel.Text = "삭제";
             this.btnDel.UseVisualStyleBackColor = false;
+            this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.textBox3);
+            this.panel1.Controls.Add(this.tboxPhone);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.textBox2);
+            this.panel1.Controls.Add(this.tboxName);
             this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.btnUpdate);
             this.panel1.Controls.Add(this.btnDel);
             this.panel1.Controls.Add(this.btnSearch);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.tboxMember);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(28, 26);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -85,14 +90,14 @@
             this.panel1.Size = new System.Drawing.Size(734, 142);
             this.panel1.TabIndex = 2;
             // 
-            // textBox3
+            // tboxPhone
             // 
-            this.textBox3.Font = new System.Drawing.Font("굴림", 18F);
-            this.textBox3.Location = new System.Drawing.Point(173, 95);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(172, 35);
-            this.textBox3.TabIndex = 12;
+            this.tboxPhone.Font = new System.Drawing.Font("굴림", 18F);
+            this.tboxPhone.Location = new System.Drawing.Point(173, 95);
+            this.tboxPhone.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tboxPhone.Name = "tboxPhone";
+            this.tboxPhone.Size = new System.Drawing.Size(172, 35);
+            this.tboxPhone.TabIndex = 12;
             // 
             // label2
             // 
@@ -104,14 +109,14 @@
             this.label2.TabIndex = 11;
             this.label2.Text = "전화번호";
             // 
-            // textBox2
+            // tboxName
             // 
-            this.textBox2.Font = new System.Drawing.Font("굴림", 18F);
-            this.textBox2.Location = new System.Drawing.Point(173, 52);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(172, 35);
-            this.textBox2.TabIndex = 10;
+            this.tboxName.Font = new System.Drawing.Font("굴림", 18F);
+            this.tboxName.Location = new System.Drawing.Point(173, 52);
+            this.tboxName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tboxName.Name = "tboxName";
+            this.tboxName.Size = new System.Drawing.Size(172, 35);
+            this.tboxName.TabIndex = 10;
             // 
             // label4
             // 
@@ -123,18 +128,19 @@
             this.label4.TabIndex = 9;
             this.label4.Text = "이름";
             // 
-            // button1
+            // btnUpdate
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
-            this.button1.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold);
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(537, 6);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(182, 62);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "수정";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
+            this.btnUpdate.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold);
+            this.btnUpdate.ForeColor = System.Drawing.Color.White;
+            this.btnUpdate.Location = new System.Drawing.Point(537, 6);
+            this.btnUpdate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(182, 62);
+            this.btnUpdate.TabIndex = 5;
+            this.btnUpdate.Text = "수정";
+            this.btnUpdate.UseVisualStyleBackColor = false;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnSearch
             // 
@@ -148,15 +154,16 @@
             this.btnSearch.TabIndex = 3;
             this.btnSearch.Text = "조회";
             this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
-            // textBox1
+            // tboxMember
             // 
-            this.textBox1.Font = new System.Drawing.Font("굴림", 18F);
-            this.textBox1.Location = new System.Drawing.Point(173, 10);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(172, 35);
-            this.textBox1.TabIndex = 2;
+            this.tboxMember.Font = new System.Drawing.Font("굴림", 18F);
+            this.tboxMember.Location = new System.Drawing.Point(173, 10);
+            this.tboxMember.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tboxMember.Name = "tboxMember";
+            this.tboxMember.Size = new System.Drawing.Size(172, 35);
+            this.tboxMember.TabIndex = 2;
             // 
             // label1
             // 
@@ -178,7 +185,7 @@
             this.label3.TabIndex = 4;
             this.label3.Text = "회원목록";
             // 
-            // frmClientView
+            // frmCustInquiry
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -186,11 +193,13 @@
             this.ClientSize = new System.Drawing.Size(787, 556);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvMember);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Name = "frmClientView";
+            this.Name = "frmCustInquiry";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmClientView";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.frmCustInquiry_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMember)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -200,17 +209,17 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvMember;
         private System.Windows.Forms.Button btnDel;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnSearch;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tboxMember;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox tboxName;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.TextBox tboxPhone;
         private System.Windows.Forms.Label label2;
     }
 }

@@ -74,3 +74,5 @@ C:\Users\gd3-2\Documents\GPos\Pos\obj\Debug\Pos.csproj.GenerateResource.Cache
 C:\Users\gd3-2\Documents\GPos\Pos\obj\Debug\Pos.csproj.CoreCompileInputs.cache
 C:\Users\gd3-2\Documents\GPos\Pos\obj\Debug\Pos.exe
 C:\Users\gd3-2\Documents\GPos\Pos\obj\Debug\Pos.pdb
+C:\Users\gd3-2\Documents\GPos\Pos\obj\Debug\Pos.frmCustInquiry.resources
+C:\Users\gd3-2\Documents\GPos\Pos\obj\Debug\Pos.frmEmployee.resources
