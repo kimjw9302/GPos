@@ -31,6 +31,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtProductName = new System.Windows.Forms.MaskedTextBox();
             this.group = new System.Windows.Forms.GroupBox();
+            this.txtBarcode = new System.Windows.Forms.MaskedTextBox();
             this.cbPlaceTemp = new System.Windows.Forms.ComboBox();
             this.cbCate2Temp = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -46,7 +47,6 @@
             this.txtUnitPrice = new System.Windows.Forms.MaskedTextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
-            this.txtBarcode = new System.Windows.Forms.MaskedTextBox();
             this.group.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -95,6 +95,15 @@
             this.group.TabIndex = 2;
             this.group.TabStop = false;
             this.group.Text = "상품 등록";
+            // 
+            // txtBarcode
+            // 
+            this.txtBarcode.Location = new System.Drawing.Point(123, 75);
+            this.txtBarcode.Mask = "9999999999999";
+            this.txtBarcode.Name = "txtBarcode";
+            this.txtBarcode.PromptChar = ' ';
+            this.txtBarcode.Size = new System.Drawing.Size(300, 33);
+            this.txtBarcode.TabIndex = 1;
             // 
             // cbPlaceTemp
             // 
@@ -249,15 +258,6 @@
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // txtBarcode
-            // 
-            this.txtBarcode.Location = new System.Drawing.Point(123, 75);
-            this.txtBarcode.Mask = "9999999999999";
-            this.txtBarcode.Name = "txtBarcode";
-            this.txtBarcode.PromptChar = ' ';
-            this.txtBarcode.Size = new System.Drawing.Size(300, 33);
-            this.txtBarcode.TabIndex = 1;
-            // 
             // frmProductRegister
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -268,6 +268,7 @@
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.group);
             this.Name = "frmProductRegister";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.frmProductRegister_Load);
             this.group.ResumeLayout(false);
             this.group.PerformLayout();

@@ -20,26 +20,32 @@ namespace Pos
         private void btnCustRegister_Click(object sender, EventArgs e)
         {
             this.Close();
+            this.Visible = false;
             new frmCustRegister().ShowDialog();
+            
         }
 
         private void btnCustRegister_Click_1(object sender, EventArgs e)
         {
+            this.Visible = false;
             new frmCustRegister().ShowDialog();
         }
 
         private void btnProductRegister_Click(object sender, EventArgs e)
         {
+            this.Visible = false;
             new frmProductRegister().ShowDialog();
         }
 
         private void btnEmployeeRegister_Click(object sender, EventArgs e)
         {
+            this.Visible = false;
             new frmEmployeesRegister().ShowDialog();
         }
 
         private void btnEmpWork_Click(object sender, EventArgs e)
         {
+            this.Visible = false;
             new frmEmployeeSchedule().ShowDialog();
         }
 

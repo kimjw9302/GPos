@@ -8,16 +8,15 @@ namespace Pos
 {
     public partial class frmOrderRequest : Form, ISearch, IAlter
     {
-
-        SqlConnection con;
-        SqlDataAdapter adapter;
-        DataTable cate1Table, cateF, cateNF, placeTable, productTable, orderTable,  detailTable;
-        DataSet ds;
-        DataRowCollection c1Row, cFRow, cNFRow, pRow;
-        DataTable dt =null;
-        int noIndex = 1, qua = 1;
-        static int quaTemp;
-        static decimal payTemp;
+        private SqlConnection con;
+        private SqlDataAdapter adapter;
+        private DataTable cate1Table, cateF, cateNF, placeTable, productTable, orderTable, detailTable;
+        private DataSet ds;
+        private DataRowCollection c1Row, cFRow, cNFRow, pRow;
+        private DataTable dt = null;
+        private int noIndex = 1, qua = 1;
+        private static int quaTemp;
+        private static decimal payTemp;
         private int empID;
 
         private string getQua;
@@ -40,15 +39,18 @@ namespace Pos
         {
             InitializeComponent();
         }
+
         public frmOrderRequest(int empID) : this()
         {
             this.EmpID = empID;
         }
-        public frmOrderRequest(DataTable dt, int empId): this()
+
+        public frmOrderRequest(DataTable dt, int empId) : this()
         {
             this.dt = dt;
             this.empID = empId;
         }
+
         private void btnAllClear_Click(object sender, EventArgs e)
         {
             dgvOrder.Refresh();
@@ -104,10 +106,10 @@ namespace Pos
             dgvSpec.Refresh();
             detailTable.Rows.Clear();
             object cb = cbOrderNum.SelectedItem;
-            
-            if (cb !=null)
+
+            if (cb != null)
             {
-                
+
                 con = DBcontroller.Instance();
                 using (var cmd = new SqlCommand("OrderSpec", con))
                 {
@@ -127,13 +129,13 @@ namespace Pos
                         detailRow[1] = er.GetString(4); //상품코드
                         detailRow[2] = er.GetString(5); //품명
                         detailRow[3] = er.GetSqlInt32(6); //수량
-                        detailRow[4] =  er.GetDecimal(7); //원가
-                        detailRow[5] =  er.GetDecimal(8); //원가 합계
+                        detailRow[4] = er.GetDecimal(7); //원가
+                        detailRow[5] = er.GetDecimal(8); //원가 합계
                         detailRow[6] = er.GetString(9); //거래처
                         i++;
 
                         detailTable.Rows.Add(detailRow);
-                        txtSum.Text =  er.GetDecimal(1).ToString();
+                        txtSum.Text = er.GetDecimal(1).ToString();
                         txtName.Text = er.GetString(3);
                     }
                     er.Close();
@@ -160,7 +162,7 @@ namespace Pos
             {
                 MessageBox.Show(" 주문번호를 선택해주세요. ");
             }
-            
+
         }
 
         private void btnPNameSearch_Click(object sender, EventArgs e)
@@ -188,7 +190,7 @@ namespace Pos
 
         private void dgvOrder_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(e.ColumnIndex == 5)
+            if (e.ColumnIndex == 5)
             {
                 string temp = dgvOrder.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString();
                 frmQua qua = new frmQua(temp);
@@ -201,7 +203,7 @@ namespace Pos
                 return;
             }
         }
-        
+
 
         private void SpecTableMake()
         {
@@ -237,7 +239,7 @@ namespace Pos
                     orderRow[1] = dgvProducts.Rows[i].Cells[1].Value; // 바코드
                     orderRow[2] = dgvProducts.Rows[i].Cells[2].Value; //상품명
                     orderRow[3] = dgvProducts.Rows[i].Cells[3].Value; //단가
-                    orderRow[4] =  dgvProducts.Rows[i].Cells[4].Value; //원가
+                    orderRow[4] = dgvProducts.Rows[i].Cells[4].Value; //원가
                     orderRow[5] = qua; //수량
                     orderRow[6] = decimal.Parse(dgvProducts.Rows[i].Cells[4].Value.ToString()) * qua; //총금액
                     orderRow[7] = dgvProducts.Rows[i].Cells[5].Value; //거래처
@@ -527,10 +529,10 @@ namespace Pos
                     }
                 }
             }
-            
-           
+
+
             con.Close();
-            
+
         }
 
         private void OrderTableMake()
@@ -551,7 +553,7 @@ namespace Pos
             orderTable.Columns.Add("수량");
             orderTable.Columns.Add("총금액");
             orderTable.Columns.Add("거래처");
-           
+
         }
         private void ProductTableMake()
         {
@@ -562,7 +564,7 @@ namespace Pos
             productTable.Columns.Add("단가");
             productTable.Columns.Add("원가");
             productTable.Columns.Add("거래처");
-            
+
         }
     }
 }
