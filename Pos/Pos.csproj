@@ -56,6 +56,12 @@
     <Compile Include="frmAddrSearch.Designer.cs">
       <DependentUpon>frmAddrSearch.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEmployee.Designer.cs">
+      <DependentUpon>frmEmployee.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -234,11 +240,8 @@
     <Compile Include="IDelete.cs" />
     <Compile Include="ISearch.cs" />
     <Compile Include="ISubmit.cs" />
-
     <Compile Include="OrderProducts.cs" />
-
     <Compile Include="Products.cs" />
-
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -246,10 +249,15 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-
     <Compile Include="Sell.cs" />
     <EmbeddedResource Include="frmAddrSearch.resx">
       <DependentUpon>frmAddrSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCustInquiry.resx">
+      <DependentUpon>frmCustInquiry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEmployee.resx">
+      <DependentUpon>frmEmployee.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>

@@ -1,5 +1,10 @@
+C:\Users\gd3-1\Documents\GPos\Pos\bin\Debug\Pos.exe.config
+C:\Users\gd3-1\Documents\GPos\Pos\bin\Debug\Pos.exe
+C:\Users\gd3-1\Documents\GPos\Pos\bin\Debug\Pos.pdb
 C:\Users\gd3-1\Documents\GPos\Pos\obj\Debug\Pos.csprojResolveAssemblyReference.cache
 C:\Users\gd3-1\Documents\GPos\Pos\obj\Debug\Pos.frmAddrSearch.resources
+C:\Users\gd3-1\Documents\GPos\Pos\obj\Debug\Pos.frmCustInquiry.resources
+C:\Users\gd3-1\Documents\GPos\Pos\obj\Debug\Pos.frmEmployee.resources
 C:\Users\gd3-1\Documents\GPos\Pos\obj\Debug\Pos.frmLogin.resources
 C:\Users\gd3-1\Documents\GPos\Pos\obj\Debug\Pos.frmCalculator.resources
 C:\Users\gd3-1\Documents\GPos\Pos\obj\Debug\Pos.frmCard.resources
@@ -31,8 +36,5 @@ C:\Users\gd3-1\Documents\GPos\Pos\obj\Debug\Pos.frmWait.resources
 C:\Users\gd3-1\Documents\GPos\Pos\obj\Debug\Pos.Properties.Resources.resources
 C:\Users\gd3-1\Documents\GPos\Pos\obj\Debug\Pos.csproj.GenerateResource.Cache
 C:\Users\gd3-1\Documents\GPos\Pos\obj\Debug\Pos.csproj.CoreCompileInputs.cache
-C:\Users\gd3-1\Documents\GPos\Pos\bin\Debug\Pos.exe.config
-C:\Users\gd3-1\Documents\GPos\Pos\bin\Debug\Pos.exe
-C:\Users\gd3-1\Documents\GPos\Pos\bin\Debug\Pos.pdb
 C:\Users\gd3-1\Documents\GPos\Pos\obj\Debug\Pos.exe
 C:\Users\gd3-1\Documents\GPos\Pos\obj\Debug\Pos.pdb
