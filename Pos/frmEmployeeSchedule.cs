@@ -13,11 +13,11 @@ namespace Pos
 {
     public partial class frmEmployeeSchedule : Form, ISearch
     {
-        SqlDataAdapter adapter;
-        DataSet ds;
-        DataTable emp, conditionView;
-        DataRowCollection rows;
-        SqlConnection con;
+        private SqlDataAdapter adapter;
+        private DataSet ds;
+        private DataTable emp, conditionView;
+        private DataRowCollection rows;
+        private SqlConnection con;
 
         public frmEmployeeSchedule()
         {

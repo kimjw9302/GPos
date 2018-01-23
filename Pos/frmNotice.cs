@@ -12,6 +12,7 @@ namespace Pos
     public partial class frmNotice : Form
     {
         private DataTable dataTable;
+        private int empId;
 
         public frmNotice()
         {
@@ -19,9 +20,10 @@ namespace Pos
         }
 
         //DataTable을 받는 생성자
-        public frmNotice(DataTable dataTable) :this()
+        public frmNotice(DataTable dataTable, int empId) :this()
         {
             this.dataTable = dataTable;
+            this.empId = empId;
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -48,7 +50,7 @@ namespace Pos
 
         private void btnGo_Click(object sender, EventArgs e)
         {
-            frmOrderRequest for1 =new frmOrderRequest();
+            frmOrderRequest for1 =new frmOrderRequest(dataTable, empId);
             this.Visible = false;
             for1.ShowDialog();
             this.Dispose();
