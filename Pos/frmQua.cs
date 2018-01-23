@@ -39,7 +39,7 @@ namespace Pos
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Dispose();
         }
         private void btnNum_Click(object sender, EventArgs e)
         {

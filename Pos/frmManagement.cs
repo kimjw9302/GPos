@@ -50,12 +50,13 @@ namespace Pos
         }
         private void btnAban_Click(object sender, EventArgs e)
         {
+            this.Visible = false;
             new frmAbanView().ShowDialog();
         }
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Dispose();
         }
 
         

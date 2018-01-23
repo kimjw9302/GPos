@@ -42,16 +42,17 @@ namespace Pos
             }
             
         }
-
+        //연령별 분석
+        private void EmployeeAnalysis()
+        {
+            
+        }
         //총매출
         private void TotalRevenue()
         {
             throw new NotImplementedException();
         }
 
-        //연령별 분석
-        private void EmployeeAnalysis()
-        {
-        }
+       
     }
 }

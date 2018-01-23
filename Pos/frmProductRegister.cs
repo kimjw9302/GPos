@@ -21,7 +21,7 @@ namespace Pos
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Dispose();
         }
 
         private void btnRegister_Click(object sender, EventArgs e)
