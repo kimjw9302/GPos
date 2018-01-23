@@ -34,7 +34,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.btnOk = new System.Windows.Forms.Button();
-            this.panel = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
             // listBox1
@@ -104,20 +103,12 @@
             this.btnOk.Text = "조회";
             this.btnOk.UseVisualStyleBackColor = true;
             // 
-            // panel
-            // 
-            this.panel.Location = new System.Drawing.Point(301, 87);
-            this.panel.Name = "panel";
-            this.panel.Size = new System.Drawing.Size(756, 582);
-            this.panel.TabIndex = 8;
-            // 
             // frmRevenue
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(1087, 707);
-            this.Controls.Add(this.panel);
             this.Controls.Add(this.btnOk);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -140,6 +131,5 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnOk;
-        private System.Windows.Forms.Panel panel;
     }
 }
