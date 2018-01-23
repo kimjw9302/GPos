@@ -54,7 +54,7 @@ namespace Pos
                     }
                     else
                     {
-                        cmd.Parameters.AddWithValue("@memberNum", s.ClientID);
+                        cmd.Parameters.AddWithValue("@memberNum",int.Parse( s.ClientID));
                     }
 
                     cmd.Parameters.AddWithValue("@sellDate", DateTime.Now);
@@ -68,6 +68,7 @@ namespace Pos
                     cmd.Parameters.AddWithValue("@savePoint",s.SavePoint);
                     cmd.Parameters.AddWithValue("@empNum", s.EmpId);
                     cmd.Parameters.AddWithValue("@card", DBNull.Value);
+                    cmd.Parameters.AddWithValue("@preturn", DBNull.Value);
                     cmd.ExecuteNonQuery();
                 }
                 fm.T2.Text = "************이전 정보 \r\n";
@@ -85,7 +86,7 @@ namespace Pos
 
 
                         decimal salesquantity = 0;
-                        decimal tot = -1 * decimal.Parse(row["할인"].ToString());
+                        decimal tot = -1 *int.Parse(row["할인"].ToString());
                         salesquantity = tot / decimal.Parse(row["단가"].ToString());
                         ccmd.Parameters.AddWithValue("@barcode", row["바코드"].ToString());
                         ccmd.Parameters.AddWithValue("@quantity", row["수량"].ToString());
@@ -98,10 +99,10 @@ namespace Pos
                 {
                     using (var ccmd = new SqlCommand("UpdatePoint", con))
                     {
-
-
+                        MessageBox.Show(s.ClientID.ToString());
                         ccmd.CommandType = CommandType.StoredProcedure;
-                        ccmd.Parameters.AddWithValue("@phone", s.ClientID);
+                        ccmd.Parameters.AddWithValue("@phone", s.Phone);
+                        ccmd.Parameters.AddWithValue("@point", s.SavePoint);
                         ccmd.ExecuteNonQuery();
                     }
                 }

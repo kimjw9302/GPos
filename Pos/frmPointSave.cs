@@ -15,6 +15,9 @@ namespace Pos
         SqlConnection con;
         string money;
         bool selectflage = false;
+        int dis = 0;
+        string tempphone = null;
+        string tempID = null;
         public frmPointSave()
         {
             InitializeComponent();
@@ -41,9 +44,14 @@ namespace Pos
 
                     while (sdr.Read())
                     {
-                        Sell s = Sell.Load();
-                        s.ClientID = sdr["memberNum"].ToString();
+                      
                         lblName.Text = sdr["name"].ToString();
+                        lblGrade.Text = sdr["gradeName"].ToString();
+                        dis = int.Parse(sdr["discountRate"].ToString());
+                        tempphone = sdr["phone"].ToString();
+                        tempID = sdr["memberNum"].ToString();
+                        lblDiscount.Text = sdr["discountRate"].ToString()+"% 적립";
+                        tboxSave.Text = (int.Parse(money) * (dis * 1) / 100).ToString();
                         lblName.Visible = true;
                         lblName2.Visible = true;
                         selectflage = true;
@@ -67,7 +75,7 @@ namespace Pos
         {
             Sell s = Sell.Load();
             tboxMoney.Text = money;
-            tboxSave.Text = (int.Parse(money) * 0.04).ToString();
+         
         }
 
         private void btnCancle_Click(object sender, EventArgs e)
@@ -81,6 +89,8 @@ namespace Pos
             {
                 Sell s = Sell.Load();
                 s.SavePoint = int.Parse(tboxSave.Text);
+                s.Phone = tempphone;
+                s.ClientID = tempID;
                 frmMain fm = (frmMain)Owner;
                 fm.T2.Text = "회원 이름 : "+lblName.Text +"\r\n";
                 fm.T2.Text += "적립 포인트  : "+tboxSave.Text+"점";

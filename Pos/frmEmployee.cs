@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Barcode128;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,7 @@ namespace Pos
 {
     public partial class frmEmployee : Form, ISearch, IDelete, ISubmit
     {
+        private string memberNum = null;
         public frmEmployee()
         {
             InitializeComponent();
@@ -37,6 +39,7 @@ namespace Pos
             sda.SelectCommand = cmd;
             sda.Fill(ds);
             dgvEmployees.DataSource = ds.Tables[0];
+           
         }
         private void dgvEmployees_Click(object sender, EventArgs e)
         {
@@ -122,14 +125,65 @@ namespace Pos
             textBox();
             frmEmployee_Load(null, null);
         }
+        private void GdiOutput(string strBarData)
+        {
+            //바데이터를 이미지로 출력해준다.
+
+            //프린트 가중치 : 선의 두깨를 결정한다.
+            int intW = 1;
+
+            Graphics graphics = pboxBarcode.CreateGraphics();
+            //팬색
+            Pen BlackPen = new Pen(Color.Black, intW);
+            Pen WhitePen = new Pen(Color.White, intW);
+
+            Brush BlackBrush = new SolidBrush(Color.Black);
+
+            //선그리기
+            for (int i = 0; i < strBarData.Length; ++i)
+            {
+                int intTemp = Convert.ToInt32(strBarData.Substring(i, 1));
+
+                if (intTemp == 1)
+                {
+                    //검정색 출력
+                    graphics.DrawLine(BlackPen, 30 + (i * intW), 10, 30 + (i * intW), 60);
+                }
+                else
+                {
+                    //하얀색 출력
+                    graphics.DrawLine(WhitePen, 30 + (i * intW), 10, 30 + (i * intW), 60);
+                }
+            }
+
+            //시간출력
+            graphics.DrawString(DateTime.Now + "", new Font("Arial", 8, FontStyle.Regular), BlackBrush, 70, 270);
+
+            //더미
+            graphics.DrawString("_", new Font("고딕", 1, FontStyle.Regular), BlackBrush, 40, 300);
+        }
+
+        private void Form1_Paint(object sender, PaintEventArgs e)
+        {
+            GdiOutput(memberNum);
+        }
+
         private void textBox()
         {
             if (dgvEmployees.RowCount != 0)
             {
-                tboxName.Text = dgvEmployees.CurrentRow.Cells[0].Value.ToString();                
-                tboxPosition.Text = dgvEmployees.CurrentRow.Cells[1].Value.ToString();
-                tboxPhone.Text = dgvEmployees.CurrentRow.Cells[2].Value.ToString();
-                tboxhourlyWage.Text = dgvEmployees.CurrentRow.Cells[3].Value.ToString();
+      
+                memberNum = dgvEmployees.CurrentRow.Cells[0].Value.ToString();
+                MessageBox.Show(memberNum);
+                tboxName.Text = dgvEmployees.CurrentRow.Cells[1].Value.ToString();                
+                tboxPosition.Text = dgvEmployees.CurrentRow.Cells[2].Value.ToString();
+                tboxPhone.Text = dgvEmployees.CurrentRow.Cells[3].Value.ToString();
+                tboxhourlyWage.Text = dgvEmployees.CurrentRow.Cells[4].Value.ToString();
+                claBarcode bcTemp = new claBarcode();
+
+                memberNum = bcTemp.strBarcode(memberNum, 0);
+                memberNum = bcTemp.strBarcodeToBar(memberNum);
+                GdiOutput(memberNum);
             }
             else
             {

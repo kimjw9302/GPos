@@ -80,6 +80,7 @@ namespace Pos
                     cmd.Parameters.AddWithValue("@card",cardNum);
                     cmd.Parameters.AddWithValue("@empNum", s.EmpId);
                     cmd.Parameters.AddWithValue("@savePoint", s.SavePoint);
+                    cmd.Parameters.AddWithValue("@preturn", DBNull.Value);
                     cmd.ExecuteNonQuery();
 
                     this.Dispose();
@@ -116,7 +117,7 @@ namespace Pos
 
 
                         ccmd.CommandType = CommandType.StoredProcedure;
-                        ccmd.Parameters.AddWithValue("@phone", s.ClientID);
+                        ccmd.Parameters.AddWithValue("@phone", s.Phone);
                         ccmd.ExecuteNonQuery();
                     }
                 }

@@ -36,7 +36,7 @@ namespace Pos
             using (var cmd = new SqlCommand("SearchMember", con))
             {
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@phone", phone);
+                cmd.Parameters.AddWithValue("@phone", tboxPhone.Text);
                 cmd.Parameters.AddWithValue("@pwd",tboxPass.Text);
                 var sdr = cmd.ExecuteReader();
                 if (sdr.HasRows)
@@ -44,27 +44,40 @@ namespace Pos
                     while (sdr.Read())
                     {
 
-                        if (sdr["pwd"].ToString() == "1")
+                        if (sdr[0].ToString() == "0")
                         {
-                            s.ClientID = sdr["memberNum"].ToString();
-                            selectflage = true;
-                       
-                        }
-                        else
-                        {
-                            MessageBox.Show(sdr["pwd"].ToString());
                             MessageBox.Show("정보 불일치");
                             con.Close();
                             return;
+                        }
+                        else
+                        {
+                            s.ClientID = sdr["memberNum"].ToString();
+                            selectflage = true;
+                         
                         }
 
 
                     }
                 }
 
-
             }
+            con.Close();
+            con.Open();
+            if (selectflage)
+            {
+                using (var cmd = new SqlCommand("UpdatePoint", con))
+                {
+                    int s = -1*int.Parse(tboxInputPoint.Text);
 
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@phone", tboxPhone.Text);
+                    cmd.Parameters.AddWithValue("@point", s);
+                    cmd.ExecuteNonQuery();
+
+                }
+            }
+            con.Close();
             if (tboxInputPoint.Text != "" && int.Parse(tboxUPoint.Text) >= int.Parse(tboxInputPoint.Text))
             {
                 s.Pointmoney = decimal.Parse(tboxInputPoint.Text);
@@ -75,7 +88,7 @@ namespace Pos
                 fm.T2.Text += "할인후 보유 포인트 : " + (int.Parse(tboxUPoint.Text) - int.Parse(tboxInputPoint.Text)) + "\r\n";
                 fm.T1.Text = (int.Parse(fm.T1.Text) - int.Parse(tboxInputPoint.Text)).ToString();
                 fm.T5.Text = (int.Parse(fm.T4.Text) + int.Parse(fm.T1.Text)).ToString();
-                con.Close();
+      
                 this.Dispose();
             }
             else
@@ -84,6 +97,9 @@ namespace Pos
                 tboxInputPoint.Text = "";
                 MessageBox.Show("보유 포인트 부족");
             }
+            con.Close();
+            MessageBox.Show(tboxInputPoint.Text);
+           
         }
 
         private void btnCancle_Click(object sender, EventArgs e)
@@ -118,15 +134,11 @@ namespace Pos
                 var sdr = cmd.ExecuteReader();
                 if (sdr.HasRows)
                 {
-
-
                     while (sdr.Read())
                     {
-
                         tboxUPoint.Text = sdr["point"].ToString();
                         phone = tboxPhone.Text;
                         selectflage = true;
-
                     }
                 }
                 else

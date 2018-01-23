@@ -49,6 +49,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="claBarcode.cs" />
+    <Compile Include="claCodeData.cs" />
     <Compile Include="DBcontroller.cs" />
     <Compile Include="frmAddrSearch.cs">
       <SubType>Form</SubType>
