@@ -110,6 +110,7 @@
             this.StartDate.Name = "StartDate";
             this.StartDate.Size = new System.Drawing.Size(302, 35);
             this.StartDate.TabIndex = 22;
+            this.StartDate.Value = new System.DateTime(2018, 1, 1, 0, 0, 0, 0);
             // 
             // btnDelete
             // 

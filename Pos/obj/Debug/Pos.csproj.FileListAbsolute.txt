@@ -15,7 +15,6 @@ C:\Users\gdn3-15\Documents\GPos\Pos\obj\Debug\Pos.frmEmployeeSchedule.resources
 C:\Users\gdn3-15\Documents\GPos\Pos\obj\Debug\Pos.frmEmployeesRegister.resources
 C:\Users\gdn3-15\Documents\GPos\Pos\obj\Debug\Pos.frmEtc.resources
 C:\Users\gdn3-15\Documents\GPos\Pos\obj\Debug\Pos.frmEvent.resources
-C:\Users\gdn3-15\Documents\GPos\Pos\obj\Debug\Pos.frmEventAdd.resources
 C:\Users\gdn3-15\Documents\GPos\Pos\obj\Debug\Pos.frmLog.resources
 C:\Users\gdn3-15\Documents\GPos\Pos\obj\Debug\Pos.frmMail.resources
 C:\Users\gdn3-15\Documents\GPos\Pos\obj\Debug\Pos.frmMain.resources

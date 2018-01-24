@@ -134,12 +134,6 @@
     <Compile Include="frmEvent.Designer.cs">
       <DependentUpon>frmEvent.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmEventAdd.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmEventAdd.Designer.cs">
-      <DependentUpon>frmEventAdd.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmLog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -291,9 +285,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmEvent.resx">
       <DependentUpon>frmEvent.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmEventAdd.resx">
-      <DependentUpon>frmEventAdd.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLog.resx">
       <DependentUpon>frmLog.cs</DependentUpon>

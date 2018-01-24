@@ -24,32 +24,34 @@ namespace Pos
 
         private void Rests()
         {
-            using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["gposStr"].ConnectionString))
+            var con = DBcontroller.Instance();
+            using (var cmd = new SqlCommand("EventLoad", con))
             {
-                using (var cmd = new SqlCommand("EventLoad", con))
-                {
-                    con.Open();
-                    cmd.CommandType = CommandType.StoredProcedure;
+                con.Open();
+                cmd.CommandType = CommandType.StoredProcedure;
 
-                    SqlDataAdapter adapter = new SqlDataAdapter();
-                    adapter.SelectCommand = cmd;
-                    con.Close();
+                SqlDataAdapter adapter = new SqlDataAdapter();
+                adapter.SelectCommand = cmd;
+                con.Close();
 
-                    ds = new DataSet();
-                    adapter.Fill(ds);
-                    this.dataGridView1.DataSource = ds.Tables[0];
+                ds = new DataSet();
+                adapter.Fill(ds);
+                this.dataGridView1.DataSource = ds.Tables[0];
 
-                    dataGridView1.Columns[0].HeaderText = "바코드";
-                    dataGridView1.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                    dataGridView1.Columns[1].HeaderText = "내용";
-                    dataGridView1.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                    dataGridView1.Columns[2].HeaderText = "할인율";
-                    dataGridView1.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                    dataGridView1.Columns[3].HeaderText = "시작날짜";
-                    dataGridView1.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                    dataGridView1.Columns[4].HeaderText = "끝나는날짜";
-                    dataGridView1.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                }
+                dataGridView1.Columns[0].HeaderText = "이벤트번호";
+                dataGridView1.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                dataGridView1.Columns[0].HeaderText = "이벤트명";
+                dataGridView1.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                dataGridView1.Columns[1].HeaderText = "내용";
+                dataGridView1.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                dataGridView1.Columns[2].HeaderText = "할인율";
+                dataGridView1.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                dataGridView1.Columns[3].HeaderText = "시작날짜";
+                dataGridView1.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                dataGridView1.Columns[4].HeaderText = "끝나는날짜";
+                dataGridView1.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+
+                con.Close();
             }
         }
 
@@ -68,32 +70,30 @@ namespace Pos
             string uStartDate = this.StartDate.Value.ToLongDateString();
             string uEndDate = this.EndDate.Value.ToLongDateString();
 
-            using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["gposStr"].ConnectionString))
+            var con = DBcontroller.Instance();
+            using (var cmd = new SqlCommand("EventSave", con))
             {
-                using (var cmd = new SqlCommand("EventSave", con))
+                cmd.Parameters.AddWithValue("@uBarcode", uBarcode);
+                cmd.Parameters.AddWithValue("@uEventContent", uEventContent);
+                cmd.Parameters.AddWithValue("@uDiscount", uDiscount);
+                cmd.Parameters.AddWithValue("@uStartDate", uStartDate);
+                cmd.Parameters.AddWithValue("@uEndDate", uEndDate);
+
+
+
+                con.Open();
+
+                int i = cmd.ExecuteNonQuery();
+                if (i == 1)
                 {
-                    cmd.Parameters.AddWithValue("@uBarcode", uBarcode);
-                    cmd.Parameters.AddWithValue("@uEventContent", uEventContent);
-                    cmd.Parameters.AddWithValue("@uDiscount", uDiscount);
-                    cmd.Parameters.AddWithValue("@uStartDate", uStartDate);
-                    cmd.Parameters.AddWithValue("@uEndDate", uEndDate);
-
-
-
-                    con.Open();
-
-                    int i = cmd.ExecuteNonQuery();
-                    if (i == 1)
-                    {
-                        MessageBox.Show("저장 되었습니다.");
-                        Rests();
-                        return;
-                    }
-                    else
-                    {
-                        MessageBox.Show("저장 실패");
-                        return;
-                    }
+                    MessageBox.Show("저장 되었습니다.");
+                    Rests();
+                    return;
+                }
+                else
+                {
+                    MessageBox.Show("저장 실패");
+                    return;
                 }
             }
         }
@@ -113,36 +113,34 @@ namespace Pos
             string uEndDate = this.EndDate.Value.ToLongDateString();
 
 
-            using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["gposStr"].ConnectionString))
+            var con = DBcontroller.Instance();
+            using (var cmd = new SqlCommand("EventsModify", con))
             {
-                using (var cmd = new SqlCommand("EventsModify", con))
+                con.Open();
+                SqlDataAdapter adapter = new SqlDataAdapter();
+
+                cmd.Parameters.AddWithValue("@uBarcode", uBarcode);
+                cmd.Parameters.AddWithValue("@uEventContent", uEventContent);
+                cmd.Parameters.AddWithValue("@uDiscount", uDiscount);
+                cmd.Parameters.AddWithValue("@uStartDate", uStartDate);
+                cmd.Parameters.AddWithValue("@uEndDate", uEndDate);
+
+                adapter.UpdateCommand = cmd;
+
+                int i;
+                i = cmd.ExecuteNonQuery();
+
+                if (i == 1)
                 {
-                    con.Open();
-                    SqlDataAdapter adapter = new SqlDataAdapter();
-
-                    cmd.Parameters.AddWithValue("@uBarcode", uBarcode);
-                    cmd.Parameters.AddWithValue("@uEventContent", uEventContent);
-                    cmd.Parameters.AddWithValue("@uDiscount", uDiscount);
-                    cmd.Parameters.AddWithValue("@uStartDate", uStartDate);
-                    cmd.Parameters.AddWithValue("@uEndDate", uEndDate);
-
-                    adapter.UpdateCommand = cmd;
-
-                    int i;
-                    i = cmd.ExecuteNonQuery();
-
-                    if (i == 1)
-                    {
-                        MessageBox.Show("저장 되었습니다.");
-                        Rests();
-                        ComponentInit();
-                        return;
-                    }
-                    else
-                    {
-                        MessageBox.Show("저장 실패");
-                        return;
-                    }
+                    MessageBox.Show("저장 되었습니다.");
+                    Rests();
+                    ComponentInit();
+                    return;
+                }
+                else
+                {
+                    MessageBox.Show("저장 실패");
+                    return;
                 }
             }
         }
@@ -152,29 +150,27 @@ namespace Pos
         private void btnDelete_Click(object sender, EventArgs e)
         {
             string uBarcode = this.tboxBarcode.Text.Trim();
-            using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["gposStr"].ConnectionString))
+            var con = DBcontroller.Instance();
+            using (var cmd = new SqlCommand("EventDelete", con))
             {
-                using (var cmd = new SqlCommand("EventDelete", con))
+                con.Open();
+                SqlDataAdapter adapter = new SqlDataAdapter();
+                cmd.Parameters.AddWithValue("@uBarcode", uBarcode);
+
+                adapter.DeleteCommand = cmd;
+
+                int i = cmd.ExecuteNonQuery();
+                if (i == 1)
                 {
-                    con.Open();
-                    SqlDataAdapter adapter = new SqlDataAdapter();
-                    cmd.Parameters.AddWithValue("@uBarcode", uBarcode);
+                    MessageBox.Show("삭제 되었습니다.");
+                    Rests();
+                    return;
+                }
+                else
+                {
+                    MessageBox.Show("삭제 실패");
 
-                    adapter.DeleteCommand = cmd;
-
-                    int i = cmd.ExecuteNonQuery();
-                    if (i == 1)
-                    {
-                        MessageBox.Show("삭제 되었습니다.");
-                        Rests();
-                        return;
-                    }
-                    else
-                    {
-                        MessageBox.Show("삭제 실패");
-
-                        return;
-                    }
+                    return;
                 }
             }
         }
