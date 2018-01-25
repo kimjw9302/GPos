@@ -126,10 +126,10 @@ namespace Pos
         {
             if (dgvEmployees.RowCount != 0)
             {
-                tboxName.Text = dgvEmployees.CurrentRow.Cells[0].Value.ToString();                
-                tboxPosition.Text = dgvEmployees.CurrentRow.Cells[1].Value.ToString();
-                tboxPhone.Text = dgvEmployees.CurrentRow.Cells[2].Value.ToString();
-                tboxhourlyWage.Text = dgvEmployees.CurrentRow.Cells[3].Value.ToString();
+                tboxName.Text = dgvEmployees.CurrentRow.Cells[1].Value.ToString();                
+                tboxPosition.Text = dgvEmployees.CurrentRow.Cells[2].Value.ToString();
+                tboxPhone.Text = dgvEmployees.CurrentRow.Cells[3].Value.ToString();
+                tboxhourlyWage.Text = dgvEmployees.CurrentRow.Cells[4].Value.ToString();
             }
             else
             {
