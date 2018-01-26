@@ -36,6 +36,7 @@
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.ServiceProcess" />
     <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
@@ -49,6 +50,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="claBarcode.cs" />
+    <Compile Include="claCodeData.cs" />
     <Compile Include="DBcontroller.cs" />
     <Compile Include="frmAban.cs">
       <SubType>Form</SubType>
@@ -242,6 +245,18 @@
     <Compile Include="frmSalesinquiry.Designer.cs">
       <DependentUpon>frmSalesinquiry.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmSign.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSign.Designer.cs">
+      <DependentUpon>frmSign.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmStoreInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmStoreInfo.Designer.cs">
+      <DependentUpon>frmStoreInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -268,12 +283,21 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Sell.cs" />
+<<<<<<< HEAD
     <EmbeddedResource Include="frmAban.resx">
       <DependentUpon>frmAban.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmAbanView.resx">
       <DependentUpon>frmAbanView.cs</DependentUpon>
     </EmbeddedResource>
+=======
+    <Compile Include="SignPad.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SignPad.Designer.cs">
+      <DependentUpon>SignPad.cs</DependentUpon>
+    </Compile>
+>>>>>>> f8f79c5a0965093f3829eb2d452f0f2f7f28fb97
     <EmbeddedResource Include="frmAddrSearch.resx">
       <DependentUpon>frmAddrSearch.cs</DependentUpon>
     </EmbeddedResource>
@@ -364,6 +388,12 @@
     <EmbeddedResource Include="frmSalesinquiry.resx">
       <DependentUpon>frmSalesinquiry.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmSign.resx">
+      <DependentUpon>frmSign.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmStoreInfo.resx">
+      <DependentUpon>frmStoreInfo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmView.resx">
       <DependentUpon>frmView.cs</DependentUpon>
     </EmbeddedResource>
@@ -373,6 +403,9 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SignPad.resx">
+      <DependentUpon>SignPad.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
