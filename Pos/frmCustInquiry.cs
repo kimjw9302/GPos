@@ -147,5 +147,10 @@ namespace Pos
         {
             delete();
         }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
     }
 }

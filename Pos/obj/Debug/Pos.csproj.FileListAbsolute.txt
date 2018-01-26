@@ -78,6 +78,7 @@ C:\Users\gd3-2\Documents\GPos\Pos\obj\Debug\Pos.csproj.GenerateResource.Cache
 C:\Users\gd3-2\Documents\GPos\Pos\obj\Debug\Pos.csproj.CoreCompileInputs.cache
 C:\Users\gd3-2\Documents\GPos\Pos\obj\Debug\Pos.exe
 C:\Users\gd3-2\Documents\GPos\Pos\obj\Debug\Pos.pdb
+<<<<<<< HEAD
 C:\Users\김재웅\Documents\GPos\Pos\bin\Debug\Pos.exe.config
 C:\Users\김재웅\Documents\GPos\Pos\bin\Debug\Pos.exe
 C:\Users\김재웅\Documents\GPos\Pos\bin\Debug\Pos.pdb
@@ -121,3 +122,7 @@ C:\Users\김재웅\Documents\GPos\Pos\obj\Debug\Pos.frmStoreInfo.resources
 C:\Users\김재웅\Documents\GPos\Pos\obj\Debug\Pos.SignPad.resources
 C:\Users\김재웅\Documents\GPos\Pos\obj\Debug\Pos.frmSign.resources
 C:\Users\김재웅\Documents\GPos\Pos\obj\Debug\Pos.frmCalculator.resources
+=======
+C:\Users\gd3-2\Documents\GPos\Pos\obj\Debug\Pos.frmReturnReason.resources
+>>>>>>> f312230371ce44b9a8a3cc2d68715b6c2d1dd804
+C:\Users\김재웅\Documents\GPos\Pos\obj\Debug\Pos.frmReturnReason.resources
