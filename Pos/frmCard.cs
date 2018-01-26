@@ -62,7 +62,11 @@ namespace Pos
                 fm.T2.Text += "카드 결제 : " + s.Cardmoeny + "원\r\n";
                 fm.T2.Text += "포인트 결제 : " + s.Pointmoney + "원\r\n";
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+
+>>>>>>> 메인폼
                 con.Close();
                 con.Open();
                 foreach (DataRow row in fm.Ss.Rows)
@@ -107,7 +111,10 @@ namespace Pos
                     }
                 }
 
+<<<<<<< HEAD
 >>>>>>> f312230371ce44b9a8a3cc2d68715b6c2d1dd804
+=======
+>>>>>>> 메인폼
 
                 Sell.Clear();
                 fm.Ss.Clear();

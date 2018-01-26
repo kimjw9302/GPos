@@ -16,15 +16,22 @@ namespace Pos
     public partial class frmRevenue : Form, ISearch, IAlter
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 메인폼
         DataGridView dgvProducts = null;
         DataGridView dgvTotal = null;
         SqlConnection con = null;
         DataRow dr1 = null;
         DataTable dt =null;
         decimal row1_sum, row2_sum, row3_sum = 0;
+<<<<<<< HEAD
 =======
         
 >>>>>>> f312230371ce44b9a8a3cc2d68715b6c2d1dd804
+=======
+
+>>>>>>> 메인폼
         public frmRevenue()
         {
             InitializeComponent();
@@ -37,6 +44,7 @@ namespace Pos
         }
         private void Method()
         {
+            MessageBox.Show("Test");
             MethodReturnChart.Visible = true;
             var con = DBcontroller.Instance();
             con.Open();
@@ -133,6 +141,7 @@ namespace Pos
                 cmd.Parameters.AddWithValue("@sdate", DateTime.Parse(dtStart.Value.ToShortDateString() + " 00:00:00"));
                 cmd.Parameters.AddWithValue("@edate", DateTime.Parse(dtEnd.Value.ToShortDateString() + " 23:59:59"));
                 
+                
                 DataSet ds = new DataSet();
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                 adapter.SelectCommand = cmd;
@@ -140,9 +149,9 @@ namespace Pos
                 DataTable food = ds.Tables[0];
                 DataTable notfood = ds.Tables[1];
                 MethodReturnChart.Size = new Size(450, 350);
-                MethodReturnChart.Location = new Point(0, 0);
+                CateNFChart.Location = new Point(913, CateNFChart.Location.Y);
                 CateNFChart.Size = new Size(450, 350);
-                CateNFChart.Location = new Point(450, 0);                             
+                                         
 
                 if (food.Rows.Count == 0)
                 {                    
@@ -172,20 +181,37 @@ namespace Pos
             MethodReturnChart.Series["return"].Points.Clear();
             MethodReturnChart.Series["categoryF"].Points.Clear();
             CateNFChart.Series["categoryNF"].Points.Clear();
-            if (listBox1.SelectedIndex.ToString() == "4")
+            totalChart.Visible = false;
+ 
+            if (listBox1.SelectedIndex == 1)
+            {
+                Category();
+            }
+
+          else  if (listBox1.SelectedIndex == 2)
+            {
+                dgvProducts.DataSource = null;
+                this.Controls.Remove(dgvProducts);
+                ProductRevenue();
+
+            }
+           else if (listBox1.SelectedIndex == 4)
             {
                 Method();
             }
-            else if (listBox1.SelectedIndex.ToString() == "5")
+
+            else if (listBox1.SelectedIndex == 5)
             {
                 Return();
             }
-            else if (listBox1.SelectedIndex.ToString() == "1")
+            else if (listBox1.SelectedIndex == 6)
             {
-                Category();
-            }            
-          
-           
+                dgvTotal.DataSource = null;
+                this.Controls.Remove(dgvTotal);
+                AllTotalRevenue();
+                totalChart.Visible = true;
+            }
+
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -327,7 +353,7 @@ namespace Pos
             DataSet ds = new DataSet();
              dt = new DataTable();
 
-            chart1.Visible = true;
+            totalChart.Visible = true;
 
             #region 컨트롤정의
             //Label label1 = new Label();
@@ -557,9 +583,12 @@ namespace Pos
                     Series1.Points.AddXY(dt.Columns[j].ToString().Substring(5, 2) + "-"+dt.Columns[j].ToString().Substring(8,2), dt.Rows[i].ItemArray[j]);
                 }     
             }
-            chart1.Series.Clear();
-            chart1.Series.Add(Series1);
+            totalChart.Series.Clear();
+            totalChart.Series.Add(Series1);
         }
+
+     
+
         //재웅 추가/
 
         //총매출
@@ -568,10 +597,10 @@ namespace Pos
             throw new NotImplementedException();
         }
 
-        private void frmRevenue_Load(object sender, EventArgs e)
-        {
-            chart1.Visible = false;
-        }
+        //private void frmRevenue_Load(object sender, EventArgs e)
+        //{
+        //    totalChart.Visible = false;
+        //}
 
         //연령별 분석
         private void EmployeeAnalysis()
@@ -581,24 +610,24 @@ namespace Pos
         }
 
         //재웅추가
-        private void btnOk_Click(object sender, EventArgs e)
-        {
-            chart1.Visible = false;
-            if (listBox1.SelectedIndex == 2)
-            {
-                dgvProducts.DataSource = null;
-                this.Controls.Remove(dgvProducts);
-                ProductRevenue();
+        //private void btnOk_Click(object sender, EventArgs e)
+        //{
+        //    totalChart.Visible = false;
+        //    if (listBox1.SelectedIndex == 2)
+        //    {
+        //        dgvProducts.DataSource = null;
+        //        this.Controls.Remove(dgvProducts);
+        //        ProductRevenue();
                
-            }
-            else if (listBox1.SelectedIndex == 6)
-            {
-                dgvTotal.DataSource = null;
-                this.Controls.Remove(dgvTotal);
-                AllTotalRevenue();
-                chart1.Visible = true;
-            }
+        //    }
+        //    else if (listBox1.SelectedIndex == 6)
+        //    {
+        //        dgvTotal.DataSource = null;
+        //        this.Controls.Remove(dgvTotal);
+        //        AllTotalRevenue();
+        //        totalChart.Visible = true;
+        //    }
 
-        }
+        //}
     }
 }

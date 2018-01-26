@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
@@ -42,6 +43,19 @@
             System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
 >>>>>>> f312230371ce44b9a8a3cc2d68715b6c2d1dd804
+=======
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series9 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series10 = new System.Windows.Forms.DataVisualization.Charting.Series();
+>>>>>>> 메인폼
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.dtStart = new System.Windows.Forms.DateTimePicker();
             this.dtEnd = new System.Windows.Forms.DateTimePicker();
@@ -49,17 +63,25 @@
             this.label3 = new System.Windows.Forms.Label();
             this.btnOk = new System.Windows.Forms.Button();
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
 =======
             this.panel = new System.Windows.Forms.Panel();
             this.MethodReturnChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
+=======
+            this.totalChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
+>>>>>>> 메인폼
             this.btnClose = new System.Windows.Forms.Button();
+            this.MethodReturnChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.CateNFChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.panel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.totalChart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MethodReturnChart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CateNFChart)).BeginInit();
+<<<<<<< HEAD
 >>>>>>> f312230371ce44b9a8a3cc2d68715b6c2d1dd804
+=======
+>>>>>>> 메인폼
             this.SuspendLayout();
             // 
             // listBox1
@@ -136,6 +158,7 @@
             this.btnOk.Click += new System.EventHandler(this.btnOk_Click);
             // 
 <<<<<<< HEAD
+<<<<<<< HEAD
             // chart1
             // 
             chartArea2.Name = "ChartArea1";
@@ -194,6 +217,25 @@
             this.MethodReturnChart.Text = "chart1";
             this.MethodReturnChart.Visible = false;
             this.MethodReturnChart.Click += new System.EventHandler(this.MethodReturnChat_Click);
+=======
+            // totalChart
+            // 
+            chartArea4.Name = "ChartArea1";
+            this.totalChart.ChartAreas.Add(chartArea4);
+            legend4.Name = "Legend1";
+            this.totalChart.Legends.Add(legend4);
+            this.totalChart.Location = new System.Drawing.Point(421, 467);
+            this.totalChart.Name = "totalChart";
+            series6.ChartArea = "ChartArea1";
+            series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series6.Color = System.Drawing.Color.Black;
+            series6.Legend = "Legend1";
+            series6.Name = "Series1";
+            this.totalChart.Series.Add(series6);
+            this.totalChart.Size = new System.Drawing.Size(937, 300);
+            this.totalChart.TabIndex = 8;
+            this.totalChart.Text = "chart1";
+>>>>>>> 메인폼
             // 
             // btnClose
             // 
@@ -205,29 +247,57 @@
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
+            // MethodReturnChart
+            // 
+            chartArea5.Name = "ChartArea1";
+            this.MethodReturnChart.ChartAreas.Add(chartArea5);
+            legend5.Name = "Legend1";
+            this.MethodReturnChart.Legends.Add(legend5);
+            this.MethodReturnChart.Location = new System.Drawing.Point(463, 136);
+            this.MethodReturnChart.Name = "MethodReturnChart";
+            this.MethodReturnChart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SeaGreen;
+            series7.ChartArea = "ChartArea1";
+            series7.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series7.Legend = "Legend1";
+            series7.Name = "method";
+            series8.ChartArea = "ChartArea1";
+            series8.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series8.Legend = "Legend1";
+            series8.Name = "return";
+            series9.ChartArea = "ChartArea1";
+            series9.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series9.Legend = "Legend1";
+            series9.Name = "categoryF";
+            this.MethodReturnChart.Series.Add(series7);
+            this.MethodReturnChart.Series.Add(series8);
+            this.MethodReturnChart.Series.Add(series9);
+            this.MethodReturnChart.Size = new System.Drawing.Size(300, 300);
+            this.MethodReturnChart.TabIndex = 9;
+            this.MethodReturnChart.Text = "chart1";
+            // 
             // CateNFChart
             // 
-            chartArea2.Name = "ChartArea1";
-            this.CateNFChart.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.CateNFChart.Legends.Add(legend2);
-            this.CateNFChart.Location = new System.Drawing.Point(218, 91);
+            chartArea6.Name = "ChartArea1";
+            this.CateNFChart.ChartAreas.Add(chartArea6);
+            legend6.Name = "Legend1";
+            this.CateNFChart.Legends.Add(legend6);
+            this.CateNFChart.Location = new System.Drawing.Point(902, 136);
             this.CateNFChart.Name = "CateNFChart";
-            series4.ChartArea = "ChartArea1";
-            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series4.Legend = "Legend1";
-            series4.Name = "categoryNF";
-            this.CateNFChart.Series.Add(series4);
-            this.CateNFChart.Size = new System.Drawing.Size(400, 350);
-            this.CateNFChart.TabIndex = 1;
-            this.CateNFChart.Text = "chart1";
-            this.CateNFChart.Visible = false;
+            series10.ChartArea = "ChartArea1";
+            series10.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series10.Legend = "Legend1";
+            series10.Name = "categoryNF";
+            this.CateNFChart.Series.Add(series10);
+            this.CateNFChart.Size = new System.Drawing.Size(300, 300);
+            this.CateNFChart.TabIndex = 10;
+            this.CateNFChart.Text = "chart2";
             // 
             // frmRevenue
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
+<<<<<<< HEAD
 <<<<<<< HEAD
             this.ClientSize = new System.Drawing.Size(1360, 884);
             this.Controls.Add(this.chart1);
@@ -236,17 +306,23 @@
             this.ControlBox = false;
             this.Controls.Add(this.btnClose);
 >>>>>>> f312230371ce44b9a8a3cc2d68715b6c2d1dd804
+=======
+            this.ClientSize = new System.Drawing.Size(1543, 884);
+            this.Controls.Add(this.MethodReturnChart);
+            this.Controls.Add(this.totalChart);
+>>>>>>> 메인폼
             this.Controls.Add(this.btnOk);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dtEnd);
             this.Controls.Add(this.dtStart);
-            this.Controls.Add(this.panel);
             this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.CateNFChart);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frmRevenue";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmRevenue";
+<<<<<<< HEAD
             this.Load += new System.EventHandler(this.frmRevenue_Load);
 <<<<<<< HEAD
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
@@ -255,6 +331,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.MethodReturnChart)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CateNFChart)).EndInit();
 >>>>>>> f312230371ce44b9a8a3cc2d68715b6c2d1dd804
+=======
+            ((System.ComponentModel.ISupportInitialize)(this.totalChart)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MethodReturnChart)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CateNFChart)).EndInit();
+>>>>>>> 메인폼
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -269,12 +350,21 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnOk;
 <<<<<<< HEAD
+<<<<<<< HEAD
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
 =======
         private System.Windows.Forms.Panel panel;
         private System.Windows.Forms.DataVisualization.Charting.Chart MethodReturnChart;
+=======
+        private System.Windows.Forms.DataVisualization.Charting.Chart totalChart;
+        
+>>>>>>> 메인폼
         private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.DataVisualization.Charting.Chart MethodReturnChart;
         private System.Windows.Forms.DataVisualization.Charting.Chart CateNFChart;
+<<<<<<< HEAD
 >>>>>>> f312230371ce44b9a8a3cc2d68715b6c2d1dd804
+=======
+>>>>>>> 메인폼
     }
 }
