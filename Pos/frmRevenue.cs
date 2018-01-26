@@ -255,6 +255,9 @@ namespace Pos
         //listbox선택시 
         private void listBox1_Click(object sender, EventArgs e)
         {
+            dtStart.Value = DateTime.Now;
+            dtEnd.Value = DateTime.Now;
+
             switch (listBox1.SelectedIndex)
             {
                 case 0:
@@ -280,6 +283,11 @@ namespace Pos
                 case 7:
                     break;
             }
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
 
         //성별 차트
