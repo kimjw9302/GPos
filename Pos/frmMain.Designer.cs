@@ -114,7 +114,9 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvProduct.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvProduct.Location = new System.Drawing.Point(11, 99);
+
+            this.dgvProduct.Location = new System.Drawing.Point(10, 79);
+
             this.dgvProduct.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvProduct.Name = "dgvProduct";
             this.dgvProduct.ReadOnly = true;

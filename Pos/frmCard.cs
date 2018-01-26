@@ -62,6 +62,51 @@ namespace Pos
                 fm.T2.Text += "카드 결제 : " + s.Cardmoeny + "원\r\n";
                 fm.T2.Text += "포인트 결제 : " + s.Pointmoney + "원\r\n";
 
+                con.Close();
+                con.Open();
+                foreach (DataRow row in fm.Ss.Rows)
+                {
+                    using (var ccmd = new SqlCommand("InsertSellInfo", con))
+                    {
+
+                        ccmd.CommandType = CommandType.StoredProcedure;
+
+
+                        decimal salesquantity = 0;
+                        decimal tot = -1 * decimal.Parse(row["할인"].ToString());
+                        salesquantity = tot / decimal.Parse(row["단가"].ToString());
+                        ccmd.Parameters.AddWithValue("@barcode", row["바코드"].ToString());
+                        ccmd.Parameters.AddWithValue("@quantity", row["수량"].ToString());
+                        ccmd.Parameters.AddWithValue("@salesquantity", tot);
+                        ccmd.ExecuteNonQuery();
+
+                    }
+                }
+                if (s.ClientID != null)
+                {
+                    using (var ccmd = new SqlCommand("UpdatePoint", con))
+                    {
+                        ccmd.CommandType = CommandType.StoredProcedure;
+                        ccmd.Parameters.AddWithValue("@phone", s.ClientID);
+                        ccmd.ExecuteNonQuery();
+                    }
+                }
+
+                foreach (DataRow row in fm.Ss.Rows)
+                {
+                    using (var ccmd = new SqlCommand("UpdateProducts", con))
+                    {
+                        ccmd.CommandType = CommandType.StoredProcedure;
+                        ccmd.Parameters.AddWithValue("@barcode", row["바코드"].ToString());
+                        ccmd.Parameters.AddWithValue("@quantity", row["수량"].ToString());
+                        if (ccmd.ExecuteNonQuery() != 1)
+                        {
+                            MessageBox.Show("상품 재고 업데이트 에러");
+                        }
+                    }
+                }
+
+
                 Sell.Clear();
                 fm.Ss.Clear();
                 this.Dispose();

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSalesinquiry));
             this.dgvSells = new System.Windows.Forms.DataGridView();
             this.btnPrint = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
@@ -44,11 +45,18 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.btnSearch = new System.Windows.Forms.Button();
             this.btnReturn = new System.Windows.Forms.Button();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.tboxSellD = new System.Windows.Forms.TextBox();
+            this.labRecipt = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
+            this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSells)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvSells
@@ -77,6 +85,7 @@
             this.btnPrint.TabIndex = 3;
             this.btnPrint.Text = "출력";
             this.btnPrint.UseVisualStyleBackColor = false;
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
             // btnClose
             // 
@@ -90,6 +99,7 @@
             this.btnClose.TabIndex = 4;
             this.btnClose.Text = "닫기";
             this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // btnDown
             // 
@@ -154,6 +164,7 @@
             this.dtpSellDate2.Name = "dtpSellDate2";
             this.dtpSellDate2.Size = new System.Drawing.Size(323, 21);
             this.dtpSellDate2.TabIndex = 3;
+            this.dtpSellDate2.ValueChanged += new System.EventHandler(this.dtpSellDate2_ValueChanged);
             // 
             // dtpSellDate1
             // 
@@ -162,6 +173,7 @@
             this.dtpSellDate1.Name = "dtpSellDate1";
             this.dtpSellDate1.Size = new System.Drawing.Size(314, 21);
             this.dtpSellDate1.TabIndex = 2;
+            this.dtpSellDate1.ValueChanged += new System.EventHandler(this.dtpSellDate1_ValueChanged);
             // 
             // tabControl1
             // 
@@ -226,28 +238,81 @@
             // 
             this.btnReturn.BackColor = System.Drawing.Color.Black;
             this.btnReturn.ForeColor = System.Drawing.Color.White;
-            this.btnReturn.Location = new System.Drawing.Point(985, 24);
+            this.btnReturn.Location = new System.Drawing.Point(985, 26);
             this.btnReturn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnReturn.Name = "btnReturn";
             this.btnReturn.Size = new System.Drawing.Size(87, 87);
             this.btnReturn.TabIndex = 10;
             this.btnReturn.Text = "반품";
             this.btnReturn.UseVisualStyleBackColor = false;
+            this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.InitialImage")));
+            this.pictureBox2.Location = new System.Drawing.Point(827, 294);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(255, 83);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 17;
+            this.pictureBox2.TabStop = false;
             // 
             // tboxSellD
             // 
-            this.tboxSellD.Location = new System.Drawing.Point(801, 119);
+            this.tboxSellD.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.tboxSellD.Location = new System.Drawing.Point(765, 103);
             this.tboxSellD.Multiline = true;
             this.tboxSellD.Name = "tboxSellD";
-            this.tboxSellD.Size = new System.Drawing.Size(271, 359);
-            this.tboxSellD.TabIndex = 13;
+            this.tboxSellD.ReadOnly = true;
+            this.tboxSellD.Size = new System.Drawing.Size(255, 172);
+            this.tboxSellD.TabIndex = 16;
+            // 
+            // labRecipt
+            // 
+            this.labRecipt.AutoSize = true;
+            this.labRecipt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.labRecipt.Location = new System.Drawing.Point(1217, 106);
+            this.labRecipt.Name = "labRecipt";
+            this.labRecipt.Size = new System.Drawing.Size(2, 14);
+            this.labRecipt.TabIndex = 18;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
+            this.pictureBox1.Location = new System.Drawing.Point(1219, 20);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(255, 83);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 19;
+            this.pictureBox1.TabStop = false;
+            // 
+            // printDocument1
+            // 
+            this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
+            // 
+            // printPreviewDialog1
+            // 
+            this.printPreviewDialog1.AutoScrollMargin = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.AutoScrollMinSize = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.ClientSize = new System.Drawing.Size(400, 300);
+            this.printPreviewDialog1.Enabled = true;
+            this.printPreviewDialog1.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialog1.Icon")));
+            this.printPreviewDialog1.Name = "printPreviewDialog1";
+            this.printPreviewDialog1.Visible = false;
             // 
             // frmSalesinquiry
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(1097, 534);
+            this.AutoSize = true;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ClientSize = new System.Drawing.Size(1559, 989);
+            this.ControlBox = false;
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.labRecipt);
+            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.tboxSellD);
             this.Controls.Add(this.btnReturn);
             this.Controls.Add(this.btnSearch);
@@ -268,6 +333,8 @@
             this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -291,6 +358,11 @@
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Button btnReturn;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.TextBox tboxSellD;
+        private System.Windows.Forms.Label labRecipt;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Drawing.Printing.PrintDocument printDocument1;
+        private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
     }
 }
