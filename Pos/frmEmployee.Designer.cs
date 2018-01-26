@@ -42,15 +42,7 @@
             this.tboxName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvEmployees = new System.Windows.Forms.DataGridView();
-<<<<<<< HEAD
-<<<<<<< HEAD
-            this.pboxBarcode = new System.Windows.Forms.PictureBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.btnPrint = new System.Windows.Forms.Button();
-=======
-            this.btnClose = new System.Windows.Forms.Button();
->>>>>>> f312230371ce44b9a8a3cc2d68715b6c2d1dd804
-=======
+
 
             this.pboxBarcode = new System.Windows.Forms.PictureBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -58,7 +50,7 @@
 
             this.btnClose = new System.Windows.Forms.Button();
 
->>>>>>> 메인폼
+
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmployees)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pboxBarcode)).BeginInit();
@@ -225,11 +217,6 @@
             this.dgvEmployees.TabIndex = 5;
             this.dgvEmployees.Click += new System.EventHandler(this.dgvEmployees_Click);
             // 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-
->>>>>>> 메인폼
             // pboxBarcode
             // 
             this.pboxBarcode.BackColor = System.Drawing.Color.White;
@@ -262,11 +249,6 @@
             this.btnPrint.TabIndex = 15;
             this.btnPrint.Text = "바코드 출력";
             this.btnPrint.UseVisualStyleBackColor = false;
-<<<<<<< HEAD
-=======
-=======
-
->>>>>>> 메인폼
             // btnClose
             // 
             this.btnClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
@@ -280,37 +262,20 @@
             this.btnClose.Text = "닫기";
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
-<<<<<<< HEAD
->>>>>>> f312230371ce44b9a8a3cc2d68715b6c2d1dd804
-=======
 
->>>>>>> 메인폼
             // 
             // frmEmployee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-<<<<<<< HEAD
-<<<<<<< HEAD
             this.ClientSize = new System.Drawing.Size(1009, 735);
             this.Controls.Add(this.btnPrint);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.pboxBarcode);
-=======
             this.ClientSize = new System.Drawing.Size(883, 672);
             this.ControlBox = false;
             this.Controls.Add(this.btnClose);
->>>>>>> f312230371ce44b9a8a3cc2d68715b6c2d1dd804
-=======
-         this.ClientSize = new System.Drawing.Size(1009, 735);
-            this.Controls.Add(this.btnPrint);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.pboxBarcode);
-
-            this.Controls.Add(this.btnClose);
-
->>>>>>> 메인폼
             this.Controls.Add(this.label3);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dgvEmployees);
@@ -344,20 +309,12 @@
         private System.Windows.Forms.DataGridView dgvEmployees;
         private System.Windows.Forms.TextBox tboxhourlyWage;
         private System.Windows.Forms.Label label5;
-<<<<<<< HEAD
-<<<<<<< HEAD
+
         private System.Windows.Forms.PictureBox pboxBarcode;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnPrint;
-=======
-        private System.Windows.Forms.Button btnClose;
->>>>>>> f312230371ce44b9a8a3cc2d68715b6c2d1dd804
-=======
-        private System.Windows.Forms.PictureBox pboxBarcode;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button btnPrint;
+
         private System.Windows.Forms.Button btnClose;
 
->>>>>>> 메인폼
     }
 }

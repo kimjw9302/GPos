@@ -283,21 +283,18 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Sell.cs" />
-<<<<<<< HEAD
     <EmbeddedResource Include="frmAban.resx">
       <DependentUpon>frmAban.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmAbanView.resx">
       <DependentUpon>frmAbanView.cs</DependentUpon>
     </EmbeddedResource>
-=======
     <Compile Include="SignPad.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="SignPad.Designer.cs">
       <DependentUpon>SignPad.cs</DependentUpon>
     </Compile>
->>>>>>> f8f79c5a0965093f3829eb2d452f0f2f7f28fb97
     <EmbeddedResource Include="frmAddrSearch.resx">
       <DependentUpon>frmAddrSearch.cs</DependentUpon>
     </EmbeddedResource>

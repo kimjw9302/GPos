@@ -15,12 +15,10 @@ namespace Pos
 {
     public partial class frmRevenue : Form, ISearch, IAlter
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
+
         SqlConnection con;
         SqlDataAdapter adapter;
         DataSet ds;
-
         //지혜 - 시간대별 매출
         DataTable dt;
         DataRowCollection dtRow;
@@ -48,51 +46,19 @@ namespace Pos
         DataPoint w40 = new DataPoint(0, 0);
         DataPoint w50 = new DataPoint(0, 0); 
         #endregion
-
-        //private DataPointCollection dataPointM , dataPointW;
-
-        //버튼누르면
-        private void btnOk_Click(object sender, EventArgs e)
-        {
-            
-          
-        }
-
         Title BarTitle = new Title();
-=======
->>>>>>> f312230371ce44b9a8a3cc2d68715b6c2d1dd804
-=======
-<<<<<<< HEAD
-=======
->>>>>>> 메인폼
         DataGridView dgvProducts = null;
         DataGridView dgvTotal = null;
-        SqlConnection con = null;
         DataRow dr1 = null;
-        DataTable dt =null;
+        DataTable dt1 =null;
         decimal row1_sum, row2_sum, row3_sum = 0;
-<<<<<<< HEAD
-=======
->>>>>>> f8f79c5a0965093f3829eb2d452f0f2f7f28fb97
-        
->>>>>>> f312230371ce44b9a8a3cc2d68715b6c2d1dd804
-=======
-
->>>>>>> 메인폼
         public frmRevenue()
         {
             InitializeComponent();
         }
-        
-
-<<<<<<< HEAD
-        //조회버튼클릭
-        private void btnOk_Click_1(object sender, EventArgs e)
-=======
-
         private void frmRevenue_Load(object sender, EventArgs e)
         {
-
+            
         }
         private void Method()
         {
@@ -134,8 +100,6 @@ namespace Pos
                     MethodReturnChart.Series["method"].Points.AddXY("포인트", point);
                 }
             }
-
-
         }
         private void Return()
         {
@@ -301,17 +265,15 @@ namespace Pos
             }
         }
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
->>>>>>> f312230371ce44b9a8a3cc2d68715b6c2d1dd804
+
         {
             switch (listBox1.SelectedIndex)
             {
                 case 0:
-<<<<<<< HEAD
+
                     chartAge.Visible = false;
                     chartGender.Visible = false;
                     TimeRevenue();
-=======
->>>>>>> f8f79c5a0965093f3829eb2d452f0f2f7f28fb97
                     break;
                 case 1:
                     break;
@@ -327,18 +289,7 @@ namespace Pos
                     break;
                 case 5:
                     break;
-<<<<<<< HEAD
-                case 6: 
-                    break;
-                case 7:
-                    break;
-            }
-        }
-
-        private void TimeRevenue()
-=======
                 case 6: //재웅
-
                     AllTotalRevenue();
                     break;
             }
@@ -422,7 +373,7 @@ namespace Pos
             int days = int.Parse(subDate.TotalDays.ToString()) + 1;
 
             DataSet ds = new DataSet();
-             dt = new DataTable();
+             dt1 = new DataTable();
 
             totalChart.Visible = true;
 
@@ -461,22 +412,22 @@ namespace Pos
             dgvTotal.Size = new Size(944, 150);
             #endregion
 
-            #region DB연결부분
+            #region DB연결1부분
 
             SqlConnection con = DBcontroller.Instance();
             con.Open();
             DateTime temp = sdate;
-            dt.Columns.Add("분류");
+            dt1.Columns.Add("분류");
             
             for (int i = 0; i < days; i++)
             {
                 if (sdate.Month.ToString().Length == 1)
                 {
-                    dt.Columns.Add(sdate.Year.ToString() + "년" +"0"+ sdate.Month.ToString() + "월" + sdate.Day.ToString() + "일");
+                    dt1.Columns.Add(sdate.Year.ToString() + "년" +"0"+ sdate.Month.ToString() + "월" + sdate.Day.ToString() + "일");
                 }
                 else
                 {
-                    dt.Columns.Add(sdate.Year.ToString() + "년" + sdate.Month.ToString() + "월" + sdate.Day.ToString() + "일");
+                    dt1.Columns.Add(sdate.Year.ToString() + "년" + sdate.Month.ToString() + "월" + sdate.Day.ToString() + "일");
                 }
            
 
@@ -485,9 +436,9 @@ namespace Pos
                 sdate = sdate.AddDays(1);
             }
 
-            dt.Columns.Add("합계");
+            dt1.Columns.Add("합계");
 
-            dr1 = dt.NewRow();
+            dr1 = dt1.NewRow();
             //매출액 
             dr1[0] = "매출액";
          
@@ -519,10 +470,10 @@ namespace Pos
                 temp = temp.AddDays(1);
             }
             dr1[days+1] = row1_sum;
-            dt.Rows.Add(dr1);
+            dt1.Rows.Add(dr1);
 
             //할인금액
-            dr1 = dt.NewRow();
+            dr1 = dt1.NewRow();
             dr1[0] = "할인금";
             sdate = DateTime.Parse(dtStart.Value.ToShortDateString());
             for (int i = 1; i < days + 1; i++)
@@ -552,9 +503,9 @@ namespace Pos
 
             }
             dr1[days + 1] = row2_sum;
-            dt.Rows.Add(dr1);
+            dt1.Rows.Add(dr1);
             //매출단가
-            dr1 = dt.NewRow();
+            dr1 = dt1.NewRow();
             dr1[0] = "매출단가";
             sdate = DateTime.Parse(dtStart.Value.ToShortDateString());
             for (int i = 1; i < days + 1; i++)
@@ -585,7 +536,7 @@ namespace Pos
 
             }
             dr1[days + 1] = row3_sum;
-            dt.Rows.Add(dr1);
+            dt1.Rows.Add(dr1);
   
             //for (int i = 0; i < 3; i++)
             //{
@@ -594,12 +545,12 @@ namespace Pos
 
             //합계
             List<decimal> intarr = new List<decimal>();
-            dr1 = dt.NewRow();
+            dr1 = dt1.NewRow();
             dr1[0] = "매출총합계";
             sdate = DateTime.Parse(dtStart.Value.ToShortDateString());
             intarr.Add(1);
             int count = 1;
-            foreach (DataRow row in dt.Rows)
+            foreach (DataRow row in dt1.Rows)
             {
                
                 for (int i = 1; i < row.ItemArray.Length-1; i++)
@@ -623,7 +574,7 @@ namespace Pos
                 row4_sum += intarr[i];
             }
             dr1[days + 1] = row4_sum;
-            dt.Rows.Add(dr1);
+            dt1.Rows.Add(dr1);
             con.Close();
 
 
@@ -639,7 +590,7 @@ namespace Pos
             //this.Controls.Add(lblCard);
             dgvTotal.AllowUserToAddRows = false;
 
-            dgvTotal.DataSource = dt;
+            dgvTotal.DataSource = dt1;
             Draw_Chart();
 
         }
@@ -647,24 +598,23 @@ namespace Pos
         {
             Series Series1 = new Series("매출금액");
             Series1.ChartType = SeriesChartType.Line;
-            for (int i = 3; i < dt.Rows.Count; i++)
+            for (int i = 3; i < dt1.Rows.Count; i++)
             {       
-                for (int j = 1; j < dt.Rows[3].ItemArray.Length-1; j++)
+                for (int j = 1; j < dt1.Rows[3].ItemArray.Length-1; j++)
                 {
-                    Series1.Points.AddXY(dt.Columns[j].ToString().Substring(5, 2) + "-"+dt.Columns[j].ToString().Substring(8,2), dt.Rows[i].ItemArray[j]);
+                    Series1.Points.AddXY(dt1.Columns[j].ToString().Substring(5, 2) + "-"+dt1.Columns[j].ToString().Substring(8,2), dt1.Rows[i].ItemArray[j]);
                 }     
             }
             totalChart.Series.Clear();
             totalChart.Series.Add(Series1);
         }
 
-     
+
 
         //재웅 추가/
 
         //총매출
-        private void TotalRevenue()
->>>>>>> f8f79c5a0965093f3829eb2d452f0f2f7f28fb97
+        private void TimeRevenue()
         {
             txtTime.Visible = true;
             txtTime.Text = "";
@@ -826,7 +776,6 @@ namespace Pos
         //listbox선택시 
         private void listBox1_Click(object sender, EventArgs e)
         {
-<<<<<<< HEAD
             dtStart.Value = DateTime.Now;
             dtEnd.Value = DateTime.Now;
 
@@ -857,23 +806,11 @@ namespace Pos
             }
         }
 
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
 
-        }
 
-<<<<<<< HEAD
+
         //성별 차트
         private void AgeChart()
-=======
-        //private void frmRevenue_Load(object sender, EventArgs e)
-        //{
-        //    totalChart.Visible = false;
-        //}
-
-        //연령별 분석
-        private void EmployeeAnalysis()
->>>>>>> f8f79c5a0965093f3829eb2d452f0f2f7f28fb97
         {
             chartAge.Series[0].Points.Clear();
             chartAge.Series[1].Points.Clear();
@@ -1039,15 +976,7 @@ namespace Pos
 
 
             }
-=======
-            throw new NotImplementedException();
-
->>>>>>> f312230371ce44b9a8a3cc2d68715b6c2d1dd804
         }
-<<<<<<< HEAD
-        
-     
-=======
 
         //재웅추가
         //private void btnOk_Click(object sender, EventArgs e)
@@ -1069,6 +998,6 @@ namespace Pos
         //    }
 
         //}
->>>>>>> f8f79c5a0965093f3829eb2d452f0f2f7f28fb97
+
     }
 }
