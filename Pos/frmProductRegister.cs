@@ -13,11 +13,11 @@ namespace Pos
 {
     public partial class frmProductRegister : Form
     {
-        SqlConnection con;
-        SqlDataAdapter adapter;
-        DataTable cate1Table, cateF, cateNF, placeTable;
-        DataSet ds;
-        DataRowCollection c1Row, cFRow, cNFRow, pRow;
+        private SqlConnection con;
+        private SqlDataAdapter adapter;
+        private DataTable cate1Table, cateF, cateNF, placeTable;
+        private DataSet ds;
+        private DataRowCollection c1Row, cFRow, cNFRow, pRow;
 
         private void btnClose_Click(object sender, EventArgs e)
         {
@@ -60,6 +60,8 @@ namespace Pos
                     int i = cmd.ExecuteNonQuery();
                     if (i == 1)
                     {
+                        txtBarcode.Text = ""; txtCostPrice.Text = ""; txtProductName.Text = ""; txtUnitPrice.Text = "";
+                        cbCate1.Text = ""; cbCate2.Text = ""; cbPlace.Text = "";
                         MessageBox.Show("상품 저장");
                         con.Close();
                         return;
@@ -72,9 +74,9 @@ namespace Pos
                     }
                 } 
             }
-
+          
         }
-
+        
         private void cbCate1_SelectedIndexChanged(object sender, EventArgs e)
         {
             cbCate2.Items.Clear();

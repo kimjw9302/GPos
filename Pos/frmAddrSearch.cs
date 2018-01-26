@@ -13,14 +13,14 @@ namespace Pos
 {
     public partial class frmAddrSearch : Form
     {
-        string currentPage = "1";  
-        string countPerPage = "1000"; 
-        string confmKey = "U01TX0FVVEgyMDE4MDExMTA5NTE0NjEwNzYwNTY="; 
-        string keyword = string.Empty;
-        string url = string.Empty;
+        private string currentPage = "1";  
+        private string countPerPage = "1000"; 
+        private string confmKey = "U01TX0FVVEgyMDE4MDExMTA5NTE0NjEwNzYwNTY="; 
+        private string keyword = string.Empty;
+        private string url = string.Empty;
 
-        DataTable addrTable;
-        DataRowCollection rows;
+        private DataTable addrTable;
+        private DataRowCollection rows;
 
         public frmAddrSearch()
         {

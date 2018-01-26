@@ -20,6 +20,7 @@ namespace Pos
             InitializeComponent();
         }
 
+
         private void frmRevenue_Load(object sender, EventArgs e)
         {
 
@@ -210,6 +211,44 @@ namespace Pos
             {
                 MessageBox.Show("Test");
             }
+        }
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            switch(listBox1.SelectedIndex)
+            {
+                case 0: 
+                    break;
+                case 1:
+                    break;
+                case 2:
+                    break;
+                case 3: //지혜
+                    EmployeeAnalysis();
+                    break;
+                case 4: 
+                    break;
+                case 5:
+                    break;
+                case 6: //지혜
+                    TotalRevenue();
+                    break;
+                case 7:
+                    break;
+            }
+            
+        }
+
+        //총매출
+        private void TotalRevenue()
+        {
+            throw new NotImplementedException();
+        }
+
+        //연령별 분석
+        private void EmployeeAnalysis()
+        {
+            throw new NotImplementedException();
+
         }
     }
 }
