@@ -88,7 +88,7 @@ namespace Pos
                 fm.T2.Text += "할인후 보유 포인트 : " + (int.Parse(tboxUPoint.Text) - int.Parse(tboxInputPoint.Text)) + "\r\n";
                 fm.T1.Text = (int.Parse(fm.T1.Text) - int.Parse(tboxInputPoint.Text)).ToString();
                 fm.T5.Text = (int.Parse(fm.T4.Text) + int.Parse(fm.T1.Text)).ToString();
-      
+                s.Phone = tboxPhone.Text;
                 this.Dispose();
             }
             else
@@ -126,10 +126,12 @@ namespace Pos
         {
             con = DBcontroller.Instance();
             con.Open();
+  
             using (var cmd = new SqlCommand("SearchMember", con))
             {
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@phone", tboxPhone.Text);
+        
                 cmd.Parameters.AddWithValue("@pwd", DBNull.Value);
                 var sdr = cmd.ExecuteReader();
                 if (sdr.HasRows)

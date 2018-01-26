@@ -86,7 +86,6 @@ C:\Users\김재웅\Documents\GPos\Pos\obj\Debug\Pos.frmAddrSearch.resources
 C:\Users\김재웅\Documents\GPos\Pos\obj\Debug\Pos.frmCustInquiry.resources
 C:\Users\김재웅\Documents\GPos\Pos\obj\Debug\Pos.frmEmployee.resources
 C:\Users\김재웅\Documents\GPos\Pos\obj\Debug\Pos.frmLogin.resources
-C:\Users\김재웅\Documents\GPos\Pos\obj\Debug\Pos.frmCalculator.resources
 C:\Users\김재웅\Documents\GPos\Pos\obj\Debug\Pos.frmCard.resources
 C:\Users\김재웅\Documents\GPos\Pos\obj\Debug\Pos.frmCash.resources
 C:\Users\김재웅\Documents\GPos\Pos\obj\Debug\Pos.frmCustRegister.resources
@@ -118,3 +117,7 @@ C:\Users\김재웅\Documents\GPos\Pos\obj\Debug\Pos.csproj.GenerateResource.Cach
 C:\Users\김재웅\Documents\GPos\Pos\obj\Debug\Pos.csproj.CoreCompileInputs.cache
 C:\Users\김재웅\Documents\GPos\Pos\obj\Debug\Pos.exe
 C:\Users\김재웅\Documents\GPos\Pos\obj\Debug\Pos.pdb
+C:\Users\김재웅\Documents\GPos\Pos\obj\Debug\Pos.frmStoreInfo.resources
+C:\Users\김재웅\Documents\GPos\Pos\obj\Debug\Pos.SignPad.resources
+C:\Users\김재웅\Documents\GPos\Pos\obj\Debug\Pos.frmSign.resources
+C:\Users\김재웅\Documents\GPos\Pos\obj\Debug\Pos.frmCalculator.resources

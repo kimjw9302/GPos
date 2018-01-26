@@ -64,13 +64,12 @@ namespace Pos
             sellTable.Columns.Add("비고");
             sellTable.Columns.Add("이벤트번호");
             sellTable.Columns.Add("이벤트내용");
+            sellTable.Columns.Add("이벤트그룹");
         }
         //로드.
         private void frmMain_Load(object sender, EventArgs e)
         {
             dataGridView = dgvProduct;
-
-
             t1 = txtDiscount;
             t2 = txtPaymentList;
             t3 = txtChange;
@@ -95,8 +94,8 @@ namespace Pos
             dgvProduct.Columns[6].Width = 100;
             dgvProduct.Columns[7].Visible = false;
             dgvProduct.Columns[8].Visible = false;
+            dgvProduct.Columns[9].Visible = false;
             con.Open();
-
             using (var cmd = new SqlCommand("LoadCheckProducts", con))
             {
                 cmd.CommandType = CommandType.StoredProcedure;
@@ -112,15 +111,11 @@ namespace Pos
                 {
                     this.Visible = true;
                     con.Close();
-
-                    frmNotice fn = new frmNotice(ds.Tables[0], empId);
+                   frmNotice fn = new frmNotice(ds.Tables[0], empId);
                     fn.Owner = this;
-
                     fn.ShowDialog();
                 }
-
             }
-
         }
 
         //종료버튼.
@@ -232,6 +227,7 @@ namespace Pos
             frmCalculator fc = frmCalculator.Instance();
             fc.Show();
             fc.Focus();
+       
         }
 
 
@@ -341,7 +337,7 @@ namespace Pos
         {
             int index = dataGridView.CurrentCell.RowIndex;
             string localbarcode = dgvProduct[1, index].Value.ToString();
-            string localeventNum = dgvProduct[7, index].Value.ToString();
+            string localeventNum = dgvProduct[9, index].Value.ToString();
             string price = dgvProduct[3, index].Value.ToString();
             string eventcon = dgvProduct[8, index].Value.ToString();
             int quan = int.Parse(dgvProduct[4, index].Value.ToString());
@@ -383,8 +379,6 @@ namespace Pos
                     //1+1인경우
                     else if (eventcon == "1+1")
                     {
-
-
                         // 몫 - 나머지 : 
                         int mok = totCount / 2;
                         int namege = totCount % 2;
@@ -455,7 +449,7 @@ namespace Pos
             {
                 int index = dataGridView.CurrentCell.RowIndex;
                 string localbarcode = dgvProduct[1, index].Value.ToString();
-                string localeventNum = dgvProduct[7, index].Value.ToString();
+                string localeventNum = dgvProduct[9, index].Value.ToString();
                 string price = dgvProduct[3, index].Value.ToString();
                 string eventcon = dgvProduct[8, index].Value.ToString();
                 DataRow[] update1 = sellTable.Select("바코드='" + localbarcode + "'");//selltable에 바코드가 존재하는지
@@ -629,6 +623,9 @@ namespace Pos
                         {
                             string localbarcode = sdr["barcode"].ToString();
                             string localeventNum = sdr["eventNum"].ToString();
+                            string localgroupNum = sdr["eventgroup"].ToString();
+                     
+                       
                             if (localbarcode.Length == 18)
                             {
                                 string barcode = sdr["barcode"].ToString();
@@ -668,23 +665,13 @@ namespace Pos
                             }
                             //로우가 있다 -> 일치하는 바코드가 존재한다
                             DataRow[] update1 = sellTable.Select("바코드='" + localbarcode + "'");//selltable에 바코드가 존재하는지
-                            DataRow[] update2 = sellTable.Select("이벤트번호='" + localeventNum + "'");//selltable에 이벤트번호가 있는지
-                                                                                                  //1.바코드 있고, 이벤트 번호 같을경우
-                                                                                                  //2.바코드 있고, 이벤트 번호 없을 경우
-                                                                                                  //3 바코드 없으면 , 이벤트 번호 같음
-                                                                                                  //4. 바코드 없고, 이벤트 번호 x
-
-                            //DateTime startDate = (DateTime)sdr["startDate"];
-                            //DateTime endDate = (DateTi    me)sdr["endDate"];
-                            //int sdateCompare = DateTime.Compare(startDate, DateTime.Now);
-                            //if (sdateCompare >= 0)
-                            //{
-                            //    //이벤트가 지났다면 딜리트해줌
-                            //}
-
+                            DataRow[] update2 = sellTable.Select("이벤트그룹='" + localgroupNum + "'");//selltable에 이벤트번호가 있는지
+                                                                                                  //1.바코드 있고, 이벤트 그룹이 같을경우
+                                                                                                  //2.바코드 있고, 이벤트 그룹 없을 경우
+                                                                                                  //3 바코드 없으면 , 이벤트 그룹 같음
+                                                                                                  //4. 바코드 없고, 이벤트 번호 그룹 없을경우
                             if (update1.Length == 0 && update2.Length == 0)
                             {
-
                                 //바코드가 없고, 이벤트번호 없고
                                 MessageBox.Show("여기");
                                 DataRow newRow = sellTable.NewRow();
@@ -696,15 +683,19 @@ namespace Pos
                                 newRow["할인"] = 0;
                                 newRow["이벤트번호"] = sdr["eventNum"];
                                 newRow["이벤트내용"] = sdr["content"];
+                                newRow["이벤트그룹"] = sdr["eventgroup"];
                                 sellTable.Rows.Add(newRow);
                                 txtTotal.Text = (decimal.Parse(txtTotal.Text) + decimal.Parse(sdr["unitPrice"].ToString())).ToString();
                                 txtReceived.Text = (decimal.Parse(txtTotal.Text) + decimal.Parse(txtDiscount.Text)).ToString();
-                                if (sdr["content"].ToString() == "1+1")
+                                
+                                if (sdr["content"].ToString() == "1+1" )
                                 {
                                     MessageBox.Show("1-1");
                                     txtPaymentList.Text = "★★★★★★이벤트정보★★★★★\r\n";
                                     txtPaymentList.Text += "상품명 : " + sdr["productName"].ToString() + "\r\n";
+
                                     txtPaymentList.Text += "이벤트 내용 : " + sdr["content"].ToString() + "\r\n";
+
                                     txtPaymentList.Text += "이벤트 상품 : ";
                                     for (int i = 0; i < eventList.Count - 1; i++)
                                     {
@@ -743,6 +734,7 @@ namespace Pos
                                 newRow["단가"] = sdr["unitPrice"];
                                 newRow["수량"] = 1;
                                 newRow["이벤트내용"] = sdr["content"];
+                                newRow["이벤트그룹"] = sdr["eventgroup"];
                                 //1+1인경우
                                 if (sdr["content"].ToString() == "없음")
                                 {
@@ -822,6 +814,7 @@ namespace Pos
                             else if (update1.Length != 0 && update2.Length != 0)
                             {
                                 MessageBox.Show("여기3");
+                                MessageBox.Show(sdr["content"].ToString());
                                 //바코드가 selltable에 있고, 이벤트 번호가 존재할때!
                                 //우선 이벤트 번호가있는 상품의 수량을 알아야함!그리고 나눠!서 가격을바꿔줭~
                                 int totCount = 0;
@@ -987,6 +980,39 @@ namespace Pos
                 fsq.ShowDialog();
             }
         }
+
+        //매장정보변경 버튼 클릭 
+        private void btnSetting_Click(object sender, EventArgs e)
+        {
+            //1. 현재 포스 담당자의 번호가 사장이상 일 시 버튼이 작동하게 만든다. 
+            //2. DB와 연결 후 현재 담당자의 번호가 점장인지 확인.
+            con = DBcontroller.Instance();
+            con.Open();
+
+            using (var cmd = new SqlCommand("SelectEmployees",con))
+            {
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@empNum", empId);
+
+                var sdr = cmd.ExecuteScalar();
+                if (sdr.ToString()=="1")
+                {
+                    con.Close();
+                    new frmStoreInfo().ShowDialog();
+                  
+
+                }
+                else
+                {
+                    MessageBox.Show("접근이 불가능합니다.");
+                    con.Close();
+                }
+
+            }
+
+
+        }
+
         private void txtTotal_Click(object sender, EventArgs e)
         {
             txtProduct.Focus();

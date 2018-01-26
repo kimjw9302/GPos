@@ -33,17 +33,18 @@ namespace Pos
             frmPayment fm = (frmPayment)Owner;
             if (decimal.Parse(tboxBit.Text) == 0)
             {
-
                 con = DBcontroller.Instance();
                 s.Cashmoney = s.Cashmoney + int.Parse(tboxReceive.Text);
-
                 fm.T1.Text = "0";
                 fm.T2.Text = "0"; //payList
                 fm.T3.Text = "0";
                 fm.T4.Text = "0";
                 fm.T5.Text = "0";
-
-
+                int type = 1;
+                if (s.Pointmoney != 0)
+                {
+                    type = 3;
+                }
                 con.Open();
                 using (var cmd = new SqlCommand("InsertSell", con))
                 {
@@ -59,7 +60,7 @@ namespace Pos
 
                     cmd.Parameters.AddWithValue("@sellDate", DateTime.Now);
                     cmd.Parameters.AddWithValue("@clientNum", s.Ages);
-                    cmd.Parameters.AddWithValue("@methodNum", 1);
+                    cmd.Parameters.AddWithValue("@methodNum", type);
                     cmd.Parameters.AddWithValue("@totalMoney", s.Tot);
                     cmd.Parameters.AddWithValue("@receiveCash", s.Cashmoney);
                     cmd.Parameters.AddWithValue("@receiveCard", s.Cardmoeny);
@@ -69,6 +70,7 @@ namespace Pos
                     cmd.Parameters.AddWithValue("@empNum", s.EmpId);
                     cmd.Parameters.AddWithValue("@card", DBNull.Value);
                     cmd.Parameters.AddWithValue("@preturn", DBNull.Value);
+                    cmd.Parameters.AddWithValue("@returnReason", DBNull.Value);
                     cmd.ExecuteNonQuery();
                 }
                 fm.T2.Text = "************이전 정보 \r\n";
@@ -103,6 +105,14 @@ namespace Pos
                         ccmd.CommandType = CommandType.StoredProcedure;
                         ccmd.Parameters.AddWithValue("@phone", s.Phone);
                         ccmd.Parameters.AddWithValue("@point", s.SavePoint);
+                        ccmd.ExecuteNonQuery();
+                    }
+
+                    using (var ccmd = new SqlCommand("SelectMemberGrade", con))
+                    {
+                        MessageBox.Show("Test");
+                        ccmd.CommandType = CommandType.StoredProcedure;
+                        ccmd.Parameters.AddWithValue("@phone", s.Phone);
                         ccmd.ExecuteNonQuery();
                     }
                 }

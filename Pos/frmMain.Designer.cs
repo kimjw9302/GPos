@@ -686,6 +686,7 @@
             this.btnSetting.TabIndex = 44;
             this.btnSetting.Text = "매장정보변경";
             this.btnSetting.UseVisualStyleBackColor = true;
+            this.btnSetting.Click += new System.EventHandler(this.btnSetting_Click);
             // 
             // panel2
             // 
