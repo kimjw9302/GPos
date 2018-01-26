@@ -42,8 +42,10 @@
             this.lblDiscount = new System.Windows.Forms.Label();
             this.lblContent = new System.Windows.Forms.Label();
             this.btnSearch = new System.Windows.Forms.Button();
-            this.tboxBarcode = new System.Windows.Forms.TextBox();
-            this.lblBarcode = new System.Windows.Forms.Label();
+            this.tboxEventNum = new System.Windows.Forms.TextBox();
+            this.lblEventNum = new System.Windows.Forms.Label();
+            this.tboxProductName = new System.Windows.Forms.TextBox();
+            this.lblProductName = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -51,15 +53,17 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 236);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 275);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(734, 355);
+            this.dataGridView1.Size = new System.Drawing.Size(734, 316);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.Click += new System.EventHandler(this.dataGridView1_Click);
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.lblProductName);
+            this.panel1.Controls.Add(this.tboxProductName);
             this.panel1.Controls.Add(this.EndDate);
             this.panel1.Controls.Add(this.btnModify);
             this.panel1.Controls.Add(this.StartDate);
@@ -72,18 +76,18 @@
             this.panel1.Controls.Add(this.lblDiscount);
             this.panel1.Controls.Add(this.lblContent);
             this.panel1.Controls.Add(this.btnSearch);
-            this.panel1.Controls.Add(this.tboxBarcode);
-            this.panel1.Controls.Add(this.lblBarcode);
+            this.panel1.Controls.Add(this.tboxEventNum);
+            this.panel1.Controls.Add(this.lblEventNum);
             this.panel1.Location = new System.Drawing.Point(12, 11);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(734, 220);
+            this.panel1.Size = new System.Drawing.Size(734, 259);
             this.panel1.TabIndex = 4;
             // 
             // EndDate
             // 
             this.EndDate.Font = new System.Drawing.Font("굴림", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.EndDate.Location = new System.Drawing.Point(148, 170);
+            this.EndDate.Location = new System.Drawing.Point(148, 207);
             this.EndDate.Name = "EndDate";
             this.EndDate.Size = new System.Drawing.Size(302, 35);
             this.EndDate.TabIndex = 23;
@@ -94,10 +98,10 @@
             this.btnModify.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
             this.btnModify.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold);
             this.btnModify.ForeColor = System.Drawing.Color.White;
-            this.btnModify.Location = new System.Drawing.Point(592, 6);
+            this.btnModify.Location = new System.Drawing.Point(592, 12);
             this.btnModify.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnModify.Name = "btnModify";
-            this.btnModify.Size = new System.Drawing.Size(130, 100);
+            this.btnModify.Size = new System.Drawing.Size(130, 110);
             this.btnModify.TabIndex = 21;
             this.btnModify.Text = "수정";
             this.btnModify.UseVisualStyleBackColor = false;
@@ -106,7 +110,7 @@
             // StartDate
             // 
             this.StartDate.Font = new System.Drawing.Font("굴림", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.StartDate.Location = new System.Drawing.Point(148, 129);
+            this.StartDate.Location = new System.Drawing.Point(148, 168);
             this.StartDate.Name = "StartDate";
             this.StartDate.Size = new System.Drawing.Size(302, 35);
             this.StartDate.TabIndex = 22;
@@ -117,10 +121,10 @@
             this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
             this.btnDelete.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold);
             this.btnDelete.ForeColor = System.Drawing.Color.White;
-            this.btnDelete.Location = new System.Drawing.Point(592, 110);
+            this.btnDelete.Location = new System.Drawing.Point(592, 134);
             this.btnDelete.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(130, 100);
+            this.btnDelete.Size = new System.Drawing.Size(130, 110);
             this.btnDelete.TabIndex = 20;
             this.btnDelete.Text = "삭제";
             this.btnDelete.UseVisualStyleBackColor = false;
@@ -131,10 +135,10 @@
             this.btnAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
             this.btnAdd.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold);
             this.btnAdd.ForeColor = System.Drawing.Color.White;
-            this.btnAdd.Location = new System.Drawing.Point(458, 110);
+            this.btnAdd.Location = new System.Drawing.Point(458, 134);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(130, 100);
+            this.btnAdd.Size = new System.Drawing.Size(130, 110);
             this.btnAdd.TabIndex = 19;
             this.btnAdd.Text = "추가";
             this.btnAdd.UseVisualStyleBackColor = false;
@@ -143,7 +147,7 @@
             // tboxDiscount
             // 
             this.tboxDiscount.Font = new System.Drawing.Font("굴림", 18F);
-            this.tboxDiscount.Location = new System.Drawing.Point(148, 90);
+            this.tboxDiscount.Location = new System.Drawing.Point(148, 129);
             this.tboxDiscount.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tboxDiscount.Name = "tboxDiscount";
             this.tboxDiscount.Size = new System.Drawing.Size(302, 35);
@@ -152,7 +156,7 @@
             // tboxContent
             // 
             this.tboxContent.Font = new System.Drawing.Font("굴림", 18F);
-            this.tboxContent.Location = new System.Drawing.Point(148, 51);
+            this.tboxContent.Location = new System.Drawing.Point(148, 90);
             this.tboxContent.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tboxContent.Name = "tboxContent";
             this.tboxContent.Size = new System.Drawing.Size(302, 35);
@@ -162,7 +166,7 @@
             // 
             this.lblEndDate.AutoSize = true;
             this.lblEndDate.Font = new System.Drawing.Font("굴림", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lblEndDate.Location = new System.Drawing.Point(7, 175);
+            this.lblEndDate.Location = new System.Drawing.Point(7, 213);
             this.lblEndDate.Name = "lblEndDate";
             this.lblEndDate.Size = new System.Drawing.Size(135, 24);
             this.lblEndDate.TabIndex = 14;
@@ -172,7 +176,7 @@
             // 
             this.lblStartDate.AutoSize = true;
             this.lblStartDate.Font = new System.Drawing.Font("굴림", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lblStartDate.Location = new System.Drawing.Point(32, 134);
+            this.lblStartDate.Location = new System.Drawing.Point(32, 175);
             this.lblStartDate.Name = "lblStartDate";
             this.lblStartDate.Size = new System.Drawing.Size(110, 24);
             this.lblStartDate.TabIndex = 13;
@@ -182,7 +186,7 @@
             // 
             this.lblDiscount.AutoSize = true;
             this.lblDiscount.Font = new System.Drawing.Font("굴림", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lblDiscount.Location = new System.Drawing.Point(57, 93);
+            this.lblDiscount.Location = new System.Drawing.Point(57, 134);
             this.lblDiscount.Name = "lblDiscount";
             this.lblDiscount.Size = new System.Drawing.Size(85, 24);
             this.lblDiscount.TabIndex = 11;
@@ -192,7 +196,7 @@
             // 
             this.lblContent.AutoSize = true;
             this.lblContent.Font = new System.Drawing.Font("굴림", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lblContent.Location = new System.Drawing.Point(82, 54);
+            this.lblContent.Location = new System.Drawing.Point(82, 95);
             this.lblContent.Name = "lblContent";
             this.lblContent.Size = new System.Drawing.Size(60, 24);
             this.lblContent.TabIndex = 9;
@@ -203,32 +207,51 @@
             this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
             this.btnSearch.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold);
             this.btnSearch.ForeColor = System.Drawing.Color.White;
-            this.btnSearch.Location = new System.Drawing.Point(458, 6);
+            this.btnSearch.Location = new System.Drawing.Point(458, 12);
             this.btnSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(130, 100);
+            this.btnSearch.Size = new System.Drawing.Size(130, 110);
             this.btnSearch.TabIndex = 3;
             this.btnSearch.Text = "조회";
             this.btnSearch.UseVisualStyleBackColor = false;
             // 
-            // tboxBarcode
+            // tboxEventNum
             // 
-            this.tboxBarcode.Font = new System.Drawing.Font("굴림", 18F);
-            this.tboxBarcode.Location = new System.Drawing.Point(148, 12);
-            this.tboxBarcode.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tboxBarcode.Name = "tboxBarcode";
-            this.tboxBarcode.Size = new System.Drawing.Size(302, 35);
-            this.tboxBarcode.TabIndex = 2;
+            this.tboxEventNum.Font = new System.Drawing.Font("굴림", 18F);
+            this.tboxEventNum.Location = new System.Drawing.Point(148, 12);
+            this.tboxEventNum.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tboxEventNum.Name = "tboxEventNum";
+            this.tboxEventNum.Size = new System.Drawing.Size(302, 35);
+            this.tboxEventNum.TabIndex = 2;
             // 
-            // lblBarcode
+            // lblEventNum
             // 
-            this.lblBarcode.AutoSize = true;
-            this.lblBarcode.Font = new System.Drawing.Font("굴림", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lblBarcode.Location = new System.Drawing.Point(57, 17);
-            this.lblBarcode.Name = "lblBarcode";
-            this.lblBarcode.Size = new System.Drawing.Size(85, 24);
-            this.lblBarcode.TabIndex = 0;
-            this.lblBarcode.Text = "바코드";
+            this.lblEventNum.AutoSize = true;
+            this.lblEventNum.Font = new System.Drawing.Font("굴림", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblEventNum.Location = new System.Drawing.Point(7, 17);
+            this.lblEventNum.Name = "lblEventNum";
+            this.lblEventNum.Size = new System.Drawing.Size(135, 24);
+            this.lblEventNum.TabIndex = 0;
+            this.lblEventNum.Text = "이벤트번호";
+            // 
+            // tboxProductName
+            // 
+            this.tboxProductName.Font = new System.Drawing.Font("굴림", 18F);
+            this.tboxProductName.Location = new System.Drawing.Point(148, 51);
+            this.tboxProductName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tboxProductName.Name = "tboxProductName";
+            this.tboxProductName.Size = new System.Drawing.Size(302, 35);
+            this.tboxProductName.TabIndex = 24;
+            // 
+            // lblProductName
+            // 
+            this.lblProductName.AutoSize = true;
+            this.lblProductName.Font = new System.Drawing.Font("굴림", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblProductName.Location = new System.Drawing.Point(82, 54);
+            this.lblProductName.Name = "lblProductName";
+            this.lblProductName.Size = new System.Drawing.Size(60, 24);
+            this.lblProductName.TabIndex = 25;
+            this.lblProductName.Text = "상품";
             // 
             // frmEvent
             // 
@@ -255,8 +278,8 @@
         private System.Windows.Forms.Label lblDiscount;
         private System.Windows.Forms.Label lblContent;
         private System.Windows.Forms.Button btnSearch;
-        private System.Windows.Forms.TextBox tboxBarcode;
-        private System.Windows.Forms.Label lblBarcode;
+        private System.Windows.Forms.TextBox tboxEventNum;
+        private System.Windows.Forms.Label lblEventNum;
         private System.Windows.Forms.DateTimePicker EndDate;
         private System.Windows.Forms.Button btnModify;
         private System.Windows.Forms.DateTimePicker StartDate;
@@ -266,5 +289,7 @@
         private System.Windows.Forms.TextBox tboxContent;
         private System.Windows.Forms.Label lblEndDate;
         private System.Windows.Forms.Label lblStartDate;
+        private System.Windows.Forms.Label lblProductName;
+        private System.Windows.Forms.TextBox tboxProductName;
     }
 }
