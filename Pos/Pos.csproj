@@ -224,6 +224,12 @@
     <Compile Include="frmQua.Designer.cs">
       <DependentUpon>frmQua.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmReturnReason.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReturnReason.Designer.cs">
+      <DependentUpon>frmReturnReason.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmRevenue.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -348,6 +354,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmQua.resx">
       <DependentUpon>frmQua.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReturnReason.resx">
+      <DependentUpon>frmReturnReason.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmRevenue.resx">
       <DependentUpon>frmRevenue.cs</DependentUpon>

@@ -78,5 +78,9 @@ C:\Users\gd3-2\Documents\GPos\Pos\obj\Debug\Pos.csproj.GenerateResource.Cache
 C:\Users\gd3-2\Documents\GPos\Pos\obj\Debug\Pos.csproj.CoreCompileInputs.cache
 C:\Users\gd3-2\Documents\GPos\Pos\obj\Debug\Pos.exe
 C:\Users\gd3-2\Documents\GPos\Pos\obj\Debug\Pos.pdb
+<<<<<<< HEAD
 C:\Users\gd3-1\Documents\GPos\Pos\obj\Debug\Pos.frmAban.resources
 C:\Users\gd3-1\Documents\GPos\Pos\obj\Debug\Pos.frmAbanView.resources
+=======
+C:\Users\gd3-2\Documents\GPos\Pos\obj\Debug\Pos.frmReturnReason.resources
+>>>>>>> f312230371ce44b9a8a3cc2d68715b6c2d1dd804
