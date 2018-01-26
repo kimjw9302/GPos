@@ -113,8 +113,6 @@ namespace Pos
                 {
                     using (var ccmd = new SqlCommand("UpdatePoint", con))
                     {
-
-
                         ccmd.CommandType = CommandType.StoredProcedure;
                         ccmd.Parameters.AddWithValue("@phone", s.ClientID);
                         ccmd.ExecuteNonQuery();
