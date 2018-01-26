@@ -131,7 +131,7 @@ namespace Pos
             DataSet ds = new DataSet();
              dt = new DataTable();
 
-            chart1.Visible = true;
+            totalChart.Visible = true;
 
             #region 컨트롤정의
             //Label label1 = new Label();
@@ -361,8 +361,8 @@ namespace Pos
                     Series1.Points.AddXY(dt.Columns[j].ToString().Substring(5, 2) + "-"+dt.Columns[j].ToString().Substring(8,2), dt.Rows[i].ItemArray[j]);
                 }     
             }
-            chart1.Series.Clear();
-            chart1.Series.Add(Series1);
+            totalChart.Series.Clear();
+            totalChart.Series.Add(Series1);
         }
         //재웅 추가/
 
@@ -374,7 +374,7 @@ namespace Pos
 
         private void frmRevenue_Load(object sender, EventArgs e)
         {
-            chart1.Visible = false;
+            totalChart.Visible = false;
         }
 
         //연령별 분석
@@ -386,7 +386,7 @@ namespace Pos
         //재웅추가
         private void btnOk_Click(object sender, EventArgs e)
         {
-            chart1.Visible = false;
+            totalChart.Visible = false;
             if (listBox1.SelectedIndex == 2)
             {
                 dgvProducts.DataSource = null;
@@ -399,7 +399,7 @@ namespace Pos
                 dgvTotal.DataSource = null;
                 this.Controls.Remove(dgvTotal);
                 AllTotalRevenue();
-                chart1.Visible = true;
+                totalChart.Visible = true;
             }
 
         }
