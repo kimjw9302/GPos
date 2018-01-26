@@ -17,8 +17,11 @@ namespace Pos
         SqlConnection con;
         SqlDataAdapter adapter;
         DataSet ds;
-      
 
+        //지혜 - 시간대별 매출
+        DataTable dt;
+        DataRowCollection dtRow;
+        int totalMoney;
         #region 막대차트디자인
         //~ 지혜 - 막대차트
         DataTable manTable, womenTable;
@@ -58,33 +61,7 @@ namespace Pos
         {
             InitializeComponent();
         }
-
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            switch(listBox1.SelectedIndex)
-            {
-                case 0: 
-                    break;
-                case 1:
-                    break;
-                case 2:
-                    break;
-                case 3: //지혜
-                    GenderChart();
-                    AgeChart();
-                    break;
-                case 4: 
-                    break;
-                case 5:
-                    break;
-                case 6: //지혜
-                    break;
-                case 7:
-                    break;
-            }
-            
-        }
-
+        
 
         //조회버튼클릭
         private void btnOk_Click_1(object sender, EventArgs e)
@@ -92,6 +69,8 @@ namespace Pos
             switch (listBox1.SelectedIndex)
             {
                 case 0:
+                    chartAge.Visible = false;
+                    chartGender.Visible = false;
                     TimeRevenue();
                     break;
                 case 1:
@@ -99,6 +78,7 @@ namespace Pos
                 case 2:
                     break;
                 case 3: //지혜
+                    txtTime.Visible = false;
                     GenderChart(); //성별
                     AgeChart(); //연령별
                     break;
@@ -115,15 +95,194 @@ namespace Pos
 
         private void TimeRevenue()
         {
-            TextBox txtTime = new TextBox();
-            txtTime.Location = new Point(319, 87);
-            txtTime.Multiline = true;
-            txtTime.Name = "txtTime";
-            txtTime.Size = new Size(435, 582);
-            this.Controls.Add(txtTime);
+            txtTime.Visible = true;
+            txtTime.Text = "";
+            con = DBcontroller.Instance();
+            using (var cmd = new SqlCommand("TimeRevenue", con))
+            {
+                int[] count = new int[24];
+                decimal[] money = new decimal[24];
+                   
+
+                string strDate = dtStart.Value.ToShortDateString() + " 00:00:00";
+                string endDate = dtEnd.Value.ToShortDateString() + " 23:59:59";
+                
+                con.Open();
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@startDate", DateTime.Parse(strDate));
+                cmd.Parameters.AddWithValue("@endDate", DateTime.Parse(endDate));
+
+                adapter = new SqlDataAdapter();
+                ds = new DataSet();
+                adapter.SelectCommand = cmd;
+                adapter.Fill(ds);
+                dt = ds.Tables[0];
+
+                dtRow = dt.Rows;
+
+                #region 시간대별로 건수, 금액 넣는 부분
+                foreach (DataRow item in dtRow)
+                {
+                    string time = DateTime.Parse(item[0].ToString()).ToString("HH:mm:ss");
+                    switch (time.Substring(0, 2))
+                    {
+                        case "00":
+                            count[0] = int.Parse(item[1].ToString());
+                            money[0] = decimal.Parse(item[2].ToString());
+                            break;
+                        case "01":
+                            count[1] = int.Parse(item[1].ToString());
+                            money[1] = decimal.Parse(item[2].ToString());
+                            break;
+                        case "02":
+                            count[2] = int.Parse(item[1].ToString());
+                            money[2] = decimal.Parse(item[2].ToString());
+                            break;
+                        case "03":
+                            count[3] = int.Parse(item[1].ToString());
+                            money[3] = decimal.Parse(item[2].ToString());
+                            break;
+                        case "04":
+                            count[4] = int.Parse(item[1].ToString());
+                            money[4] = decimal.Parse(item[2].ToString());
+                            break;
+                        case "05":
+                            count[5] = int.Parse(item[1].ToString());
+                            money[5] = decimal.Parse(item[2].ToString());
+                            break;
+                        case "06":
+                            count[6] = int.Parse(item[1].ToString());
+                            money[6] = decimal.Parse(item[2].ToString());
+                            break;
+                        case "07":
+                            count[7] = int.Parse(item[1].ToString());
+                            money[7] = decimal.Parse(item[2].ToString());
+                            break;
+                        case "08":
+                            count[8] = int.Parse(item[1].ToString());
+                            money[8] = decimal.Parse(item[2].ToString());
+                            break;
+                        case "09":
+                            count[9] = int.Parse(item[1].ToString());
+                            money[9] = decimal.Parse(item[2].ToString());
+                            break;
+                        case "10":
+                            count[10] = int.Parse(item[1].ToString());
+                            money[10] = decimal.Parse(item[2].ToString());
+                            break;
+                        case "11":
+                            count[11] = int.Parse(item[1].ToString());
+                            money[11] = decimal.Parse(item[2].ToString());
+                            break;
+                        case "12":
+                            count[12] = int.Parse(item[1].ToString());
+                            money[12] = decimal.Parse(item[2].ToString());
+                            break;
+                        case "13":
+                            count[13] = int.Parse(item[1].ToString());
+                            money[13] = decimal.Parse(item[2].ToString());
+                            break;
+                        case "14":
+                            count[14] = int.Parse(item[1].ToString());
+                            money[14] = decimal.Parse(item[2].ToString());
+                            break;
+                        case "15":
+                            count[15] = int.Parse(item[1].ToString());
+                            money[15] = decimal.Parse(item[2].ToString());
+                            break;
+                        case "16":
+                            count[16] = int.Parse(item[1].ToString());
+                            money[16] = decimal.Parse(item[2].ToString());
+                            break;
+                        case "17":
+                            count[17] = int.Parse(item[1].ToString());
+                            money[17] = decimal.Parse(item[2].ToString());
+                            break;
+                        case "18":
+                            count[18] = int.Parse(item[1].ToString());
+                            money[18] = decimal.Parse(item[2].ToString());
+                            break;
+                        case "19":
+                            count[19] = int.Parse(item[1].ToString());
+                            money[19] = decimal.Parse(item[2].ToString());
+                            break;
+                        case "20":
+                            count[20] = int.Parse(item[1].ToString());
+                            money[20] = decimal.Parse(item[2].ToString());
+                            break;
+                        case "21":
+                            count[21] = int.Parse(item[1].ToString());
+                            money[21] = decimal.Parse(item[2].ToString());
+                            break;
+                        case "22":
+                            count[22] = int.Parse(item[1].ToString());
+                            money[22] = decimal.Parse(item[2].ToString());
+                            break;
+                        case "23":
+                            count[23] = int.Parse(item[1].ToString());
+                            money[23] = decimal.Parse(item[2].ToString());
+                            break;
+
+                    } 
+                    #endregion
+
+                }
+                con.Close();
+
+                txtTime.Text += "\t <<시간대별 매출 현황 >>\r\n";
+                txtTime.Text += "==================================\r\n";
+                txtTime.Text += "    시간대\t개수\t\t금액\t \r\n";
+                txtTime.Text += "==================================\r\n";
+
+                
+                for (int i = 0; i < 24; i++)
+                {
+                    var s = "PM";
+                    if(i < 12)
+                    {
+                        s = "AM";
+                    }
+
+                    txtTime.Text +="  "+s+" "+ i+"~"+(i+1)+"\t"+ count[i].ToString() +"건\t\t "+ (int)money[i] + "원\r\n";
+                    totalMoney += (int)money[i];
+                }
+                txtTime.Text += "==================================\r\n";
+                txtTime.Text += "\t\t\t  총 금액 : " + totalMoney +"원";
+            }
 
         }
 
+        //listbox선택시 
+        private void listBox1_Click(object sender, EventArgs e)
+        {
+            switch (listBox1.SelectedIndex)
+            {
+                case 0:
+                    chartAge.Visible = false;
+                    chartGender.Visible = false;
+                    TimeRevenue();
+                    break;
+                case 1:
+                    break;
+                case 2:
+                    break;
+                case 3: //지혜
+                    txtTime.Visible = false;
+                    GenderChart(); //성별
+                    AgeChart(); //연령별
+                    break;
+                case 4:
+                    break;
+                case 5:
+                    break;
+                case 6:
+                    break;
+                case 7:
+                    break;
+            }
+        }
+
+        //성별 차트
         private void AgeChart()
         {
             chartAge.Series[0].Points.Clear();
@@ -224,6 +383,7 @@ namespace Pos
             chartAge.Series["여자"].Color = Color.LightPink;
         }
 
+        //연령대별 차트
         private void GenderChart()
         {
 
