@@ -70,6 +70,7 @@ namespace Pos
         private void frmMain_Load(object sender, EventArgs e)
         {
             dataGridView = dgvProduct;
+          
             t1 = txtDiscount;
             t2 = txtPaymentList;
             t3 = txtChange;
@@ -95,6 +96,7 @@ namespace Pos
             dgvProduct.Columns[7].Visible = false;
             dgvProduct.Columns[8].Visible = false;
             dgvProduct.Columns[9].Visible = false;
+            dgvProduct.DefaultCellStyle.BackColor = Color.FromArgb(128, Color.White);
             con.Open();
             using (var cmd = new SqlCommand("LoadCheckProducts", con))
             {
@@ -214,12 +216,18 @@ namespace Pos
 
         private void btnEmployeeChange_Click(object sender, EventArgs e)
         {
-            frmEmployeeRotaion fer = new frmEmployeeRotaion(sdate);
-            fer.Owner = this;
-            fer.EmpName = empName;
-            fer.EmpId = empId;
-            fer.ShowDialog();
-
+            if (sellTable.Rows.Count >= 1)
+            {
+                MessageBox.Show("판매도중에는 교대를 하실 수 없습니다.");
+            }
+            else
+            {
+                frmEmployeeRotaion fer = new frmEmployeeRotaion(sdate);
+                fer.Owner = this;
+                fer.EmpName = empName;
+                fer.EmpId = empId;
+                fer.ShowDialog();
+            }
         }
         private void btnCalc_Click(object sender, EventArgs e)
         {
@@ -234,7 +242,7 @@ namespace Pos
 
         private void txtProduct_ChangeUICues(object sender, UICuesEventArgs e)
         {
-            MessageBox.Show("Test");
+          
         }
 
 
@@ -413,7 +421,7 @@ namespace Pos
                         }
                         else if (namege == 2)
                         {
-                            MessageBox.Show("2");
+                     
                             update3[0]["할인"] = decimal.Parse(update3[0]["할인"].ToString()) + decimal.Parse(update3[0]["단가"].ToString());
                             txtDiscount.Text = (decimal.Parse(txtDiscount.Text) + decimal.Parse(price)).ToString();
                             txtReceived.Text = (decimal.Parse(txtTotal.Text) + int.Parse(txtDiscount.Text)).ToString();
@@ -422,7 +430,7 @@ namespace Pos
                         }
                         else if (namege == 0)
                         {
-                            MessageBox.Show("3");
+                            
                             update3[0]["할인"] = decimal.Parse(update3[0]["할인"].ToString());
                             txtReceived.Text = (decimal.Parse(txtTotal.Text) + decimal.Parse(txtDiscount.Text)).ToString();
                         }
@@ -472,7 +480,7 @@ namespace Pos
                     totCount += 1;
                     if (eventcon == "없음")
                     {
-                        MessageBox.Show("Test");
+                     
                         txtReceived.Text = (decimal.Parse(txtTotal.Text) + decimal.Parse(txtDiscount.Text)).ToString();
                     }
                     //1+1인경우
@@ -673,7 +681,7 @@ namespace Pos
                             if (update1.Length == 0 && update2.Length == 0)
                             {
                                 //바코드가 없고, 이벤트번호 없고
-                                MessageBox.Show("여기");
+                      
                                 DataRow newRow = sellTable.NewRow();
                                 newRow["No"] = sellTable.Rows.Count + 1; //No.
                                 newRow["바코드"] = localbarcode; //바코드
@@ -690,7 +698,7 @@ namespace Pos
                                 
                                 if (sdr["content"].ToString() == "1+1" )
                                 {
-                                    MessageBox.Show("1-1");
+                                 
                                     txtPaymentList.Text = "★★★★★★이벤트정보★★★★★\r\n";
                                     txtPaymentList.Text += "상품명 : " + sdr["productName"].ToString() + "\r\n";
 
@@ -706,7 +714,7 @@ namespace Pos
                                 }
                                 else if (sdr["content"].ToString() == "2+1")
                                 {
-                                    MessageBox.Show("1-2");
+                            
                                     txtPaymentList.Text = "★★★★★★이벤트정보★★★★★\r\n";
                                     txtPaymentList.Text += "상품명 : " + sdr["productName"].ToString() + "\r\n";
                                     txtPaymentList.Text += "이벤트 내용 : " + sdr["content"].ToString() + "\r\n";
@@ -720,7 +728,7 @@ namespace Pos
                             else if (update1.Length == 0 && update2.Length != 0)
                             {
                                 int totCount = 1;
-                                MessageBox.Show("여기2");
+                           
                                 //바코드가 없고, 이벤트번호 있고
                                 DataRow[] update4 = sellTable.Select("이벤트번호='" + localeventNum + "'");
                                 for (int i = 0; i < update4.Length; i++)
@@ -744,7 +752,7 @@ namespace Pos
 
                                 else if (sdr["content"].ToString() == "1+1")
                                 {
-                                    MessageBox.Show("1-3");
+                               
                                     txtPaymentList.Text = "★★★★★★이벤트정보★★★★★\r\n";
                                     txtPaymentList.Text += "상품명 : " + sdr["productName"].ToString() + "\r\n";
                                     txtPaymentList.Text += "이벤트 내용 : " + sdr["content"].ToString() + "\r\n";
@@ -774,12 +782,12 @@ namespace Pos
                                 //2+1인경우
                                 else if (sdr["content"].ToString() == "2+1")
                                 {
-                                    MessageBox.Show("1-4");
+                               
                                     txtPaymentList.Text = "★★★★★★이벤트정보★★★★★\r\n";
                                     txtPaymentList.Text += "상품명 : " + sdr["productName"].ToString() + "\r\n";
                                     txtPaymentList.Text += "이벤트 내용 : " + sdr["content"].ToString() + "\r\n";
                                     txtPaymentList.Text += "이벤트 상품 : ";
-                                    MessageBox.Show(update2.Length.ToString());
+               
                                     for (int i = 0; i < eventList.Count; i++)
                                     {
                                         txtPaymentList.Text += eventList[i].ToString();
@@ -813,8 +821,6 @@ namespace Pos
                             }
                             else if (update1.Length != 0 && update2.Length != 0)
                             {
-                                MessageBox.Show("여기3");
-                                MessageBox.Show(sdr["content"].ToString());
                                 //바코드가 selltable에 있고, 이벤트 번호가 존재할때!
                                 //우선 이벤트 번호가있는 상품의 수량을 알아야함!그리고 나눠!서 가격을바꿔줭~
                                 int totCount = 0;
@@ -831,13 +837,12 @@ namespace Pos
                                 totCount += 1;
                                 if (sdr["content"].ToString() == "없음")
                                 {
-                                    MessageBox.Show("1-5");
                                     txtReceived.Text = (decimal.Parse(txtTotal.Text) + decimal.Parse(txtDiscount.Text)).ToString();
                                 }
                                 //1+1인경우
                                 else if (sdr["content"].ToString() == "1+1")
                                 {
-                                    MessageBox.Show("1-6");
+ 
                                     txtPaymentList.Text = "★★★★★★이벤트정보★★★★★\r\n";
                                     txtPaymentList.Text += "상품명 : " + sdr["productName"].ToString() + "\r\n";
                                     txtPaymentList.Text += "이벤트 내용 : " + sdr["content"].ToString() + "\r\n";
@@ -866,7 +871,6 @@ namespace Pos
                                 //2+1인경우
                                 else if (sdr["content"].ToString() == "2+1")
                                 {
-                                    MessageBox.Show("1-7");
                                     txtPaymentList.Text = "★★★★★★이벤트정보★★★★★\r\n";
                                     txtPaymentList.Text += "상품명 : " + sdr["productName"].ToString() + "\r\n";
                                     txtPaymentList.Text += "이벤트 내용 : " + sdr["content"].ToString() + "\r\n";
@@ -879,20 +883,17 @@ namespace Pos
                                     int namege = totCount % 3;
                                     if (namege == 1)
                                     {
-                                        MessageBox.Show("1-9");
                                         update3[0]["할인"] = decimal.Parse(update3[0]["할인"].ToString());
                                         txtReceived.Text = (decimal.Parse(txtTotal.Text) + decimal.Parse(txtDiscount.Text)).ToString();
                                     }
                                     else if (namege == 2)
                                     {
-                                        MessageBox.Show("1-10");
                                         update3[0]["할인"] = decimal.Parse(update3[0]["할인"].ToString());
                                         txtReceived.Text = (decimal.Parse(txtTotal.Text) + decimal.Parse(txtDiscount.Text)).ToString();
 
                                     }
                                     else if (namege == 0)
                                     {
-                                        MessageBox.Show("1-11");
                                         update3[0]["할인"] = decimal.Parse(update3[0]["할인"].ToString()) + decimal.Parse("-" + update3[0]["단가"].ToString());
                                         txtDiscount.Text = (decimal.Parse(txtDiscount.Text) + decimal.Parse("-" + sdr["unitPrice"].ToString())).ToString();
                                         txtReceived.Text = (decimal.Parse(txtTotal.Text) + decimal.Parse(txtDiscount.Text)).ToString();
@@ -901,7 +902,6 @@ namespace Pos
                             }
                             else if (update1.Length != 0 && update2.Length == 0)
                             {
-                                MessageBox.Show("여기4");
                                 //바코드가 selltable에 있고, 이벤트 번호가 존재할때!
                                 //우선 이벤트 번호가있는 상품의 수량을 알아야함!그리고 나눠!서 가격을바꿔줭~
                                 update1[0]["수량"] = decimal.Parse(update1[0]["수량"].ToString()) + 1;
@@ -1012,6 +1012,8 @@ namespace Pos
 
 
         }
+
+
 
         private void txtTotal_Click(object sender, EventArgs e)
         {

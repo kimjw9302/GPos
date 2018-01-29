@@ -42,15 +42,10 @@
             this.tboxName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvEmployees = new System.Windows.Forms.DataGridView();
-
-
             this.pboxBarcode = new System.Windows.Forms.PictureBox();
             this.label6 = new System.Windows.Forms.Label();
             this.btnPrint = new System.Windows.Forms.Button();
-
             this.btnClose = new System.Windows.Forms.Button();
-
-
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmployees)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pboxBarcode)).BeginInit();
@@ -60,11 +55,11 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("굴림", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label3.Location = new System.Drawing.Point(82, 331);
+            this.label3.Location = new System.Drawing.Point(17, 273);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(137, 30);
             this.label3.TabIndex = 7;
-            this.label3.Text = "회원목록";
+            this.label3.Text = "직원목록";
             // 
             // panel1
             // 
@@ -79,7 +74,7 @@
             this.panel1.Controls.Add(this.btnSearch);
             this.panel1.Controls.Add(this.tboxName);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(87, 69);
+            this.panel1.Location = new System.Drawing.Point(22, 11);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(839, 238);
@@ -209,7 +204,7 @@
             this.dgvEmployees.AllowUserToDeleteRows = false;
             this.dgvEmployees.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgvEmployees.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvEmployees.Location = new System.Drawing.Point(87, 364);
+            this.dgvEmployees.Location = new System.Drawing.Point(22, 306);
             this.dgvEmployees.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvEmployees.Name = "dgvEmployees";
             this.dgvEmployees.RowTemplate.Height = 27;
@@ -220,7 +215,7 @@
             // pboxBarcode
             // 
             this.pboxBarcode.BackColor = System.Drawing.Color.White;
-            this.pboxBarcode.Location = new System.Drawing.Point(756, 394);
+            this.pboxBarcode.Location = new System.Drawing.Point(569, 331);
             this.pboxBarcode.Name = "pboxBarcode";
             this.pboxBarcode.Size = new System.Drawing.Size(153, 183);
             this.pboxBarcode.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -231,7 +226,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("굴림", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label6.Location = new System.Drawing.Point(608, 331);
+            this.label6.Location = new System.Drawing.Point(543, 273);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(168, 30);
             this.label6.TabIndex = 9;
@@ -242,39 +237,38 @@
             this.btnPrint.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
             this.btnPrint.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold);
             this.btnPrint.ForeColor = System.Drawing.Color.White;
-            this.btnPrint.Location = new System.Drawing.Point(613, 622);
+            this.btnPrint.Location = new System.Drawing.Point(717, 253);
             this.btnPrint.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnPrint.Name = "btnPrint";
-            this.btnPrint.Size = new System.Drawing.Size(313, 100);
+            this.btnPrint.Size = new System.Drawing.Size(127, 61);
             this.btnPrint.TabIndex = 15;
             this.btnPrint.Text = "바코드 출력";
             this.btnPrint.UseVisualStyleBackColor = false;
+            // 
             // btnClose
             // 
-            this.btnClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
+            this.btnClose.BackColor = System.Drawing.Color.Red;
             this.btnClose.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold);
             this.btnClose.ForeColor = System.Drawing.Color.White;
-            this.btnClose.Location = new System.Drawing.Point(628, 581);
+            this.btnClose.Location = new System.Drawing.Point(569, 565);
             this.btnClose.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(182, 80);
+            this.btnClose.Size = new System.Drawing.Size(275, 99);
             this.btnClose.TabIndex = 15;
             this.btnClose.Text = "닫기";
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
-
             // 
             // frmEmployee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(1009, 735);
+            this.ClientSize = new System.Drawing.Size(878, 677);
+            this.ControlBox = false;
             this.Controls.Add(this.btnPrint);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.pboxBarcode);
-            this.ClientSize = new System.Drawing.Size(883, 672);
-            this.ControlBox = false;
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.panel1);
@@ -282,7 +276,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frmEmployee";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmEmployee";
+            this.Text = "직원 조회창";
             this.Load += new System.EventHandler(this.frmEmployee_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

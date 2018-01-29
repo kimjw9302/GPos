@@ -59,6 +59,7 @@
             // 
             // group
             // 
+            this.group.Controls.Add(this.btnclose);
             this.group.Controls.Add(this.txtWage);
             this.group.Controls.Add(this.btnRegister);
             this.group.Controls.Add(this.label1);
@@ -94,11 +95,11 @@
             // 
             this.btnRegister.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
             this.btnRegister.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRegister.Font = new System.Drawing.Font("돋움", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnRegister.Font = new System.Drawing.Font("돋움", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnRegister.ForeColor = System.Drawing.Color.White;
-            this.btnRegister.Location = new System.Drawing.Point(192, 369);
+            this.btnRegister.Location = new System.Drawing.Point(134, 358);
             this.btnRegister.Name = "btnRegister";
-            this.btnRegister.Size = new System.Drawing.Size(109, 55);
+            this.btnRegister.Size = new System.Drawing.Size(109, 72);
             this.btnRegister.TabIndex = 46;
             this.btnRegister.Text = "등록";
             this.btnRegister.UseVisualStyleBackColor = false;
@@ -222,13 +223,13 @@
             // 
             // btnclose
             // 
-            this.btnclose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
+            this.btnclose.BackColor = System.Drawing.Color.Red;
             this.btnclose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnclose.Font = new System.Drawing.Font("돋움", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnclose.Font = new System.Drawing.Font("돋움", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnclose.ForeColor = System.Drawing.Color.White;
-            this.btnclose.Location = new System.Drawing.Point(409, 26);
+            this.btnclose.Location = new System.Drawing.Point(249, 358);
             this.btnclose.Name = "btnclose";
-            this.btnclose.Size = new System.Drawing.Size(109, 55);
+            this.btnclose.Size = new System.Drawing.Size(109, 72);
             this.btnclose.TabIndex = 48;
             this.btnclose.Text = "닫기";
             this.btnclose.UseVisualStyleBackColor = false;
@@ -241,10 +242,10 @@
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(544, 659);
             this.ControlBox = false;
-            this.Controls.Add(this.btnclose);
             this.Controls.Add(this.group);
             this.Name = "frmEmployeesRegister";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "직원등록창";
             this.Load += new System.EventHandler(this.frmEmployeesRegister_Load);
             this.group.ResumeLayout(false);
             this.group.PerformLayout();

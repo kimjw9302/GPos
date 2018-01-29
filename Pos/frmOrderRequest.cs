@@ -53,7 +53,10 @@ namespace Pos
 
         private void btnAllClear_Click(object sender, EventArgs e)
         {
+            orderTable.Rows.Clear();
             dgvOrder.Refresh();
+            txtTotalPay.Text = "";
+            txtTotalQua.Text = "";
         }
 
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
@@ -231,8 +234,7 @@ namespace Pos
         {
             quaTemp = 0;
             payTemp = 0;
-
-
+            
             for (int i = 0; i < dgvProducts.RowCount; i++)
             {
                 //선택된거
@@ -550,6 +552,7 @@ namespace Pos
 
             orderTable = new DataTable();
 
+            orderTable.Columns.
             orderTable.Columns.Add("No");
             orderTable.Columns.Add("바코드");
             orderTable.Columns.Add("상품명");
@@ -563,7 +566,7 @@ namespace Pos
         private void ProductTableMake()
         {
             productTable = new DataTable();
-
+            
             productTable.Columns.Add("상품명");
             productTable.Columns.Add("바코드");
             productTable.Columns.Add("단가");

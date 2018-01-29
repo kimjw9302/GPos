@@ -75,6 +75,7 @@
             this.MethodReturnChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.totalChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.CateNFChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.btnClose = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.chartGender)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartAge)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
@@ -98,7 +99,7 @@
             "7. 기간별 매출"});
             this.listBox1.Location = new System.Drawing.Point(23, 87);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(272, 565);
+            this.listBox1.Size = new System.Drawing.Size(272, 548);
             this.listBox1.TabIndex = 0;
             this.listBox1.Click += new System.EventHandler(this.listBox1_Click);
             this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
@@ -164,7 +165,7 @@
             this.chartGender.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
             this.chartGender.Legends.Add(legend1);
-            this.chartGender.Location = new System.Drawing.Point(973, 109);
+            this.chartGender.Location = new System.Drawing.Point(884, 90);
             this.chartGender.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chartGender.Name = "chartGender";
             series1.ChartArea = "ChartArea1";
@@ -180,7 +181,7 @@
             series1.Points.Add(dataPoint1);
             series1.Points.Add(dataPoint2);
             this.chartGender.Series.Add(series1);
-            this.chartGender.Size = new System.Drawing.Size(276, 218);
+            this.chartGender.Size = new System.Drawing.Size(355, 422);
             this.chartGender.TabIndex = 8;
             this.chartGender.Text = "chart1";
             title1.Alignment = System.Drawing.ContentAlignment.MiddleLeft;
@@ -197,7 +198,7 @@
             this.chartAge.ChartAreas.Add(chartArea2);
             legend2.Name = "Legend1";
             this.chartAge.Legends.Add(legend2);
-            this.chartAge.Location = new System.Drawing.Point(336, 87);
+            this.chartAge.Location = new System.Drawing.Point(346, 88);
             this.chartAge.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chartAge.Name = "chartAge";
             series2.ChartArea = "ChartArea1";
@@ -235,7 +236,7 @@
             series3.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
             this.chartAge.Series.Add(series2);
             this.chartAge.Series.Add(series3);
-            this.chartAge.Size = new System.Drawing.Size(447, 528);
+            this.chartAge.Size = new System.Drawing.Size(413, 547);
             this.chartAge.TabIndex = 9;
             this.chartAge.Text = "chart1";
             title2.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -248,12 +249,12 @@
             // txtTime
             // 
             this.txtTime.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.txtTime.Location = new System.Drawing.Point(336, 87);
+            this.txtTime.Location = new System.Drawing.Point(336, 109);
             this.txtTime.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTime.Multiline = true;
             this.txtTime.Name = "txtTime";
             this.txtTime.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtTime.Size = new System.Drawing.Size(406, 497);
+            this.txtTime.Size = new System.Drawing.Size(406, 466);
             this.txtTime.TabIndex = 10;
             this.txtTime.Visible = false;
             // 
@@ -281,7 +282,7 @@
             this.MethodReturnChart.ChartAreas.Add(chartArea4);
             legend4.Name = "Legend1";
             this.MethodReturnChart.Legends.Add(legend4);
-            this.MethodReturnChart.Location = new System.Drawing.Point(255, 131);
+            this.MethodReturnChart.Location = new System.Drawing.Point(336, 90);
             this.MethodReturnChart.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MethodReturnChart.Name = "MethodReturnChart";
             this.MethodReturnChart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SemiTransparent;
@@ -321,6 +322,7 @@
             this.totalChart.Size = new System.Drawing.Size(820, 240);
             this.totalChart.TabIndex = 8;
             this.totalChart.Text = "chart1";
+            this.totalChart.Visible = false;
             // 
             // CateNFChart
             // 
@@ -340,6 +342,21 @@
             this.CateNFChart.TabIndex = 10;
             this.CateNFChart.Text = "chart2";
             // 
+            // btnClose
+            // 
+            this.btnClose.BackColor = System.Drawing.Color.Black;
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnClose.ForeColor = System.Drawing.Color.White;
+            this.btnClose.Location = new System.Drawing.Point(1233, 26);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(94, 37);
+            this.btnClose.TabIndex = 11;
+            this.btnClose.Text = "닫기";
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click_1);
+            // 
             // frmRevenue
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -347,9 +364,7 @@
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(1350, 707);
             this.ControlBox = false;
-            this.Controls.Add(this.txtTime);
-            this.Controls.Add(this.chartAge);
-            this.Controls.Add(this.chartGender);
+            this.Controls.Add(this.btnClose);
             this.Controls.Add(this.chart1);
             this.Controls.Add(this.MethodReturnChart);
             this.Controls.Add(this.totalChart);
@@ -360,9 +375,13 @@
             this.Controls.Add(this.dtStart);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.CateNFChart);
+            this.Controls.Add(this.txtTime);
+            this.Controls.Add(this.chartAge);
+            this.Controls.Add(this.chartGender);
             this.Name = "frmRevenue";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmRevenue";
+            this.Text = "매출현황";
+            this.Load += new System.EventHandler(this.frmRevenue_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.chartGender)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartAge)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
@@ -390,6 +409,6 @@
         private System.Windows.Forms.DataVisualization.Charting.Chart MethodReturnChart;
         private System.Windows.Forms.DataVisualization.Charting.Chart totalChart;
         private System.Windows.Forms.DataVisualization.Charting.Chart CateNFChart;
-
+        private System.Windows.Forms.Button btnClose;
     }
 }

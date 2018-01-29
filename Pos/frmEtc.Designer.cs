@@ -31,6 +31,7 @@
             this.btnStockSelect = new System.Windows.Forms.Button();
             this.btnLog = new System.Windows.Forms.Button();
             this.btnMail = new System.Windows.Forms.Button();
+            this.btnClose = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnStockSelect
@@ -40,9 +41,10 @@
             this.btnStockSelect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnStockSelect.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold);
             this.btnStockSelect.ForeColor = System.Drawing.Color.White;
-            this.btnStockSelect.Location = new System.Drawing.Point(34, 67);
+            this.btnStockSelect.Location = new System.Drawing.Point(19, 7);
+            this.btnStockSelect.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnStockSelect.Name = "btnStockSelect";
-            this.btnStockSelect.Size = new System.Drawing.Size(114, 104);
+            this.btnStockSelect.Size = new System.Drawing.Size(189, 130);
             this.btnStockSelect.TabIndex = 15;
             this.btnStockSelect.Text = "이벤트 등록\r\n및 조회";
             this.btnStockSelect.UseVisualStyleBackColor = false;
@@ -55,9 +57,10 @@
             this.btnLog.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLog.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold);
             this.btnLog.ForeColor = System.Drawing.Color.White;
-            this.btnLog.Location = new System.Drawing.Point(154, 67);
+            this.btnLog.Location = new System.Drawing.Point(216, 7);
+            this.btnLog.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnLog.Name = "btnLog";
-            this.btnLog.Size = new System.Drawing.Size(114, 104);
+            this.btnLog.Size = new System.Drawing.Size(189, 130);
             this.btnLog.TabIndex = 14;
             this.btnLog.Text = "로그";
             this.btnLog.UseVisualStyleBackColor = false;
@@ -70,26 +73,46 @@
             this.btnMail.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMail.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold);
             this.btnMail.ForeColor = System.Drawing.Color.White;
-            this.btnMail.Location = new System.Drawing.Point(274, 67);
+            this.btnMail.Location = new System.Drawing.Point(18, 143);
+            this.btnMail.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnMail.Name = "btnMail";
-            this.btnMail.Size = new System.Drawing.Size(114, 104);
+            this.btnMail.Size = new System.Drawing.Size(189, 130);
             this.btnMail.TabIndex = 16;
             this.btnMail.Text = "관리자\r\n문의메일";
             this.btnMail.UseVisualStyleBackColor = false;
             this.btnMail.Click += new System.EventHandler(this.btnMail_Click);
             // 
+            // btnClose
+            // 
+            this.btnClose.BackColor = System.Drawing.Color.Red;
+            this.btnClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold);
+            this.btnClose.ForeColor = System.Drawing.Color.White;
+            this.btnClose.Location = new System.Drawing.Point(216, 143);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(189, 130);
+            this.btnClose.TabIndex = 17;
+            this.btnClose.Text = "닫기";
+            this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
             // frmEtc
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(430, 223);
+            this.ClientSize = new System.Drawing.Size(422, 283);
+            this.ControlBox = false;
+            this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnMail);
             this.Controls.Add(this.btnStockSelect);
             this.Controls.Add(this.btnLog);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frmEtc";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmEtc";
+            this.Text = "GOODEE24";
             this.ResumeLayout(false);
 
         }
@@ -99,5 +122,6 @@
         private System.Windows.Forms.Button btnStockSelect;
         private System.Windows.Forms.Button btnLog;
         private System.Windows.Forms.Button btnMail;
+        private System.Windows.Forms.Button btnClose;
     }
 }
