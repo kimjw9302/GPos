@@ -34,7 +34,6 @@ namespace Pos
         List<decimal> yValueWom = new List<decimal>();
         ChartArea chartArea2 = new ChartArea();
         Legend legend2 = new Legend();
-        private Chart chart2;
         DataPoint m10 = new DataPoint(0, 0);
         DataPoint m20 = new DataPoint(0, 0);
         DataPoint m30 = new DataPoint(0, 0);
@@ -265,7 +264,6 @@ namespace Pos
             }
         }
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
-
         {
             switch (listBox1.SelectedIndex)
             {
@@ -273,23 +271,38 @@ namespace Pos
 
                     chartAge.Visible = false;
                     chartGender.Visible = false;
+                    CateNFChart.Visible = false;
+                    chart1.Visible = false;
+                    MethodReturnChart.Visible = false;
+                    totalChart.Visible = false;
                     TimeRevenue();
                     break;
                 case 1:
+                    txtTime.Visible = false;
                     break;
                 case 2://재웅
+                    txtTime.Visible = false;
                     ProductRevenue();
                     break;
                 case 3: //지혜
+                    chartAge.Visible = false;
+                    chartGender.Visible = false;
+                    CateNFChart.Visible = false;
+                    chart1.Visible = false;
+                    MethodReturnChart.Visible = false;
+                    totalChart.Visible = false;
                     txtTime.Visible = false;
                     GenderChart(); //성별
                     AgeChart(); //연령별
                     break;
                 case 4:
+                    txtTime.Visible = false;
                     break;
                 case 5:
+                    txtTime.Visible = false;
                     break;
                 case 6: //재웅
+                    txtTime.Visible = false;
                     AllTotalRevenue();
                     break;
             }
