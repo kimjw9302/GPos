@@ -392,6 +392,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(849, 433);
+            this.ControlBox = false;
             this.Controls.Add(this.btnCancle);
             this.Controls.Add(this.btnPay);
             this.Controls.Add(this.btn7);

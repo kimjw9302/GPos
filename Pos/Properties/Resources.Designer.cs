@@ -63,6 +63,16 @@ namespace Pos.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
+        internal static System.Drawing.Bitmap goodee24 {
+            get {
+                object obj = ResourceManager.GetObject("goodee24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
         internal static System.Drawing.Bitmap goodeelogo {
             get {
                 object obj = ResourceManager.GetObject("goodeelogo", resourceCulture);
@@ -76,6 +86,16 @@ namespace Pos.Properties {
         internal static System.Drawing.Bitmap man {
             get {
                 object obj = ResourceManager.GetObject("man", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap warninsign {
+            get {
+                object obj = ResourceManager.GetObject("warninsign", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

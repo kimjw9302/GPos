@@ -90,3 +90,4 @@ C:\Users\김재웅\Documents\GPos\Pos\obj\Debug\Pos.csproj.GenerateResource.Cach
 C:\Users\김재웅\Documents\GPos\Pos\obj\Debug\Pos.csproj.CoreCompileInputs.cache
 C:\Users\김재웅\Documents\GPos\Pos\obj\Debug\Pos.exe
 C:\Users\김재웅\Documents\GPos\Pos\obj\Debug\Pos.pdb
+C:\Users\김재웅\Documents\GPos\Pos\obj\Debug\Pos.csproj.ResolveComReference.cache

@@ -47,8 +47,8 @@ namespace Pos
         DataPoint w50 = new DataPoint(0, 0); 
         #endregion
         Title BarTitle = new Title();
-        DataGridView dgvProducts = null;
-        DataGridView dgvTotal = null;
+        DataGridView dgvProducts = new DataGridView();
+        DataGridView dgvTotal =new DataGridView();
         DataRow dr1 = null;
         DataTable dt1 =null;
         decimal row1_sum, row2_sum, row3_sum = 0;
@@ -60,10 +60,25 @@ namespace Pos
         {
             
         }
+        public void VisibleReset()
+        {
+            txtTime.Visible = false;
+            CateNFChart.Visible = false;
+            chartGender.Visible = false;
+            chart1.Visible = false;
+            totalChart.Visible = false;
+            dgvTotal.Visible = false;
+            dgvProducts.Visible = false;
+            MethodReturnChart.Visible = false;
+            chartAge.Visible = false;
+        }
         private void Method()
         {
-            MessageBox.Show("Test");
+
             MethodReturnChart.Visible = true;
+            MethodReturnChart.Series["method"].Points.Clear();
+            MethodReturnChart.Series["return"].Points.Clear();
+            MethodReturnChart.Series["categoryF"].Points.Clear();
             var con = DBcontroller.Instance();
             con.Open();
             using (var cmd = new SqlCommand("SalesMethod", con))
@@ -104,6 +119,9 @@ namespace Pos
         private void Return()
         {
             MethodReturnChart.Visible = true;
+            MethodReturnChart.Series["method"].Points.Clear();
+            MethodReturnChart.Series["return"].Points.Clear();
+            MethodReturnChart.Series["categoryF"].Points.Clear();
             var con = DBcontroller.Instance();
             con.Open();
             using (var cmd = new SqlCommand("SalesReturn", con))
@@ -148,6 +166,12 @@ namespace Pos
         {
             MethodReturnChart.Visible = true;
             CateNFChart.Visible = true;
+       
+            CateNFChart.Series["categoryNF"].Points.Clear();
+            MethodReturnChart.Series["categoryF"].Points.Clear();
+            MethodReturnChart.Series["method"].Points.Clear();
+            MethodReturnChart.Series["return"].Points.Clear();
+
             var con = DBcontroller.Instance();
             con.Open();
             using (var cmd = new SqlCommand("SalesCate", con))
@@ -193,12 +217,7 @@ namespace Pos
 
         private void btnOk_Click(object sender, EventArgs e)
         {            
-            MethodReturnChart.Series["method"].Points.Clear();
-            MethodReturnChart.Series["return"].Points.Clear();
-            MethodReturnChart.Series["categoryF"].Points.Clear();
-            CateNFChart.Series["categoryNF"].Points.Clear();
-            totalChart.Visible = false;
- 
+
             if (listBox1.SelectedIndex == 1)
             {
                 Category();
@@ -301,8 +320,8 @@ namespace Pos
         {
 
             DataTable pTable = new DataTable();
-            dgvProducts = new DataGridView();
 
+            dgvProducts.Visible = true;
             dgvProducts.Location = new Point(355, 109);
             dgvProducts.Size = new Size(600, 484);
             dgvProducts.AllowUserToAddRows = false;
@@ -371,43 +390,14 @@ namespace Pos
             DateTime edate = DateTime.Parse(dtEnd.Value.ToShortDateString());
             TimeSpan subDate = edate - sdate;
             int days = int.Parse(subDate.TotalDays.ToString()) + 1;
-
+            row1_sum= row2_sum= row3_sum = 0;
             DataSet ds = new DataSet();
              dt1 = new DataTable();
 
             totalChart.Visible = true;
-
+            dgvTotal.Visible = true;
             #region 컨트롤정의
-            //Label label1 = new Label();
-            //label1.Location = new Point(396, 145);
-            //label1.Text = "매출액      :";
-            //label1.Font = new Font("맑은 고딕", 14, FontStyle.Bold);
-
-            //Label label2 = new Label();
-            //label2.Location = new Point(396, 204);
-            //label2.Text = "매출원가   :";
-            //label2.Font = new Font("맑은 고딕", 14, FontStyle.Bold);
-
-            //Label label3 = new Label();
-            //label3.Location = new Point(396, 262);
-            //label3.Text = "매출총이익:";
-            //label3.Font = new Font("맑은 고딕", 14, FontStyle.Bold);
-
-            //Label label4 = new Label();
-            //label4.Location = new Point(750, 109);
-            //label4.Text = "이달의 카드 이월 금액";
-            //label4.Font = new Font("맑은 고딕", 14, FontStyle.Bold);
-
-            //Label lblRevenue = new Label(); //매출
-            //lblRevenue.Location = new Point(573, 145);
-            //Label lblUnitRevenue = new Label(); //매출 원가
-            //lblUnitRevenue.Location = new Point(572, 204);
-            //Label lblTotReenue = new Label(); //총 매출
-            //lblTotReenue.Location = new Point(157, 38);
-            //Label lblCard = new Label(); //카드 이월 금액
-            //lblCard.Location = new Point(168, 38);
-
-            dgvTotal = new DataGridView();
+            
             dgvTotal.Location = new Point(352, 109);
             dgvTotal.Size = new Size(944, 150);
             #endregion
@@ -580,16 +570,7 @@ namespace Pos
 
             #endregion
             this.Controls.Add(dgvTotal);
-            //this.Controls.Add(label1);
-            //this.Controls.Add(label2);
-            //this.Controls.Add(label3);
-            //this.Controls.Add(label4);
-            //this.Controls.Add(lblRevenue);
-            //this.Controls.Add(lblUnitRevenue);
-            //this.Controls.Add(lblTotReenue);
-            //this.Controls.Add(lblCard);
             dgvTotal.AllowUserToAddRows = false;
-
             dgvTotal.DataSource = dt1;
             Draw_Chart();
 
@@ -607,6 +588,11 @@ namespace Pos
             }
             totalChart.Series.Clear();
             totalChart.Series.Add(Series1);
+        }
+
+        private void frmRevenue_Load_1(object sender, EventArgs e)
+        {
+
         }
 
 
@@ -775,33 +761,38 @@ namespace Pos
 
         //listbox선택시 
         private void listBox1_Click(object sender, EventArgs e)
-        {
+        {    
+   
             dtStart.Value = DateTime.Now;
             dtEnd.Value = DateTime.Now;
 
+            VisibleReset();
             switch (listBox1.SelectedIndex)
-            {
-                case 0:
-                    chartAge.Visible = false;
-                    chartGender.Visible = false;
+            {         
+                
+                case 0: //시간대별
+    
                     TimeRevenue();
                     break;
-                case 1:
+                case 1: //카테고리별
+                    Category();
                     break;
-                case 2:
+                case 2://상품별
+                    ProductRevenue();
                     break;
-                case 3: //지혜
-                    txtTime.Visible = false;
+                case 3: //객층분석
+     
                     GenderChart(); //성별
                     AgeChart(); //연령별
                     break;
                 case 4:
+                    Method();
                     break;
-                case 5:
+                case 5://반품현황
+                    Return();
                     break;
-                case 6:
-                    break;
-                case 7:
+                case 6://기간별 매출
+                    AllTotalRevenue();
                     break;
             }
         }

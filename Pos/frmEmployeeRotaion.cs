@@ -86,7 +86,7 @@ namespace Pos
                             ccmd.Parameters.AddWithValue("@etime", edate.TimeOfDay);
                             ccmd.ExecuteNonQuery();                        
                             MessageBox.Show(CurrentName + " 씨 안녕하세요!");
-                            WriteLog();
+                            WriteLog.Start(EmpName,"근무교대를 위한 로그인을 하였습니다.");
                             this.Close();
                         }
                     }
@@ -107,35 +107,6 @@ namespace Pos
             }
             con.Close();
         }
-        //로그 남기기 위한 메소드
-        public void WriteLog()
-        {
-
-            FileInfo s = new FileInfo(Application.StartupPath+@"\gposlog.txt");
-            if (s.Exists)
-            {
-                FileStream fs = new FileStream(Application.StartupPath + @"\gposlog.txt", FileMode.Open);
-                StreamReader sr = new StreamReader(fs, Encoding.Default);
-                string str = sr.ReadToEnd();
-                StreamWriter sw = new StreamWriter(fs,Encoding.Default);
-                sw.Write(sr.ReadToEnd());
-                sw.WriteLine("관리자 : " + EmpName.ToString());
-                sw.WriteLine("날짜 : " + DateTime.Now);
-                sw.WriteLine("내용 : 근무교대를 위한 로그인 " );
-                sw.Close();
-                sr.Close();
-                fs.Close();
-            }
-            else
-            {
-                FileStream fs = new FileStream(Application.StartupPath + @"\gposlog.txt",FileMode.Create);
-                StreamWriter sw = new StreamWriter(fs, Encoding.Default);
-                sw.WriteLine("관리자 : " + EmpName.ToString());
-                sw.WriteLine("날짜 : " + DateTime.Now);
-                sw.WriteLine("내용 : 근무교대를 위한 로그인 ");
-                sw.Close();
-                fs.Close();
-            }
-        }
+      
     }
 }

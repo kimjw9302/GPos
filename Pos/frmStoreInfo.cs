@@ -37,6 +37,7 @@ namespace Pos
                         tboxAddr.Text = sdr["address"].ToString();
                         tboxHomePhone.Text = sdr["homephone"].ToString();
                     }
+                    con.Close();
                 }
                 else
                 {
