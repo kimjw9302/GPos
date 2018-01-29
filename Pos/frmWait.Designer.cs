@@ -41,12 +41,12 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::Pos.Properties.Resources.goodeelogo;
-            this.pictureBox1.Location = new System.Drawing.Point(51, 11);
+            this.pictureBox1.Image = global::Pos.Properties.Resources.goodee24;
+            this.pictureBox1.Location = new System.Drawing.Point(12, -10);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(139, 50);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.Size = new System.Drawing.Size(470, 101);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 10;
             this.pictureBox1.TabStop = false;
             // 
@@ -55,7 +55,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label2.Location = new System.Drawing.Point(66, 104);
+            this.label2.Location = new System.Drawing.Point(69, 118);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(100, 32);
             this.label2.TabIndex = 9;
@@ -64,7 +64,7 @@
             // tboxpassword
             // 
             this.tboxpassword.Font = new System.Drawing.Font("굴림", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.tboxpassword.Location = new System.Drawing.Point(172, 101);
+            this.tboxpassword.Location = new System.Drawing.Point(175, 115);
             this.tboxpassword.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tboxpassword.Name = "tboxpassword";
             this.tboxpassword.PasswordChar = '*';
@@ -76,7 +76,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label1.Location = new System.Drawing.Point(221, 22);
+            this.label1.Location = new System.Drawing.Point(58, 73);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(130, 28);
             this.label1.TabIndex = 12;
@@ -87,7 +87,7 @@
             this.btnOutCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
             this.btnOutCancel.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnOutCancel.ForeColor = System.Drawing.Color.White;
-            this.btnOutCancel.Location = new System.Drawing.Point(158, 158);
+            this.btnOutCancel.Location = new System.Drawing.Point(160, 175);
             this.btnOutCancel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnOutCancel.Name = "btnOutCancel";
             this.btnOutCancel.Size = new System.Drawing.Size(192, 74);
@@ -101,7 +101,7 @@
             this.lblsc.AutoSize = true;
             this.lblsc.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblsc.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblsc.Location = new System.Drawing.Point(350, 22);
+            this.lblsc.Location = new System.Drawing.Point(205, 73);
             this.lblsc.Name = "lblsc";
             this.lblsc.Size = new System.Drawing.Size(0, 28);
             this.lblsc.TabIndex = 16;
@@ -116,14 +116,14 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(489, 255);
+            this.ClientSize = new System.Drawing.Size(489, 262);
             this.ControlBox = false;
             this.Controls.Add(this.lblsc);
             this.Controls.Add(this.btnOutCancel);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tboxpassword);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label2);
+            this.Controls.Add(this.pictureBox1);
             this.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frmWait";

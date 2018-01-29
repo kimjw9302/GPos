@@ -204,6 +204,10 @@ namespace Pos
             }
         }
 
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
 
         private void SpecTableMake()
         {
@@ -412,6 +416,7 @@ namespace Pos
                     if (i == 1)
                     {
                         MessageBox.Show(" 날짜 : " + DateTime.Now.ToShortDateString() + " [ 발주 성공] ");
+                        this.Close();
                     }
                     else
                     {

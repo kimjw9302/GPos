@@ -45,6 +45,8 @@ namespace Pos
                 if (flag.ToString() == "1")
                 {
 
+
+                    WriteLog.Start(EmpName, lblsc.Text+"동안 외출하기 기능을 이용하였습니다");
                     con.Close();
                     this.Dispose();
                 }
@@ -58,42 +60,11 @@ namespace Pos
             }
 
         }
-        public void WriteLog()
-        {
-
-            FileInfo s = new FileInfo(Application.StartupPath + @"\gposlog.txt");
-            if (s.Exists)
-            {
-                FileStream fs = new FileStream(Application.StartupPath + @"\gposlog.txt", FileMode.Open);
-                StreamReader sr = new StreamReader(fs, Encoding.Default);
-                string str = sr.ReadToEnd();
-                StreamWriter sw = new StreamWriter(fs, Encoding.Default);
-                sw.Write(sr.ReadToEnd());
-                sw.WriteLine("관리자 : " + EmpName.ToString());
-                sw.WriteLine("날짜 : " + DateTime.Now);
-                sw.WriteLine("내용 : 외출하기 기능 이용 ");
-                sw.Flush();
-                sw.Close();
-                sr.Close();
-                fs.Close();
-            }
-            else
-            {
-                FileStream fs = new FileStream(Application.StartupPath + @"\gposlog.txt", FileMode.Create);
-                StreamWriter sw = new StreamWriter(fs, Encoding.Default);
-                sw.WriteLine("관리자 : " + EmpName.ToString());
-                sw.WriteLine("날짜 : " + DateTime.Now);
-                sw.WriteLine("내용 : 외출하기 기능 이용 ");
-                sw.Flush();
-                sw.Close();
-                fs.Close();
-            }
-        }
+     
 
         private void frmWait_Load(object sender, EventArgs e)
         {
 
-            WriteLog();
             stime = DateTime.Now;
 
             timer1.Start();

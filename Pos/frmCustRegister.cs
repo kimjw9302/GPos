@@ -147,7 +147,7 @@ namespace Pos
                 string memberNum = txtUserNum.Text;
                 string memberName = txtUserName.Text.Trim().Replace(" ", "");
                 string birth = cbYear.Text + "-" + cbMonth.Text + "-" + cbDay.Text;
-                string phone = cbPhone1.Text + txtPhone2.Text + txtPhone3.Text;
+                string phone = cbPhone1.Text +"-" + txtPhone2.Text + "-"+ txtPhone3.Text;
                 string address = txtAddress.Text + txtDetailAddress.Text;
                 string passWord = cbMonth.Text + cbDay.Text;
                 string gender = "남자";

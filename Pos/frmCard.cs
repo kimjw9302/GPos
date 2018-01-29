@@ -14,7 +14,11 @@ namespace Pos
     public partial class frmCard : Form
     {
         string sendMoney; //결제금액 칸에 찍힐 금액
-        SqlConnection con; 
+        SqlConnection con;
+        DataTable ss;
+
+        public DataTable Ss { get => ss; set => ss = value; }
+
         public frmCard()
         {
             InitializeComponent();
@@ -40,55 +44,24 @@ namespace Pos
             //1. 유효성 검사
             if (Check())
             {
+
                 s.Cardmoeny = decimal.Parse(tboxPay.Text);
                 s.CardNumber = tboxCardNum.Text;
-
+                this.Visible = false;
+                frmSign fs = new frmSign();
+                Ss = fm.Ss;
+                fs.Owner = this;
+                fs.ShowDialog();
                 fm.T1.Text = "0";
                 fm.T2.Text = "0"; //payList
                 fm.T3.Text = "0";
                 fm.T4.Text = "0";
                 fm.T5.Text = "0";
-                con = DBcontroller.Instance();
-                con.Open();
-                using (var cmd = new SqlCommand("InsertSell", con))
-                {
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    if (s.ClientID == null)
-                    {
-                        cmd.Parameters.AddWithValue("@memberNum", DBNull.Value);
-                    }
-                    else
-                    {
-                        cmd.Parameters.AddWithValue("@memberNum", s.ClientID);
-                    }
-                    int type = 2;
-                    if (s.Cardmoeny != 0 || s.Pointmoney!=0)
-                    {
-                        type = 3;
-                    }
-                    string cardNum = s.CardNumber.Substring(0, 6);
-                    cardNum += "******";
-                    cardNum += s.CardNumber.Substring(12,4);
-                    cmd.Parameters.AddWithValue("@sellDate", DateTime.Now);
-                    cmd.Parameters.AddWithValue("@clientNum", s.Ages);
-                    cmd.Parameters.AddWithValue("@methodNum", type);
-                    cmd.Parameters.AddWithValue("@totalMoney", s.Tot);
-                    cmd.Parameters.AddWithValue("@receiveCash", s.Cashmoney);
-                    cmd.Parameters.AddWithValue("@receiveCard", s.Cardmoeny);
-                    cmd.Parameters.AddWithValue("@receivePoint", s.Pointmoney);
-                    cmd.Parameters.AddWithValue("@note", s.Sale.ToString());
-                    cmd.Parameters.AddWithValue("@card",cardNum);
-                    cmd.Parameters.AddWithValue("@empNum", s.EmpId);
-                    cmd.Parameters.AddWithValue("@savePoint", s.SavePoint);
-                    cmd.ExecuteNonQuery();
-
-                    this.Dispose();
-                }
-
                 fm.T2.Text = "************이전 정보 \r\n";
                 fm.T2.Text += "현금 결제 : " + s.Cashmoney + "원\r\n";
                 fm.T2.Text += "카드 결제 : " + s.Cardmoeny + "원\r\n";
                 fm.T2.Text += "포인트 결제 : " + s.Pointmoney + "원\r\n";
+
                 con.Close();
                 con.Open();
                 foreach (DataRow row in fm.Ss.Rows)
@@ -133,11 +106,10 @@ namespace Pos
                     }
                 }
 
-
                 Sell.Clear();
                 fm.Ss.Clear();
-                con.Close();
                 this.Dispose();
+
             }
             else
             {

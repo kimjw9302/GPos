@@ -19,19 +19,27 @@ namespace Pos
 
         private void btnStockSelect_Click(object sender, EventArgs e)
         {
+            this.Visible = false;
             new frmEvent().ShowDialog();
+            this.Dispose();
         }
 
         private void btnLog_Click(object sender, EventArgs e)
         {
+            this.Visible = false;
             new frmLog().ShowDialog();
+            this.Dispose();
         }
 
         private void btnMail_Click(object sender, EventArgs e)
         {
             this.Visible = false;
-            new frmMail().ShowDialog();
-      
+            new frmMail().ShowDialog();      
+            this.Dispose();
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
             this.Dispose();
         }
     }

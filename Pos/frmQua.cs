@@ -30,16 +30,23 @@ namespace Pos
 
         private void btnOk_Click(object sender, EventArgs e)
         {
-            
-            frmOrderRequest frmOrder = (frmOrderRequest)Owner;
-            frmOrder.GetQua = txtQua.Text;
-            this.Close();
+            if(int.Parse(txtQua.Text) > 0)
+            {
+                frmOrderRequest frmOrder = (frmOrderRequest)Owner;
+                frmOrder.GetQua = txtQua.Text;
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("0이상 선택하여야 합니다.");
+            }
+           
             
         }
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Dispose();
         }
         private void btnNum_Click(object sender, EventArgs e)
         {
