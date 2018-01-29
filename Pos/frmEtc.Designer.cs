@@ -112,7 +112,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frmEtc";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "GOODEE24";
+            this.Text = "기타";
             this.ResumeLayout(false);
 
         }

@@ -6,10 +6,13 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
+using Excel = Microsoft.Office.Interop.Excel;
+
 
 namespace Pos
 {
@@ -44,13 +47,13 @@ namespace Pos
         DataPoint w20 = new DataPoint(0, 0);
         DataPoint w30 = new DataPoint(0, 0);
         DataPoint w40 = new DataPoint(0, 0);
-        DataPoint w50 = new DataPoint(0, 0); 
+        DataPoint w50 = new DataPoint(0, 0);
         #endregion
         Title BarTitle = new Title();
         DataGridView dgvProducts = new DataGridView();
-        DataGridView dgvTotal =new DataGridView();
+        DataGridView dgvTotal = new DataGridView();
         DataRow dr1 = null;
-        DataTable dt1 =null;
+        DataTable dt1 = null;
         decimal row1_sum, row2_sum, row3_sum = 0;
         public frmRevenue()
         {
@@ -58,7 +61,7 @@ namespace Pos
         }
         private void frmRevenue_Load(object sender, EventArgs e)
         {
-            
+
         }
         public void VisibleReset()
         {
@@ -71,6 +74,7 @@ namespace Pos
             dgvProducts.Visible = false;
             MethodReturnChart.Visible = false;
             chartAge.Visible = false;
+            this.btnExcel.Visible = false;
         }
         private void Method()
         {
@@ -139,7 +143,7 @@ namespace Pos
                 int error = int.Parse(ds.Tables[1].Rows[0][0].ToString());
                 int etc = int.Parse(ds.Tables[2].Rows[0][0].ToString());
 
-                
+
                 MethodReturnChart.Series["return"].LabelFormat = "{0.0}%";
                 if (trade == 0 && error == 0 && etc == 0)
                 {
@@ -166,7 +170,7 @@ namespace Pos
         {
             MethodReturnChart.Visible = true;
             CateNFChart.Visible = true;
-       
+
             CateNFChart.Series["categoryNF"].Points.Clear();
             MethodReturnChart.Series["categoryF"].Points.Clear();
             MethodReturnChart.Series["method"].Points.Clear();
@@ -180,8 +184,8 @@ namespace Pos
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@sdate", DateTime.Parse(dtStart.Value.ToShortDateString() + " 00:00:00"));
                 cmd.Parameters.AddWithValue("@edate", DateTime.Parse(dtEnd.Value.ToShortDateString() + " 23:59:59"));
-                
-                
+
+
                 DataSet ds = new DataSet();
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                 adapter.SelectCommand = cmd;
@@ -191,10 +195,10 @@ namespace Pos
                 MethodReturnChart.Size = new Size(450, 350);
                 CateNFChart.Location = new Point(913, CateNFChart.Location.Y);
                 CateNFChart.Size = new Size(450, 350);
-                                         
+
 
                 if (food.Rows.Count == 0)
-                {                    
+                {
                     MethodReturnChart.Series["categoryF"].Points.AddXY("없음", 100);
                 }
                 foreach (DataRow item in food.Rows)
@@ -202,35 +206,35 @@ namespace Pos
                     MethodReturnChart.Series["categoryF"].Points.AddXY(item[0].ToString(), item[1].ToString());
                 }
                 if (notfood.Rows.Count == 0)
-                {                    
+                {
                     CateNFChart.Series["categoryNF"].Points.AddXY("없음", 100);
                 }
                 foreach (DataRow item in notfood.Rows)
-                { 
+                {
                     CateNFChart.Series["categoryNF"].Points.AddXY(item[0].ToString(), item[1].ToString());
-                   
+
                 }
                 con.Close();
-               
+
             }
         }
 
         private void btnOk_Click(object sender, EventArgs e)
-        {            
+        {
 
             if (listBox1.SelectedIndex == 1)
             {
                 Category();
             }
 
-          else  if (listBox1.SelectedIndex == 2)
+            else if (listBox1.SelectedIndex == 2)
             {
                 dgvProducts.DataSource = null;
                 this.Controls.Remove(dgvProducts);
                 ProductRevenue();
 
             }
-           else if (listBox1.SelectedIndex == 4)
+            else if (listBox1.SelectedIndex == 4)
             {
                 Method();
             }
@@ -264,7 +268,7 @@ namespace Pos
                 dtStart.Value = dtEnd.Value;
             }
         }
-       
+
 
         private void dtStart_ValueChanged(object sender, EventArgs e)
         {
@@ -390,14 +394,14 @@ namespace Pos
             DateTime edate = DateTime.Parse(dtEnd.Value.ToShortDateString());
             TimeSpan subDate = edate - sdate;
             int days = int.Parse(subDate.TotalDays.ToString()) + 1;
-            row1_sum= row2_sum= row3_sum = 0;
+            row1_sum = row2_sum = row3_sum = 0;
             DataSet ds = new DataSet();
-             dt1 = new DataTable();
+            dt1 = new DataTable();
 
             totalChart.Visible = true;
             dgvTotal.Visible = true;
             #region 컨트롤정의
-            
+
             dgvTotal.Location = new Point(352, 109);
             dgvTotal.Size = new Size(944, 150);
             #endregion
@@ -408,18 +412,18 @@ namespace Pos
             con.Open();
             DateTime temp = sdate;
             dt1.Columns.Add("분류");
-            
+
             for (int i = 0; i < days; i++)
             {
                 if (sdate.Month.ToString().Length == 1)
                 {
-                    dt1.Columns.Add(sdate.Year.ToString() + "년" +"0"+ sdate.Month.ToString() + "월" + sdate.Day.ToString() + "일");
+                    dt1.Columns.Add(sdate.Year.ToString() + "년" + "0" + sdate.Month.ToString() + "월" + sdate.Day.ToString() + "일");
                 }
                 else
                 {
                     dt1.Columns.Add(sdate.Year.ToString() + "년" + sdate.Month.ToString() + "월" + sdate.Day.ToString() + "일");
                 }
-           
+
 
 
 
@@ -431,7 +435,7 @@ namespace Pos
             dr1 = dt1.NewRow();
             //매출액 
             dr1[0] = "매출액";
-         
+
             for (int i = 1; i < days + 1; i++)
             {
                 using (var cmd = new SqlCommand("TotalRevenue", con))
@@ -456,10 +460,10 @@ namespace Pos
                     sdr.Close();
 
                 }
-                
+
                 temp = temp.AddDays(1);
             }
-            dr1[days+1] = row1_sum;
+            dr1[days + 1] = row1_sum;
             dt1.Rows.Add(dr1);
 
             //할인금액
@@ -527,7 +531,7 @@ namespace Pos
             }
             dr1[days + 1] = row3_sum;
             dt1.Rows.Add(dr1);
-  
+
             //for (int i = 0; i < 3; i++)
             //{
             //    dt.Rows.Add("");
@@ -542,13 +546,13 @@ namespace Pos
             int count = 1;
             foreach (DataRow row in dt1.Rows)
             {
-               
-                for (int i = 1; i < row.ItemArray.Length-1; i++)
+
+                for (int i = 1; i < row.ItemArray.Length - 1; i++)
                 {
                     //MessageBox.Show("!! : "+row.ItemArray[i].ToString());
                     if (count == 1)
                     {
-                        intarr.Add(decimal.Parse(row.ItemArray[i].ToString()));                       
+                        intarr.Add(decimal.Parse(row.ItemArray[i].ToString()));
                     }
                     else
                     {
@@ -580,11 +584,11 @@ namespace Pos
             Series Series1 = new Series("매출금액");
             Series1.ChartType = SeriesChartType.Line;
             for (int i = 3; i < dt1.Rows.Count; i++)
-            {       
-                for (int j = 1; j < dt1.Rows[3].ItemArray.Length-1; j++)
+            {
+                for (int j = 1; j < dt1.Rows[3].ItemArray.Length - 1; j++)
                 {
-                    Series1.Points.AddXY(dt1.Columns[j].ToString().Substring(5, 2) + "-"+dt1.Columns[j].ToString().Substring(8,2), dt1.Rows[i].ItemArray[j]);
-                }     
+                    Series1.Points.AddXY(dt1.Columns[j].ToString().Substring(5, 2) + "-" + dt1.Columns[j].ToString().Substring(8, 2), dt1.Rows[i].ItemArray[j]);
+                }
             }
             totalChart.Series.Clear();
             totalChart.Series.Add(Series1);
@@ -592,6 +596,85 @@ namespace Pos
 
         private void frmRevenue_Load_1(object sender, EventArgs e)
         {
+
+        }
+
+        private void btnExcel_Click(object sender, EventArgs e)
+        {
+            string sdate = dtStart.Value.Month + "." + dtStart.Value.Day;
+            string edate = dtEnd.Value.Month + "." + dtEnd.Value.Day;
+
+            if (sdate == edate) this.saveFileDialog1.FileName = sdate + " 매출 보고서";
+            else this.saveFileDialog1.FileName = sdate + "-" + edate + " 매출 보고서";
+            this.saveFileDialog1.DefaultExt = "xls";
+            this.saveFileDialog1.Filter = "Excel files (*.xls)|*.xls";
+            this.saveFileDialog1.InitialDirectory = "c:\\";
+
+            DialogResult dr = saveFileDialog1.ShowDialog();
+            if (dr == DialogResult.OK)
+            {
+                int num = 0;
+                object missingType = Type.Missing;
+                Excel.Application objApp;
+                Excel._Workbook objBook;
+                Excel.Workbooks objBooks;
+                Excel.Sheets objSheets;
+                Excel._Worksheet objSheet;
+                Excel.Range range;
+                
+
+                string[] headers = new string[dgvTotal.ColumnCount];
+                string[] columns = new string[dgvTotal.ColumnCount];
+
+                for (int c = 0; c < dgvTotal.ColumnCount; c++)
+                {
+                    headers[c] = dgvTotal.Rows[0].Cells[c].OwningColumn.HeaderText.ToString();
+                    num = c + 65;
+                    columns[c] = Convert.ToString((char)num);
+                }
+
+                objApp = new Excel.Application();
+                objBooks = objApp.Workbooks;
+                objBook = objBooks.Add(Missing.Value);
+                objSheets = objBook.Worksheets;
+                objSheet = (Excel._Worksheet)objSheets.get_Item(1);
+                objSheet.Name = "기간 별 총 매출현황";
+                for (int c = 0; c < dgvTotal.ColumnCount; c++)
+                {
+                    range = objSheet.get_Range(columns[c] + "1", Missing.Value);
+                    range.set_Value(Missing.Value, headers[c]);
+                }
+                for (int i = 0; i < dgvTotal.RowCount - 1; i++)
+                {
+                    for (int j = 0; j < dgvTotal.ColumnCount; j++)
+                    {
+                        range = objSheet.get_Range(columns[j] + Convert.ToString(i + 2),
+                                                               Missing.Value);
+                        range.set_Value(Missing.Value,
+                                              dgvTotal.Rows[i].Cells[j].Value.ToString());
+                    }
+                }
+                objApp.Visible = false;
+                objApp.UserControl = false;
+
+                objBook.SaveAs(this.saveFileDialog1.FileName,
+                          Excel.XlFileFormat.xlWorkbookNormal,
+                          missingType, missingType, missingType, missingType,
+                          Excel.XlSaveAsAccessMode.xlNoChange,
+                          missingType, missingType, missingType, missingType, missingType);
+                objBook.Close(false, missingType, missingType);
+
+                //Cursor.Current = Cursors.Default;
+
+                MessageBox.Show("Save Success!!!");
+
+
+
+            }
+            else
+            {
+
+            }
 
         }
 
@@ -609,11 +692,11 @@ namespace Pos
             {
                 int[] count = new int[24];
                 decimal[] money = new decimal[24];
-                   
+
 
                 string strDate = dtStart.Value.ToShortDateString() + " 00:00:00";
                 string endDate = dtEnd.Value.ToShortDateString() + " 23:59:59";
-                
+
                 con.Open();
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@startDate", DateTime.Parse(strDate));
@@ -730,7 +813,7 @@ namespace Pos
                             money[23] = decimal.Parse(item[2].ToString());
                             break;
 
-                    } 
+                    }
                     #endregion
 
                 }
@@ -741,37 +824,37 @@ namespace Pos
                 txtTime.Text += "    시간대\t개수\t\t금액\t \r\n";
                 txtTime.Text += "==================================\r\n";
 
-                
+
                 for (int i = 0; i < 24; i++)
                 {
                     var s = "PM";
-                    if(i < 12)
+                    if (i < 12)
                     {
                         s = "AM";
                     }
 
-                    txtTime.Text +="  "+s+" "+ i+"~"+(i+1)+"\t"+ count[i].ToString() +"건\t\t "+ (int)money[i] + "원\r\n";
+                    txtTime.Text += "  " + s + " " + i + "~" + (i + 1) + "\t" + count[i].ToString() + "건\t\t " + (int)money[i] + "원\r\n";
                     totalMoney += (int)money[i];
                 }
                 txtTime.Text += "==================================\r\n";
-                txtTime.Text += "\t\t\t  총 금액 : " + totalMoney +"원";
+                txtTime.Text += "\t\t\t  총 금액 : " + totalMoney + "원";
             }
 
         }
 
         //listbox선택시 
         private void listBox1_Click(object sender, EventArgs e)
-        {    
-   
+        {
+
             dtStart.Value = DateTime.Now;
             dtEnd.Value = DateTime.Now;
 
             VisibleReset();
             switch (listBox1.SelectedIndex)
-            {         
-                
+            {
+
                 case 0: //시간대별
-    
+
                     TimeRevenue();
                     break;
                 case 1: //카테고리별
@@ -781,7 +864,7 @@ namespace Pos
                     ProductRevenue();
                     break;
                 case 3: //객층분석
-     
+
                     GenderChart(); //성별
                     AgeChart(); //연령별
                     break;
@@ -792,6 +875,7 @@ namespace Pos
                     Return();
                     break;
                 case 6://기간별 매출
+                    this.btnExcel.Visible = true;
                     AllTotalRevenue();
                     break;
             }
@@ -889,7 +973,7 @@ namespace Pos
             chartAge.Series["남자"].Points[2].AxisLabel = "30대";
             chartAge.Series["남자"].Points[3].AxisLabel = "40대";
             chartAge.Series["남자"].Points[4].AxisLabel = "50대 이상";
-            
+
 
             chartAge.Series["남자"].Font = new Font("맑은 고딕", 12F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
             chartAge.Series["여자"].Font = new Font("맑은 고딕", 12F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
@@ -924,22 +1008,22 @@ namespace Pos
                 adapter.Fill(ds);
 
                 DataRowCollection rows = ds.Tables[0].Rows;
-                decimal man =0;
-                decimal woman =0;
+                decimal man = 0;
+                decimal woman = 0;
                 foreach (var item in rows)
                 {
-                    if(rows.Count>1)
+                    if (rows.Count > 1)
                     {
-                         man = decimal.Parse(ds.Tables[0].Rows[0][1].ToString());
+                        man = decimal.Parse(ds.Tables[0].Rows[0][1].ToString());
                         woman = decimal.Parse(ds.Tables[0].Rows[1][1].ToString());
                     }
                 }
-                
-                
+
+
 
                 //MethodReturnChat.Series["method"].IsValueShownAsLabel = true;
                 //MethodReturnChat.Series["method"].LabelFormat = "{0.0}%";
-                if (man == 0 && woman == 0 )
+                if (man == 0 && woman == 0)
                 {
                     chartGender.Series["Gender"].Points.AddXY("데이터값 없음", 100);
                     chartGender.Series["Gender"].Points[0].Color = Color.Coral;
@@ -950,7 +1034,7 @@ namespace Pos
                     chartGender.Series["Gender"].Points[0].IsValueShownAsLabel = true;
                     chartGender.Series["Gender"].Points[0].LabelFormat = "{0.0}%";
                     chartGender.Series["Gender"].Points[0].Color = Color.SkyBlue;
-                 
+
 
                 }
                 if (woman != 0)
@@ -978,7 +1062,7 @@ namespace Pos
         //        dgvProducts.DataSource = null;
         //        this.Controls.Remove(dgvProducts);
         //        ProductRevenue();
-               
+
         //    }
         //    else if (listBox1.SelectedIndex == 6)
         //    {

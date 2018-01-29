@@ -31,6 +31,12 @@ namespace Pos
             //결제끝
             Sell s = Sell.Load();
             frmPayment fm = (frmPayment)Owner;
+            if (tboxBit.Text == "")
+            {
+                tboxReceive.Text = tboxTotal.Text;
+                tboxBit.Text = "0";
+                tboxChange.Text = "0";
+            }
             if (decimal.Parse(tboxBit.Text) == 0)
             {
                 con = DBcontroller.Instance();
@@ -301,6 +307,5 @@ namespace Pos
             tboxReceive.Focus();
             current = tboxReceive;
         }
-
     }
 }
