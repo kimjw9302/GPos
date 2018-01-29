@@ -81,10 +81,7 @@ namespace Pos
                 cmd.Parameters.AddWithValue("@uStartDate", uStartDate);
                 cmd.Parameters.AddWithValue("@uEndDate", uEndDate);
 
-
-
                 con.Open();
-
                 int i = cmd.ExecuteNonQuery();
                 if (i == 1)
                 {
@@ -96,7 +93,7 @@ namespace Pos
                 {
                     MessageBox.Show("저장 실패");
                     return;
-                }
+                }   
             }
         }
 
@@ -132,8 +129,7 @@ namespace Pos
 
                 adapter.UpdateCommand = cmd;
 
-                int i;
-                i = cmd.ExecuteNonQuery();
+                int i = cmd.ExecuteNonQuery();
 
                 if (i == 1)
                 {
@@ -154,7 +150,7 @@ namespace Pos
         // 삭제
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            string uEventNum = this.tboxEventNum.Text.Trim();
+            int uEventNum = int.Parse(this.tboxEventNum.Text.Trim());
             var con = DBcontroller.Instance();
             using (var cmd = new SqlCommand("EventDelete", con))
             {

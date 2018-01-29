@@ -30,6 +30,8 @@
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblProductName = new System.Windows.Forms.Label();
+            this.tboxProductName = new System.Windows.Forms.TextBox();
             this.EndDate = new System.Windows.Forms.DateTimePicker();
             this.btnModify = new System.Windows.Forms.Button();
             this.StartDate = new System.Windows.Forms.DateTimePicker();
@@ -44,8 +46,6 @@
             this.btnSearch = new System.Windows.Forms.Button();
             this.tboxEventNum = new System.Windows.Forms.TextBox();
             this.lblEventNum = new System.Windows.Forms.Label();
-            this.tboxProductName = new System.Windows.Forms.TextBox();
-            this.lblProductName = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -83,6 +83,25 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(734, 259);
             this.panel1.TabIndex = 4;
+            // 
+            // lblProductName
+            // 
+            this.lblProductName.AutoSize = true;
+            this.lblProductName.Font = new System.Drawing.Font("굴림", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblProductName.Location = new System.Drawing.Point(82, 54);
+            this.lblProductName.Name = "lblProductName";
+            this.lblProductName.Size = new System.Drawing.Size(60, 24);
+            this.lblProductName.TabIndex = 25;
+            this.lblProductName.Text = "상품";
+            // 
+            // tboxProductName
+            // 
+            this.tboxProductName.Font = new System.Drawing.Font("굴림", 18F);
+            this.tboxProductName.Location = new System.Drawing.Point(148, 51);
+            this.tboxProductName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tboxProductName.Name = "tboxProductName";
+            this.tboxProductName.Size = new System.Drawing.Size(302, 35);
+            this.tboxProductName.TabIndex = 24;
             // 
             // EndDate
             // 
@@ -214,6 +233,7 @@
             this.btnSearch.TabIndex = 3;
             this.btnSearch.Text = "조회";
             this.btnSearch.UseVisualStyleBackColor = false;
+            
             // 
             // tboxEventNum
             // 
@@ -233,25 +253,6 @@
             this.lblEventNum.Size = new System.Drawing.Size(135, 24);
             this.lblEventNum.TabIndex = 0;
             this.lblEventNum.Text = "이벤트번호";
-            // 
-            // tboxProductName
-            // 
-            this.tboxProductName.Font = new System.Drawing.Font("굴림", 18F);
-            this.tboxProductName.Location = new System.Drawing.Point(148, 51);
-            this.tboxProductName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tboxProductName.Name = "tboxProductName";
-            this.tboxProductName.Size = new System.Drawing.Size(302, 35);
-            this.tboxProductName.TabIndex = 24;
-            // 
-            // lblProductName
-            // 
-            this.lblProductName.AutoSize = true;
-            this.lblProductName.Font = new System.Drawing.Font("굴림", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lblProductName.Location = new System.Drawing.Point(82, 54);
-            this.lblProductName.Name = "lblProductName";
-            this.lblProductName.Size = new System.Drawing.Size(60, 24);
-            this.lblProductName.TabIndex = 25;
-            this.lblProductName.Text = "상품";
             // 
             // frmEvent
             // 

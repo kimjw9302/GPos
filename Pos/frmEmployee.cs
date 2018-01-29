@@ -172,24 +172,24 @@ namespace Pos
         {
             if (dgvEmployees.RowCount != 0)
             {
-<<<<<<< HEAD
-=======
+
+
       
                 memberNum = dgvEmployees.CurrentRow.Cells[0].Value.ToString();
                 MessageBox.Show(memberNum);
->>>>>>> 7c2b0ae6aa54ce03ea3ce84d35956f79026c841d
+
                 tboxName.Text = dgvEmployees.CurrentRow.Cells[1].Value.ToString();                
                 tboxPosition.Text = dgvEmployees.CurrentRow.Cells[2].Value.ToString();
                 tboxPhone.Text = dgvEmployees.CurrentRow.Cells[3].Value.ToString();
                 tboxhourlyWage.Text = dgvEmployees.CurrentRow.Cells[4].Value.ToString();
-<<<<<<< HEAD
-=======
+
+
                 claBarcode bcTemp = new claBarcode();
 
                 memberNum = bcTemp.strBarcode(memberNum, 0);
                 memberNum = bcTemp.strBarcodeToBar(memberNum);
                 GdiOutput(memberNum);
->>>>>>> 7c2b0ae6aa54ce03ea3ce84d35956f79026c841d
+
             }
             else
             {
