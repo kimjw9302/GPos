@@ -662,6 +662,7 @@ namespace Pos
         private void TimeRevenue()
         {
             txtTime.Visible = true;
+            totalMoney = 0;
             txtTime.Text = "";
             con = DBcontroller.Instance();
             using (var cmd = new SqlCommand("TimeRevenue", con))

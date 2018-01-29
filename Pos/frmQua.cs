@@ -30,15 +30,18 @@ namespace Pos
 
         private void btnOk_Click(object sender, EventArgs e)
         {
-            if(int.Parse(txtQua.Text) > 0)
+            try
             {
-                frmOrderRequest frmOrder = (frmOrderRequest)Owner;
-                frmOrder.GetQua = txtQua.Text;
-                this.Close();
+                if (int.Parse(txtQua.Text) > 0)
+                {
+                    frmOrderRequest frmOrder = (frmOrderRequest)Owner;
+                    frmOrder.GetQua = txtQua.Text;
+                    this.Close();
+                }
             }
-            else
+            catch (FormatException)
             {
-                MessageBox.Show("0이상 선택하여야 합니다.");
+                MessageBox.Show("수량을 입력해주세요.", "알림", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
            
             
@@ -55,8 +58,14 @@ namespace Pos
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            
-            txtQua.Text = txtQua.Text.Remove(txtQua.Text.Length - 1, 1);
+            try
+            {
+                txtQua.Text = txtQua.Text.Remove(txtQua.Text.Length - 1, 1);
+            }
+            catch (ArgumentOutOfRangeException )
+            {
+                return;
+            }
         }
 
         private void btnInit_Click(object sender, EventArgs e)

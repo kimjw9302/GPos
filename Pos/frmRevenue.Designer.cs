@@ -249,12 +249,12 @@
             // txtTime
             // 
             this.txtTime.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.txtTime.Location = new System.Drawing.Point(336, 109);
+            this.txtTime.Location = new System.Drawing.Point(336, 90);
             this.txtTime.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTime.Multiline = true;
             this.txtTime.Name = "txtTime";
             this.txtTime.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtTime.Size = new System.Drawing.Size(406, 466);
+            this.txtTime.Size = new System.Drawing.Size(423, 545);
             this.txtTime.TabIndex = 10;
             this.txtTime.Visible = false;
             // 
@@ -405,7 +405,6 @@
         private System.Windows.Forms.DataVisualization.Charting.Chart chartAge;
         private System.Windows.Forms.TextBox txtTime;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
-        private System.Windows.Forms.Panel panel;
         private System.Windows.Forms.DataVisualization.Charting.Chart MethodReturnChart;
         private System.Windows.Forms.DataVisualization.Charting.Chart totalChart;
         private System.Windows.Forms.DataVisualization.Charting.Chart CateNFChart;
