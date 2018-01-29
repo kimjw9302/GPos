@@ -51,28 +51,30 @@
             this.dgvWorkView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvWorkView.BackgroundColor = System.Drawing.Color.White;
             this.dgvWorkView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvWorkView.Location = new System.Drawing.Point(16, 196);
+            this.dgvWorkView.Location = new System.Drawing.Point(18, 185);
+            this.dgvWorkView.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dgvWorkView.Name = "dgvWorkView";
             this.dgvWorkView.RowTemplate.Height = 23;
-            this.dgvWorkView.Size = new System.Drawing.Size(778, 411);
+            this.dgvWorkView.Size = new System.Drawing.Size(830, 514);
             this.dgvWorkView.TabIndex = 3;
             // 
             // cbEmp
             // 
             this.cbEmp.Font = new System.Drawing.Font("맑은 고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.cbEmp.FormattingEnabled = true;
-            this.cbEmp.Location = new System.Drawing.Point(105, 24);
+            this.cbEmp.Location = new System.Drawing.Point(120, 30);
+            this.cbEmp.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cbEmp.Name = "cbEmp";
-            this.cbEmp.Size = new System.Drawing.Size(121, 28);
+            this.cbEmp.Size = new System.Drawing.Size(138, 33);
             this.cbEmp.TabIndex = 4;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("맑은 고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label1.Location = new System.Drawing.Point(25, 26);
+            this.label1.Location = new System.Drawing.Point(29, 32);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(74, 20);
+            this.label1.Size = new System.Drawing.Size(95, 25);
             this.label1.TabIndex = 5;
             this.label1.Text = "직원 선택";
             // 
@@ -80,9 +82,9 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("맑은 고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label2.Location = new System.Drawing.Point(60, 27);
+            this.label2.Location = new System.Drawing.Point(69, 34);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(39, 20);
+            this.label2.Size = new System.Drawing.Size(50, 25);
             this.label2.TabIndex = 6;
             this.label2.Text = "기간";
             // 
@@ -90,39 +92,42 @@
             // 
             this.dtpEndDate.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.dtpEndDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpEndDate.Location = new System.Drawing.Point(283, 23);
+            this.dtpEndDate.Location = new System.Drawing.Point(323, 29);
+            this.dtpEndDate.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dtpEndDate.Name = "dtpEndDate";
-            this.dtpEndDate.Size = new System.Drawing.Size(151, 29);
+            this.dtpEndDate.Size = new System.Drawing.Size(172, 34);
             this.dtpEndDate.TabIndex = 26;
             // 
             // dtpStartDate
             // 
             this.dtpStartDate.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.dtpStartDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpStartDate.Location = new System.Drawing.Point(105, 23);
+            this.dtpStartDate.Location = new System.Drawing.Point(120, 29);
+            this.dtpStartDate.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dtpStartDate.Name = "dtpStartDate";
-            this.dtpStartDate.Size = new System.Drawing.Size(145, 29);
+            this.dtpStartDate.Size = new System.Drawing.Size(165, 34);
             this.dtpStartDate.TabIndex = 27;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label3.Location = new System.Drawing.Point(256, 23);
+            this.label3.Location = new System.Drawing.Point(293, 29);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(21, 21);
+            this.label3.Size = new System.Drawing.Size(26, 28);
             this.label3.TabIndex = 28;
             this.label3.Text = "~";
             // 
             // btnClose
             // 
-            this.btnClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
+            this.btnClose.BackColor = System.Drawing.Color.Red;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Font = new System.Drawing.Font("돋움", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnClose.Font = new System.Drawing.Font("맑은 고딕", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnClose.ForeColor = System.Drawing.Color.White;
-            this.btnClose.Location = new System.Drawing.Point(695, 21);
+            this.btnClose.Location = new System.Drawing.Point(437, 710);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(99, 68);
+            this.btnClose.Size = new System.Drawing.Size(225, 90);
             this.btnClose.TabIndex = 29;
             this.btnClose.Text = "닫기";
             this.btnClose.UseVisualStyleBackColor = false;
@@ -130,13 +135,14 @@
             // 
             // btnView
             // 
-            this.btnView.BackColor = System.Drawing.Color.OrangeRed;
+            this.btnView.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
             this.btnView.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnView.Font = new System.Drawing.Font("돋움", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnView.Font = new System.Drawing.Font("맑은 고딕", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnView.ForeColor = System.Drawing.Color.White;
-            this.btnView.Location = new System.Drawing.Point(695, 102);
+            this.btnView.Location = new System.Drawing.Point(145, 707);
+            this.btnView.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnView.Name = "btnView";
-            this.btnView.Size = new System.Drawing.Size(99, 72);
+            this.btnView.Size = new System.Drawing.Size(225, 90);
             this.btnView.TabIndex = 31;
             this.btnView.Text = "조회";
             this.btnView.UseVisualStyleBackColor = false;
@@ -146,10 +152,11 @@
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(18, 80);
+            this.tabControl1.Location = new System.Drawing.Point(21, 40);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(671, 94);
+            this.tabControl1.Size = new System.Drawing.Size(767, 118);
             this.tabControl1.TabIndex = 33;
             // 
             // tabPage1
@@ -158,10 +165,11 @@
             this.tabPage1.Controls.Add(this.dtpStartDate);
             this.tabPage1.Controls.Add(this.label3);
             this.tabPage1.Controls.Add(this.dtpEndDate);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Location = new System.Drawing.Point(4, 25);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(663, 68);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tabPage1.Size = new System.Drawing.Size(759, 89);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "기간별 전직원";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -170,27 +178,30 @@
             // 
             this.tabPage2.Controls.Add(this.cbEmp);
             this.tabPage2.Controls.Add(this.label1);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Location = new System.Drawing.Point(4, 25);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(663, 68);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tabPage2.Size = new System.Drawing.Size(759, 89);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "기간 & 직원별 ";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // frmEmployeeSchedule
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(817, 656);
+            this.ClientSize = new System.Drawing.Size(858, 820);
             this.ControlBox = false;
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.btnView);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.dgvWorkView);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frmEmployeeSchedule";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "직원 스케줄 창";
             this.Load += new System.EventHandler(this.frmEmployeeSchedule_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvWorkView)).EndInit();
             this.tabControl1.ResumeLayout(false);

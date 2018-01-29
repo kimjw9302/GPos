@@ -39,7 +39,6 @@ namespace Pos
             sda.SelectCommand = cmd;
             sda.Fill(ds);
             dgvEmployees.DataSource = ds.Tables[0];
-           
         }
         private void dgvEmployees_Click(object sender, EventArgs e)
         {
@@ -133,6 +132,7 @@ namespace Pos
             int intW = 1;
 
             Graphics graphics = pboxBarcode.CreateGraphics();
+            graphics.Clear(Color.White);
             //팬색
             Pen BlackPen = new Pen(Color.Black, intW);
             Pen WhitePen = new Pen(Color.White, intW);
@@ -157,8 +157,8 @@ namespace Pos
             }
 
             //시간출력
+            
             graphics.DrawString(DateTime.Now + "", new Font("Arial", 8, FontStyle.Regular), BlackBrush, 70, 270);
-
             //더미
             graphics.DrawString("_", new Font("고딕", 1, FontStyle.Regular), BlackBrush, 40, 300);
         }

@@ -26,7 +26,7 @@ namespace Pos
             dgvAban.DataSource = abantable;
 
             con = DBcontroller.Instance();
-
+            con.Open();
             using (var cmd = new SqlCommand("AbanCheck", con))
             {
                 SqlDataAdapter adapter = new SqlDataAdapter();
@@ -40,7 +40,7 @@ namespace Pos
 
 
             }
-            
+            con.Close();
         }
 
         private void AbanTableMaker()
