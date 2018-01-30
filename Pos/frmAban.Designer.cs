@@ -38,19 +38,18 @@
             // txtBarcode
             // 
             this.txtBarcode.Font = new System.Drawing.Font("굴림", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.txtBarcode.Location = new System.Drawing.Point(231, 64);
-            this.txtBarcode.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtBarcode.Location = new System.Drawing.Point(202, 51);
             this.txtBarcode.Name = "txtBarcode";
-            this.txtBarcode.Size = new System.Drawing.Size(300, 42);
+            this.txtBarcode.Size = new System.Drawing.Size(263, 35);
             this.txtBarcode.TabIndex = 0;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("맑은 고딕", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label1.Location = new System.Drawing.Point(76, 65);
+            this.label1.Location = new System.Drawing.Point(66, 52);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(167, 41);
+            this.label1.Size = new System.Drawing.Size(132, 32);
             this.label1.TabIndex = 1;
             this.label1.Text = "폐기 상품 :";
             // 
@@ -60,10 +59,9 @@
             this.btnOk.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOk.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnOk.ForeColor = System.Drawing.Color.White;
-            this.btnOk.Location = new System.Drawing.Point(83, 165);
-            this.btnOk.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnOk.Location = new System.Drawing.Point(73, 132);
             this.btnOk.Name = "btnOk";
-            this.btnOk.Size = new System.Drawing.Size(184, 92);
+            this.btnOk.Size = new System.Drawing.Size(161, 74);
             this.btnOk.TabIndex = 2;
             this.btnOk.Text = "등록";
             this.btnOk.UseVisualStyleBackColor = false;
@@ -73,9 +71,9 @@
             // 
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.Color.Red;
-            this.label2.Location = new System.Drawing.Point(295, 115);
+            this.label2.Location = new System.Drawing.Point(258, 92);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(259, 15);
+            this.label2.Size = new System.Drawing.Size(207, 12);
             this.label2.TabIndex = 3;
             this.label2.Text = "* 폐기할 상품을 바코드로 찍어주세요";
             // 
@@ -85,10 +83,9 @@
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnClose.ForeColor = System.Drawing.Color.White;
-            this.btnClose.Location = new System.Drawing.Point(316, 165);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnClose.Location = new System.Drawing.Point(276, 132);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(184, 92);
+            this.btnClose.Size = new System.Drawing.Size(161, 74);
             this.btnClose.TabIndex = 4;
             this.btnClose.Text = "닫기";
             this.btnClose.UseVisualStyleBackColor = false;
@@ -96,18 +93,18 @@
             // 
             // frmAban
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(578, 287);
+            this.ClientSize = new System.Drawing.Size(531, 236);
             this.ControlBox = false;
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnOk);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtBarcode);
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frmAban";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "폐기등록";
             this.ResumeLayout(false);
             this.PerformLayout();

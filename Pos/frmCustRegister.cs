@@ -68,7 +68,9 @@ namespace Pos
                     cbDay.Items.Add(i);
                 }
             }
-
+            txtAddress.Text = "ex) 세종대로";
+            txtAddress.ForeColor = Color.Gray;
+            txtDetailAddress.ForeColor = Color.Gray;
         }
 
         /// <summary>
@@ -258,6 +260,14 @@ namespace Pos
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+        
+        private void txtAddress_Enter(object sender, EventArgs e)
+        {
+            if (txtAddress.Text == "ex) 세종대로")
+            {
+                txtAddress.Text = "";
+            }
         }
     }
 }

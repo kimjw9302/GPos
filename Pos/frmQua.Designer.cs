@@ -52,7 +52,7 @@
             this.btnOk.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOk.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnOk.ForeColor = System.Drawing.Color.White;
-            this.btnOk.Location = new System.Drawing.Point(149, 541);
+            this.btnOk.Location = new System.Drawing.Point(90, 528);
             this.btnOk.Name = "btnOk";
             this.btnOk.Size = new System.Drawing.Size(127, 70);
             this.btnOk.TabIndex = 1;
@@ -64,7 +64,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label1.Location = new System.Drawing.Point(101, 80);
+            this.label1.Location = new System.Drawing.Point(95, 88);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(69, 25);
             this.label1.TabIndex = 3;
@@ -73,10 +73,10 @@
             // txtQua
             // 
             this.txtQua.Font = new System.Drawing.Font("굴림", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.txtQua.Location = new System.Drawing.Point(176, 79);
+            this.txtQua.Location = new System.Drawing.Point(170, 87);
             this.txtQua.Name = "txtQua";
             this.txtQua.PromptChar = ' ';
-            this.txtQua.Size = new System.Drawing.Size(153, 32);
+            this.txtQua.Size = new System.Drawing.Size(160, 32);
             this.txtQua.TabIndex = 4;
             // 
             // btnClose
@@ -85,11 +85,11 @@
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnClose.ForeColor = System.Drawing.Color.White;
-            this.btnClose.Location = new System.Drawing.Point(353, 12);
+            this.btnClose.Location = new System.Drawing.Point(223, 528);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(46, 45);
+            this.btnClose.Size = new System.Drawing.Size(107, 70);
             this.btnClose.TabIndex = 5;
-            this.btnClose.Text = "x";
+            this.btnClose.Text = "닫기";
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
@@ -244,7 +244,7 @@
             this.btnCancel.Location = new System.Drawing.Point(249, 375);
             this.btnCancel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(80, 79);
+            this.btnCancel.Size = new System.Drawing.Size(81, 79);
             this.btnCancel.TabIndex = 55;
             this.btnCancel.Text = "<-";
             this.btnCancel.UseVisualStyleBackColor = true;
@@ -305,6 +305,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnOk);
             this.Name = "frmQua";
+            this.Text = "수량 변경";
             this.ResumeLayout(false);
             this.PerformLayout();
 

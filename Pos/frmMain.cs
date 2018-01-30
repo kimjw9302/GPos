@@ -96,7 +96,10 @@ namespace Pos
             dgvProduct.Columns[7].Visible = false;
             dgvProduct.Columns[8].Visible = false;
             dgvProduct.Columns[9].Visible = false;
+<<<<<<< HEAD
             dgvProduct.BackgroundImage = Image.FromFile(@"C:\Users\gdn3-15\Documents\GPos\Pos\Resources\goodee24.png");
+=======
+>>>>>>> 3e2338b51e46983f6494228a27001e24d01ade64
             dgvProduct.DefaultCellStyle.BackColor = Color.FromArgb(128, Color.White);
             con.Open();
             using (var cmd = new SqlCommand("LoadCheckProducts", con))

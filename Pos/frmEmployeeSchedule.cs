@@ -57,6 +57,7 @@ namespace Pos
             dgvWorkView.Refresh();
             con = DBcontroller.Instance();
             //tab 컨트롤 눌렀을 때마다 다른거 조회
+
             if (tabControl1.SelectedIndex == 0)
             {
                 using (var cmd = new SqlCommand("EmployeeSchedule", con))
@@ -71,11 +72,12 @@ namespace Pos
                     adapter.Fill(ds);
 
                     conditionView = ds.Tables[0];
-                    
                     dgvWorkView.DataSource = conditionView;
+                    dgvColor();
+                    
                 }
                 con.Close();
-
+                
             }
             else if(tabControl1.SelectedIndex == 1)
             {
@@ -92,6 +94,7 @@ namespace Pos
                     conditionView = ds.Tables[0];
                     
                     dgvWorkView.DataSource = conditionView;
+                    
                 }
                 con.Close();
             }
@@ -113,6 +116,47 @@ namespace Pos
             dgvWorkView.DataSource = conditionView;
 
         }
+
+        private void dtpStartDate_ValueChanged(object sender, EventArgs e)
+        {
+            dtpStartDate.MaxDate = DateTime.Now;
+            dtpEndDate.MaxDate = DateTime.Now;
+            
+        }
+
+        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            conditionView.Clear();
+            dgvWorkView.Refresh();
+        }
+
+        private void dgvWorkView_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            dgvColor();
+        }
+
+        private void dgvColor()
+        {
+            foreach (DataGridViewRow row in dgvWorkView.Rows)
+            {
+                switch (row.Cells[0].Value)
+                {
+                    case "고지혜":
+                        row.DefaultCellStyle.BackColor = Color.LightCoral;
+                        break;
+                    case "안치훈":
+                        row.DefaultCellStyle.BackColor = Color.AliceBlue;
+                        break;
+                    case "김재웅":
+                        row.DefaultCellStyle.BackColor = Color.LightGoldenrodYellow;
+                        break;
+                    case "김덕준":
+                        row.DefaultCellStyle.BackColor = Color.LightPink;
+                        break;
+                }
+            }
+        }
+
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Dispose();
