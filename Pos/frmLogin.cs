@@ -96,11 +96,11 @@ namespace Pos
         /// <returns></returns>
         public bool Check(string a, string b)
         {
-            if (a.Length > 5 || a == "")
+            if (a.Length > 10 || a == "")
             {
                 return false;
             }
-            if (b.Length > 5 || b == "")
+            if (b.Length > 10 || b == "")
             {
                 return false;
             }
