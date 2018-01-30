@@ -433,5 +433,11 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
   </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\cal.png" />
+    <EmbeddedResource Include="Resources\power.png" />
+    <EmbeddedResource Include="Resources\rotaiton.png" />
+    <EmbeddedResource Include="Resources\setting.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

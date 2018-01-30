@@ -43,10 +43,9 @@
             this.btnProductRegister.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnProductRegister.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold);
             this.btnProductRegister.ForeColor = System.Drawing.Color.White;
-            this.btnProductRegister.Location = new System.Drawing.Point(146, 8);
-            this.btnProductRegister.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnProductRegister.Location = new System.Drawing.Point(158, 39);
             this.btnProductRegister.Name = "btnProductRegister";
-            this.btnProductRegister.Size = new System.Drawing.Size(130, 130);
+            this.btnProductRegister.Size = new System.Drawing.Size(114, 104);
             this.btnProductRegister.TabIndex = 12;
             this.btnProductRegister.Text = "상품 등록";
             this.btnProductRegister.UseVisualStyleBackColor = false;
@@ -59,10 +58,9 @@
             this.btnCustRegister.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCustRegister.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold);
             this.btnCustRegister.ForeColor = System.Drawing.Color.White;
-            this.btnCustRegister.Location = new System.Drawing.Point(10, 8);
-            this.btnCustRegister.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnCustRegister.Location = new System.Drawing.Point(39, 39);
             this.btnCustRegister.Name = "btnCustRegister";
-            this.btnCustRegister.Size = new System.Drawing.Size(130, 130);
+            this.btnCustRegister.Size = new System.Drawing.Size(114, 104);
             this.btnCustRegister.TabIndex = 13;
             this.btnCustRegister.Text = "회원 등록";
             this.btnCustRegister.UseVisualStyleBackColor = false;
@@ -75,10 +73,9 @@
             this.btnEmployeeRegister.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEmployeeRegister.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold);
             this.btnEmployeeRegister.ForeColor = System.Drawing.Color.White;
-            this.btnEmployeeRegister.Location = new System.Drawing.Point(10, 144);
-            this.btnEmployeeRegister.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnEmployeeRegister.Location = new System.Drawing.Point(39, 148);
             this.btnEmployeeRegister.Name = "btnEmployeeRegister";
-            this.btnEmployeeRegister.Size = new System.Drawing.Size(130, 130);
+            this.btnEmployeeRegister.Size = new System.Drawing.Size(114, 104);
             this.btnEmployeeRegister.TabIndex = 14;
             this.btnEmployeeRegister.Text = "직원 등록";
             this.btnEmployeeRegister.UseVisualStyleBackColor = false;
@@ -91,10 +88,9 @@
             this.btnEmpWork.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEmpWork.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold);
             this.btnEmpWork.ForeColor = System.Drawing.Color.White;
-            this.btnEmpWork.Location = new System.Drawing.Point(147, 144);
-            this.btnEmpWork.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnEmpWork.Location = new System.Drawing.Point(159, 148);
             this.btnEmpWork.Name = "btnEmpWork";
-            this.btnEmpWork.Size = new System.Drawing.Size(130, 130);
+            this.btnEmpWork.Size = new System.Drawing.Size(114, 104);
             this.btnEmpWork.TabIndex = 15;
             this.btnEmpWork.Text = "직원 근태";
             this.btnEmpWork.UseVisualStyleBackColor = false;
@@ -107,10 +103,9 @@
             this.btnAban.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAban.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold);
             this.btnAban.ForeColor = System.Drawing.Color.White;
-            this.btnAban.Location = new System.Drawing.Point(282, 8);
-            this.btnAban.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnAban.Location = new System.Drawing.Point(277, 39);
             this.btnAban.Name = "btnAban";
-            this.btnAban.Size = new System.Drawing.Size(130, 130);
+            this.btnAban.Size = new System.Drawing.Size(114, 104);
             this.btnAban.TabIndex = 17;
             this.btnAban.Text = "폐기 등록";
             this.btnAban.UseVisualStyleBackColor = false;
@@ -118,15 +113,14 @@
             // 
             // btnClose
             // 
-            this.btnClose.BackColor = System.Drawing.Color.Red;
+            this.btnClose.BackColor = System.Drawing.Color.OrangeRed;
             this.btnClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold);
             this.btnClose.ForeColor = System.Drawing.Color.White;
-            this.btnClose.Location = new System.Drawing.Point(283, 144);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnClose.Location = new System.Drawing.Point(278, 148);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(130, 130);
+            this.btnClose.Size = new System.Drawing.Size(114, 104);
             this.btnClose.TabIndex = 18;
             this.btnClose.Text = "닫기";
             this.btnClose.UseVisualStyleBackColor = false;
@@ -134,10 +128,10 @@
             // 
             // frmManagement
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(422, 283);
+            this.ClientSize = new System.Drawing.Size(430, 296);
             this.ControlBox = false;
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnAban);
@@ -145,7 +139,6 @@
             this.Controls.Add(this.btnEmployeeRegister);
             this.Controls.Add(this.btnCustRegister);
             this.Controls.Add(this.btnProductRegister);
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frmManagement";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "관리";

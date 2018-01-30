@@ -31,6 +31,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtProductName = new System.Windows.Forms.MaskedTextBox();
             this.group = new System.Windows.Forms.GroupBox();
+            this.txtBarcode = new System.Windows.Forms.TextBox();
             this.btnClose = new System.Windows.Forms.Button();
             this.cbPlaceTemp = new System.Windows.Forms.ComboBox();
             this.cbCate2Temp = new System.Windows.Forms.ComboBox();
@@ -46,7 +47,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtUnitPrice = new System.Windows.Forms.MaskedTextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtBarcode = new System.Windows.Forms.TextBox();
             this.group.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -97,9 +97,17 @@
             this.group.TabStop = false;
             this.group.Text = "상품 등록";
             // 
+            // txtBarcode
+            // 
+            this.txtBarcode.Location = new System.Drawing.Point(123, 84);
+            this.txtBarcode.MaxLength = 18;
+            this.txtBarcode.Name = "txtBarcode";
+            this.txtBarcode.Size = new System.Drawing.Size(300, 33);
+            this.txtBarcode.TabIndex = 1;
+            // 
             // btnClose
             // 
-            this.btnClose.BackColor = System.Drawing.Color.Red;
+            this.btnClose.BackColor = System.Drawing.Color.OrangeRed;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnClose.ForeColor = System.Drawing.Color.White;
@@ -252,14 +260,6 @@
             this.label2.Size = new System.Drawing.Size(69, 25);
             this.label2.TabIndex = 2;
             this.label2.Text = "바코드";
-            // 
-            // txtBarcode
-            // 
-            this.txtBarcode.Location = new System.Drawing.Point(123, 84);
-            this.txtBarcode.MaxLength = 18;
-            this.txtBarcode.Name = "txtBarcode";
-            this.txtBarcode.Size = new System.Drawing.Size(300, 33);
-            this.txtBarcode.TabIndex = 1;
             // 
             // frmProductRegister
             // 

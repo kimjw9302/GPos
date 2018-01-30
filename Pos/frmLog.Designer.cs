@@ -61,21 +61,25 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("굴림", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label2.Location = new System.Drawing.Point(34, 98);
+            this.label2.Font = new System.Drawing.Font("맑은 고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label2.Location = new System.Drawing.Point(84, 102);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(654, 19);
+            this.label2.Size = new System.Drawing.Size(518, 20);
             this.label2.TabIndex = 2;
             this.label2.Text = "* 로그에 대한 정보는 포스 프로그램 내에 로그인을 한 기록들을 보여줍니다.";
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(279, 610);
+            this.btnCancel.BackColor = System.Drawing.Color.OrangeRed;
+            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancel.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnCancel.ForeColor = System.Drawing.Color.White;
+            this.btnCancel.Location = new System.Drawing.Point(270, 627);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(130, 47);
+            this.btnCancel.Size = new System.Drawing.Size(139, 66);
             this.btnCancel.TabIndex = 3;
             this.btnCancel.Text = "닫기";
-            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // frmLog
@@ -83,7 +87,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(710, 678);
+            this.ClientSize = new System.Drawing.Size(710, 719);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);

@@ -204,9 +204,27 @@ namespace Pos
         }
         private void btnOrder_Click(object sender, EventArgs e)
         {
-            //지혜 - 수정
-            new frmOrderRequest(empId).ShowDialog();
-            //new frmOrder(empId).ShowDialog();
+            con = DBcontroller.Instance();
+            con.Open();
+
+            using (var cmd = new SqlCommand("SelectEmployees", con))
+            {
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@empNum", empId);
+
+                var sdr = cmd.ExecuteScalar();
+                if (sdr.ToString() == "1")
+                {
+                    con.Close();
+                    new frmOrderRequest(empId).ShowDialog();
+                   
+                }
+                else
+                {
+                    MessageBox.Show("접근이 불가능합니다.");
+                    con.Close();
+                }
+            }
         }
         private void btnEtc_Click(object sender, EventArgs e)
         {

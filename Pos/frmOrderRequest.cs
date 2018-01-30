@@ -41,15 +41,17 @@ namespace Pos
             InitializeComponent();
         }
 
-        public frmOrderRequest(int empID) : this()
+        public frmOrderRequest(int empId) : this()
         {
-            this.EmpID = empID;
+            this.EmpID = empId;
+
         }
 
         public frmOrderRequest(DataTable dt, int empId) : this()
         {
             this.dt = dt;
             this.empID = empId;
+            
         }
 
         private void btnAllClear_Click(object sender, EventArgs e)
@@ -216,7 +218,7 @@ namespace Pos
             }
             
             txtTotalQua.Text = quaTemp.ToString();
-            txtTotalPay.Text = payTemp.ToString();
+            txtTotalPay.Text = payTemp.ToString().Substring(0,payTemp.ToString().IndexOf('.',0));
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -285,8 +287,8 @@ namespace Pos
             }
 
             txtTotalQua.Text = quaTemp.ToString();
-            txtTotalPay.Text = payTemp.ToString();
-            
+            txtTotalPay.Text = txtTotalPay.Text = payTemp.ToString().Substring(0, payTemp.ToString().IndexOf('.', 0));
+
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -302,7 +304,7 @@ namespace Pos
             }
             
             txtTotalQua.Text = quaTemp.ToString();
-            txtTotalPay.Text = payTemp.ToString();
+            txtTotalPay.Text = txtTotalPay.Text = payTemp.ToString().Substring(0, payTemp.ToString().IndexOf('.', 0));
 
         }
 

@@ -39,7 +39,7 @@
             this.dgvAban.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvAban.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dgvAban.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvAban.Location = new System.Drawing.Point(23, 22);
+            this.dgvAban.Location = new System.Drawing.Point(12, 69);
             this.dgvAban.Name = "dgvAban";
             this.dgvAban.ReadOnly = true;
             this.dgvAban.RowTemplate.Height = 23;
@@ -52,10 +52,10 @@
             this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSearch.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold);
             this.btnSearch.ForeColor = System.Drawing.Color.White;
-            this.btnSearch.Location = new System.Drawing.Point(82, 531);
+            this.btnSearch.Location = new System.Drawing.Point(144, 607);
             this.btnSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(201, 78);
+            this.btnSearch.Size = new System.Drawing.Size(173, 78);
             this.btnSearch.TabIndex = 4;
             this.btnSearch.Text = "폐기 등록";
             this.btnSearch.UseVisualStyleBackColor = false;
@@ -63,14 +63,14 @@
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.Red;
+            this.button1.BackColor = System.Drawing.Color.OrangeRed;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold);
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(398, 531);
+            this.button1.Location = new System.Drawing.Point(343, 607);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(201, 78);
+            this.button1.Size = new System.Drawing.Size(173, 78);
             this.button1.TabIndex = 5;
             this.button1.Text = "닫기";
             this.button1.UseVisualStyleBackColor = false;
@@ -81,7 +81,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(717, 620);
+            this.ClientSize = new System.Drawing.Size(700, 711);
             this.ControlBox = false;
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnSearch);

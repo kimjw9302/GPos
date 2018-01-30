@@ -37,31 +37,30 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("굴림", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label1.Location = new System.Drawing.Point(77, 106);
+            this.label1.Font = new System.Drawing.Font("맑은 고딕", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label1.Location = new System.Drawing.Point(90, 63);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(143, 30);
+            this.label1.Size = new System.Drawing.Size(104, 30);
             this.label1.TabIndex = 0;
             this.label1.Text = "직원 번호";
             // 
             // tboxEmpNum
             // 
             this.tboxEmpNum.Font = new System.Drawing.Font("굴림", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.tboxEmpNum.Location = new System.Drawing.Point(229, 102);
-            this.tboxEmpNum.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tboxEmpNum.Location = new System.Drawing.Point(200, 62);
             this.tboxEmpNum.Name = "tboxEmpNum";
-            this.tboxEmpNum.Size = new System.Drawing.Size(278, 42);
+            this.tboxEmpNum.Size = new System.Drawing.Size(216, 35);
             this.tboxEmpNum.TabIndex = 1;
             // 
             // btnChange
             // 
             this.btnChange.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
-            this.btnChange.Font = new System.Drawing.Font("굴림", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnChange.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnChange.Font = new System.Drawing.Font("맑은 고딕", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnChange.ForeColor = System.Drawing.Color.White;
-            this.btnChange.Location = new System.Drawing.Point(81, 182);
-            this.btnChange.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnChange.Location = new System.Drawing.Point(105, 150);
             this.btnChange.Name = "btnChange";
-            this.btnChange.Size = new System.Drawing.Size(185, 99);
+            this.btnChange.Size = new System.Drawing.Size(143, 75);
             this.btnChange.TabIndex = 2;
             this.btnChange.Text = "변경";
             this.btnChange.UseVisualStyleBackColor = false;
@@ -69,13 +68,13 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.BackColor = System.Drawing.Color.Red;
-            this.btnCancel.Font = new System.Drawing.Font("굴림", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnCancel.BackColor = System.Drawing.Color.OrangeRed;
+            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancel.Font = new System.Drawing.Font("맑은 고딕", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnCancel.ForeColor = System.Drawing.Color.White;
-            this.btnCancel.Location = new System.Drawing.Point(322, 182);
-            this.btnCancel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnCancel.Location = new System.Drawing.Point(273, 150);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(185, 99);
+            this.btnCancel.Size = new System.Drawing.Size(143, 75);
             this.btnCancel.TabIndex = 3;
             this.btnCancel.Text = "닫기";
             this.btnCancel.UseVisualStyleBackColor = false;
@@ -83,16 +82,15 @@
             // 
             // frmEmployeeRotaion
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(579, 322);
+            this.ClientSize = new System.Drawing.Size(496, 258);
             this.ControlBox = false;
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnChange);
             this.Controls.Add(this.tboxEmpNum);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frmEmployeeRotaion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "직원교대";
