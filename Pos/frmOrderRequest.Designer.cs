@@ -156,9 +156,9 @@
             this.label11.Font = new System.Drawing.Font("맑은 고딕", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label11.Location = new System.Drawing.Point(1109, 649);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(38, 37);
+            this.label11.Size = new System.Drawing.Size(44, 37);
             this.label11.TabIndex = 104;
-            this.label11.Text = "\\";
+            this.label11.Text = "원";
             // 
             // label6
             // 
@@ -232,6 +232,7 @@
             this.txtProName.Name = "txtProName";
             this.txtProName.Size = new System.Drawing.Size(268, 29);
             this.txtProName.TabIndex = 72;
+            this.txtProName.TextChanged += new System.EventHandler(this.txtProName_TextChanged);
             // 
             // btnProDel
             // 
@@ -253,7 +254,7 @@
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 74.38271F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.61728F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 221F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 223F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 74.38271F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.61728F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 224F));
@@ -272,10 +273,10 @@
             // txtTotalQua
             // 
             this.txtTotalQua.Font = new System.Drawing.Font("맑은 고딕", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.txtTotalQua.Location = new System.Drawing.Point(302, 0);
+            this.txtTotalQua.Location = new System.Drawing.Point(301, 0);
             this.txtTotalQua.Margin = new System.Windows.Forms.Padding(0);
             this.txtTotalQua.Name = "txtTotalQua";
-            this.txtTotalQua.Size = new System.Drawing.Size(104, 46);
+            this.txtTotalQua.Size = new System.Drawing.Size(103, 46);
             this.txtTotalQua.TabIndex = 43;
             // 
             // button3
@@ -288,7 +289,7 @@
             this.button3.Location = new System.Drawing.Point(0, 0);
             this.button3.Margin = new System.Windows.Forms.Padding(0);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(302, 46);
+            this.button3.Size = new System.Drawing.Size(301, 46);
             this.button3.TabIndex = 85;
             this.button3.Text = "총수량/ 총금액";
             this.button3.UseVisualStyleBackColor = false;
@@ -296,7 +297,7 @@
             // txtTotalPay
             // 
             this.txtTotalPay.Font = new System.Drawing.Font("맑은 고딕", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.txtTotalPay.Location = new System.Drawing.Point(406, 0);
+            this.txtTotalPay.Location = new System.Drawing.Point(404, 0);
             this.txtTotalPay.Margin = new System.Windows.Forms.Padding(0);
             this.txtTotalPay.Name = "txtTotalPay";
             this.txtTotalPay.Size = new System.Drawing.Size(184, 46);
@@ -343,7 +344,7 @@
             this.btnPSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPSearch.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnPSearch.ForeColor = System.Drawing.Color.White;
-            this.btnPSearch.Location = new System.Drawing.Point(286, 34);
+            this.btnPSearch.Location = new System.Drawing.Point(286, 38);
             this.btnPSearch.Name = "btnPSearch";
             this.btnPSearch.Size = new System.Drawing.Size(69, 40);
             this.btnPSearch.TabIndex = 71;
@@ -355,7 +356,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label2.Location = new System.Drawing.Point(24, 44);
+            this.label2.Location = new System.Drawing.Point(24, 48);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(68, 21);
             this.label2.TabIndex = 70;
@@ -366,7 +367,7 @@
             this.cbPlace.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbPlace.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.cbPlace.FormattingEnabled = true;
-            this.cbPlace.Location = new System.Drawing.Point(98, 38);
+            this.cbPlace.Location = new System.Drawing.Point(98, 42);
             this.cbPlace.Name = "cbPlace";
             this.cbPlace.Size = new System.Drawing.Size(182, 33);
             this.cbPlace.TabIndex = 69;
@@ -499,7 +500,7 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 29.60526F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70.39474F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 177F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 336F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 340F));
             this.tableLayoutPanel2.Controls.Add(this.txtSum, 3, 2);
             this.tableLayoutPanel2.Controls.Add(this.txtAddress, 1, 2);
             this.tableLayoutPanel2.Controls.Add(this.txtName, 3, 1);
@@ -526,10 +527,10 @@
             this.txtSum.AutoSize = true;
             this.txtSum.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtSum.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.txtSum.Location = new System.Drawing.Point(765, 67);
+            this.txtSum.Location = new System.Drawing.Point(761, 67);
             this.txtSum.Margin = new System.Windows.Forms.Padding(5);
             this.txtSum.Name = "txtSum";
-            this.txtSum.Size = new System.Drawing.Size(327, 24);
+            this.txtSum.Size = new System.Drawing.Size(331, 24);
             this.txtSum.TabIndex = 25;
             this.txtSum.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
@@ -538,10 +539,10 @@
             this.txtAddress.AutoSize = true;
             this.txtAddress.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtAddress.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.txtAddress.Location = new System.Drawing.Point(178, 67);
+            this.txtAddress.Location = new System.Drawing.Point(177, 67);
             this.txtAddress.Margin = new System.Windows.Forms.Padding(5);
             this.txtAddress.Name = "txtAddress";
-            this.txtAddress.Size = new System.Drawing.Size(398, 24);
+            this.txtAddress.Size = new System.Drawing.Size(395, 24);
             this.txtAddress.TabIndex = 24;
             this.txtAddress.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
@@ -550,10 +551,10 @@
             this.txtName.AutoSize = true;
             this.txtName.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtName.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.txtName.Location = new System.Drawing.Point(765, 37);
+            this.txtName.Location = new System.Drawing.Point(761, 37);
             this.txtName.Margin = new System.Windows.Forms.Padding(5);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(327, 19);
+            this.txtName.Size = new System.Drawing.Size(331, 19);
             this.txtName.TabIndex = 23;
             this.txtName.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
@@ -562,10 +563,10 @@
             this.txtStoreName.AutoSize = true;
             this.txtStoreName.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtStoreName.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.txtStoreName.Location = new System.Drawing.Point(178, 37);
+            this.txtStoreName.Location = new System.Drawing.Point(177, 37);
             this.txtStoreName.Margin = new System.Windows.Forms.Padding(5);
             this.txtStoreName.Name = "txtStoreName";
-            this.txtStoreName.Size = new System.Drawing.Size(398, 19);
+            this.txtStoreName.Size = new System.Drawing.Size(395, 19);
             this.txtStoreName.TabIndex = 22;
             this.txtStoreName.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
@@ -574,10 +575,10 @@
             this.txtPhone.AutoSize = true;
             this.txtPhone.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtPhone.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.txtPhone.Location = new System.Drawing.Point(765, 6);
+            this.txtPhone.Location = new System.Drawing.Point(761, 6);
             this.txtPhone.Margin = new System.Windows.Forms.Padding(5);
             this.txtPhone.Name = "txtPhone";
-            this.txtPhone.Size = new System.Drawing.Size(327, 20);
+            this.txtPhone.Size = new System.Drawing.Size(331, 20);
             this.txtPhone.TabIndex = 21;
             this.txtPhone.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
@@ -586,10 +587,10 @@
             this.txtStoreNum.AutoSize = true;
             this.txtStoreNum.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtStoreNum.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.txtStoreNum.Location = new System.Drawing.Point(178, 6);
+            this.txtStoreNum.Location = new System.Drawing.Point(177, 6);
             this.txtStoreNum.Margin = new System.Windows.Forms.Padding(5);
             this.txtStoreNum.Name = "txtStoreNum";
-            this.txtStoreNum.Size = new System.Drawing.Size(398, 20);
+            this.txtStoreNum.Size = new System.Drawing.Size(395, 20);
             this.txtStoreNum.TabIndex = 20;
             this.txtStoreNum.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
@@ -598,7 +599,7 @@
             this.label9.AutoSize = true;
             this.label9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label9.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label9.Location = new System.Drawing.Point(587, 6);
+            this.label9.Location = new System.Drawing.Point(583, 6);
             this.label9.Margin = new System.Windows.Forms.Padding(5);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(167, 20);
@@ -611,7 +612,7 @@
             this.label18.AutoSize = true;
             this.label18.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label18.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label18.Location = new System.Drawing.Point(587, 67);
+            this.label18.Location = new System.Drawing.Point(583, 67);
             this.label18.Margin = new System.Windows.Forms.Padding(5);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(167, 24);
@@ -627,7 +628,7 @@
             this.label16.Location = new System.Drawing.Point(6, 67);
             this.label16.Margin = new System.Windows.Forms.Padding(5);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(161, 24);
+            this.label16.Size = new System.Drawing.Size(160, 24);
             this.label16.TabIndex = 9;
             this.label16.Text = "사업장 주소";
             this.label16.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -637,7 +638,7 @@
             this.label14.AutoSize = true;
             this.label14.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label14.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label14.Location = new System.Drawing.Point(587, 37);
+            this.label14.Location = new System.Drawing.Point(583, 37);
             this.label14.Margin = new System.Windows.Forms.Padding(5);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(167, 19);
@@ -653,7 +654,7 @@
             this.label12.Location = new System.Drawing.Point(6, 37);
             this.label12.Margin = new System.Windows.Forms.Padding(5);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(161, 19);
+            this.label12.Size = new System.Drawing.Size(160, 19);
             this.label12.TabIndex = 4;
             this.label12.Text = "상 호";
             this.label12.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -666,7 +667,7 @@
             this.label5.Location = new System.Drawing.Point(6, 6);
             this.label5.Margin = new System.Windows.Forms.Padding(5);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(161, 20);
+            this.label5.Size = new System.Drawing.Size(160, 20);
             this.label5.TabIndex = 0;
             this.label5.Text = "사업자 번호";
             this.label5.TextAlign = System.Drawing.ContentAlignment.TopCenter;
