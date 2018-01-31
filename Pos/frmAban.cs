@@ -65,6 +65,7 @@ namespace Pos
                     else
                     {
                         AbanTableAdd(barcodeShort, barcode);
+                        this.Close();
                         return;
                     }
                 }
@@ -118,6 +119,7 @@ namespace Pos
             catch (SqlException)
             {
                 con.Close();
+                this.Close();
                 return;
             }
         }

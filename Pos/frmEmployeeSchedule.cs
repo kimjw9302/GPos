@@ -74,6 +74,7 @@ namespace Pos
                     conditionView = ds.Tables[0];
                     dgvWorkView.DataSource = conditionView;
                     dgvColor();
+                    dgvWorkView.CurrentCell = null;
                     
                 }
                 con.Close();
@@ -142,16 +143,17 @@ namespace Pos
                 switch (row.Cells[0].Value)
                 {
                     case "고지혜":
-                        row.DefaultCellStyle.BackColor = Color.LightCoral;
+                        row.DefaultCellStyle.BackColor = Color.Gold;
                         break;
                     case "안치훈":
-                        row.DefaultCellStyle.BackColor = Color.AliceBlue;
+                        row.DefaultCellStyle.BackColor = Color.DeepSkyBlue;
                         break;
                     case "김재웅":
-                        row.DefaultCellStyle.BackColor = Color.LightGoldenrodYellow;
+                        row.DefaultCellStyle.BackColor = Color.LightPink;
                         break;
                     case "김덕준":
-                        row.DefaultCellStyle.BackColor = Color.LightPink;
+                        row.DefaultCellStyle.BackColor = Color.DarkOrchid;
+                        row.DefaultCellStyle.ForeColor = Color.White;
                         break;
                 }
             }
