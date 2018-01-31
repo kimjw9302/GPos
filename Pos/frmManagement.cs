@@ -19,7 +19,6 @@ namespace Pos
         
         private void btnCustRegister_Click(object sender, EventArgs e)
         {
-            this.Close();
             this.Visible = false;
             new frmCustRegister().ShowDialog();
             

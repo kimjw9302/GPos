@@ -37,7 +37,6 @@ namespace Pos
         List<decimal> yValueWom = new List<decimal>();
         ChartArea chartArea2 = new ChartArea();
         Legend legend2 = new Legend();
-        private Chart chart2;
         DataPoint m10 = new DataPoint(0, 0);
         DataPoint m20 = new DataPoint(0, 0);
         DataPoint m30 = new DataPoint(0, 0);
@@ -221,36 +220,47 @@ namespace Pos
 
         private void btnOk_Click(object sender, EventArgs e)
         {
-
-            if (listBox1.SelectedIndex == 1)
+            switch (listBox1.SelectedIndex)
             {
-                Category();
-            }
+                case 0:
+                    chartAge.Visible = false;
+                    chartGender.Visible = false;
+                    CateNFChart.Visible = false;
+                    chart1.Visible = false;
+                    MethodReturnChart.Visible = false;
+                    totalChart.Visible = false;
+                    TimeRevenue();
+                    break;
+                case 1:
+                    txtTime.Visible = false;
+                    break;
+                case 2://재웅
+                    txtTime.Visible = false;
+                    ProductRevenue();
+                    break;
+                case 3: //지혜
+                    chartAge.Visible = false;
+                    chartGender.Visible = false;
+                    CateNFChart.Visible = false;
+                    chart1.Visible = false;
+                    MethodReturnChart.Visible = false;
+                    totalChart.Visible = false;
+                    txtTime.Visible = false;
+                    GenderChart(); //성별
+                    AgeChart(); //연령별
+                    break;
+                case 4:
+                    txtTime.Visible = false;
+                    break;
+                case 5:
+                    txtTime.Visible = false;
+                    break;
+                case 6: //재웅
+                    txtTime.Visible = false;
+                    AllTotalRevenue();
+                    break;
 
-            else if (listBox1.SelectedIndex == 2)
-            {
-                dgvProducts.DataSource = null;
-                this.Controls.Remove(dgvProducts);
-                ProductRevenue();
-
             }
-            else if (listBox1.SelectedIndex == 4)
-            {
-                Method();
-            }
-
-            else if (listBox1.SelectedIndex == 5)
-            {
-                Return();
-            }
-            else if (listBox1.SelectedIndex == 6)
-            {
-                dgvTotal.DataSource = null;
-                this.Controls.Remove(dgvTotal);
-                AllTotalRevenue();
-                totalChart.Visible = true;
-            }
-
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -288,7 +298,6 @@ namespace Pos
             }
         }
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
-
         {
             switch (listBox1.SelectedIndex)
             {
@@ -296,23 +305,38 @@ namespace Pos
 
                     chartAge.Visible = false;
                     chartGender.Visible = false;
+                    CateNFChart.Visible = false;
+                    chart1.Visible = false;
+                    MethodReturnChart.Visible = false;
+                    totalChart.Visible = false;
                     TimeRevenue();
                     break;
                 case 1:
+                    txtTime.Visible = false;
                     break;
                 case 2://재웅
+                    txtTime.Visible = false;
                     ProductRevenue();
                     break;
                 case 3: //지혜
+                    chartAge.Visible = false;
+                    chartGender.Visible = false;
+                    CateNFChart.Visible = false;
+                    chart1.Visible = false;
+                    MethodReturnChart.Visible = false;
+                    totalChart.Visible = false;
                     txtTime.Visible = false;
                     GenderChart(); //성별
                     AgeChart(); //연령별
                     break;
                 case 4:
+                    txtTime.Visible = false;
                     break;
                 case 5:
+                    txtTime.Visible = false;
                     break;
                 case 6: //재웅
+                    txtTime.Visible = false;
                     AllTotalRevenue();
                     break;
             }
@@ -326,7 +350,7 @@ namespace Pos
             DataTable pTable = new DataTable();
 
             dgvProducts.Visible = true;
-            dgvProducts.Location = new Point(355, 109);
+            dgvProducts.Location = new Point(340, 90);
             dgvProducts.Size = new Size(600, 484);
             dgvProducts.AllowUserToAddRows = false;
 
@@ -396,6 +420,7 @@ namespace Pos
             int days = int.Parse(subDate.TotalDays.ToString()) + 1;
             row1_sum = row2_sum = row3_sum = 0;
             DataSet ds = new DataSet();
+            
             dt1 = new DataTable();
 
             totalChart.Visible = true;
@@ -417,21 +442,22 @@ namespace Pos
             {
                 if (sdate.Month.ToString().Length == 1)
                 {
-                    dt1.Columns.Add(sdate.Year.ToString() + "년" + "0" + sdate.Month.ToString() + "월" + sdate.Day.ToString() + "일");
+                    if (sdate.Date.ToString().Length == 1)
+                    dt1.Columns.Add(sdate.Year.ToString() + "년" + "0" + sdate.Month.ToString() + "월" +"0"+ sdate.Day.ToString() + "일");
+                    else
+                        dt1.Columns.Add(sdate.Year.ToString() + "년" + "0" + sdate.Month.ToString() + "월" + sdate.Day.ToString() + "일");
                 }
                 else
                 {
-                    dt1.Columns.Add(sdate.Year.ToString() + "년" + sdate.Month.ToString() + "월" + sdate.Day.ToString() + "일");
+                    if (sdate.Date.ToString().Length == 1)
+                            dt1.Columns.Add(sdate.Year.ToString() + "년" +sdate.Month.ToString() + "월" + "0" + sdate.Day.ToString() + "일");
+                    else
+                        dt1.Columns.Add(sdate.Year.ToString() + "년" + sdate.Month.ToString() + "월" + sdate.Day.ToString() + "일");
                 }
-
-
-
-
                 sdate = sdate.AddDays(1);
             }
 
             dt1.Columns.Add("합계");
-
             dr1 = dt1.NewRow();
             //매출액 
             dr1[0] = "매출액";
@@ -621,7 +647,9 @@ namespace Pos
                 Excel.Sheets objSheets;
                 Excel._Worksheet objSheet;
                 Excel.Range range;
-                
+                frmProgressBar fpb = new frmProgressBar();
+                fpb.ShowDialog();
+                fpb.progressBar1.Maximum = dgvTotal.Rows.Count;
 
                 string[] headers = new string[dgvTotal.ColumnCount];
                 string[] columns = new string[dgvTotal.ColumnCount];
@@ -651,7 +679,7 @@ namespace Pos
                         range = objSheet.get_Range(columns[j] + Convert.ToString(i + 2),
                                                                Missing.Value);
                         range.set_Value(Missing.Value,
-                                              dgvTotal.Rows[i].Cells[j].Value.ToString());
+                                              dgvTotal.Rows[i].Cells[j].Value.ToString());         
                     }
                 }
                 objApp.Visible = false;
@@ -664,18 +692,11 @@ namespace Pos
                           missingType, missingType, missingType, missingType, missingType);
                 objBook.Close(false, missingType, missingType);
 
-                //Cursor.Current = Cursors.Default;
-
-                MessageBox.Show("Save Success!!!");
-
-
-
             }
             else
             {
 
             }
-
         }
 
 
@@ -686,6 +707,7 @@ namespace Pos
         private void TimeRevenue()
         {
             txtTime.Visible = true;
+            totalMoney = 0;
             txtTime.Text = "";
             con = DBcontroller.Instance();
             using (var cmd = new SqlCommand("TimeRevenue", con))
@@ -880,10 +902,6 @@ namespace Pos
                     break;
             }
         }
-
-
-
-
         //성별 차트
         private void AgeChart()
         {
@@ -1018,11 +1036,6 @@ namespace Pos
                         woman = decimal.Parse(ds.Tables[0].Rows[1][1].ToString());
                     }
                 }
-
-
-
-                //MethodReturnChat.Series["method"].IsValueShownAsLabel = true;
-                //MethodReturnChat.Series["method"].LabelFormat = "{0.0}%";
                 if (man == 0 && woman == 0)
                 {
                     chartGender.Series["Gender"].Points.AddXY("데이터값 없음", 100);
@@ -1046,33 +1059,8 @@ namespace Pos
                 }
 
                 chartGender.Series["Gender"].Font = new Font("맑은 고딕", 12F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
-
                 con.Close();
-
-
             }
         }
-
-        //재웅추가
-        //private void btnOk_Click(object sender, EventArgs e)
-        //{
-        //    totalChart.Visible = false;
-        //    if (listBox1.SelectedIndex == 2)
-        //    {
-        //        dgvProducts.DataSource = null;
-        //        this.Controls.Remove(dgvProducts);
-        //        ProductRevenue();
-
-        //    }
-        //    else if (listBox1.SelectedIndex == 6)
-        //    {
-        //        dgvTotal.DataSource = null;
-        //        this.Controls.Remove(dgvTotal);
-        //        AllTotalRevenue();
-        //        totalChart.Visible = true;
-        //    }
-
-        //}
-
     }
 }

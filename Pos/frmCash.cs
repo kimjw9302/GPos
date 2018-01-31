@@ -6,6 +6,7 @@ using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -51,97 +52,106 @@ namespace Pos
                 {
                     type = 3;
                 }
-                con.Open();
-                using (var cmd = new SqlCommand("InsertSell", con))
+                try
                 {
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    if (s.ClientID == null)
+                    con.Open();
+                    using (var cmd = new SqlCommand("InsertSell", con))
                     {
-                        cmd.Parameters.AddWithValue("@memberNum", DBNull.Value);
-                    }
-                    else
-                    {
-                        cmd.Parameters.AddWithValue("@memberNum",int.Parse( s.ClientID));
-                    }
-
-                    cmd.Parameters.AddWithValue("@sellDate", DateTime.Now);
-                    cmd.Parameters.AddWithValue("@clientNum", s.Ages);
-                    cmd.Parameters.AddWithValue("@methodNum", type);
-                    cmd.Parameters.AddWithValue("@totalMoney", s.Tot);
-                    cmd.Parameters.AddWithValue("@receiveCash", s.Cashmoney);
-                    cmd.Parameters.AddWithValue("@receiveCard", s.Cardmoeny);
-                    cmd.Parameters.AddWithValue("@receivePoint", s.Pointmoney);
-                    cmd.Parameters.AddWithValue("@note", s.Sale.ToString());
-                    cmd.Parameters.AddWithValue("@savePoint",s.SavePoint);
-                    cmd.Parameters.AddWithValue("@empNum", s.EmpId);
-                    cmd.Parameters.AddWithValue("@card", DBNull.Value);
-                    cmd.Parameters.AddWithValue("@preturn", DBNull.Value);
-                    cmd.Parameters.AddWithValue("@returnReason", DBNull.Value);
-                    cmd.ExecuteNonQuery();
-                }
-                fm.T2.Text = "************이전 정보 \r\n";
-                fm.T2.Text += "현금 결제 : " + tboxTotal.Text + "원\r\n";
-                fm.T2.Text += "카드 결제 : " + s.Cardmoeny + "원\r\n";
-                fm.T2.Text += "포인트 결제 : " + s.Pointmoney + "원\r\n";
-                con.Close();
-                con.Open();
-                foreach (DataRow row in fm.Ss.Rows)
-                {
-                    using (var ccmd = new SqlCommand("InsertSellInfo", con))
-                    {
-
-                        ccmd.CommandType = CommandType.StoredProcedure;
-
-
-                        decimal salesquantity = 0;
-                        decimal tot = -1 *int.Parse(row["할인"].ToString());
-                        salesquantity = tot / decimal.Parse(row["단가"].ToString());
-                        ccmd.Parameters.AddWithValue("@barcode", row["바코드"].ToString());
-                        ccmd.Parameters.AddWithValue("@quantity", row["수량"].ToString());
-                        ccmd.Parameters.AddWithValue("@salesquantity", tot);
-                        ccmd.ExecuteNonQuery();
-
-                    }
-                }
-                if (s.ClientID != null)
-                {
-                    using (var ccmd = new SqlCommand("UpdatePoint", con))
-                    {
-                        MessageBox.Show(s.ClientID.ToString());
-                        ccmd.CommandType = CommandType.StoredProcedure;
-                        ccmd.Parameters.AddWithValue("@phone", s.Phone);
-                        ccmd.Parameters.AddWithValue("@point", s.SavePoint);
-                        ccmd.ExecuteNonQuery();
-                    }
-
-                    using (var ccmd = new SqlCommand("SelectMemberGrade", con))
-                    {
-                        MessageBox.Show("Test");
-                        ccmd.CommandType = CommandType.StoredProcedure;
-                        ccmd.Parameters.AddWithValue("@phone", s.Phone);
-                        ccmd.ExecuteNonQuery();
-                    }
-                }
-
-                foreach (DataRow row in fm.Ss.Rows)
-                {
-                    using (var ccmd = new SqlCommand("UpdateProducts", con))
-                    {
-                        ccmd.CommandType = CommandType.StoredProcedure;
-                        ccmd.Parameters.AddWithValue("@barcode", row["바코드"].ToString());
-                        ccmd.Parameters.AddWithValue("@quantity", row["수량"].ToString());
-                        if (ccmd.ExecuteNonQuery() != 1)
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        if (s.ClientID == null)
                         {
-                            MessageBox.Show("상품 재고 업데이트 에러");
+                            cmd.Parameters.AddWithValue("@memberNum", DBNull.Value);
+                        }
+                        else
+                        {
+                            cmd.Parameters.AddWithValue("@memberNum", int.Parse(s.ClientID));
+                        }
+
+                        cmd.Parameters.AddWithValue("@sellDate", DateTime.Now);
+                        cmd.Parameters.AddWithValue("@clientNum", s.Ages);
+                        cmd.Parameters.AddWithValue("@methodNum", type);
+                        cmd.Parameters.AddWithValue("@totalMoney", s.Tot);
+                        cmd.Parameters.AddWithValue("@receiveCash", s.Cashmoney);
+                        cmd.Parameters.AddWithValue("@receiveCard", s.Cardmoeny);
+                        cmd.Parameters.AddWithValue("@receivePoint", s.Pointmoney);
+                        cmd.Parameters.AddWithValue("@note", s.Sale.ToString());
+                        cmd.Parameters.AddWithValue("@savePoint", s.SavePoint);
+                        cmd.Parameters.AddWithValue("@empNum", s.EmpId);
+                        cmd.Parameters.AddWithValue("@card", DBNull.Value);
+                        cmd.Parameters.AddWithValue("@preturn", DBNull.Value);
+                        cmd.Parameters.AddWithValue("@returnReason", DBNull.Value);
+                        cmd.ExecuteNonQuery();
+                    }
+                    fm.T2.Text = "************이전 정보 \r\n";
+                    fm.T2.Text += "현금 결제 : " + tboxTotal.Text + "원\r\n";
+                    fm.T2.Text += "카드 결제 : " + s.Cardmoeny + "원\r\n";
+                    fm.T2.Text += "포인트 결제 : " + s.Pointmoney + "원\r\n";
+                    con.Close();
+                    con.Open();
+                    foreach (DataRow row in fm.Ss.Rows)
+                    {
+                        using (var ccmd = new SqlCommand("InsertSellInfo", con))
+                        {
+
+                            ccmd.CommandType = CommandType.StoredProcedure;
+
+
+                            decimal salesquantity = 0;
+                            decimal tot = -1 * int.Parse(row["할인"].ToString());
+                            salesquantity = tot / decimal.Parse(row["단가"].ToString());
+                            ccmd.Parameters.AddWithValue("@barcode", row["바코드"].ToString());
+                            ccmd.Parameters.AddWithValue("@quantity", row["수량"].ToString());
+                            ccmd.Parameters.AddWithValue("@salesquantity", tot);
+                            ccmd.ExecuteNonQuery();
+
                         }
                     }
+                    if (s.ClientID != null)
+                    {
+                        using (var ccmd = new SqlCommand("UpdatePoint", con))
+                        {
+                            MessageBox.Show(s.ClientID.ToString());
+                            ccmd.CommandType = CommandType.StoredProcedure;
+                            ccmd.Parameters.AddWithValue("@phone", s.Phone);
+                            ccmd.Parameters.AddWithValue("@point", s.SavePoint);
+                            ccmd.ExecuteNonQuery();
+                        }
+
+                        using (var ccmd = new SqlCommand("SelectMemberGrade", con))
+                        {
+                            MessageBox.Show("Test");
+                            ccmd.CommandType = CommandType.StoredProcedure;
+                            ccmd.Parameters.AddWithValue("@phone", s.Phone);
+                            ccmd.ExecuteNonQuery();
+                        }
+                    }
+
+                    foreach (DataRow row in fm.Ss.Rows)
+                    {
+                        using (var ccmd = new SqlCommand("UpdateProducts", con))
+                        {
+                            ccmd.CommandType = CommandType.StoredProcedure;
+                            ccmd.Parameters.AddWithValue("@barcode", row["바코드"].ToString());
+                            ccmd.Parameters.AddWithValue("@quantity", row["수량"].ToString());
+                            if (ccmd.ExecuteNonQuery() != 1)
+                            {
+                                MessageBox.Show("상품 재고 업데이트 에러");
+                            }
+                        }
+                    }
+
+
+                    Sell.Clear();
+                    fm.Ss.Clear();
+                    con.Close();
+                    this.Dispose();
                 }
-             
-               
-                Sell.Clear();
-                fm.Ss.Clear();
-                con.Close();
-                this.Dispose();
+                catch (Exception msg)
+                {
+                    con.Close();
+                    MessageBox.Show(msg.Message);
+
+                }
             }
             //복합결제
             else
@@ -306,6 +316,25 @@ namespace Pos
         {
             tboxReceive.Focus();
             current = tboxReceive;
+        }
+
+        private void tboxReceive_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(Char.IsDigit(e.KeyChar)) && e.KeyChar != Convert.ToChar(Keys.Back))
+
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void tboxReceive_Leave(object sender, EventArgs e)
+        {
+            Regex emailregex = new Regex(@"[0-9]");
+            Boolean ismatch = emailregex.IsMatch(tboxReceive.Text);
+            if (!ismatch)
+            {
+                MessageBox.Show("숫자만 입력해 주세요.");
+            }
         }
     }
 }

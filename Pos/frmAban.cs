@@ -21,7 +21,6 @@ namespace Pos
         private void btnOk_Click(object sender, EventArgs e)
         {
             string barcodeShort = txtBarcode.Text.Substring(0, 13);
-            MessageBox.Show(barcodeShort);
             string barcode = txtBarcode.Text;
             // db
             frmAbanView abanView = (frmAbanView)Owner;
@@ -47,7 +46,7 @@ namespace Pos
                             int i = cmd.ExecuteNonQuery();
                             if (i == 2)
                             {
-                                MessageBox.Show("성공");
+                                MessageBox.Show("등록 성공");
                                 con.Close();
                                 this.Close();
                                 Owner.Close();
@@ -55,7 +54,7 @@ namespace Pos
                             }
                             else
                             {
-                                MessageBox.Show("실패");
+                                MessageBox.Show("등록 실패");
                                 con.Close();
                                 this.Close();
                                 Owner.Close();
@@ -72,37 +71,53 @@ namespace Pos
             }
             else
             {
-                AbanTableAdd(barcodeShort, barcode); //
+                AbanTableAdd(barcodeShort, barcode); 
             }
         }
 
         private void AbanTableAdd(string barcodeShort, string barcode)
         {
-            //테이블에 추가
-            con = DBcontroller.Instance();
-            using (var cmd = new SqlCommand("AbandonsAdd", con))
+            if(barcode.Length > 17)
             {
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@barcode", barcodeShort); //바코드 13자리
-                cmd.Parameters.AddWithValue("@date", DateTime.Parse(DateTime.Now.ToShortDateString()));
-                cmd.Parameters.AddWithValue("@qua", 1);
-                cmd.Parameters.AddWithValue("@barcodeSub", barcode.Substring(13, 5)); //바코드 5자리
-                con.Open();
-                int i = cmd.ExecuteNonQuery(); //
-                if (i != 1)
+                barcode=barcode.Substring(13, 5);
+            }
+            else
+            {
+                barcode = "";
+            }
+            //첫등록 상품 테이블에 추가
+            try
+            {
+                con = DBcontroller.Instance();
+                using (var cmd = new SqlCommand("AbandonsAdd", con))
                 {
-                    MessageBox.Show("성공");
-                    con.Close();
-                    this.Close();
-                    Owner.Close();
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@barcode", barcodeShort); //바코드 13자리
+                    cmd.Parameters.AddWithValue("@date", DateTime.Parse(DateTime.Now.ToShortDateString()));
+                    cmd.Parameters.AddWithValue("@qua", 1);
+                    cmd.Parameters.AddWithValue("@barcodeSub", barcode); //바코드 5자리
+                    con.Open();
+                    int i = cmd.ExecuteNonQuery(); //
+                    if (i != 1)
+                    {
+                        MessageBox.Show("등록 성공");
+                        con.Close();
+                        this.Close();
+                        Owner.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("등록 실패");
+                        con.Close();
+                        this.Close();
+                        Owner.Close();
+                    }
                 }
-                else
-                {
-                    MessageBox.Show("실패");
-                    con.Close();
-                    this.Close();
-                    Owner.Close();
-                }
+            }
+            catch (SqlException)
+            {
+                con.Close();
+                return;
             }
         }
 

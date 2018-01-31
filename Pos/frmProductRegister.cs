@@ -24,6 +24,15 @@ namespace Pos
             this.Dispose();
         }
 
+        private void btnImgSelect_Click(object sender, EventArgs e)
+        {
+            openFileDialog1.Title = "이미지 선택";
+            openFileDialog1.FileName = "image";
+            openFileDialog1.Filter = "그림 파일 (*.jpg, *.gif, *.bmp) | *.jpg; *.gif; *.bmp; | 모든 파일 (*.*) | *.*";
+           
+
+        }
+
         private void btnRegister_Click(object sender, EventArgs e)
         {
             if (ValidityCheck() && checkPK())
@@ -38,7 +47,6 @@ namespace Pos
                     cate1 = "NF";
                 }
 
-                //MessageBox.Show(cbCate2Temp.Items[cbCate2.SelectedIndex].ToString());
                 int cate2 = int.Parse(cbCate2Temp.Items[cbCate2.SelectedIndex].ToString());
 
                 int placeNum = int.Parse(cbPlaceTemp.Items[cbPlace.SelectedIndex].ToString());

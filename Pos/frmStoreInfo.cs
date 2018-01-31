@@ -62,23 +62,24 @@ namespace Pos
                 {
                     con = DBcontroller.Instance();
                     con.Open();
-                    using (var cmd = new SqlCommand("UpdateStoreInfo", con))
+                    using (var cmd = new SqlCommand("UpdateSotreInfo", con))
                     {
                         cmd.CommandType = CommandType.StoredProcedure;
                         cmd.Parameters.AddWithValue("@storeNum", tboxStoreNum.Text);
                         cmd.Parameters.AddWithValue("@storeName", tboxStoreName.Text);
                         cmd.Parameters.AddWithValue("@MName", tboxMName.Text);
                         cmd.Parameters.AddWithValue("@addr", tboxAddr.Text);
-                        cmd.Parameters.AddWithValue("@homephone", tboxHomePhone.Text);
-
+                        cmd.Parameters.AddWithValue("@homephone", tboxHomePhone.Text);                      
                         cmd.ExecuteNonQuery();
                         con.Close();
-
+                        MessageBox.Show("정보가 변경되었습니다");
+                        this.Dispose();
                     }
 
                 }
                 catch (Exception z)
                 {
+                    con.Close();
                     MessageBox.Show(z.Message);
                 }
             }

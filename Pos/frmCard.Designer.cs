@@ -118,6 +118,7 @@
             this.tboxCardNum.TabIndex = 1;
             this.tboxCardNum.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.tboxCardNum.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tboxCardNum_KeyDown);
+            this.tboxCardNum.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tboxCardNum_KeyPress);
             // 
             // tboxYear
             // 

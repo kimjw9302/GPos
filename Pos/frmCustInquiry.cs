@@ -20,38 +20,53 @@ namespace Pos
 
         private void frmCustInquiry_Load(object sender, EventArgs e)
         {
-            
             var con = DBcontroller.Instance();
-            using (var cmd = new SqlCommand("MemberAllView", con))
-            {
-                con.Open();
-                cmd.CommandType = CommandType.StoredProcedure;               
-                var sdr = cmd.ExecuteNonQuery();
-                dataset(cmd);
-                textBox();
+            try
+            {          
+                using (var cmd = new SqlCommand("MemberAllView", con))
+                {
+                    con.Open();
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    var sdr = cmd.ExecuteNonQuery();
+                    dataset(cmd);
+                    textBox();
 
+                }
+                con.Close();
+                return;
             }
-            con.Close();
-            return;
+            catch (Exception msg)
+            {
+                con.Close();
+                MessageBox.Show(msg.Message);
+            }
         }
         public void search()
         {
             int MemberNum = int.Parse(tboxMember.Text);
             var con = DBcontroller.Instance();
-            using (var cmd = new SqlCommand("MemberSerch", con))
+            try
             {
-                con.Open();
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@MemberNum", MemberNum);
-                var sdr = cmd.ExecuteNonQuery();
-                if (sdr.ToString() != "0")
+                using (var cmd = new SqlCommand("MemberSerch", con))
                 {
-                    dataset(cmd);
-                    //textBox();
-                }
+                    con.Open();
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@MemberNum", MemberNum);
+                    var sdr = cmd.ExecuteNonQuery();
+                    if (sdr.ToString() != "0")
+                    {
+                        dataset(cmd);
+                        //textBox();
+                    }
 
+                }
+                con.Close();
             }
-            con.Close();
+            catch (Exception msg)
+            {
+                con.Close();
+                MessageBox.Show(msg.Message);
+            }
             return;
         }
 
@@ -63,20 +78,29 @@ namespace Pos
             string Phone =tboxPhone.Text;
 
             var con = DBcontroller.Instance();
-            using (var cmd = new SqlCommand("MemberUpdate", con))
+            try
             {
-                con.Open();
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@memberNum", int.Parse(MemberNum));
-                cmd.Parameters.AddWithValue("@memberName", Name);
-                cmd.Parameters.AddWithValue("@phone", Phone);
-                cmd.ExecuteNonQuery();
-                MessageBox.Show("수정이 완료 되었습니다.");
-                textBox();
-                con.Close();
+                using (var cmd = new SqlCommand("MemberUpdate", con))
+                {
+                    con.Open();
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@memberNum", int.Parse(MemberNum));
+                    cmd.Parameters.AddWithValue("@memberName", Name);
+                    cmd.Parameters.AddWithValue("@phone", Phone);
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("수정이 완료 되었습니다.");
+                    textBox();
+                    con.Close();
+                }
+
+                frmCustInquiry_Load(null, null);
             }
-            
-            frmCustInquiry_Load(null, null);
+            catch (Exception msg)
+            {
+                con.Close();
+                MessageBox.Show(msg.Message);
+                
+            }
         }
         public void dataset(SqlCommand cmd)
         {
@@ -95,13 +119,22 @@ namespace Pos
             var result = MessageBox.Show("삭제하시겠습니까?", "알림", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
             if (result == DialogResult.OK)
             {
-                using (var cmd = new SqlCommand("MemberDelete", con))
+                try
                 {
-                    con.Open();
-                    cmd.Parameters.AddWithValue("@memberNum", int.Parse(memberNum));
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.ExecuteNonQuery();
+                    using (var cmd = new SqlCommand("MemberDelete", con))
+                    {
+                        con.Open();
+                        cmd.Parameters.AddWithValue("@memberNum", int.Parse(memberNum));
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.ExecuteNonQuery();
+                        con.Close();
+                    }
+                }
+                catch (Exception msg)
+                {
                     con.Close();
+                    MessageBox.Show(msg.Message);
+                    this.Dispose();
                 }
             }
             textBox();

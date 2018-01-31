@@ -68,7 +68,9 @@ namespace Pos
                     cbDay.Items.Add(i);
                 }
             }
-
+            txtAddress.Text = "ex) 세종대로";
+            txtAddress.ForeColor = Color.Gray;
+            txtDetailAddress.ForeColor = Color.Gray;
         }
 
         /// <summary>
@@ -82,44 +84,53 @@ namespace Pos
 
             con = DBcontroller.Instance();
 
-            using (var cmd = new SqlCommand("MemberCheckPK", con))
+            try
             {
+                using (var cmd = new SqlCommand("MemberCheckPK", con))
+                {
 
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@memberNum", memberNum);
-                cmd.Parameters.AddWithValue("@phone", memberPhone);
-                con.Open();
-                var sdr = cmd.ExecuteScalar();
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@memberNum", memberNum);
+                    cmd.Parameters.AddWithValue("@phone", memberPhone);
+                    con.Open();
+                    var sdr = cmd.ExecuteScalar();
 
-                if (sdr.ToString() == "0")
-                {
-                    MessageBox.Show("회원번호 중복");
-                    userRandomNum = new Random().Next(00000000, 99999999);
-                    txtUserNum.Text = userRandomNum.ToString();
-                    con.Close();
-                    return false;
+                    if (sdr.ToString() == "0")
+                    {
+                        MessageBox.Show("회원번호 중복");
+                        userRandomNum = new Random().Next(00000000, 99999999);
+                        txtUserNum.Text = userRandomNum.ToString();
+                        con.Close();
+                        return false;
+                    }
+                    else if (sdr.ToString() == "1")
+                    {
+                        MessageBox.Show("전화번호 중복");
+                        txtPhone2.Text = txtPhone3.Text = "";
+                        con.Close();
+                        return false;
+                    }
+                    else if (sdr.ToString() == "2")
+                    {
+                        MessageBox.Show("회원번호, 전화번호 중복");
+                        txtPhone2.Text = txtPhone3.Text = "";
+                        userRandomNum = new Random().Next(00000000, 99999999);
+                        txtUserNum.Text = userRandomNum.ToString();
+                        con.Close();
+                        return false;
+                    }
+                    else
+                    {
+                        con.Close();
+                        return true;
+                    }
                 }
-                else if (sdr.ToString() == "1")
-                {
-                    MessageBox.Show("전화번호 중복");
-                    txtPhone2.Text = txtPhone3.Text = "";
-                    con.Close();
-                    return false;
-                }
-                else if (sdr.ToString() == "2")
-                {
-                    MessageBox.Show("회원번호, 전화번호 중복");
-                    txtPhone2.Text = txtPhone3.Text = "";
-                    userRandomNum = new Random().Next(00000000, 99999999);
-                    txtUserNum.Text = userRandomNum.ToString();
-                    con.Close();
-                    return false;
-                }
-                else
-                {
-                    con.Close();
-                    return true;
-                }
+            }
+            catch (Exception msg)
+            {
+                con.Close();
+                return false;
+                MessageBox.Show(msg.Message);
             }
 
         }
@@ -158,36 +169,43 @@ namespace Pos
 
                 var con = DBcontroller.Instance();
 
-
-                using (var cmd = new SqlCommand("MemberRegister", con))
+                try
                 {
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@memberNum", memberNum);
-                    cmd.Parameters.AddWithValue("@memberName", memberName);
-                    cmd.Parameters.AddWithValue("@birth", birth);
-                    cmd.Parameters.AddWithValue("@phone", phone);
-                    cmd.Parameters.AddWithValue("@address", address);
-                    cmd.Parameters.AddWithValue("@password", passWord);
-                    cmd.Parameters.AddWithValue("@gender", gender);
 
-                    con.Open();
+                    using (var cmd = new SqlCommand("MemberRegister", con))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@memberNum", memberNum);
+                        cmd.Parameters.AddWithValue("@memberName", memberName);
+                        cmd.Parameters.AddWithValue("@birth", birth);
+                        cmd.Parameters.AddWithValue("@phone", phone);
+                        cmd.Parameters.AddWithValue("@address", address);
+                        cmd.Parameters.AddWithValue("@password", passWord);
+                        cmd.Parameters.AddWithValue("@gender", gender);
 
-                    int i = cmd.ExecuteNonQuery();
-                    if (i == 1)
-                    {
-                        MessageBox.Show("회원 등록 완료");
-                        this.Close();
-                        con.Close();
-                        return;
-                    }
-                    else
-                    {
-                        MessageBox.Show("회원 등록 실패", "알림", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        con.Close();
-                        return;
+                        con.Open();
+
+                        int i = cmd.ExecuteNonQuery();
+                        if (i == 1)
+                        {
+                            MessageBox.Show("회원 등록 완료");
+                            this.Close();
+                            con.Close();
+                            return;
+                        }
+                        else
+                        {
+                            MessageBox.Show("회원 등록 실패", "알림", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            con.Close();
+                            return;
+                        }
                     }
                 }
-
+                catch (Exception msg)
+                {
+                    con.Close();
+                    MessageBox.Show(msg.Message);
+                }
             }
         }
 
@@ -258,6 +276,14 @@ namespace Pos
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+        
+        private void txtAddress_Enter(object sender, EventArgs e)
+        {
+            if (txtAddress.Text == "ex) 세종대로")
+            {
+                txtAddress.Text = "";
+            }
         }
     }
 }

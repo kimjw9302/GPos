@@ -8,6 +8,7 @@ namespace Pos
 {
     public partial class frmOrderRequest : Form, ISearch, IAlter
     {
+        private DataGridViewCheckBoxColumn check;
         private SqlConnection con;
         private SqlDataAdapter adapter;
         private DataTable cate1Table, cateF, cateNF, placeTable, productTable, orderTable, detailTable;
@@ -15,8 +16,8 @@ namespace Pos
         private DataRowCollection c1Row, cFRow, cNFRow, pRow;
         private DataTable dt = null;
         private int noIndex = 1, qua = 1;
-        private static int quaTemp;
-        private static decimal payTemp;
+        internal static int quaTemp;
+        internal static decimal payTemp;
         private int empID;
 
         private string getQua;
@@ -53,7 +54,10 @@ namespace Pos
 
         private void btnAllClear_Click(object sender, EventArgs e)
         {
+            orderTable.Rows.Clear();
             dgvOrder.Refresh();
+            txtTotalPay.Text = "";
+            txtTotalQua.Text = "";
         }
 
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
@@ -197,11 +201,22 @@ namespace Pos
                 qua.Owner = this;
                 qua.ShowDialog();
                 dgvOrder.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = GetQua;
+
+                quaTemp = 0;
+                payTemp = 0;
+                foreach (DataGridViewRow row in dgvOrder.Rows)
+                {
+                    quaTemp += int.Parse(row.Cells[5].Value.ToString());
+                    payTemp += decimal.Parse(row.Cells[6].Value.ToString()) * int.Parse(row.Cells[5].Value.ToString());
+                }
             }
             else
             {
                 return;
             }
+            
+            txtTotalQua.Text = quaTemp.ToString();
+            txtTotalPay.Text = payTemp.ToString();
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -231,8 +246,7 @@ namespace Pos
         {
             quaTemp = 0;
             payTemp = 0;
-
-
+            
             for (int i = 0; i < dgvProducts.RowCount; i++)
             {
                 //선택된거
@@ -260,8 +274,8 @@ namespace Pos
                         noIndex++;
                         orderTable.Rows.Add(orderRow);
                     }
-
                 }
+                dgvProducts.Rows[i].Cells[0].Value = "0";
             }
 
             foreach (DataGridViewRow row in dgvOrder.Rows)
@@ -272,7 +286,7 @@ namespace Pos
 
             txtTotalQua.Text = quaTemp.ToString();
             txtTotalPay.Text = payTemp.ToString();
-
+            
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -284,9 +298,9 @@ namespace Pos
                 payTemp -= decimal.Parse(item.Cells[6].Value.ToString()) * int.Parse(item.Cells[5].Value.ToString());
 
                 this.dgvOrder.Rows.Remove(item);
+                
             }
-
-
+            
             txtTotalQua.Text = quaTemp.ToString();
             txtTotalPay.Text = payTemp.ToString();
 
@@ -475,6 +489,7 @@ namespace Pos
             ProductTableMake();
             dgvProducts.DataSource = productTable;
             dgvOrder.DataSource = orderTable;
+            dgvProducts.Columns[0].Width = 30;
             con = DBcontroller.Instance();
             using (var cmd = new SqlCommand("GetProRegInfo", con))
             {
@@ -542,14 +557,14 @@ namespace Pos
 
         private void OrderTableMake()
         {
-            DataGridViewCheckBoxColumn check = new DataGridViewCheckBoxColumn();
-            check.HeaderText = "선택";
+            check = new DataGridViewCheckBoxColumn();
+            check.HeaderText = "V";
             check.FalseValue = "0";
             check.TrueValue = "1";
             dgvProducts.Columns.Insert(0, check);
 
             orderTable = new DataTable();
-
+            
             orderTable.Columns.Add("No");
             orderTable.Columns.Add("바코드");
             orderTable.Columns.Add("상품명");
@@ -563,7 +578,7 @@ namespace Pos
         private void ProductTableMake()
         {
             productTable = new DataTable();
-
+            
             productTable.Columns.Add("상품명");
             productTable.Columns.Add("바코드");
             productTable.Columns.Add("단가");

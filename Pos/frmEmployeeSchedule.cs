@@ -32,24 +32,33 @@ namespace Pos
 
             con = DBcontroller.Instance();
 
-            using (var cmd = new SqlCommand("GetEmployeeName", con))
+            try
             {
-                con.Open();
-                adapter = new SqlDataAdapter(cmd);
-                ds = new DataSet();
-                adapter.SelectCommand = cmd;
-                adapter.Fill(ds);
-
-                emp = ds.Tables[0];
-                rows = emp.Rows;
-
-                foreach (DataRow item in rows)
+                using (var cmd = new SqlCommand("GetEmployeeName", con))
                 {
-                    cbEmp.Items.Add(item[0]);
+                    con.Open();
+                    adapter = new SqlDataAdapter(cmd);
+                    ds = new DataSet();
+                    adapter.SelectCommand = cmd;
+                    adapter.Fill(ds);
+
+                    emp = ds.Tables[0];
+                    rows = emp.Rows;
+
+                    foreach (DataRow item in rows)
+                    {
+                        cbEmp.Items.Add(item[0]);
+                    }
+
                 }
-                
+                con.Close();
             }
-            con.Close();
+            catch (Exception msg)
+            {
+                con.Close();
+                MessageBox.Show(msg.Message);
+
+            }
         }
 
         private void btnView_Click(object sender, EventArgs e)
@@ -57,43 +66,62 @@ namespace Pos
             dgvWorkView.Refresh();
             con = DBcontroller.Instance();
             //tab 컨트롤 눌렀을 때마다 다른거 조회
+
             if (tabControl1.SelectedIndex == 0)
             {
-                using (var cmd = new SqlCommand("EmployeeSchedule", con))
+                try
                 {
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@startDate", dtpStartDate.Value.ToShortDateString());
-                    cmd.Parameters.AddWithValue("@endDate", dtpEndDate.Value.ToShortDateString());
-                    con.Open();
-                    adapter = new SqlDataAdapter(cmd);
-                    ds = new DataSet();
-                    adapter.SelectCommand = cmd;
-                    adapter.Fill(ds);
+                    using (var cmd = new SqlCommand("EmployeeSchedule", con))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@startDate", dtpStartDate.Value.ToShortDateString());
+                        cmd.Parameters.AddWithValue("@endDate", dtpEndDate.Value.ToShortDateString());
+                        con.Open();
+                        adapter = new SqlDataAdapter(cmd);
+                        ds = new DataSet();
+                        adapter.SelectCommand = cmd;
+                        adapter.Fill(ds);
 
-                    conditionView = ds.Tables[0];
-                    
-                    dgvWorkView.DataSource = conditionView;
+                        conditionView = ds.Tables[0];
+                        dgvWorkView.DataSource = conditionView;
+                        dgvColor();
+
+                    }
+                    con.Close();
                 }
-                con.Close();
-
+                catch (Exception msg)
+                {
+                    con.Close();
+                    MessageBox.Show(msg.Message);
+                }
+                
             }
             else if(tabControl1.SelectedIndex == 1)
             {
-                using (var cmd = new SqlCommand("EmpNameSchedule", con))
+                try
                 {
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@empName", cbEmp.SelectedItem);
+                    using (var cmd = new SqlCommand("EmpNameSchedule", con))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@empName", cbEmp.SelectedItem);
 
-                    adapter = new SqlDataAdapter(cmd);
-                    ds = new DataSet();
-                    adapter.SelectCommand = cmd;
-                    adapter.Fill(ds);
+                        adapter = new SqlDataAdapter(cmd);
+                        ds = new DataSet();
+                        adapter.SelectCommand = cmd;
+                        adapter.Fill(ds);
 
-                    conditionView = ds.Tables[0];
-                    
-                    dgvWorkView.DataSource = conditionView;
+                        conditionView = ds.Tables[0];
+
+                        dgvWorkView.DataSource = conditionView;
+
+                    }
+                    con.Close();
                 }
-                con.Close();
+                catch (Exception msg)
+                {
+                    con.Close();
+                    MessageBox.Show(msg.Message);
+                }
             }
           
         }
@@ -113,6 +141,47 @@ namespace Pos
             dgvWorkView.DataSource = conditionView;
 
         }
+
+        private void dtpStartDate_ValueChanged(object sender, EventArgs e)
+        {
+            dtpStartDate.MaxDate = DateTime.Now;
+            dtpEndDate.MaxDate = DateTime.Now;
+            
+        }
+
+        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            conditionView.Clear();
+            dgvWorkView.Refresh();
+        }
+
+        private void dgvWorkView_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            dgvColor();
+        }
+
+        private void dgvColor()
+        {
+            foreach (DataGridViewRow row in dgvWorkView.Rows)
+            {
+                switch (row.Cells[0].Value)
+                {
+                    case "고지혜":
+                        row.DefaultCellStyle.BackColor = Color.LightCoral;
+                        break;
+                    case "안치훈":
+                        row.DefaultCellStyle.BackColor = Color.AliceBlue;
+                        break;
+                    case "김재웅":
+                        row.DefaultCellStyle.BackColor = Color.LightGoldenrodYellow;
+                        break;
+                    case "김덕준":
+                        row.DefaultCellStyle.BackColor = Color.LightPink;
+                        break;
+                }
+            }
+        }
+
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Dispose();

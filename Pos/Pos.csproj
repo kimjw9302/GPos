@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="HtmlAgilityPack, Version=1.6.15.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
+      <HintPath>packages\HtmlAgilityPack.1.6.15\lib\Net40\HtmlAgilityPack.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
@@ -49,6 +52,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="barcode_search.cs" />
     <Compile Include="claBarcode.cs" />
     <Compile Include="claCodeData.cs" />
     <Compile Include="DBcontroller.cs" />
@@ -220,6 +224,12 @@
     <Compile Include="frmProductSelect.Designer.cs">
       <DependentUpon>frmProductSelect.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmProgressBar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmProgressBar.Designer.cs">
+      <DependentUpon>frmProgressBar.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmQua.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -373,6 +383,9 @@
     <EmbeddedResource Include="frmProductSelect.resx">
       <DependentUpon>frmProductSelect.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmProgressBar.resx">
+      <DependentUpon>frmProgressBar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmQua.resx">
       <DependentUpon>frmQua.cs</DependentUpon>
     </EmbeddedResource>
@@ -410,6 +423,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram1.cd" />
+    <None Include="packages.config" />
     <None Include="Resources\goodeelogo.gif" />
   </ItemGroup>
   <ItemGroup>

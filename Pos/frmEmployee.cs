@@ -22,14 +22,23 @@ namespace Pos
         private void frmEmployee_Load(object sender, EventArgs e)
         {
             var con = DBcontroller.Instance();
-            using (var cmd = new SqlCommand("EmployeeAllview",con))
+            try
             {
-                con.Open();
-                cmd.CommandType = CommandType.StoredProcedure;
-                dataset(cmd);                
-                con.Close();
+                using (var cmd = new SqlCommand("EmployeeAllview", con))
+                {
+                    con.Open();
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    dataset(cmd);
+                    con.Close();
+                }
+                textBox();
             }
-            textBox();
+            catch (Exception msg)
+            {
+                con.Close();
+                MessageBox.Show(msg.Message);
+                this.Dispose();
+            }
         }
         private void dataset(SqlCommand cmd)
         {            
@@ -61,21 +70,29 @@ namespace Pos
         {
             string empName = tboxName.Text;
             var con = DBcontroller.Instance();
-            using (var cmd = new SqlCommand("EmployeeSerch", con))
+            try
             {
-                con.Open();
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@empName",empName);                
-                var sdr = cmd.ExecuteNonQuery();
-                if (sdr.ToString() != "0")
+                using (var cmd = new SqlCommand("EmployeeSerch", con))
                 {
-                    dataset(cmd);
-                    textBox();
-                }
-                con.Close();
-                return;
+                    con.Open();
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@empName", empName);
+                    var sdr = cmd.ExecuteNonQuery();
+                    if (sdr.ToString() != "0")
+                    {
+                        dataset(cmd);
+                        textBox();
+                    }
+                    con.Close();
+                    return;
 
-            }            
+                }
+            }
+            catch (Exception msg)
+            {
+                con.Close();
+                MessageBox.Show(msg.Message);
+            }
             
         }
 
@@ -87,22 +104,30 @@ namespace Pos
             int houlyWage = int.Parse(tboxhourlyWage.Text);
 
             var con = DBcontroller.Instance();
-            using (var cmd = new SqlCommand("EmployeeUpdate", con))
+            try
             {
-                con.Open();
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@empName",Name);
-                cmd.Parameters.AddWithValue("@empPostion", Position);
-                cmd.Parameters.AddWithValue("@phone",Phone);
-                cmd.Parameters.AddWithValue("@hourlyWage",houlyWage);
-                cmd.ExecuteNonQuery();
-                MessageBox.Show("수정이 완료 되었습니다.");
-                textBox();
-                con.Close();
+                using (var cmd = new SqlCommand("EmployeeUpdate", con))
+                {
+                    con.Open();
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@empName", Name);
+                    cmd.Parameters.AddWithValue("@empPostion", Position);
+                    cmd.Parameters.AddWithValue("@phone", Phone);
+                    cmd.Parameters.AddWithValue("@hourlyWage", houlyWage);
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("수정이 완료 되었습니다.");
+                    textBox();
+                    con.Close();
 
+                }
+
+                frmEmployee_Load(null, null);
             }
-            
-            frmEmployee_Load(null, null);
+            catch (Exception msg)
+            {
+                con.Close();
+                MessageBox.Show(msg.Message);
+            }
         }
 
         public void delete()
@@ -112,13 +137,22 @@ namespace Pos
             var result = MessageBox.Show("삭제하시겠습니까?", "알림", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
             if (result == DialogResult.OK)
             {
-                using (var cmd = new SqlCommand("EmployeeDelete", con))
+                try
                 {
-                    con.Open();
-                    cmd.Parameters.AddWithValue("@empName", Name);
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.ExecuteNonQuery();
+                    using (var cmd = new SqlCommand("EmployeeDelete", con))
+                    {
+                        con.Open();
+                        cmd.Parameters.AddWithValue("@empName", Name);
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.ExecuteNonQuery();
+                        con.Close();
+                    }
+                }
+                catch (Exception msg)
+                {
                     con.Close();
+                    MessageBox.Show(msg.Message);
+                    this.Dispose();                  
                 }
             }
             textBox();

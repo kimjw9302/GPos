@@ -82,7 +82,7 @@
             // tboxChange
             // 
             this.tboxChange.Font = new System.Drawing.Font("굴림", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.tboxChange.Location = new System.Drawing.Point(201, 224);
+            this.tboxChange.Location = new System.Drawing.Point(201, 230);
             this.tboxChange.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tboxChange.Name = "tboxChange";
             this.tboxChange.Size = new System.Drawing.Size(249, 42);
@@ -101,6 +101,8 @@
             this.tboxReceive.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.tboxReceive.Click += new System.EventHandler(this.tboxReceive_Click);
             this.tboxReceive.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tboxReceive_KeyDown);
+            this.tboxReceive.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tboxReceive_KeyPress);
+            this.tboxReceive.Leave += new System.EventHandler(this.tboxReceive_Leave);
             // 
             // tboxTotal
             // 
