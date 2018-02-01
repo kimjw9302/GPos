@@ -24,23 +24,30 @@ namespace Pos
         {
             AbanTableMaker();
             dgvAban.DataSource = abantable;
-
             con = DBcontroller.Instance();
-            con.Open();
-            using (var cmd = new SqlCommand("AbanCheck", con))
+            try
             {
-                SqlDataAdapter adapter = new SqlDataAdapter();
-                DataSet ds = new DataSet();
-                
-                adapter.SelectCommand = cmd;
-                adapter.Fill(ds);
+                con.Open();
+                using (var cmd = new SqlCommand("AbanCheck", con))
+                {
+                    SqlDataAdapter adapter = new SqlDataAdapter();
+                    DataSet ds = new DataSet();
 
-                abantable = ds.Tables[0];
-                dgvAban.DataSource = abantable;
+                    adapter.SelectCommand = cmd;
+                    adapter.Fill(ds);
+
+                    abantable = ds.Tables[0];
+                    dgvAban.DataSource = abantable;
 
 
+                }
+                con.Close();
             }
-            con.Close();
+            catch (Exception msg)
+            {
+                con.Close();
+                MessageBox.Show(msg.Message);
+            }
         }
 
         private void AbanTableMaker()

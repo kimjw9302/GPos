@@ -23,6 +23,7 @@ namespace Pos
         {
             this.Dispose();
         }
+        
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
@@ -46,7 +47,7 @@ namespace Pos
                 {
                     cate1 = "NF";
                 }
-                
+
                 int cate2 = int.Parse(cbCate2Temp.Items[cbCate2.SelectedIndex].ToString());
 
                 int placeNum = int.Parse(cbPlaceTemp.Items[cbPlace.SelectedIndex].ToString());

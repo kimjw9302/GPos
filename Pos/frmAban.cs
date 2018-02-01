@@ -86,7 +86,6 @@ namespace Pos
             {
                 barcode = "";
             }
-
             //첫등록 상품 테이블에 추가
             try
             {

@@ -19,71 +19,64 @@ namespace Pos
         {
             InitializeComponent();
         }
-
-
         //종료버튼 클릭
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Dispose();
-        }
-
-  
+        } 
         //로그인버튼 클릭
         private void btnLogin_Click(object sender, EventArgs e)
         {
-
             string employeeID = tboxID.Text;
             string storePw = tboxPw.Text;
-
             //유효성 검사
             if (Check(employeeID, storePw))
             {
                 //우선쿼리로 제작(직원 아이디로 접근 )
                 var con = DBcontroller.Instance();
-
-                //Employees 테이블 
-                //
-
-                using (var cmd = new SqlCommand("FirstLoginSelect", con))
+                try
                 {
-                    con.Open();
-
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@EmployeeID", int.Parse(employeeID));
-                    cmd.Parameters.AddWithValue("@StorePW", int.Parse(storePw));
-                    var sdr = cmd.ExecuteScalar();
-
-                    if (sdr.ToString() != "0")
+                    using (var cmd = new SqlCommand("FirstLoginSelect", con))
                     {
+                        con.Open();
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@EmployeeID", int.Parse(employeeID));
+                        cmd.Parameters.AddWithValue("@StorePW", int.Parse(storePw));
+                        var sdr = cmd.ExecuteScalar();
 
-                        con.Close();
+                        if (sdr.ToString() != "0")
+                        {
+                            con.Close();
+                            this.Visible = false;
+                            EmpName = sdr.ToString();
+                            WriteLog.Start(EmpName, "프로그램시작을 위한 로그인을 하였습니다");
+                            frmMain main = new frmMain(sdr.ToString(), tboxID.Text);
+                            main.ShowDialog();
+                            this.Close();
+                        }
+                        else
+                        {
+                            MessageBox.Show("다시입력해주세요");
+                            tboxID.Text = "";
+                            tboxPw.Text = "";
+                            tboxID.Focus();
+                            con.Close();
+                            return;
+                        }
 
-                        this.Visible = false;
-                        EmpName = sdr.ToString();
-                        WriteLog.Start(EmpName,"프로그램시작을 위한 로그인을 하였습니다");
-                        frmMain main = new frmMain(sdr.ToString(),tboxID.Text);
-                        main.ShowDialog();
-                        this.Close();
                     }
-                    else
-                    {
-                        MessageBox.Show("다시입력해주세요");
-                        tboxID.Text = "";
-                        tboxPw.Text = "";
-                        tboxID.Focus();
-                        con.Close();
-                        return;
-                    }
-
+                }
+                catch (Exception msg)
+                {
+                    con.Close();
+                    MessageBox.Show(msg.Message);
                 }
             }
-
             else
             {
                 tboxID.Text = "";
                 tboxPw.Text = "";
-                tboxID.Focus();
-            
+                tboxID.Focus();         
                 MessageBox.Show("다시 입력해주세요.");
             }
 
@@ -118,19 +111,6 @@ namespace Pos
             {
                 btnLogin_Click(sender, e);
             }
-
-
         }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            new frmEmployeeSchedule().ShowDialog();
-        }
-
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-            new frmCustRegister().ShowDialog();
-        }
-
     }
 }

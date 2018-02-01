@@ -249,7 +249,6 @@ namespace Pos
 
         private void dgvProducts_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            
             if (((DataGridView)sender).CurrentCell.ColumnIndex == 0)
             {
                
@@ -654,7 +653,6 @@ namespace Pos
             }
             
             con.Close();
-
             //자동완성
             source = new AutoCompleteStringCollection();
             con = DBcontroller.Instance();

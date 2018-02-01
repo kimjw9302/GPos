@@ -75,7 +75,8 @@
             this.MethodReturnChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.totalChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.CateNFChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.btnClose = new System.Windows.Forms.Button();
+            this.btnExcel = new System.Windows.Forms.Button();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.chartGender)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartAge)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
@@ -88,7 +89,8 @@
             // 
             this.listBox1.Font = new System.Drawing.Font("맑은 고딕", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 23;
+            this.listBox1.ItemHeight = 22;
+
             this.listBox1.Items.AddRange(new object[] {
             "1. 시간대별 매출현황",
             "2. 카테고리별 매출현황",
@@ -97,9 +99,11 @@
             "5. 결제수단별 매출현황",
             "6. 반품현황",
             "7. 기간별 매출"});
-            this.listBox1.Location = new System.Drawing.Point(23, 87);
+            this.listBox1.Location = new System.Drawing.Point(26, 109);
+            this.listBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(272, 556);
+
             this.listBox1.TabIndex = 0;
             this.listBox1.Click += new System.EventHandler(this.listBox1_Click);
             this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
@@ -108,9 +112,10 @@
             // 
             this.dtStart.Font = new System.Drawing.Font("맑은 고딕", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.dtStart.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtStart.Location = new System.Drawing.Point(146, 30);
+            this.dtStart.Location = new System.Drawing.Point(167, 38);
+            this.dtStart.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dtStart.Name = "dtStart";
-            this.dtStart.Size = new System.Drawing.Size(177, 30);
+            this.dtStart.Size = new System.Drawing.Size(202, 36);
             this.dtStart.TabIndex = 3;
             this.dtStart.ValueChanged += new System.EventHandler(this.dtStart_ValueChanged);
             // 
@@ -118,9 +123,10 @@
             // 
             this.dtEnd.Font = new System.Drawing.Font("맑은 고딕", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.dtEnd.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtEnd.Location = new System.Drawing.Point(368, 30);
+            this.dtEnd.Location = new System.Drawing.Point(421, 38);
+            this.dtEnd.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dtEnd.Name = "dtEnd";
-            this.dtEnd.Size = new System.Drawing.Size(200, 30);
+            this.dtEnd.Size = new System.Drawing.Size(228, 36);
             this.dtEnd.TabIndex = 4;
             this.dtEnd.ValueChanged += new System.EventHandler(this.dtEnd_ValueChanged);
             // 
@@ -128,9 +134,9 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("맑은 고딕", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label2.Location = new System.Drawing.Point(42, 35);
+            this.label2.Location = new System.Drawing.Point(48, 44);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(88, 23);
+            this.label2.Size = new System.Drawing.Size(114, 30);
             this.label2.TabIndex = 5;
             this.label2.Text = "조회기간 :";
             // 
@@ -138,9 +144,9 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("맑은 고딕", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label3.Location = new System.Drawing.Point(332, 26);
+            this.label3.Location = new System.Drawing.Point(379, 32);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(22, 23);
+            this.label3.Size = new System.Drawing.Size(28, 30);
             this.label3.TabIndex = 6;
             this.label3.Text = "~";
             // 
@@ -150,10 +156,10 @@
             this.btnOk.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOk.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnOk.ForeColor = System.Drawing.Color.White;
-            this.btnOk.Location = new System.Drawing.Point(585, 29);
+            this.btnOk.Location = new System.Drawing.Point(669, 36);
             this.btnOk.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnOk.Name = "btnOk";
-            this.btnOk.Size = new System.Drawing.Size(94, 37);
+            this.btnOk.Size = new System.Drawing.Size(107, 46);
             this.btnOk.TabIndex = 7;
             this.btnOk.Text = "조회";
             this.btnOk.UseVisualStyleBackColor = true;
@@ -194,6 +200,7 @@
             // 
             // chartAge
             // 
+
             chartArea20.Name = "ChartArea1";
             this.chartAge.ChartAreas.Add(chartArea20);
             legend20.Name = "Legend1";
@@ -249,12 +256,12 @@
             // txtTime
             // 
             this.txtTime.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.txtTime.Location = new System.Drawing.Point(336, 90);
+            this.txtTime.Location = new System.Drawing.Point(384, 112);
             this.txtTime.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTime.Multiline = true;
             this.txtTime.Name = "txtTime";
             this.txtTime.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtTime.Size = new System.Drawing.Size(423, 545);
+            this.txtTime.Size = new System.Drawing.Size(483, 680);
             this.txtTime.TabIndex = 10;
             this.txtTime.Visible = false;
             // 
@@ -300,12 +307,14 @@
             this.MethodReturnChart.Series.Add(series28);
             this.MethodReturnChart.Series.Add(series30);
             this.MethodReturnChart.Size = new System.Drawing.Size(615, 422);
+
             this.MethodReturnChart.TabIndex = 0;
             this.MethodReturnChart.Text = "chart1";
             this.MethodReturnChart.Visible = false;
             // 
             // totalChart
             // 
+
             chartArea23.Name = "ChartArea1";
             this.totalChart.ChartAreas.Add(chartArea23);
             legend23.Name = "Legend1";
@@ -339,32 +348,49 @@
             series32.Name = "categoryNF";
             this.CateNFChart.Series.Add(series32);
             this.CateNFChart.Size = new System.Drawing.Size(262, 240);
+
             this.CateNFChart.TabIndex = 10;
             this.CateNFChart.Text = "chart2";
             // 
-            // btnClose
+            // btnExcel
             // 
-            this.btnClose.BackColor = System.Drawing.Color.OrangeRed;
-            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnClose.ForeColor = System.Drawing.Color.White;
-            this.btnClose.Location = new System.Drawing.Point(1227, 631);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(111, 65);
-            this.btnClose.TabIndex = 11;
-            this.btnClose.Text = "닫기";
-            this.btnClose.UseVisualStyleBackColor = false;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click_1);
+
+            this.btnExcel.BackColor = System.Drawing.Color.Black;
+            this.btnExcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExcel.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnExcel.ForeColor = System.Drawing.Color.White;
+            this.btnExcel.Location = new System.Drawing.Point(906, 45);
+            this.btnExcel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnExcel.Name = "btnExcel";
+            this.btnExcel.Size = new System.Drawing.Size(122, 58);
+            this.btnExcel.TabIndex = 11;
+            this.btnExcel.Text = "Excel";
+            this.btnExcel.UseVisualStyleBackColor = true;
+            this.btnExcel.Visible = false;
+            this.btnExcel.Click += new System.EventHandler(this.btnExcel_Click);
+//=======
+//            this.btnClose.BackColor = System.Drawing.Color.OrangeRed;
+//            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+//            this.btnClose.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+//            this.btnClose.ForeColor = System.Drawing.Color.White;
+//            this.btnClose.Location = new System.Drawing.Point(1227, 631);
+//            this.btnClose.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+//            this.btnClose.Name = "btnClose";
+//            this.btnClose.Size = new System.Drawing.Size(111, 65);
+//            this.btnClose.TabIndex = 11;
+//            this.btnClose.Text = "닫기";
+//            this.btnClose.UseVisualStyleBackColor = false;
+//            this.btnClose.Click += new System.EventHandler(this.btnClose_Click_1);
+//>>>>>>> c526223d3b4b2edd4806c8579baf0d57e61d8555
             // 
             // frmRevenue
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(1350, 707);
+            this.ClientSize = new System.Drawing.Size(1543, 884);
             this.ControlBox = false;
-            this.Controls.Add(this.btnClose);
+            this.Controls.Add(this.btnExcel);
             this.Controls.Add(this.chart1);
             this.Controls.Add(this.MethodReturnChart);
             this.Controls.Add(this.totalChart);
@@ -378,6 +404,7 @@
             this.Controls.Add(this.txtTime);
             this.Controls.Add(this.chartAge);
             this.Controls.Add(this.chartGender);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frmRevenue";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "매출현황";
@@ -408,6 +435,8 @@
         private System.Windows.Forms.DataVisualization.Charting.Chart MethodReturnChart;
         private System.Windows.Forms.DataVisualization.Charting.Chart totalChart;
         private System.Windows.Forms.DataVisualization.Charting.Chart CateNFChart;
-        private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.Button btnExcel;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+
     }
 }

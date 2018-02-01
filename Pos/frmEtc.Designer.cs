@@ -107,7 +107,7 @@
             this.Controls.Add(this.btnLog);
             this.Name = "frmEtc";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "GOODEE24";
+            this.Text = "기타";
             this.ResumeLayout(false);
 
         }
