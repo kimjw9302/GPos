@@ -15,6 +15,7 @@ namespace Pos
         private DataTable cate1Table, cateF, cateNF, placeTable, productTable, orderTable, detailTable;
         private DataSet ds;
         private DataRowCollection c1Row, cFRow, cNFRow, pRow;
+        DataRow tempRow;
         private DataTable dt = null;
         private int noIndex = 1, qua = 1;
         internal static int quaTemp;
@@ -174,33 +175,40 @@ namespace Pos
 
         private void btnPNameSearch_Click(object sender, EventArgs e)
         {
-            dgvProducts.Refresh();
-            string proName = txtProName.Text;
-            con = DBcontroller.Instance();
-            using (var cmd = new SqlCommand("proSearch", con))
+            if (txtProName.Text != "")
             {
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@proName", proName);
-                
-                adapter = new SqlDataAdapter();
-                ds = new DataSet();
+                dgvProducts.Refresh();
+                string proName = txtProName.Text;
+                con = DBcontroller.Instance();
+                using (var cmd = new SqlCommand("proSearch", con))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@proName", proName);
 
-                adapter.SelectCommand = cmd;
-                adapter.Fill(ds);
+                    adapter = new SqlDataAdapter();
+                    ds = new DataSet();
 
-                productTable = ds.Tables[0];
-                
-                dgvProducts.DataSource = productTable;
-                 //로딩시 셀선택 x
-                dgvProducts.CurrentCell = null;
-                dgvOrder.CurrentCell = null;
+                    adapter.SelectCommand = cmd;
+                    adapter.Fill(ds);
+
+                    productTable = ds.Tables[0];
+
+                    dgvProducts.DataSource = productTable;
+                    //로딩시 셀선택 x
+                    dgvProducts.CurrentCell = null;
+                    dgvOrder.CurrentCell = null;
+                }
+            }
+            else
+            {
+                return;
             }
 
         }
 
         private void dgvOrder_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == 5)
+            if (e.ColumnIndex == 6)
             {
                 string temp = dgvOrder.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString();
                 frmQua qua = new frmQua(temp);
@@ -210,10 +218,13 @@ namespace Pos
 
                 quaTemp = 0;
                 payTemp = 0;
+
+                dgvOrder.Rows[e.RowIndex].Cells[7].Value = decimal.Parse(dgvOrder.Rows[e.RowIndex].Cells[7].Value.ToString()) * int.Parse(dgvOrder.Rows[e.RowIndex].Cells[6].Value.ToString());
+
                 foreach (DataGridViewRow row in dgvOrder.Rows)
                 {
-                    quaTemp += int.Parse(row.Cells[5].Value.ToString());
-                    payTemp += decimal.Parse(row.Cells[6].Value.ToString()) * int.Parse(row.Cells[5].Value.ToString());
+                    quaTemp += int.Parse(row.Cells[6].Value.ToString());
+                    payTemp += decimal.Parse(row.Cells[7].Value.ToString());
                 }
             }
             else
@@ -295,7 +306,6 @@ namespace Pos
 
                 for (int i = 0; i < dgvProducts.RowCount; i++)
                 {
-                    MessageBox.Show((string)dgvProducts.Rows[i].Cells[0].Value);
                     //선택된거
                     if ((string)dgvProducts.Rows[i].Cells[0].Value == "1")
                     {
@@ -331,12 +341,12 @@ namespace Pos
                 foreach (DataGridViewRow row in dgvOrder.Rows)
                 {
                     quaTemp += int.Parse(row.Cells[6].Value.ToString());
-                    payTemp += decimal.Parse(row.Cells[7].Value.ToString()) * int.Parse(row.Cells[6].Value.ToString());
+                    payTemp += decimal.Parse(row.Cells[7].Value.ToString());
                     
                 }
                 
                 txtTotalQua.Text = quaTemp.ToString();
-                txtTotalPay.Text = txtTotalPay.Text = payTemp.ToString().Substring(0, payTemp.ToString().IndexOf('.', 0));
+                txtTotalPay.Text = payTemp.ToString().Substring(0, payTemp.ToString().IndexOf('.', 0));
 
                 //삭제
                 productTable.Rows.Clear();
@@ -352,56 +362,65 @@ namespace Pos
 
         private void button2_Click(object sender, EventArgs e)
         {
-            try
-            {
-                //로딩시 셀선택 x
-                dgvProducts.CurrentCell = null;
-                dgvOrder.CurrentCell = null;
-
-                for (int i = 0; i < dgvOrder.RowCount; i++)
-                {
-                    if ((bool)dgvOrder.Rows[i].Cells[0].EditedFormattedValue == true)
-                    {
-                        this.dgvOrder.Rows.Remove(dgvOrder.Rows[i]);
-                    }
-                }
-
-               
-                txtTotalQua.Text = quaTemp.ToString();
-                txtTotalPay.Text = txtTotalPay.Text = payTemp.ToString().Substring(0, payTemp.ToString().IndexOf('.', 0));
-            }
-            catch (ArgumentOutOfRangeException)
-            {
-                  MessageBox.Show( "삭제할 상품이 없습니다.", "알림", MessageBoxButtons.OK);
-            }
             
+            //로딩시 셀선택 x
+            dgvProducts.CurrentCell = null;
+            dgvOrder.CurrentCell = null;
+            quaTemp = 0;
+            payTemp = 0;
+           
+            for (int i = 0; i < dgvOrder.Rows.Count; i++)
+            {
+                if ((bool)dgvOrder.Rows[i].Cells[0].EditedFormattedValue == true)
+                {
+                    dgvOrder.Rows.Remove(dgvOrder.Rows[i--]);
+                }
+            }
+
+            foreach (DataGridViewRow item in dgvOrder.Rows)
+            {
+                quaTemp += int.Parse(item.Cells[6].Value.ToString());
+                payTemp += decimal.Parse(item.Cells[7].Value.ToString());
+            }
+
+            txtTotalQua.Text = quaTemp.ToString();
+            txtTotalPay.Text = payTemp.ToString().Substring(0, payTemp.ToString().IndexOf('.', 0));
+
+
         }
 
 
         private void btnPSearch_Click(object sender, EventArgs e)
         {
-            dgvProducts.Refresh();
-            string place = cbPlace.SelectedItem.ToString();
-            con = DBcontroller.Instance();
-            using (var cmd = new SqlCommand("OrderPlaceSearch", con))
+            try
             {
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@place", place);
-                con.Open();
+                dgvProducts.Refresh();
+                string place = cbPlace.SelectedItem.ToString();
+                con = DBcontroller.Instance();
+                using (var cmd = new SqlCommand("OrderPlaceSearch", con))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@place", place);
+                    con.Open();
 
-                adapter = new SqlDataAdapter(cmd);
-                ds = new DataSet();
-                adapter.SelectCommand = cmd;
-                adapter.Fill(ds);
+                    adapter = new SqlDataAdapter(cmd);
+                    ds = new DataSet();
+                    adapter.SelectCommand = cmd;
+                    adapter.Fill(ds);
 
-                productTable = ds.Tables[0];
+                    productTable = ds.Tables[0];
 
-                dgvProducts.DataSource = productTable;
-                //로딩시 셀선택 x
-                dgvProducts.CurrentCell = null;
-                dgvOrder.CurrentCell = null;
+                    dgvProducts.DataSource = productTable;
+                    //로딩시 셀선택 x
+                    dgvProducts.CurrentCell = null;
+                    dgvOrder.CurrentCell = null;
+                }
+                con.Close();
             }
-            con.Close();
+            catch (NullReferenceException)
+            {
+                return;
+            }
         }
 
         private void cbCate1_SelectedIndexChanged(object sender, EventArgs e)
@@ -429,31 +448,38 @@ namespace Pos
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            dgvProducts.Refresh();
-            //데이터그리드뷰에 cate1, cate2와 일치하는 상품 띄워주면됨,
-
-            int cate2 = int.Parse(cbCate2Temp.Items[cbCate2.SelectedIndex].ToString());
-            //MessageBox.Show(cate2.ToString()); 
-            con = DBcontroller.Instance();
-            using (var cmd = new SqlCommand("OrderSearch", con))
+            try
             {
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@cate2", cate2);
-                con.Open();
+                dgvProducts.Refresh();
+                //데이터그리드뷰에 cate1, cate2와 일치하는 상품 띄워주면됨,
 
-                adapter = new SqlDataAdapter(cmd);
-                ds = new DataSet();
-                adapter.SelectCommand = cmd;
-                adapter.Fill(ds);
+                int cate2 = int.Parse(cbCate2Temp.Items[cbCate2.SelectedIndex].ToString());
+                //MessageBox.Show(cate2.ToString()); 
+                con = DBcontroller.Instance();
+                using (var cmd = new SqlCommand("OrderSearch", con))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@cate2", cate2);
+                    con.Open();
 
-                productTable = ds.Tables[0];
+                    adapter = new SqlDataAdapter(cmd);
+                    ds = new DataSet();
+                    adapter.SelectCommand = cmd;
+                    adapter.Fill(ds);
 
-                dgvProducts.DataSource = productTable;
-                //로딩시 셀선택 x
-                dgvProducts.CurrentCell = null;
-                dgvOrder.CurrentCell = null;
+                    productTable = ds.Tables[0];
+
+                    dgvProducts.DataSource = productTable;
+                    //로딩시 셀선택 x
+                    dgvProducts.CurrentCell = null;
+                    dgvOrder.CurrentCell = null;
+                }
+                con.Close();
             }
-            con.Close();
+            catch (ArgumentOutOfRangeException)
+            {
+                return;
+            }
         }
 
         //dgvOrder 다돌려서 있는값 수량 가져와서 값 넘겨주기
@@ -469,8 +495,8 @@ namespace Pos
                 foreach (DataGridViewRow row in dgvOrder.Rows)
                 {
                     
-                    string barcode = row.Cells[1].Value.ToString();
-                    int Inven = int.Parse(row.Cells[5].Value.ToString());
+                    string barcode = row.Cells[2].Value.ToString();
+                    int Inven = int.Parse(row.Cells[6].Value.ToString());
 
                     using (var cmd = new SqlCommand("OrderProductUpdate", con))
                     {
@@ -514,16 +540,14 @@ namespace Pos
                         con.Close();
                     }
                 }
-
-
-
+                
 
                 foreach (DataGridViewRow row in dgvOrder.Rows)
                 {
-                    string barcode = row.Cells[1].Value.ToString();
-                    int Inven = int.Parse(row.Cells[5].Value.ToString());
-                    string placeName = row.Cells[7].Value.ToString();
-                    decimal costPrice = decimal.Parse(row.Cells[4].Value.ToString());
+                    string barcode = row.Cells[2].Value.ToString();
+                    int Inven = int.Parse(row.Cells[6].Value.ToString());
+                    string placeName = row.Cells[8].Value.ToString();
+                    decimal costPrice = decimal.Parse(row.Cells[5].Value.ToString());
 
                     using (var cmd = new SqlCommand("OrderDetailInsert", con))
                     {
@@ -543,19 +567,15 @@ namespace Pos
                             MessageBox.Show("발주 상세 실패");
                             con.Close();
                         }
-
                     }
                 }
                 con.Close();
-
             }
             else
             {
                 MessageBox.Show("발주할 상품을 선택해주세요.");
                 con.Close();
             }
-
-
         }
 
         //로드
@@ -612,11 +632,27 @@ namespace Pos
 
             if (dt != null)
             {
-                productTable = dt;
+
+                foreach (DataRow item in dt.Rows)
+                {
+                    using (var cmd = new SqlCommand("proSend", con))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@barcode", item[0]);
+
+                        adapter = new SqlDataAdapter();
+                        ds = new DataSet();
+                        adapter.SelectCommand = cmd;
+                        adapter.Fill(ds);
+
+                        tempRow = ds.Tables[0].Rows[0];
+                        productTable.Rows.Add(tempRow.ItemArray);
+                        
+                    }
+                }
                 dgvProducts.DataSource = productTable;
             }
-
-
+            
             con.Close();
 
             //자동완성
