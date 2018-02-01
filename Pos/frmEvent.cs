@@ -30,9 +30,9 @@ namespace Pos
                 this.dataGridView1.DataSource = ds.Tables[0];
 
                 dataGridView1.Columns[0].HeaderText = "바코드";
-                dataGridView1.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                dataGridView1.Columns[0].Width = 150;
                 dataGridView1.Columns[1].HeaderText = "상품";
-                dataGridView1.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                dataGridView1.Columns[1].Width = 230;
                 dataGridView1.Columns[2].HeaderText = "내용";
                 dataGridView1.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                 dataGridView1.Columns[3].HeaderText = "할인율";
@@ -49,20 +49,181 @@ namespace Pos
             }
         }
 
+        private void RestsOne()
+        {
+            var con = DBcontroller.Instance();
+            using (var cmd = new SqlCommand("EventLoadOne", con))
+            {
+                con.Open();
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                SqlDataAdapter adapter = new SqlDataAdapter();
+                adapter.SelectCommand = cmd;
+                ds = new DataSet();
+                adapter.Fill(ds);
+                this.dataGridView1.DataSource = ds.Tables[0];
+
+                dataGridView1.Columns[0].HeaderText = "바코드";
+                dataGridView1.Columns[0].Width = 150;
+                dataGridView1.Columns[1].HeaderText = "상품";
+                dataGridView1.Columns[1].Width = 230;
+                dataGridView1.Columns[2].HeaderText = "내용";
+                dataGridView1.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                dataGridView1.Columns[3].HeaderText = "할인율";
+                dataGridView1.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                dataGridView1.Columns[4].HeaderText = "시작날짜";
+                dataGridView1.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                dataGridView1.Columns[5].HeaderText = "끝나는날짜";
+                dataGridView1.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                dataGridView1.Columns[6].HeaderText = "이벤트번호";
+                dataGridView1.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                dataGridView1.Columns[7].HeaderText = "그룹번호";
+                dataGridView1.Columns[7].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                con.Close();
+            }
+        }
+
+        private void RestsTwo()
+        {
+            var con = DBcontroller.Instance();
+            using (var cmd = new SqlCommand("EventLoadTwo", con))
+            {
+                con.Open();
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                SqlDataAdapter adapter = new SqlDataAdapter();
+                adapter.SelectCommand = cmd;
+                ds = new DataSet();
+                adapter.Fill(ds);
+                this.dataGridView1.DataSource = ds.Tables[0];
+
+                dataGridView1.Columns[0].HeaderText = "바코드";
+                dataGridView1.Columns[0].Width = 150;
+                dataGridView1.Columns[1].HeaderText = "상품";
+                dataGridView1.Columns[1].Width = 230;
+                dataGridView1.Columns[2].HeaderText = "내용";
+                dataGridView1.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                dataGridView1.Columns[3].HeaderText = "할인율";
+                dataGridView1.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                dataGridView1.Columns[4].HeaderText = "시작날짜";
+                dataGridView1.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                dataGridView1.Columns[5].HeaderText = "끝나는날짜";
+                dataGridView1.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                dataGridView1.Columns[6].HeaderText = "이벤트번호";
+                dataGridView1.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                dataGridView1.Columns[7].HeaderText = "그룹번호";
+                dataGridView1.Columns[7].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                con.Close();
+            }
+        }
+
+        private void RestsTen()
+        {
+            var con = DBcontroller.Instance();
+            using (var cmd = new SqlCommand("EventLoadTen", con))
+            {
+                con.Open();
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                SqlDataAdapter adapter = new SqlDataAdapter();
+                adapter.SelectCommand = cmd;
+                ds = new DataSet();
+                adapter.Fill(ds);
+                this.dataGridView1.DataSource = ds.Tables[0];
+
+                dataGridView1.Columns[0].HeaderText = "바코드";
+                dataGridView1.Columns[0].Width = 150;
+                dataGridView1.Columns[1].HeaderText = "상품";
+                dataGridView1.Columns[1].Width = 230;
+                dataGridView1.Columns[2].HeaderText = "내용";
+                dataGridView1.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                dataGridView1.Columns[3].HeaderText = "할인율";
+                dataGridView1.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                dataGridView1.Columns[4].HeaderText = "시작날짜";
+                dataGridView1.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                dataGridView1.Columns[5].HeaderText = "끝나는날짜";
+                dataGridView1.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                dataGridView1.Columns[6].HeaderText = "이벤트번호";
+                dataGridView1.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                dataGridView1.Columns[7].HeaderText = "그룹번호";
+                dataGridView1.Columns[7].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                con.Close();
+            }
+        }
+
+        private void RestsTwen()
+        {
+            var con = DBcontroller.Instance();
+            using (var cmd = new SqlCommand("EventLoadTwen", con))
+            {
+                con.Open();
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                SqlDataAdapter adapter = new SqlDataAdapter();
+                adapter.SelectCommand = cmd;
+                ds = new DataSet();
+                adapter.Fill(ds);
+                this.dataGridView1.DataSource = ds.Tables[0];
+
+                dataGridView1.Columns[0].HeaderText = "바코드";
+                dataGridView1.Columns[0].Width = 150;
+                dataGridView1.Columns[1].HeaderText = "상품";
+                dataGridView1.Columns[1].Width = 230;
+                dataGridView1.Columns[2].HeaderText = "내용";
+                dataGridView1.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                dataGridView1.Columns[3].HeaderText = "할인율";
+                dataGridView1.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                dataGridView1.Columns[4].HeaderText = "시작날짜";
+                dataGridView1.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                dataGridView1.Columns[5].HeaderText = "끝나는날짜";
+                dataGridView1.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                dataGridView1.Columns[6].HeaderText = "이벤트번호";
+                dataGridView1.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                dataGridView1.Columns[7].HeaderText = "그룹번호";
+                dataGridView1.Columns[7].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                con.Close();
+            }
+        }
+
+        private void RestsNo()
+        {
+            var con = DBcontroller.Instance();
+            using (var cmd = new SqlCommand("EventLoadNo", con))
+            {
+                con.Open();
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                SqlDataAdapter adapter = new SqlDataAdapter();
+                adapter.SelectCommand = cmd;
+                ds = new DataSet();
+                adapter.Fill(ds);
+                this.dataGridView1.DataSource = ds.Tables[0];
+
+                dataGridView1.Columns[0].HeaderText = "바코드";
+                dataGridView1.Columns[0].Width = 150;
+                dataGridView1.Columns[1].HeaderText = "상품";
+                dataGridView1.Columns[1].Width = 230;
+                dataGridView1.Columns[2].HeaderText = "내용";
+                dataGridView1.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                dataGridView1.Columns[3].HeaderText = "할인율";
+                dataGridView1.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                dataGridView1.Columns[4].HeaderText = "시작날짜";
+                dataGridView1.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                dataGridView1.Columns[5].HeaderText = "끝나는날짜";
+                dataGridView1.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                dataGridView1.Columns[6].HeaderText = "이벤트번호";
+                dataGridView1.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                dataGridView1.Columns[7].HeaderText = "그룹번호";
+                dataGridView1.Columns[7].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                con.Close();
+            }
+        }
 
         private void frmEvent_Load(object sender, EventArgs e)
         {
             if (rb_All.Checked == true)
             {
                 Rests();
-            }
-            else if (rb_oneone.Checked)
-            {
-
-            }
-            else if (rb_twoone.Checked)
-            {
-
             }
             EventCate();
         }
@@ -162,7 +323,6 @@ namespace Pos
                 cmd.CommandType = CommandType.StoredProcedure;               
 
                 cmd.ExecuteNonQuery();
-
                
                 SqlDataAdapter sda = new SqlDataAdapter();
                 sda.SelectCommand = cmd;
@@ -170,7 +330,7 @@ namespace Pos
                 sda.Fill(ds);
                  dt = ds.Tables[0];
                 
-                MessageBox.Show(dt.Rows.Count.ToString());
+                //MessageBox.Show(dt.Rows.Count.ToString());
                 
                 for (int i = 0; i < dt.Rows.Count; i++)
                 {
@@ -194,6 +354,9 @@ namespace Pos
                 }
                 
             }
+
+            tboxEventNum.Text = (comboBox1.SelectedIndex +1).ToString();
+           
         }
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
@@ -206,6 +369,41 @@ namespace Pos
                 }
 
             }
+        }
+
+        private void rb_All_CheckedChanged(object sender, EventArgs e)
+        {
+            Rests();
+        }
+
+        private void rb_oneone_CheckedChanged(object sender, EventArgs e)
+        {
+            RestsOne();
+        }
+
+        private void rb_twoone_CheckedChanged(object sender, EventArgs e)
+        {
+            RestsTwo();
+        }
+
+        private void rb_Ten_CheckedChanged(object sender, EventArgs e)
+        {
+            RestsTen();
+        }
+
+        private void rb_Twenty_CheckedChanged(object sender, EventArgs e)
+        {
+            RestsTwen();
+        }
+
+        private void rb_no_CheckedChanged(object sender, EventArgs e)
+        {
+            RestsNo();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
         }
     }
 }

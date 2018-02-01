@@ -29,7 +29,16 @@ namespace Pos
             if (ValidityCheck() && checkPK())
             {
                 string proName = txtProductName.Text.Trim().Replace(" ", "");
-                string barCode = txtBarcode.Text.Trim().Replace(" ", "").Substring(0,13);
+                
+                string barCode;
+                if (txtBarcode.Text.Length > 13)
+                {
+                    barCode = txtBarcode.Text.Trim().Replace(" ", "").Substring(0, 13);
+                }
+                else
+                {
+                    barCode = txtBarcode.Text.Trim().Replace(" ", "");
+                }
                 decimal unitPrice = decimal.Parse(txtUnitPrice.Text.Trim().Replace(" ", ""));
                 decimal costPrice = decimal.Parse(txtCostPrice.Text.Trim().Replace(" ", ""));
                 string cate1 = "F";

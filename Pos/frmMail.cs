@@ -58,13 +58,10 @@ namespace Pos
                 }
                 catch (Exception)
                 {
-
                     MessageBox.Show("연결에러");
                     this.Dispose();
                 }
-
             }
-;
         }
         public bool Check()
         {
