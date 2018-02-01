@@ -104,7 +104,7 @@
             this.dgvProduct.BackgroundColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("굴림", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("맑은 고딕", 17.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -119,14 +119,14 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvProduct.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvProduct.Location = new System.Drawing.Point(14, 99);
+            this.dgvProduct.Location = new System.Drawing.Point(12, 74);
             this.dgvProduct.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvProduct.Name = "dgvProduct";
             this.dgvProduct.ReadOnly = true;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.dgvProduct.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvProduct.RowTemplate.Height = 30;
-            this.dgvProduct.Size = new System.Drawing.Size(1267, 429);
+            this.dgvProduct.Size = new System.Drawing.Size(1151, 343);
             this.dgvProduct.TabIndex = 0;
             // 
             // btnOutgo
@@ -134,12 +134,12 @@
             this.btnOutgo.BackColor = System.Drawing.Color.Snow;
             this.btnOutgo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOutgo.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnOutgo.Location = new System.Drawing.Point(1287, 316);
+            this.btnOutgo.Location = new System.Drawing.Point(1174, 247);
             this.btnOutgo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnOutgo.Name = "btnOutgo";
-            this.btnOutgo.Size = new System.Drawing.Size(170, 106);
+            this.btnOutgo.Size = new System.Drawing.Size(149, 85);
             this.btnOutgo.TabIndex = 11;
-            this.btnOutgo.Text = "외출";
+            this.btnOutgo.Text = "외출[P]";
             this.btnOutgo.UseVisualStyleBackColor = false;
             this.btnOutgo.Click += new System.EventHandler(this.btnOutgo_Click);
             // 
@@ -148,12 +148,12 @@
             this.btnTotalView.BackColor = System.Drawing.Color.Snow;
             this.btnTotalView.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTotalView.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnTotalView.Location = new System.Drawing.Point(1287, 99);
+            this.btnTotalView.Location = new System.Drawing.Point(1174, 73);
             this.btnTotalView.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnTotalView.Name = "btnTotalView";
-            this.btnTotalView.Size = new System.Drawing.Size(170, 106);
+            this.btnTotalView.Size = new System.Drawing.Size(149, 85);
             this.btnTotalView.TabIndex = 12;
-            this.btnTotalView.Text = "통합 조회";
+            this.btnTotalView.Text = "통합 조회[F]";
             this.btnTotalView.UseVisualStyleBackColor = false;
             this.btnTotalView.Click += new System.EventHandler(this.btnTotalView_Click);
             // 
@@ -162,12 +162,12 @@
             this.btnCard.BackColor = System.Drawing.Color.Snow;
             this.btnCard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCard.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnCard.Location = new System.Drawing.Point(14, 536);
+            this.btnCard.Location = new System.Drawing.Point(12, 424);
             this.btnCard.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCard.Name = "btnCard";
-            this.btnCard.Size = new System.Drawing.Size(167, 104);
+            this.btnCard.Size = new System.Drawing.Size(146, 83);
             this.btnCard.TabIndex = 13;
-            this.btnCard.Text = "신용카드 결제";
+            this.btnCard.Text = "신용카드 결제[F1]";
             this.btnCard.UseVisualStyleBackColor = false;
             this.btnCard.Click += new System.EventHandler(this.btnCard_Click);
             // 
@@ -178,10 +178,10 @@
             this.btnEight.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEight.Font = new System.Drawing.Font("맑은 고딕", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnEight.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnEight.Location = new System.Drawing.Point(1182, 644);
+            this.btnEight.Location = new System.Drawing.Point(1083, 515);
             this.btnEight.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnEight.Name = "btnEight";
-            this.btnEight.Size = new System.Drawing.Size(91, 99);
+            this.btnEight.Size = new System.Drawing.Size(80, 79);
             this.btnEight.TabIndex = 17;
             this.btnEight.Text = "8";
             this.btnEight.UseVisualStyleBackColor = false;
@@ -194,10 +194,10 @@
             this.btnNine.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNine.Font = new System.Drawing.Font("맑은 고딕", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnNine.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnNine.Location = new System.Drawing.Point(1273, 644);
+            this.btnNine.Location = new System.Drawing.Point(1163, 515);
             this.btnNine.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnNine.Name = "btnNine";
-            this.btnNine.Size = new System.Drawing.Size(91, 99);
+            this.btnNine.Size = new System.Drawing.Size(80, 79);
             this.btnNine.TabIndex = 17;
             this.btnNine.Text = "9";
             this.btnNine.UseVisualStyleBackColor = false;
@@ -210,10 +210,10 @@
             this.btnSix.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSix.Font = new System.Drawing.Font("맑은 고딕", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnSix.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnSix.Location = new System.Drawing.Point(1273, 741);
+            this.btnSix.Location = new System.Drawing.Point(1163, 593);
             this.btnSix.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSix.Name = "btnSix";
-            this.btnSix.Size = new System.Drawing.Size(91, 99);
+            this.btnSix.Size = new System.Drawing.Size(80, 79);
             this.btnSix.TabIndex = 20;
             this.btnSix.Text = "6";
             this.btnSix.UseVisualStyleBackColor = false;
@@ -226,10 +226,10 @@
             this.btnFive.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFive.Font = new System.Drawing.Font("맑은 고딕", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnFive.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnFive.Location = new System.Drawing.Point(1182, 741);
+            this.btnFive.Location = new System.Drawing.Point(1083, 593);
             this.btnFive.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnFive.Name = "btnFive";
-            this.btnFive.Size = new System.Drawing.Size(91, 99);
+            this.btnFive.Size = new System.Drawing.Size(80, 79);
             this.btnFive.TabIndex = 19;
             this.btnFive.Text = "5";
             this.btnFive.UseVisualStyleBackColor = false;
@@ -242,10 +242,10 @@
             this.btnFour.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFour.Font = new System.Drawing.Font("맑은 고딕", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnFour.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnFour.Location = new System.Drawing.Point(1090, 741);
+            this.btnFour.Location = new System.Drawing.Point(1003, 593);
             this.btnFour.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnFour.Name = "btnFour";
-            this.btnFour.Size = new System.Drawing.Size(91, 99);
+            this.btnFour.Size = new System.Drawing.Size(80, 79);
             this.btnFour.TabIndex = 18;
             this.btnFour.Text = "4";
             this.btnFour.UseVisualStyleBackColor = false;
@@ -258,10 +258,10 @@
             this.btnThree.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThree.Font = new System.Drawing.Font("맑은 고딕", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnThree.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnThree.Location = new System.Drawing.Point(1273, 840);
+            this.btnThree.Location = new System.Drawing.Point(1163, 672);
             this.btnThree.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnThree.Name = "btnThree";
-            this.btnThree.Size = new System.Drawing.Size(91, 99);
+            this.btnThree.Size = new System.Drawing.Size(80, 79);
             this.btnThree.TabIndex = 23;
             this.btnThree.Text = "3";
             this.btnThree.UseVisualStyleBackColor = false;
@@ -274,10 +274,10 @@
             this.btnTwo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTwo.Font = new System.Drawing.Font("맑은 고딕", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnTwo.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnTwo.Location = new System.Drawing.Point(1182, 840);
+            this.btnTwo.Location = new System.Drawing.Point(1083, 672);
             this.btnTwo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnTwo.Name = "btnTwo";
-            this.btnTwo.Size = new System.Drawing.Size(91, 99);
+            this.btnTwo.Size = new System.Drawing.Size(80, 79);
             this.btnTwo.TabIndex = 22;
             this.btnTwo.Text = "2";
             this.btnTwo.UseVisualStyleBackColor = false;
@@ -290,10 +290,10 @@
             this.btnOne.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOne.Font = new System.Drawing.Font("맑은 고딕", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnOne.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnOne.Location = new System.Drawing.Point(1090, 840);
+            this.btnOne.Location = new System.Drawing.Point(1003, 672);
             this.btnOne.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnOne.Name = "btnOne";
-            this.btnOne.Size = new System.Drawing.Size(91, 99);
+            this.btnOne.Size = new System.Drawing.Size(80, 79);
             this.btnOne.TabIndex = 21;
             this.btnOne.Text = "1";
             this.btnOne.UseVisualStyleBackColor = false;
@@ -305,10 +305,10 @@
             this.btnUp.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUp.Font = new System.Drawing.Font("맑은 고딕", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnUp.Location = new System.Drawing.Point(1365, 741);
+            this.btnUp.Location = new System.Drawing.Point(1243, 593);
             this.btnUp.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnUp.Name = "btnUp";
-            this.btnUp.Size = new System.Drawing.Size(91, 99);
+            this.btnUp.Size = new System.Drawing.Size(80, 79);
             this.btnUp.TabIndex = 26;
             this.btnUp.Text = "+";
             this.btnUp.UseVisualStyleBackColor = false;
@@ -321,10 +321,10 @@
             this.btnHundred.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHundred.Font = new System.Drawing.Font("맑은 고딕", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnHundred.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnHundred.Location = new System.Drawing.Point(1182, 939);
+            this.btnHundred.Location = new System.Drawing.Point(1083, 751);
             this.btnHundred.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnHundred.Name = "btnHundred";
-            this.btnHundred.Size = new System.Drawing.Size(91, 99);
+            this.btnHundred.Size = new System.Drawing.Size(80, 79);
             this.btnHundred.TabIndex = 25;
             this.btnHundred.Text = "00";
             this.btnHundred.UseVisualStyleBackColor = false;
@@ -337,10 +337,10 @@
             this.btnZero.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnZero.Font = new System.Drawing.Font("맑은 고딕", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnZero.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnZero.Location = new System.Drawing.Point(1090, 939);
+            this.btnZero.Location = new System.Drawing.Point(1003, 751);
             this.btnZero.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnZero.Name = "btnZero";
-            this.btnZero.Size = new System.Drawing.Size(91, 99);
+            this.btnZero.Size = new System.Drawing.Size(80, 79);
             this.btnZero.TabIndex = 24;
             this.btnZero.Text = "0";
             this.btnZero.UseVisualStyleBackColor = false;
@@ -351,12 +351,12 @@
             this.btnCash.BackColor = System.Drawing.Color.Snow;
             this.btnCash.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCash.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnCash.Location = new System.Drawing.Point(191, 536);
+            this.btnCash.Location = new System.Drawing.Point(167, 425);
             this.btnCash.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCash.Name = "btnCash";
-            this.btnCash.Size = new System.Drawing.Size(170, 104);
+            this.btnCash.Size = new System.Drawing.Size(149, 83);
             this.btnCash.TabIndex = 27;
-            this.btnCash.Text = "현금 결제";
+            this.btnCash.Text = "현금 결제\r\n[F2]";
             this.btnCash.UseVisualStyleBackColor = false;
             this.btnCash.Click += new System.EventHandler(this.btnCash_Click);
             // 
@@ -365,12 +365,12 @@
             this.btnPoint.BackColor = System.Drawing.Color.Snow;
             this.btnPoint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPoint.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnPoint.Location = new System.Drawing.Point(370, 536);
+            this.btnPoint.Location = new System.Drawing.Point(324, 425);
             this.btnPoint.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnPoint.Name = "btnPoint";
-            this.btnPoint.Size = new System.Drawing.Size(171, 104);
+            this.btnPoint.Size = new System.Drawing.Size(150, 83);
             this.btnPoint.TabIndex = 29;
-            this.btnPoint.Text = "포인트 사용\r\n/할인";
+            this.btnPoint.Text = "포인트 사용\r\n/할인 [F3]";
             this.btnPoint.UseVisualStyleBackColor = false;
             this.btnPoint.Click += new System.EventHandler(this.btnPoint_Click);
             // 
@@ -381,18 +381,19 @@
             this.panel1.Controls.Add(this.txtPaymentList);
             this.panel1.Controls.Add(this.tableLayoutPanel1);
             this.panel1.Controls.Add(this.button35);
-            this.panel1.Location = new System.Drawing.Point(14, 645);
+            this.panel1.Location = new System.Drawing.Point(12, 516);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1070, 389);
+            this.panel1.Size = new System.Drawing.Size(985, 312);
             this.panel1.TabIndex = 31;
             // 
             // pboxProducts
             // 
             this.pboxProducts.ErrorImage = global::Pos.Properties.Resources.goodee24;
-            this.pboxProducts.Location = new System.Drawing.Point(323, -1);
+            this.pboxProducts.Location = new System.Drawing.Point(311, -1);
+            this.pboxProducts.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pboxProducts.Name = "pboxProducts";
-            this.pboxProducts.Size = new System.Drawing.Size(255, 387);
+            this.pboxProducts.Size = new System.Drawing.Size(243, 310);
             this.pboxProducts.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pboxProducts.TabIndex = 47;
             this.pboxProducts.TabStop = false;
@@ -400,11 +401,11 @@
             // txtPaymentList
             // 
             this.txtPaymentList.Font = new System.Drawing.Font("굴림", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.txtPaymentList.Location = new System.Drawing.Point(57, -1);
+            this.txtPaymentList.Location = new System.Drawing.Point(50, -1);
             this.txtPaymentList.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPaymentList.Multiline = true;
             this.txtPaymentList.Name = "txtPaymentList";
-            this.txtPaymentList.Size = new System.Drawing.Size(260, 386);
+            this.txtPaymentList.Size = new System.Drawing.Size(255, 310);
             this.txtPaymentList.TabIndex = 0;
             // 
             // tableLayoutPanel1
@@ -422,17 +423,17 @@
             this.tableLayoutPanel1.Controls.Add(this.txtChange, 1, 4);
             this.tableLayoutPanel1.Controls.Add(this.txtProduct, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.txtTotal, 1, 1);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(580, 3);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(557, 0);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 6;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 75F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 75F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 75F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 75F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 71F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 8F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(487, 384);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 57F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 6F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(426, 307);
             this.tableLayoutPanel1.TabIndex = 9;
             // 
             // button1
@@ -442,10 +443,10 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(0, 75);
+            this.button1.Location = new System.Drawing.Point(0, 60);
             this.button1.Margin = new System.Windows.Forms.Padding(0);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(139, 75);
+            this.button1.Size = new System.Drawing.Size(121, 60);
             this.button1.TabIndex = 47;
             this.button1.TabStop = false;
             this.button1.Text = "총구매액";
@@ -458,10 +459,10 @@
             this.button34.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button34.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button34.ForeColor = System.Drawing.Color.White;
-            this.button34.Location = new System.Drawing.Point(0, 300);
+            this.button34.Location = new System.Drawing.Point(0, 240);
             this.button34.Margin = new System.Windows.Forms.Padding(0);
             this.button34.Name = "button34";
-            this.button34.Size = new System.Drawing.Size(139, 71);
+            this.button34.Size = new System.Drawing.Size(121, 57);
             this.button34.TabIndex = 48;
             this.button34.TabStop = false;
             this.button34.Text = "거스름돈";
@@ -474,10 +475,10 @@
             this.button33.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button33.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button33.ForeColor = System.Drawing.Color.White;
-            this.button33.Location = new System.Drawing.Point(0, 225);
+            this.button33.Location = new System.Drawing.Point(0, 180);
             this.button33.Margin = new System.Windows.Forms.Padding(0);
             this.button33.Name = "button33";
-            this.button33.Size = new System.Drawing.Size(139, 75);
+            this.button33.Size = new System.Drawing.Size(121, 60);
             this.button33.TabIndex = 47;
             this.button33.TabStop = false;
             this.button33.Text = "내실돈";
@@ -490,10 +491,10 @@
             this.button32.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button32.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button32.ForeColor = System.Drawing.Color.White;
-            this.button32.Location = new System.Drawing.Point(0, 150);
+            this.button32.Location = new System.Drawing.Point(0, 120);
             this.button32.Margin = new System.Windows.Forms.Padding(0);
             this.button32.Name = "button32";
-            this.button32.Size = new System.Drawing.Size(139, 75);
+            this.button32.Size = new System.Drawing.Size(121, 60);
             this.button32.TabIndex = 46;
             this.button32.TabStop = false;
             this.button32.Text = "행사할인";
@@ -509,7 +510,7 @@
             this.button30.Location = new System.Drawing.Point(0, 0);
             this.button30.Margin = new System.Windows.Forms.Padding(0);
             this.button30.Name = "button30";
-            this.button30.Size = new System.Drawing.Size(139, 75);
+            this.button30.Size = new System.Drawing.Size(121, 60);
             this.button30.TabIndex = 44;
             this.button30.TabStop = false;
             this.button30.Text = "상품등록";
@@ -521,12 +522,12 @@
             this.txtDiscount.Cursor = System.Windows.Forms.Cursors.Default;
             this.txtDiscount.Font = new System.Drawing.Font("맑은 고딕", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtDiscount.ImeMode = System.Windows.Forms.ImeMode.On;
-            this.txtDiscount.Location = new System.Drawing.Point(139, 150);
+            this.txtDiscount.Location = new System.Drawing.Point(121, 120);
             this.txtDiscount.Margin = new System.Windows.Forms.Padding(0);
             this.txtDiscount.Name = "txtDiscount";
             this.txtDiscount.ReadOnly = true;
             this.txtDiscount.ShortcutsEnabled = false;
-            this.txtDiscount.Size = new System.Drawing.Size(348, 74);
+            this.txtDiscount.Size = new System.Drawing.Size(305, 61);
             this.txtDiscount.TabIndex = 3;
             this.txtDiscount.TabStop = false;
             this.txtDiscount.Text = "0";
@@ -538,10 +539,10 @@
             // 
             this.txtReceived.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.txtReceived.Font = new System.Drawing.Font("맑은 고딕", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.txtReceived.Location = new System.Drawing.Point(139, 225);
+            this.txtReceived.Location = new System.Drawing.Point(121, 180);
             this.txtReceived.Margin = new System.Windows.Forms.Padding(0);
             this.txtReceived.Name = "txtReceived";
-            this.txtReceived.Size = new System.Drawing.Size(348, 74);
+            this.txtReceived.Size = new System.Drawing.Size(305, 61);
             this.txtReceived.TabIndex = 4;
             this.txtReceived.Text = "0";
             this.txtReceived.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -552,11 +553,11 @@
             this.txtChange.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.txtChange.Font = new System.Drawing.Font("맑은 고딕", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtChange.ForeColor = System.Drawing.Color.Red;
-            this.txtChange.Location = new System.Drawing.Point(139, 300);
+            this.txtChange.Location = new System.Drawing.Point(121, 240);
             this.txtChange.Margin = new System.Windows.Forms.Padding(0);
             this.txtChange.Name = "txtChange";
             this.txtChange.ReadOnly = true;
-            this.txtChange.Size = new System.Drawing.Size(348, 74);
+            this.txtChange.Size = new System.Drawing.Size(305, 61);
             this.txtChange.TabIndex = 5;
             this.txtChange.Text = "0";
             this.txtChange.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -566,10 +567,10 @@
             // 
             this.txtProduct.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.txtProduct.Font = new System.Drawing.Font("맑은 고딕", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.txtProduct.Location = new System.Drawing.Point(139, 0);
+            this.txtProduct.Location = new System.Drawing.Point(121, 0);
             this.txtProduct.Margin = new System.Windows.Forms.Padding(0);
             this.txtProduct.Name = "txtProduct";
-            this.txtProduct.Size = new System.Drawing.Size(348, 74);
+            this.txtProduct.Size = new System.Drawing.Size(305, 61);
             this.txtProduct.TabIndex = 1;
             this.txtProduct.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtProduct.Click += new System.EventHandler(this.txtProduct_Click);
@@ -580,11 +581,11 @@
             this.txtTotal.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.txtTotal.Cursor = System.Windows.Forms.Cursors.Default;
             this.txtTotal.Font = new System.Drawing.Font("맑은 고딕", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.txtTotal.Location = new System.Drawing.Point(139, 75);
+            this.txtTotal.Location = new System.Drawing.Point(121, 60);
             this.txtTotal.Margin = new System.Windows.Forms.Padding(0);
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.ReadOnly = true;
-            this.txtTotal.Size = new System.Drawing.Size(348, 74);
+            this.txtTotal.Size = new System.Drawing.Size(305, 61);
             this.txtTotal.TabIndex = 2;
             this.txtTotal.Text = "0";
             this.txtTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -597,10 +598,10 @@
             this.button35.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button35.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button35.ForeColor = System.Drawing.Color.White;
-            this.button35.Location = new System.Drawing.Point(-1, -6);
+            this.button35.Location = new System.Drawing.Point(-1, -5);
             this.button35.Margin = new System.Windows.Forms.Padding(0);
             this.button35.Name = "button35";
-            this.button35.Size = new System.Drawing.Size(58, 392);
+            this.button35.Size = new System.Drawing.Size(51, 314);
             this.button35.TabIndex = 46;
             this.button35.TabStop = false;
             this.button35.Text = "결제내역";
@@ -611,12 +612,12 @@
             this.btnRefund.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(67)))), ((int)(((byte)(22)))));
             this.btnRefund.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRefund.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnRefund.Location = new System.Drawing.Point(899, 536);
+            this.btnRefund.Location = new System.Drawing.Point(787, 425);
             this.btnRefund.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnRefund.Name = "btnRefund";
-            this.btnRefund.Size = new System.Drawing.Size(170, 104);
+            this.btnRefund.Size = new System.Drawing.Size(149, 83);
             this.btnRefund.TabIndex = 32;
-            this.btnRefund.Text = "환불";
+            this.btnRefund.Text = "환불\r\n[F7]";
             this.btnRefund.UseVisualStyleBackColor = false;
             this.btnRefund.Click += new System.EventHandler(this.btnRefund_Click);
             // 
@@ -625,12 +626,12 @@
             this.btnTotalCancel.BackColor = System.Drawing.Color.Snow;
             this.btnTotalCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTotalCancel.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnTotalCancel.Location = new System.Drawing.Point(723, 536);
+            this.btnTotalCancel.Location = new System.Drawing.Point(633, 425);
             this.btnTotalCancel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnTotalCancel.Name = "btnTotalCancel";
-            this.btnTotalCancel.Size = new System.Drawing.Size(170, 104);
+            this.btnTotalCancel.Size = new System.Drawing.Size(149, 83);
             this.btnTotalCancel.TabIndex = 33;
-            this.btnTotalCancel.Text = "상품 전체 취소";
+            this.btnTotalCancel.Text = "상품 전체 취소 [F6]";
             this.btnTotalCancel.UseVisualStyleBackColor = false;
             this.btnTotalCancel.Click += new System.EventHandler(this.btnTotalCancel_Click);
             // 
@@ -638,10 +639,10 @@
             // 
             this.btnCancel.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnCancel.Font = new System.Drawing.Font("맑은 고딕", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnCancel.Location = new System.Drawing.Point(1365, 644);
+            this.btnCancel.Location = new System.Drawing.Point(1243, 515);
             this.btnCancel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(91, 99);
+            this.btnCancel.Size = new System.Drawing.Size(80, 79);
             this.btnCancel.TabIndex = 36;
             this.btnCancel.Text = "<-";
             this.btnCancel.UseVisualStyleBackColor = true;
@@ -653,10 +654,10 @@
             this.btnInit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnInit.Font = new System.Drawing.Font("맑은 고딕", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnInit.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnInit.Location = new System.Drawing.Point(1273, 939);
+            this.btnInit.Location = new System.Drawing.Point(1163, 751);
             this.btnInit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnInit.Name = "btnInit";
-            this.btnInit.Size = new System.Drawing.Size(183, 99);
+            this.btnInit.Size = new System.Drawing.Size(160, 79);
             this.btnInit.TabIndex = 35;
             this.btnInit.Text = "초기화";
             this.btnInit.UseVisualStyleBackColor = false;
@@ -668,10 +669,10 @@
             this.btnDown.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnDown.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDown.Font = new System.Drawing.Font("맑은 고딕", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnDown.Location = new System.Drawing.Point(1365, 840);
+            this.btnDown.Location = new System.Drawing.Point(1243, 672);
             this.btnDown.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDown.Name = "btnDown";
-            this.btnDown.Size = new System.Drawing.Size(91, 99);
+            this.btnDown.Size = new System.Drawing.Size(80, 79);
             this.btnDown.TabIndex = 37;
             this.btnDown.Text = "-";
             this.btnDown.UseVisualStyleBackColor = false;
@@ -682,12 +683,11 @@
             this.btnOrder.BackColor = System.Drawing.Color.Snow;
             this.btnOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOrder.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnOrder.Location = new System.Drawing.Point(1287, 425);
-            this.btnOrder.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnOrder.Location = new System.Drawing.Point(1174, 333);
             this.btnOrder.Name = "btnOrder";
-            this.btnOrder.Size = new System.Drawing.Size(170, 106);
+            this.btnOrder.Size = new System.Drawing.Size(149, 85);
             this.btnOrder.TabIndex = 40;
-            this.btnOrder.Text = "발주";
+            this.btnOrder.Text = "발주[B]";
             this.btnOrder.UseVisualStyleBackColor = true;
             this.btnOrder.Click += new System.EventHandler(this.btnOrder_Click);
             // 
@@ -696,12 +696,11 @@
             this.btnSetting.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnSetting.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSetting.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnSetting.Location = new System.Drawing.Point(1191, -2);
-            this.btnSetting.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnSetting.Location = new System.Drawing.Point(1082, -2);
             this.btnSetting.Name = "btnSetting";
-            this.btnSetting.Size = new System.Drawing.Size(139, 79);
+            this.btnSetting.Size = new System.Drawing.Size(122, 63);
             this.btnSetting.TabIndex = 44;
-            this.btnSetting.Text = "매장정보\r\n변경";
+            this.btnSetting.Text = "매장정보\r\n변경[I]";
             this.btnSetting.UseVisualStyleBackColor = true;
             this.btnSetting.Click += new System.EventHandler(this.btnSetting_Click);
             // 
@@ -724,7 +723,7 @@
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1457, 77);
+            this.panel2.Size = new System.Drawing.Size(1330, 62);
             this.panel2.TabIndex = 9;
             // 
             // lblDate2
@@ -732,9 +731,9 @@
             this.lblDate2.AutoSize = true;
             this.lblDate2.Font = new System.Drawing.Font("맑은 고딕", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblDate2.ForeColor = System.Drawing.Color.Black;
-            this.lblDate2.Location = new System.Drawing.Point(763, 25);
+            this.lblDate2.Location = new System.Drawing.Point(690, 20);
             this.lblDate2.Name = "lblDate2";
-            this.lblDate2.Size = new System.Drawing.Size(161, 32);
+            this.lblDate2.Size = new System.Drawing.Size(128, 25);
             this.lblDate2.TabIndex = 55;
             this.lblDate2.Text = "17:28:33 (금)";
             // 
@@ -743,12 +742,12 @@
             this.btnEmployeeChange.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnEmployeeChange.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEmployeeChange.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnEmployeeChange.Location = new System.Drawing.Point(942, -1);
+            this.btnEmployeeChange.Location = new System.Drawing.Point(835, -1);
             this.btnEmployeeChange.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnEmployeeChange.Name = "btnEmployeeChange";
-            this.btnEmployeeChange.Size = new System.Drawing.Size(125, 78);
+            this.btnEmployeeChange.Size = new System.Drawing.Size(122, 63);
             this.btnEmployeeChange.TabIndex = 54;
-            this.btnEmployeeChange.Text = "담당자교대";
+            this.btnEmployeeChange.Text = "담당자교대[U]";
             this.btnEmployeeChange.UseVisualStyleBackColor = true;
             this.btnEmployeeChange.Click += new System.EventHandler(this.btnEmployeeChange_Click);
             // 
@@ -757,9 +756,9 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("맑은 고딕", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(207, 25);
+            this.label1.Location = new System.Drawing.Point(181, 20);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(133, 32);
+            this.label1.Size = new System.Drawing.Size(107, 25);
             this.label1.TabIndex = 53;
             this.label1.Text = "포스 번호 :";
             // 
@@ -768,12 +767,12 @@
             this.btnCalc.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnCalc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCalc.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnCalc.Location = new System.Drawing.Point(1066, -1);
+            this.btnCalc.Location = new System.Drawing.Point(958, -1);
             this.btnCalc.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCalc.Name = "btnCalc";
-            this.btnCalc.Size = new System.Drawing.Size(125, 78);
+            this.btnCalc.Size = new System.Drawing.Size(122, 63);
             this.btnCalc.TabIndex = 52;
-            this.btnCalc.Text = "계산기";
+            this.btnCalc.Text = "계산기[C]";
             this.btnCalc.UseVisualStyleBackColor = true;
             this.btnCalc.Click += new System.EventHandler(this.btnCalc_Click);
             // 
@@ -786,10 +785,10 @@
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnClose.ForeColor = System.Drawing.Color.White;
-            this.btnClose.Location = new System.Drawing.Point(1330, -1);
+            this.btnClose.Location = new System.Drawing.Point(1206, -2);
             this.btnClose.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(125, 78);
+            this.btnClose.Size = new System.Drawing.Size(122, 63);
             this.btnClose.TabIndex = 51;
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
@@ -799,9 +798,9 @@
             this.lblDate.AutoSize = true;
             this.lblDate.Font = new System.Drawing.Font("맑은 고딕", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblDate.ForeColor = System.Drawing.Color.Black;
-            this.lblDate.Location = new System.Drawing.Point(561, 25);
+            this.lblDate.Location = new System.Drawing.Point(485, 20);
             this.lblDate.Name = "lblDate";
-            this.lblDate.Size = new System.Drawing.Size(147, 32);
+            this.lblDate.Size = new System.Drawing.Size(116, 25);
             this.lblDate.TabIndex = 50;
             this.lblDate.Text = "2018-01-05";
             // 
@@ -810,9 +809,9 @@
             this.lblEmployee.AutoSize = true;
             this.lblEmployee.Font = new System.Drawing.Font("맑은 고딕", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblEmployee.ForeColor = System.Drawing.Color.Black;
-            this.lblEmployee.Location = new System.Drawing.Point(468, 25);
+            this.lblEmployee.Location = new System.Drawing.Point(410, 20);
             this.lblEmployee.Name = "lblEmployee";
-            this.lblEmployee.Size = new System.Drawing.Size(87, 32);
+            this.lblEmployee.Size = new System.Drawing.Size(69, 25);
             this.lblEmployee.TabIndex = 48;
             this.lblEmployee.Text = "홍길동";
             // 
@@ -821,9 +820,9 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("맑은 고딕", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label10.ForeColor = System.Drawing.Color.Black;
-            this.label10.Location = new System.Drawing.Point(376, 25);
+            this.label10.Location = new System.Drawing.Point(329, 20);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(109, 32);
+            this.label10.Size = new System.Drawing.Size(88, 25);
             this.label10.TabIndex = 47;
             this.label10.Text = "담당자 : ";
             // 
@@ -832,9 +831,9 @@
             this.lblPosNum.AutoSize = true;
             this.lblPosNum.Font = new System.Drawing.Font("맑은 고딕", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblPosNum.ForeColor = System.Drawing.Color.Black;
-            this.lblPosNum.Location = new System.Drawing.Point(334, 25);
+            this.lblPosNum.Location = new System.Drawing.Point(292, 20);
             this.lblPosNum.Name = "lblPosNum";
-            this.lblPosNum.Size = new System.Drawing.Size(43, 32);
+            this.lblPosNum.Size = new System.Drawing.Size(34, 25);
             this.lblPosNum.TabIndex = 46;
             this.lblPosNum.Text = "01";
             // 
@@ -843,9 +842,9 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("굴림", 13F);
             this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(121, 390);
+            this.label7.Location = new System.Drawing.Point(106, 312);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(241, 22);
+            this.label7.Size = new System.Drawing.Size(198, 18);
             this.label7.TabIndex = 9;
             this.label7.Text = "합계 수량 / 금액 / 할인";
             // 
@@ -854,9 +853,9 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("맑은 고딕", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(16, 10);
+            this.label6.Location = new System.Drawing.Point(3, 8);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(197, 54);
+            this.label6.Size = new System.Drawing.Size(159, 45);
             this.label6.TabIndex = 43;
             this.label6.Text = "판매 등록";
             // 
@@ -867,10 +866,10 @@
             this.btnSeven.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSeven.Font = new System.Drawing.Font("맑은 고딕", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnSeven.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnSeven.Location = new System.Drawing.Point(1090, 644);
+            this.btnSeven.Location = new System.Drawing.Point(1003, 515);
             this.btnSeven.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSeven.Name = "btnSeven";
-            this.btnSeven.Size = new System.Drawing.Size(91, 99);
+            this.btnSeven.Size = new System.Drawing.Size(80, 79);
             this.btnSeven.TabIndex = 43;
             this.btnSeven.Text = "7";
             this.btnSeven.UseVisualStyleBackColor = false;
@@ -886,12 +885,12 @@
             this.btnEtc.BackColor = System.Drawing.Color.Snow;
             this.btnEtc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEtc.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnEtc.Location = new System.Drawing.Point(1287, 534);
+            this.btnEtc.Location = new System.Drawing.Point(1174, 421);
             this.btnEtc.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnEtc.Name = "btnEtc";
-            this.btnEtc.Size = new System.Drawing.Size(170, 106);
+            this.btnEtc.Size = new System.Drawing.Size(149, 85);
             this.btnEtc.TabIndex = 47;
-            this.btnEtc.Text = "기타";
+            this.btnEtc.Text = "기타[E]";
             this.btnEtc.UseVisualStyleBackColor = false;
             this.btnEtc.Click += new System.EventHandler(this.btnEtc_Click);
             // 
@@ -900,12 +899,12 @@
             this.btnManagement.BackColor = System.Drawing.Color.Snow;
             this.btnManagement.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnManagement.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnManagement.Location = new System.Drawing.Point(1287, 208);
+            this.btnManagement.Location = new System.Drawing.Point(1174, 160);
             this.btnManagement.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnManagement.Name = "btnManagement";
-            this.btnManagement.Size = new System.Drawing.Size(170, 106);
+            this.btnManagement.Size = new System.Drawing.Size(149, 85);
             this.btnManagement.TabIndex = 30;
-            this.btnManagement.Text = "관리";
+            this.btnManagement.Text = "관리[M]";
             this.btnManagement.UseVisualStyleBackColor = false;
             this.btnManagement.Click += new System.EventHandler(this.btnManagement_Click);
             // 
@@ -914,12 +913,12 @@
             this.btnPointSave.BackColor = System.Drawing.Color.Snow;
             this.btnPointSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPointSave.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnPointSave.Location = new System.Drawing.Point(547, 536);
+            this.btnPointSave.Location = new System.Drawing.Point(479, 425);
             this.btnPointSave.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnPointSave.Name = "btnPointSave";
-            this.btnPointSave.Size = new System.Drawing.Size(171, 104);
+            this.btnPointSave.Size = new System.Drawing.Size(150, 83);
             this.btnPointSave.TabIndex = 48;
-            this.btnPointSave.Text = "포인트 적립";
+            this.btnPointSave.Text = "포인트 적립\r\n[F4]";
             this.btnPointSave.UseVisualStyleBackColor = false;
             this.btnPointSave.Click += new System.EventHandler(this.btnPointSave_Click);
             // 
@@ -927,19 +926,20 @@
             // 
             this.pictureBox1.ErrorImage = global::Pos.Properties.Resources.goodee24;
             this.pictureBox1.Image = global::Pos.Properties.Resources.goodee24;
-            this.pictureBox1.Location = new System.Drawing.Point(1073, 536);
+            this.pictureBox1.Location = new System.Drawing.Point(942, 424);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(200, 102);
+            this.pictureBox1.Size = new System.Drawing.Size(226, 82);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 48;
             this.pictureBox1.TabStop = false;
             // 
             // frmMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(1457, 1045);
+            this.ClientSize = new System.Drawing.Size(1329, 836);
             this.ControlBox = false;
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnPointSave);

@@ -16,7 +16,7 @@ namespace Pos
         string sendMoney; //결제금액 칸에 찍힐 금액
         SqlConnection con;
         DataTable ss;
-
+        TextBox current;
         public DataTable Ss { get => ss; set => ss = value; }
 
         public frmCard()
@@ -56,66 +56,27 @@ namespace Pos
                 fm.T3.Text = "0";
                 fm.T4.Text = "0";
                 fm.T5.Text = "0";
+                fm.Pic.Image = Bitmap.FromFile(@"..\..\Resources\goodee24.png");
                 fm.T2.Text = "************이전 정보 \r\n";
                 fm.T2.Text += "현금 결제 : " + s.Cashmoney + "원\r\n";
                 fm.T2.Text += "카드 결제 : " + s.Cardmoeny + "원\r\n";
                 fm.T2.Text += "포인트 결제 : " + s.Pointmoney + "원\r\n";
 
-                try
-                {
+                //try
+                //{
                     con.Open();
-                    foreach (DataRow row in fm.Ss.Rows)
-                    {
-                        using (var ccmd = new SqlCommand("InsertSellInfo", con))
-                        {
-
-                            ccmd.CommandType = CommandType.StoredProcedure;
-
-
-                            decimal salesquantity = 0;
-                            decimal tot = -1 * decimal.Parse(row["할인"].ToString());
-                            salesquantity = tot / decimal.Parse(row["단가"].ToString());
-                            ccmd.Parameters.AddWithValue("@barcode", row["바코드"].ToString());
-                            ccmd.Parameters.AddWithValue("@quantity", row["수량"].ToString());
-                            ccmd.Parameters.AddWithValue("@salesquantity", tot);
-                            ccmd.ExecuteNonQuery();
-
-                        }
-                    }
-                    if (s.ClientID != null)
-                    {
-                        using (var ccmd = new SqlCommand("UpdatePoint", con))
-                        {
-                            ccmd.CommandType = CommandType.StoredProcedure;
-                            ccmd.Parameters.AddWithValue("@phone", s.ClientID);
-                            ccmd.ExecuteNonQuery();
-                        }
-                    }
-
-                    foreach (DataRow row in fm.Ss.Rows)
-                    {
-                        using (var ccmd = new SqlCommand("UpdateProducts", con))
-                        {
-                            ccmd.CommandType = CommandType.StoredProcedure;
-                            ccmd.Parameters.AddWithValue("@barcode", row["바코드"].ToString());
-                            ccmd.Parameters.AddWithValue("@quantity", row["수량"].ToString());
-                            if (ccmd.ExecuteNonQuery() != 1)
-                            {
-                                MessageBox.Show("상품 재고 업데이트 에러");
-                            }
-                        }
-                    }
+            
 
                     Sell.Clear();
                     fm.Ss.Clear();
                     this.Dispose();
-                }
-                catch (Exception msg)
-                {
-                    con.Close();
-                    MessageBox.Show(msg.Message);
+                //}
+                //catch (Exception msg)
+                //{
+                //    con.Close();
+                //    MessageBox.Show(msg.Message);
                     
-                }
+                //}
 
             }
             else
@@ -143,8 +104,8 @@ namespace Pos
             //카드번호를 적고 엔터를 쳤을때
             if (e.KeyCode == Keys.Enter)
             {
-                try
-                {
+                //try
+                //{
                      con = DBcontroller.Instance();
                     con.Open();
 
@@ -167,13 +128,13 @@ namespace Pos
                         }
                         con.Close();
                     }
-                }
-                catch (Exception msg)
-                {
-                    con.Close();
-                    MessageBox.Show(msg.Message);
+                //}
+                //catch (Exception msg)
+                //{
+                //    con.Close();
+                //    MessageBox.Show(msg.Message);
 
-                }
+                //}
             }
         }
         //취소버튼 클릭
@@ -194,6 +155,75 @@ namespace Pos
         private void tboxYear_Click(object sender, EventArgs e)
         {
             
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            btnPay_Click(null, null);
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            current = tboxCardNum;
+            current.Text = "";
+        }
+
+        private void btn7_Click(object sender, EventArgs e)
+        {
+            current.Text += "7";
+        }
+
+        private void btn8_Click(object sender, EventArgs e)
+        {
+            current.Text += "8";
+        }
+
+        private void btn9_Click(object sender, EventArgs e)
+        {
+            current.Text += "9";
+        }
+
+        private void btn4_Click(object sender, EventArgs e)
+        {
+            current.Text += "4";
+        }
+
+        private void btn5_Click(object sender, EventArgs e)
+        {
+            current.Text += "5";
+
+        }
+
+        private void btn6_Click(object sender, EventArgs e)
+        {
+            current.Text += "6";
+        }
+
+        private void btn1_Click(object sender, EventArgs e)
+        {
+            current.Text += "1";
+
+        }
+
+        private void btn2_Click(object sender, EventArgs e)
+        {
+            current.Text += "2";
+        }
+
+        private void btn3_Click(object sender, EventArgs e)
+        {
+            current.Text += "3";
+
+        }
+
+        private void btn0_Click(object sender, EventArgs e)
+        {
+            current.Text += "0";
+        }
+
+        private void btn00_Click(object sender, EventArgs e)
+        {
+            current.Text += "00";
         }
     }
 }

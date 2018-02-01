@@ -51,6 +51,7 @@
             this.tboxEmpNum.Name = "tboxEmpNum";
             this.tboxEmpNum.Size = new System.Drawing.Size(216, 35);
             this.tboxEmpNum.TabIndex = 1;
+            this.tboxEmpNum.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tboxEmpNum_KeyPress);
             // 
             // btnChange
             // 

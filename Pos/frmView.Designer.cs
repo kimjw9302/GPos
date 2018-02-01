@@ -47,7 +47,7 @@
             this.btnCustInquiry.Name = "btnCustInquiry";
             this.btnCustInquiry.Size = new System.Drawing.Size(114, 104);
             this.btnCustInquiry.TabIndex = 1;
-            this.btnCustInquiry.Text = "고객 조회";
+            this.btnCustInquiry.Text = "고객 조회\r\n[F5]";
             this.btnCustInquiry.UseVisualStyleBackColor = false;
             this.btnCustInquiry.Click += new System.EventHandler(this.btnCustInquiry_Click);
             // 
@@ -62,7 +62,7 @@
             this.btnSell.Name = "btnSell";
             this.btnSell.Size = new System.Drawing.Size(114, 104);
             this.btnSell.TabIndex = 3;
-            this.btnSell.Text = "판매 조회\r\n(영수증)\r\n";
+            this.btnSell.Text = "판매 조회\r\n(영수증)\r\n[F2]\r\n";
             this.btnSell.UseVisualStyleBackColor = false;
             this.btnSell.Click += new System.EventHandler(this.btnSell_Click);
             // 
@@ -77,7 +77,7 @@
             this.btnRevenue.Name = "btnRevenue";
             this.btnRevenue.Size = new System.Drawing.Size(114, 104);
             this.btnRevenue.TabIndex = 4;
-            this.btnRevenue.Text = "매출 현황\r\n조회";
+            this.btnRevenue.Text = "매출 현황\r\n조회\r\n[F4]";
             this.btnRevenue.UseVisualStyleBackColor = false;
             this.btnRevenue.Click += new System.EventHandler(this.btnRevenue_Click);
             // 
@@ -92,7 +92,7 @@
             this.btnStockSelect.Name = "btnStockSelect";
             this.btnStockSelect.Size = new System.Drawing.Size(114, 104);
             this.btnStockSelect.TabIndex = 5;
-            this.btnStockSelect.Text = "재고 조회";
+            this.btnStockSelect.Text = "재고조회\r\n[F1]";
             this.btnStockSelect.UseVisualStyleBackColor = false;
             this.btnStockSelect.Click += new System.EventHandler(this.btnStockSelect_Click);
             // 
@@ -107,7 +107,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(114, 104);
             this.button1.TabIndex = 6;
-            this.button1.Text = "직원 조회";
+            this.button1.Text = "직원 조회\r\n[F3]";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -122,7 +122,7 @@
             this.btnOut.Name = "btnOut";
             this.btnOut.Size = new System.Drawing.Size(114, 104);
             this.btnOut.TabIndex = 7;
-            this.btnOut.Text = "닫기";
+            this.btnOut.Text = "닫기\r\n[Q]";
             this.btnOut.UseVisualStyleBackColor = false;
             this.btnOut.Click += new System.EventHandler(this.btnOut_Click);
             // 

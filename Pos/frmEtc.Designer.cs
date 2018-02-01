@@ -45,7 +45,7 @@
             this.btnStockSelect.Name = "btnStockSelect";
             this.btnStockSelect.Size = new System.Drawing.Size(165, 104);
             this.btnStockSelect.TabIndex = 15;
-            this.btnStockSelect.Text = "이벤트 등록\r\n및 조회";
+            this.btnStockSelect.Text = "이벤트 등록\r\n및 조회\r\n[F1]";
             this.btnStockSelect.UseVisualStyleBackColor = false;
             this.btnStockSelect.Click += new System.EventHandler(this.btnStockSelect_Click);
             // 
@@ -60,7 +60,7 @@
             this.btnLog.Name = "btnLog";
             this.btnLog.Size = new System.Drawing.Size(165, 104);
             this.btnLog.TabIndex = 14;
-            this.btnLog.Text = "로그";
+            this.btnLog.Text = "로그\r\n[F2]";
             this.btnLog.UseVisualStyleBackColor = false;
             this.btnLog.Click += new System.EventHandler(this.btnLog_Click);
             // 
@@ -75,7 +75,7 @@
             this.btnMail.Name = "btnMail";
             this.btnMail.Size = new System.Drawing.Size(165, 104);
             this.btnMail.TabIndex = 16;
-            this.btnMail.Text = "관리자\r\n문의메일";
+            this.btnMail.Text = "관리자\r\n문의메일\r\n[F3]";
             this.btnMail.UseVisualStyleBackColor = false;
             this.btnMail.Click += new System.EventHandler(this.btnMail_Click);
             // 
@@ -90,7 +90,7 @@
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(165, 104);
             this.btnClose.TabIndex = 17;
-            this.btnClose.Text = "닫기";
+            this.btnClose.Text = "닫기\r\n[Q]";
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 

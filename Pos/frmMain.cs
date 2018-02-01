@@ -12,6 +12,7 @@ using System.Windows.Forms;
 
 namespace Pos
 {
+
     public partial class frmMain : Form
     {
 
@@ -24,7 +25,7 @@ namespace Pos
         public ArrayList eventList = new ArrayList();
         DataGridView dataGridView;
         TextBox t1, t2, t3, t4, t5;
-
+        PictureBox pic;
 
         public DataGridView DataGridView { get => dataGridView; set => dataGridView = value; }
         public TextBox T1 { get => t1; set => t1 = value; }
@@ -33,7 +34,115 @@ namespace Pos
         public TextBox T4 { get => t4; set => t4 = value; }
         public TextBox T5 { get => t5; set => t5 = value; }
         public DataTable SellTable1 { get => sellTable; set => sellTable = value; }
+        public PictureBox Pic { get => pic; set => pic = value; }
 
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            if (!base.ProcessCmdKey(ref msg, keyData)) // 위에서 처리 안했으면
+            {
+                // 여기에 처리코드를 넣는다.
+
+                if (keyData.Equals(Keys.Escape) || keyData.Equals(Keys.Q))
+                {//Esc,Q 버튼 눌렀을때
+                    btnClose_Click(null, null);
+                    return true;
+                } else if (keyData.Equals(Keys.F1))
+                {
+                    //카드결제
+                    btnCard_Click(null, null);
+                    return true;
+                }
+                else if (keyData.Equals(Keys.F2))
+                {
+                    //현금결제
+                    btnCash_Click(null, null);
+                    return true;
+                }
+                else if (keyData.Equals(Keys.F3))
+                {
+                    //포인트결제
+                    btnPoint_Click(null, null);
+                    return true;
+                }
+                else if (keyData.Equals(Keys.F4))
+                {
+                    //포인트적립
+                    btnPointSave_Click(null, null);
+                    return true;
+                }
+                else if (keyData.Equals(Keys.F5))
+                {
+                    //전체상품취소
+                    btnTotalCancel_Click(null, null);
+                    return true;
+                }
+                else if (keyData.Equals(Keys.F6))
+                {
+                    //환불
+                    btnRefund_Click(null, null);
+                    return true;
+                }
+                else if (keyData.Equals(Keys.U))
+                {
+                    //교대하기 클릭
+                    btnEmployeeChange_Click(null, null);
+                    return true;
+                }
+                else if (keyData.Equals(Keys.C))
+                {
+                    //계산기
+                    btnCalc_Click(null, null);
+                    return true;
+                }
+                else if (keyData.Equals(Keys.I))
+                {
+                    //정보변경 클릭
+                    btnSetting_Click(null,null);
+                    return true;
+                }
+                else if (keyData.Equals(Keys.F))
+                {
+                    //관리하기
+                    btnTotalView_Click(null, null);
+                    return true;
+                }
+                else if (keyData.Equals(Keys.M))
+                {
+                    //관리하기
+                    btnManagement_Click(null, null);
+                    return true;
+                }
+                else if (keyData.Equals(Keys.P))
+                {
+                    //외출하기 클릭
+                    btnOutgo_Click(null, null);
+                    return true;
+                }
+                else if (keyData.Equals(Keys.B))
+                {
+                    //발주하기 클릭
+                    btnOrder_Click(null, null);
+                    return true;
+                }
+                else if (keyData.Equals(Keys.E))
+                {
+                    //발주하기 클릭
+                    btnEtc_Click(null, null);
+                    return true;
+                }
+
+
+                else
+                {
+                    return false;
+                }
+            }
+            else
+            {
+                return true;
+            }
+   
+        }
         //생성자
         public frmMain()
         {
@@ -69,7 +178,8 @@ namespace Pos
             t3 = txtChange;
             t4 = txtTotal;
             t5 = txtReceived;
-            sdate = DateTime.Now;
+            Pic = pboxProducts;
+                  sdate = DateTime.Now;
             lblDate.Text = DateTime.Now.ToLongDateString();
             lblDate2.Text = DateTime.Now.ToLongTimeString();
             SellTable();
@@ -80,12 +190,12 @@ namespace Pos
             dgvProduct.DataSource = sellTable;
             con = DBcontroller.Instance();
             dgvProduct.Columns[0].Width = 80;
-            dgvProduct.Columns[1].Width = 170;
-            dgvProduct.Columns[2].Width = 280;
-            dgvProduct.Columns[3].Width = 100;
-            dgvProduct.Columns[4].Width = 100;
-            dgvProduct.Columns[5].Width = 100;
-            dgvProduct.Columns[6].Width = 100;
+            dgvProduct.Columns[1].Width = 210;
+            dgvProduct.Columns[2].Width = 338;
+            dgvProduct.Columns[3].Width = 120;
+            dgvProduct.Columns[4].Width = 120;
+            dgvProduct.Columns[5].Width = 120;
+            dgvProduct.Columns[6].Width = 120;
             dgvProduct.Columns[7].Visible = false;
             dgvProduct.Columns[8].Visible = false;
             dgvProduct.Columns[9].Visible = false;
@@ -133,15 +243,37 @@ namespace Pos
         }
         private void btnTotalView_Click(object sender, EventArgs e)
         {
-            new frmView().ShowDialog();
+            if (sellTable.Rows.Count > 0)
+            {
+                MessageBox.Show("판매 중에 접근이 불가능합니다");
+               
+            }
+            else
+            {
+                new frmView(empId).ShowDialog();
+            }
         }
         private void btnManagement_Click(object sender, EventArgs e)
         {
-            new frmManagement().ShowDialog();
+            if (sellTable.Rows.Count > 0)
+            {
+                MessageBox.Show("판매 중에 접근이 불가능합니다");
+            }
+            else
+            {
+                new frmManagement().ShowDialog();
+   
+            }
+   
         }
         private void btnCard_Click(object sender, EventArgs e)
         {
             if (sellTable.Rows.Count > 0)
+            {
+
+                MessageBox.Show("바코드를 찍어주세요");
+            }
+            else
             {
                 Sell s = Sell.Load();
                 s.Tot = int.Parse(txtTotal.Text);
@@ -151,11 +283,7 @@ namespace Pos
                 fp.Owner = this;
                 s.EmpId = empId;
                 fp.ShowDialog();
-
-            }
-            else
-            {
-                MessageBox.Show("바코드를 찍어주세요");
+  
 
             }
         }
@@ -163,6 +291,11 @@ namespace Pos
         {
             if (sellTable.Rows.Count > 0)
             {
+                MessageBox.Show("바코드를 찍어주세요");
+            }
+            else
+            {
+               
                 Sell s = Sell.Load();
                 s.Tot = int.Parse(txtTotal.Text);
                 s.Sale = int.Parse(txtDiscount.Text);
@@ -172,17 +305,16 @@ namespace Pos
                 fp.Owner = this;
                 fp.ShowDialog();
             }
-            else
-            {
-                MessageBox.Show("바코드를 찍어주세요");
-
-            }
 
         }
         private void btnPoint_Click(object sender, EventArgs e)
         {
             Sell s = Sell.Load();
             if (sellTable.Rows.Count > 0)
+            {
+                MessageBox.Show("바코드를 찍어주세요");
+            }
+            else
             {
                 if (s.SavePoint == 0)
                 {
@@ -194,45 +326,58 @@ namespace Pos
                 {
                     MessageBox.Show("적립 후 사용 불가");
                 }
-            }
-            else
-            {
-                MessageBox.Show("바코드를 찍어주세요");
+   
             }
         }
         private void btnOrder_Click(object sender, EventArgs e)
         {
-            con = DBcontroller.Instance();
-            con.Open();
-
-            using (var cmd = new SqlCommand("SelectEmployees", con))
+            if (sellTable.Rows.Count > 0)
             {
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@empNum", empId);
+                MessageBox.Show("판매 중에 접근이 불가능합니다");
+            }
+            else
+            {
+       
+                con = DBcontroller.Instance();
+                con.Open();
 
-                var sdr = cmd.ExecuteScalar();
-                if (sdr.ToString() == "1")
+                using (var cmd = new SqlCommand("SelectEmployees", con))
                 {
-                    con.Close();
-                    new frmOrderRequest(empId).ShowDialog();
-                   
-                }
-                else
-                {
-                    MessageBox.Show("접근이 불가능합니다.");
-                    con.Close();
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@empNum", empId);
+
+                    var sdr = cmd.ExecuteScalar();
+                    if (sdr.ToString() == "1")
+                    {
+                        con.Close();
+                        new frmOrderRequest(empId).ShowDialog();
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("접근이 불가능합니다.");
+                        con.Close();
+                    }
                 }
             }
         }
         private void btnEtc_Click(object sender, EventArgs e)
         {
-            new frmEtc().ShowDialog();
+            if (sellTable.Rows.Count > 0)
+            {
+                MessageBox.Show("판매 중에 접근이 불가능합니다");
+            }
+            else
+            {
+                new frmEtc().ShowDialog();
+                
+            }
         }
         //담당자 변경 클릭시 -> 
 
         private void btnEmployeeChange_Click(object sender, EventArgs e)
         {
-            if (sellTable.Rows.Count >= 1)
+            if (sellTable.Rows.Count >0)
             {
                 MessageBox.Show("판매도중에는 교대를 하실 수 없습니다.");
             }
@@ -463,7 +608,7 @@ namespace Pos
                         else
                         {
                             MessageBox.Show("처음");
-                            txtPaymentList.Text = "★★★★★★이벤트정보★★★★★\r\n";
+                            txtPaymentList.Text = "★★★이벤트정보★★★\r\n";
                             txtPaymentList.Text += "상품명 : " + update3[0]["상품명"] + "\r\n";
                             txtPaymentList.Text += "이벤트 내용 : " + eventcon + "\r\n";
                             string dis = eventcon.Substring(0, eventcon.IndexOf('%'));
@@ -546,7 +691,7 @@ namespace Pos
                         else
                         {
                             MessageBox.Show("처음");
-                            txtPaymentList.Text = "★★★★★★이벤트정보★★★★★\r\n";
+                            txtPaymentList.Text = "★★★이벤트정보★★★\r\n";
                             txtPaymentList.Text += "상품명 : " + update3[0]["상품명"] + "\r\n";
                             txtPaymentList.Text += "이벤트 내용 : " + eventcon + "\r\n";
                             string dis = eventcon.Substring(0, eventcon.IndexOf('%'));
@@ -655,7 +800,7 @@ namespace Pos
                     else
                     {
                         MessageBox.Show("처음");
-                        txtPaymentList.Text = "★★★★★★이벤트정보★★★★★\r\n";
+                        txtPaymentList.Text = "★★★이벤트정보★★★\r\n";
                         txtPaymentList.Text += "상품명 : " + update3[0]["상품명"] + "\r\n";
                         txtPaymentList.Text += "이벤트 내용 : " + eventcon + "\r\n";
                         string dis = eventcon.Substring(0, eventcon.IndexOf('%'));
@@ -809,15 +954,16 @@ namespace Pos
 
                     using (var cmd = new SqlCommand("EventListProduct", con))
                     {
-                        eventList.Clear();
+ 
                         cmd.CommandType = CommandType.StoredProcedure;
                         cmd.Parameters.AddWithValue("@barcode", scanbarcode);
                         var sdr = cmd.ExecuteReader();
+                        eventList.Clear();
                         while (sdr.Read())
                         {
                             if (sdr["eventNum"].ToString() != "0")
                             {
-
+                                MessageBox.Show(sdr["productName"].ToString());
                                 eventList.Add(sdr["productName"].ToString());
                             }
 
@@ -937,18 +1083,14 @@ namespace Pos
                                 }
                                 else if (sdr["content"].ToString() == "1+1")
                                 {
-
                                     MessageBox.Show("1-2");
-
-                                    txtPaymentList.Text = "★★★★★★이벤트정보★★★★★\r\n";
+                                    txtPaymentList.Text = "★★★이벤트정보★★★\r\n";
                                     txtPaymentList.Text += "상품명 : " + sdr["productName"].ToString() + "\r\n";
-
-                                    txtPaymentList.Text += "이벤트 내용 : " + sdr["content"].ToString() + "\r\n";
-
-                                    txtPaymentList.Text += "이벤트 상품 : ";
+                                   txtPaymentList.Text += "이벤트 내용 : " + sdr["content"].ToString() + "\r\n";
+                                    txtPaymentList.Text += "이벤트 상품 : \r\n";
                                     for (int i = 0; i < eventList.Count - 1; i++)
                                     {
-                                        txtPaymentList.Text += eventList[i].ToString();
+                                        txtPaymentList.Text += eventList[i].ToString()+"\r\n";
                                     }
 
 
@@ -957,20 +1099,21 @@ namespace Pos
                                 {
                                     MessageBox.Show("1-3");
 
-                                    txtPaymentList.Text = "★★★★★★이벤트정보★★★★★\r\n";
+                                    txtPaymentList.Text = "★★★이벤트정보★★★\r\n";
                                     txtPaymentList.Text += "상품명 : " + sdr["productName"].ToString() + "\r\n";
                                     txtPaymentList.Text += "이벤트 내용 : " + sdr["content"].ToString() + "\r\n";
-                                    txtPaymentList.Text += "이벤트 상품 : ";
+                                    txtPaymentList.Text += "이벤트 상품 : \r\n";
                                     for (int i = 0; i < eventList.Count - 1; i++)
                                     {
-                                        txtPaymentList.Text += eventList[i].ToString();
+                                        MessageBox.Show(eventList[i].ToString());
+                                        txtPaymentList.Text += eventList[i].ToString() + "\r\n";
                                     }
                                 }
                                 //%할인
                                 else
                                 {
                                     MessageBox.Show("1-4");
-                                    txtPaymentList.Text = "★★★★★★이벤트정보★★★★★\r\n";
+                                    txtPaymentList.Text = "★★★이벤트정보★★★\r\n";
                                     txtPaymentList.Text += "상품명 : " + sdr["productName"].ToString() + "\r\n";
                                     txtPaymentList.Text += "이벤트 내용 : " + sdr["content"].ToString() + "\r\n";
                                     string dis = sdr["discount"].ToString().Substring(0, sdr["discount"].ToString().IndexOf('%'));
@@ -982,7 +1125,7 @@ namespace Pos
                                 }
                                 for (int i = 0; i < eventList.Count; i++)
                                 {
-                                    txtPaymentList.Text += eventList[i].ToString();
+                                    txtPaymentList.Text += eventList[i].ToString() + "\r\n";
                                 }
                             }
                             else if (update1.Length == 0 && update2.Length != 0)
@@ -1012,12 +1155,13 @@ namespace Pos
                                 }
                                 else if (sdr["content"].ToString() == "1+1")
                                 {
-                                    txtPaymentList.Text = "★★★★★★이벤트정보★★★★★\r\n";
+                                    txtPaymentList.Text = "★★★이벤트정보★★★\r\n";
                                     txtPaymentList.Text += "상품명 : " + sdr["productName"].ToString() + "\r\n";
                                     txtPaymentList.Text += "이벤트 내용 : " + sdr["content"].ToString() + "\r\n";
-                                    txtPaymentList.Text += "이벤트 상품 : ";
+                                    txtPaymentList.Text += "이벤트 상품 : \r\n";
                                     for (int i = 0; i < eventList.Count; i++)
                                     {
+
                                         txtPaymentList.Text += eventList[i].ToString();
                                     }
                                     if (totCount % 2 == 0)
@@ -1041,14 +1185,14 @@ namespace Pos
                                 else if (sdr["content"].ToString() == "2+1")
                                 {
 
-                                    txtPaymentList.Text = "★★★★★★이벤트정보★★★★★\r\n";
+                                    txtPaymentList.Text = "★★★이벤트정보★★★\r\n";
                                     txtPaymentList.Text += "상품명 : " + sdr["productName"].ToString() + "\r\n";
                                     txtPaymentList.Text += "이벤트 내용 : " + sdr["content"].ToString() + "\r\n";
-                                    txtPaymentList.Text += "이벤트 상품 : ";
+                                    txtPaymentList.Text += "이벤트 상품 :\r\n ";
 
                                     for (int i = 0; i < eventList.Count; i++)
                                     {
-                                        txtPaymentList.Text += eventList[i].ToString();
+                                        txtPaymentList.Text += eventList[i].ToString() + "\r\n";
                                     }
                                     if (totCount % 3 == 1)
                                     {
@@ -1083,7 +1227,7 @@ namespace Pos
                                 {
                                         MessageBox.Show("2-7");
 
-                                    txtPaymentList.Text = "★★★★★★이벤트정보★★★★★\r\n";
+                                    txtPaymentList.Text = "★★★이벤트정보★★★\r\n";
                                     txtPaymentList.Text += "상품명 : " + sdr["productName"].ToString() + "\r\n";
                                     txtPaymentList.Text += "이벤트 내용 : " + sdr["content"].ToString() + "\r\n";
                                     string dis = sdr["discount"].ToString().Substring(0, sdr["discount"].ToString().IndexOf('%'));
@@ -1124,15 +1268,14 @@ namespace Pos
                                 {
                               
 
-                                    txtPaymentList.Text = "★★★★★★이벤트정보★★★★★\r\n";
+                                    txtPaymentList.Text = "★★★이벤트정보★★★\r\n";
                                     txtPaymentList.Text += "상품명 : " + sdr["productName"].ToString() + "\r\n";
                                     txtPaymentList.Text += "이벤트 내용 : " + sdr["content"].ToString() + "\r\n";
-                                    txtPaymentList.Text += "이벤트 상품 : ";
+                                    txtPaymentList.Text += "이벤트 상품 :\r\n ";
 
                                     for (int i = 0; i < eventList.Count; i++)
                                     {
-
-                                        txtPaymentList.Text += eventList[i].ToString();
+                                        txtPaymentList.Text += eventList[i].ToString() + "\r\n";
                                     }
                                     // 몫 - 나머지 : 
                                     int mok = totCount / 2;
@@ -1154,13 +1297,13 @@ namespace Pos
                                 //2+1인경우
                                 else if (sdr["content"].ToString() == "2+1")
                                 {
-                                    txtPaymentList.Text = "★★★★★★이벤트정보★★★★★\r\n";
+                                    txtPaymentList.Text = "★★★이벤트정보★★★\r\n";
                                     txtPaymentList.Text += "상품명 : " + sdr["productName"].ToString() + "\r\n";
                                     txtPaymentList.Text += "이벤트 내용 : " + sdr["content"].ToString() + "\r\n";
-                                    txtPaymentList.Text += "이벤트 상품 : ";
+                                    txtPaymentList.Text += "이벤트 상품 :\r\n ";
                                     for (int i = 0; i < eventList.Count; i++)
                                     {
-                                        txtPaymentList.Text += eventList[i].ToString();
+                                        txtPaymentList.Text += eventList[i].ToString() + "\r\n";
                                     }
                                     int mok = totCount / 3;
                                     int namege = totCount % 3;
@@ -1189,7 +1332,7 @@ namespace Pos
                                 else
                                 {
                                     MessageBox.Show("3-7");
-                                    txtPaymentList.Text = "★★★★★★이벤트정보★★★★★\r\n";
+                                    txtPaymentList.Text = "★★★이벤트정보★★★\r\n";
                                     txtPaymentList.Text += "상품명 : " + sdr["productName"].ToString() + "\r\n";
                                     txtPaymentList.Text += "이벤트 내용 : " + sdr["content"].ToString() + "\r\n";
                                     string dis = sdr["discount"].ToString().Substring(0, sdr["discount"].ToString().IndexOf('%'));
@@ -1231,7 +1374,7 @@ namespace Pos
             }
             else
             {
-                MessageBox.Show("현재 상태에서 불가능");
+                MessageBox.Show("판매 중에 접근이 불가능합니다");
             }
 
         }
@@ -1287,6 +1430,11 @@ namespace Pos
         {
             //1. 현재 포스 담당자의 번호가 사장이상 일 시 버튼이 작동하게 만든다. 
             //2. DB와 연결 후 현재 담당자의 번호가 점장인지 확인.
+            if (sellTable.Rows.Count > 0)
+            {
+                MessageBox.Show("판매 중에 접근이 불가능합니다");
+            }
+            else { 
             try
             {
                 con = DBcontroller.Instance();
@@ -1318,7 +1466,7 @@ namespace Pos
                 con.Close();
                 MessageBox.Show(ex.Message);
             }
-
+            }
 
         }
 

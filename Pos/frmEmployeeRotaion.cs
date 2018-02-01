@@ -115,6 +115,16 @@ namespace Pos
                 MessageBox.Show(msg.Message);
             }
         }
+
+        private void tboxEmpNum_KeyPress(object sender, KeyPressEventArgs e)
+        {
       
+                if (!(Char.IsDigit(e.KeyChar)) && e.KeyChar != Convert.ToChar(Keys.Back))
+
+                {
+                    e.Handled = true;
+                }
+            
+        }
     }
 }

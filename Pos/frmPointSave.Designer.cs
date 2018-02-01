@@ -247,7 +247,7 @@
             this.tboxPhone.Mask = "000-9000-0000";
             this.tboxPhone.Name = "tboxPhone";
             this.tboxPhone.Size = new System.Drawing.Size(216, 35);
-            this.tboxPhone.TabIndex = 109;
+            this.tboxPhone.TabIndex = 1;
             this.tboxPhone.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.tboxPhone_MaskInputRejected);
             // 
             // btnEnter

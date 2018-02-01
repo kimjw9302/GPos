@@ -47,7 +47,7 @@
             this.btnProductRegister.Name = "btnProductRegister";
             this.btnProductRegister.Size = new System.Drawing.Size(114, 104);
             this.btnProductRegister.TabIndex = 12;
-            this.btnProductRegister.Text = "상품 등록";
+            this.btnProductRegister.Text = "상품 등록\r\n[F2]";
             this.btnProductRegister.UseVisualStyleBackColor = false;
             this.btnProductRegister.Click += new System.EventHandler(this.btnProductRegister_Click);
             // 
@@ -62,7 +62,7 @@
             this.btnCustRegister.Name = "btnCustRegister";
             this.btnCustRegister.Size = new System.Drawing.Size(114, 104);
             this.btnCustRegister.TabIndex = 13;
-            this.btnCustRegister.Text = "회원 등록";
+            this.btnCustRegister.Text = "회원 등록\r\n[F1]";
             this.btnCustRegister.UseVisualStyleBackColor = false;
             this.btnCustRegister.Click += new System.EventHandler(this.btnCustRegister_Click_1);
             // 
@@ -77,7 +77,7 @@
             this.btnEmployeeRegister.Name = "btnEmployeeRegister";
             this.btnEmployeeRegister.Size = new System.Drawing.Size(114, 104);
             this.btnEmployeeRegister.TabIndex = 14;
-            this.btnEmployeeRegister.Text = "직원 등록";
+            this.btnEmployeeRegister.Text = "직원 등록\r\n[F4]";
             this.btnEmployeeRegister.UseVisualStyleBackColor = false;
             this.btnEmployeeRegister.Click += new System.EventHandler(this.btnEmployeeRegister_Click);
             // 
@@ -92,7 +92,7 @@
             this.btnEmpWork.Name = "btnEmpWork";
             this.btnEmpWork.Size = new System.Drawing.Size(114, 104);
             this.btnEmpWork.TabIndex = 15;
-            this.btnEmpWork.Text = "직원 근태";
+            this.btnEmpWork.Text = "직원 근태\r\n[F5]";
             this.btnEmpWork.UseVisualStyleBackColor = false;
             this.btnEmpWork.Click += new System.EventHandler(this.btnEmpWork_Click);
             // 
@@ -107,7 +107,7 @@
             this.btnAban.Name = "btnAban";
             this.btnAban.Size = new System.Drawing.Size(114, 104);
             this.btnAban.TabIndex = 17;
-            this.btnAban.Text = "폐기 등록";
+            this.btnAban.Text = "폐기 등록\r\n[F3]";
             this.btnAban.UseVisualStyleBackColor = false;
             this.btnAban.Click += new System.EventHandler(this.btnAban_Click);
             // 
@@ -122,7 +122,7 @@
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(114, 104);
             this.btnClose.TabIndex = 18;
-            this.btnClose.Text = "닫기";
+            this.btnClose.Text = "닫기\r\n[Q]";
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click_1);
             // 

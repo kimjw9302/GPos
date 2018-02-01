@@ -47,6 +47,8 @@ namespace Pos
                 fm.T3.Text = "0";
                 fm.T4.Text = "0";
                 fm.T5.Text = "0";
+
+
                 int type = 1;
                 if (s.Pointmoney != 0)
                 {
@@ -327,14 +329,6 @@ namespace Pos
             }
         }
 
-        private void tboxReceive_Leave(object sender, EventArgs e)
-        {
-            Regex emailregex = new Regex(@"[0-9]");
-            Boolean ismatch = emailregex.IsMatch(tboxReceive.Text);
-            if (!ismatch)
-            {
-                MessageBox.Show("숫자만 입력해 주세요.");
-            }
-        }
+     
     }
 }
