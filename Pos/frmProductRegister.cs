@@ -29,7 +29,16 @@ namespace Pos
             if (ValidityCheck() && checkPK())
             {
                 string proName = txtProductName.Text.Trim().Replace(" ", "");
-                string barCode = txtBarcode.Text.Trim().Replace(" ", "").Substring(0,13);
+                string barCode;
+                if (txtBarcode.Text.Length > 13)
+                {
+                    barCode = txtBarcode.Text.Trim().Replace(" ", "").Substring(0, 13);
+                }
+                else
+                {
+                    barCode = txtBarcode.Text.Trim().Replace(" ", "");
+                }
+               
                 decimal unitPrice = decimal.Parse(txtUnitPrice.Text.Trim().Replace(" ", ""));
                 decimal costPrice = decimal.Parse(txtCostPrice.Text.Trim().Replace(" ", ""));
                 string cate1 = "F";
@@ -37,8 +46,7 @@ namespace Pos
                 {
                     cate1 = "NF";
                 }
-
-                //MessageBox.Show(cbCate2Temp.Items[cbCate2.SelectedIndex].ToString());
+                
                 int cate2 = int.Parse(cbCate2Temp.Items[cbCate2.SelectedIndex].ToString());
 
                 int placeNum = int.Parse(cbPlaceTemp.Items[cbPlace.SelectedIndex].ToString());
@@ -61,7 +69,7 @@ namespace Pos
                     if (i == 1)
                     {
                         txtBarcode.Text = ""; txtCostPrice.Text = ""; txtProductName.Text = ""; txtUnitPrice.Text = "";
-                        cbCate1.Text = ""; cbCate2.Text = ""; cbPlace.Text = "";
+                        cbCate1.SelectedIndex = 0; cbCate2.Text = ""; cbPlace.Text = ""; 
                         MessageBox.Show("상품 저장");
                         con.Close();
                         return;
@@ -145,6 +153,7 @@ namespace Pos
             InitializeComponent();
         }
 
+        //로딩
         private void frmProductRegister_Load(object sender, EventArgs e)
         {
             con = DBcontroller.Instance();

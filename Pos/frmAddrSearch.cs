@@ -45,7 +45,8 @@ namespace Pos
             {
                 listAddr.Items.Clear();
                 keyword = txtAddr.Text;
-                url = "http://www.juso.go.kr/addrlink/addrLinkApi.do?currentPage=" + currentPage + "&countPerPage=" + countPerPage + "&keyword=" + keyword + "&confmKey=" + confmKey;
+                url = "http://www.juso.go.kr/addrlink/addrLinkApi.do?currentPage=" + currentPage +
+                    "&countPerPage=" + countPerPage + "&keyword=" + keyword + "&confmKey=" + confmKey;
 
                 WebClient wc = new WebClient();
                 XmlReader read = new XmlTextReader(wc.OpenRead(url));

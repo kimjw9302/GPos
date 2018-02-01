@@ -80,8 +80,7 @@ namespace Pos
         private bool CheckPK()
         {
             string memberNum = this.txtUserNum.Text.Trim().Replace(" ", "");
-            string memberPhone = this.cbPhone1.Text + txtPhone2.Text + txtPhone3.Text;
-
+            string memberPhone = this.cbPhone1.Text +"-"+ txtPhone2.Text +"-"+ txtPhone3.Text;
             con = DBcontroller.Instance();
 
             using (var cmd = new SqlCommand("MemberCheckPK", con))
@@ -252,7 +251,6 @@ namespace Pos
         {
             string str = @"[~!@\#$%^&*\()\=+|\\/:;?""<>']";
             Regex rex = new Regex(str);
-            //MessageBox.Show(" 특스문자 " +rex.IsMatch(addr).ToString());
             return rex.IsMatch(addr);
             
         }
