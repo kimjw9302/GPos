@@ -17,7 +17,8 @@ namespace Pos
         Sell s;
         private bool selectflage = false;
         public string phone = null;
-
+        TextBox current;
+        MaskedTextBox mcurrent;
         public frmPoint()
         {
             InitializeComponent();
@@ -119,7 +120,7 @@ namespace Pos
 
         private void frmPoint_Load(object sender, EventArgs e)
         {
-
+            mcurrent = tboxPhone;
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
@@ -153,6 +154,88 @@ namespace Pos
 
             }
             con.Close();
+        }
+
+        private void tboxUPoint_Click(object sender, EventArgs e)
+        {
+            current = tboxInputPoint;
+            tboxInputPoint.Focus();
+
+        }
+
+        private void tboxPass_Click(object sender, EventArgs e)
+        {
+            current = tboxPass;
+        }
+
+        private void tboxInputPoint_Click(object sender, EventArgs e)
+        {
+            current = tboxInputPoint;
+        }
+
+        private void btn7_Click(object sender, EventArgs e)
+        {
+     
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn00_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn0_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn8_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

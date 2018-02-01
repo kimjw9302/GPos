@@ -65,6 +65,7 @@ namespace Pos
                     else
                     {
                         AbanTableAdd(barcodeShort, barcode);
+                        this.Close();
                         return;
                     }
                 }
@@ -85,7 +86,6 @@ namespace Pos
             {
                 barcode = "";
             }
-
             //첫등록 상품 테이블에 추가
             try
             {
@@ -118,6 +118,7 @@ namespace Pos
             catch (SqlException)
             {
                 con.Close();
+                this.Close();
                 return;
             }
         }

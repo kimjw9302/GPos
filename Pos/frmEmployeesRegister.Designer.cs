@@ -86,7 +86,7 @@
             // 
             // btnclose
             // 
-            this.btnclose.BackColor = System.Drawing.Color.Red;
+            this.btnclose.BackColor = System.Drawing.Color.OrangeRed;
             this.btnclose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnclose.Font = new System.Drawing.Font("돋움", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnclose.ForeColor = System.Drawing.Color.White;
@@ -207,6 +207,7 @@
             this.txtEmpNum.Font = new System.Drawing.Font("굴림", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtEmpNum.Location = new System.Drawing.Point(145, 93);
             this.txtEmpNum.Name = "txtEmpNum";
+            this.txtEmpNum.ReadOnly = true;
             this.txtEmpNum.Size = new System.Drawing.Size(261, 32);
             this.txtEmpNum.TabIndex = 34;
             // 

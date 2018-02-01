@@ -32,24 +32,33 @@ namespace Pos
 
             con = DBcontroller.Instance();
 
-            using (var cmd = new SqlCommand("GetEmployeeName", con))
+            try
             {
-                con.Open();
-                adapter = new SqlDataAdapter(cmd);
-                ds = new DataSet();
-                adapter.SelectCommand = cmd;
-                adapter.Fill(ds);
-
-                emp = ds.Tables[0];
-                rows = emp.Rows;
-
-                foreach (DataRow item in rows)
+                using (var cmd = new SqlCommand("GetEmployeeName", con))
                 {
-                    cbEmp.Items.Add(item[0]);
+                    con.Open();
+                    adapter = new SqlDataAdapter(cmd);
+                    ds = new DataSet();
+                    adapter.SelectCommand = cmd;
+                    adapter.Fill(ds);
+
+                    emp = ds.Tables[0];
+                    rows = emp.Rows;
+
+                    foreach (DataRow item in rows)
+                    {
+                        cbEmp.Items.Add(item[0]);
+                    }
+
                 }
-                
+                con.Close();
             }
-            con.Close();
+            catch (Exception msg)
+            {
+                con.Close();
+                MessageBox.Show(msg.Message);
+
+            }
         }
 
         private void btnView_Click(object sender, EventArgs e)
@@ -60,43 +69,59 @@ namespace Pos
 
             if (tabControl1.SelectedIndex == 0)
             {
-                using (var cmd = new SqlCommand("EmployeeSchedule", con))
+                try
                 {
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@startDate", dtpStartDate.Value.ToShortDateString());
-                    cmd.Parameters.AddWithValue("@endDate", dtpEndDate.Value.ToShortDateString());
-                    con.Open();
-                    adapter = new SqlDataAdapter(cmd);
-                    ds = new DataSet();
-                    adapter.SelectCommand = cmd;
-                    adapter.Fill(ds);
+                    using (var cmd = new SqlCommand("EmployeeSchedule", con))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@startDate", dtpStartDate.Value.ToShortDateString());
+                        cmd.Parameters.AddWithValue("@endDate", dtpEndDate.Value.ToShortDateString());
+                        con.Open();
+                        adapter = new SqlDataAdapter(cmd);
+                        ds = new DataSet();
+                        adapter.SelectCommand = cmd;
+                        adapter.Fill(ds);
 
-                    conditionView = ds.Tables[0];
-                    dgvWorkView.DataSource = conditionView;
-                    dgvColor();
-                    
+                        conditionView = ds.Tables[0];
+                        dgvWorkView.DataSource = conditionView;
+                        dgvColor();
+
+                    }
+                    con.Close();
                 }
-                con.Close();
+                catch (Exception msg)
+                {
+                    con.Close();
+                    MessageBox.Show(msg.Message);
+                }
                 
             }
             else if(tabControl1.SelectedIndex == 1)
             {
-                using (var cmd = new SqlCommand("EmpNameSchedule", con))
+                try
                 {
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@empName", cbEmp.SelectedItem);
+                    using (var cmd = new SqlCommand("EmpNameSchedule", con))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@empName", cbEmp.SelectedItem);
 
-                    adapter = new SqlDataAdapter(cmd);
-                    ds = new DataSet();
-                    adapter.SelectCommand = cmd;
-                    adapter.Fill(ds);
+                        adapter = new SqlDataAdapter(cmd);
+                        ds = new DataSet();
+                        adapter.SelectCommand = cmd;
+                        adapter.Fill(ds);
 
-                    conditionView = ds.Tables[0];
-                    
-                    dgvWorkView.DataSource = conditionView;
-                    
+                        conditionView = ds.Tables[0];
+
+                        dgvWorkView.DataSource = conditionView;
+
+                    }
+                    con.Close();
                 }
-                con.Close();
+                catch (Exception msg)
+                {
+                    con.Close();
+                    MessageBox.Show(msg.Message);
+                }
             }
           
         }
@@ -142,16 +167,17 @@ namespace Pos
                 switch (row.Cells[0].Value)
                 {
                     case "고지혜":
-                        row.DefaultCellStyle.BackColor = Color.LightCoral;
+                        row.DefaultCellStyle.BackColor = Color.Gold;
                         break;
                     case "안치훈":
-                        row.DefaultCellStyle.BackColor = Color.AliceBlue;
+                        row.DefaultCellStyle.BackColor = Color.DeepSkyBlue;
                         break;
                     case "김재웅":
-                        row.DefaultCellStyle.BackColor = Color.LightGoldenrodYellow;
+                        row.DefaultCellStyle.BackColor = Color.LightPink;
                         break;
                     case "김덕준":
-                        row.DefaultCellStyle.BackColor = Color.LightPink;
+                        row.DefaultCellStyle.BackColor = Color.DarkOrchid;
+                        row.DefaultCellStyle.ForeColor = Color.White;
                         break;
                 }
             }

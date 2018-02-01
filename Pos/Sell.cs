@@ -14,7 +14,7 @@ namespace Pos
         static private string clientID =null;
         static private int ages = 0;
         static private decimal tot = 0;
-        static private int sale = 0;
+        static private decimal sale = 0;
         static private decimal changemoney = 0;
         static private int savePoint = 0;
         static private string cardNumber = "0";
@@ -55,7 +55,7 @@ namespace Pos
         public string ClientID { get => clientID; set => clientID = value; }
         public int Ages { get => ages; set => ages = value; }
         public decimal Tot { get => tot; set => tot = value; }
-        public int Sale { get => sale; set => sale = value; }
+        public decimal Sale { get => sale; set => sale = value; }
         public decimal Changemoney { get => changemoney; set => changemoney = value; }
         public int SavePoint { get => savePoint; set => savePoint = value; }
         public string CardNumber { get => cardNumber; set => cardNumber = value; }

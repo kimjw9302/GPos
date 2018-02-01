@@ -37,7 +37,7 @@ namespace Pos
                     int empNum = int.Parse(txtEmpNum.Text);
                     string empName = txtEmpName.Text.Trim().Replace(" ", "");
                     string empPosition = cbRank.Text;
-                    string phone = cbPhone1.Text + txtPhone2.Text + txtPhone3.Text;
+                    string phone = cbPhone1.Text +"-"+ txtPhone2.Text +"-"+ txtPhone3.Text;
                     int hourlyWage = int.Parse(txtWage.Text);
 
                     cmd.CommandType = CommandType.StoredProcedure;

@@ -147,7 +147,7 @@ namespace Pos
 
         private void btnClear_Click(object sender, EventArgs e)
         {
-  
+            buffer = "";
             lblScreen.Text = "";
             tboxScreen.Text = "";
         }
@@ -165,11 +165,21 @@ namespace Pos
         private void btnEnter_Click_1(object sender, EventArgs e)
         {
 
-            lblScreen.Text = buffer;
-            string temp = lblScreen.Text.Replace(" ","");
-            this.lblScreen.Text += "=\r\n"+ MakeExpression(ref temp).ToString();
-            tboxScreen.Text = "";
-            buffer = "";
+            try
+            {
+                lblScreen.Text = buffer;
+                string temp = lblScreen.Text.Replace(" ", "");
+                this.lblScreen.Text += "=\r\n" + MakeExpression(ref temp).ToString();
+                tboxScreen.Text = "";
+                buffer = "";
+            }
+            catch (Exception)
+            {
+                buffer = "";
+                lblScreen.Text = "";
+                tboxScreen.Text = "";
+                MessageBox.Show("계산 오류");
+            }
         }
     }
 }

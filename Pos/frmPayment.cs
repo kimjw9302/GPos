@@ -20,6 +20,7 @@ namespace Pos
         int type;
         public string SendStr { get => sendStr; set => sendStr = value; }
         TextBox t1, t2, t3, t4, t5;
+        PictureBox pic;
         public DataGridView DataGridView { get => dataGridView; set => dataGridView = value; }
         public TextBox T1 { get => t1; set => t1 = value; }
         public TextBox T2 { get => t2; set => t2 = value; }
@@ -27,6 +28,7 @@ namespace Pos
         public TextBox T4 { get => t4; set => t4 = value; }
         public TextBox T5 { get => t5; set => t5 = value; }
         public DataTable Ss { get => ss; set => ss = value; }
+        public PictureBox Pic { get => pic; set => pic = value; }
 
         public frmPayment()
         {
@@ -55,9 +57,10 @@ namespace Pos
                 t4 = fm.T4;
                 t5 = fm.T5;
                 ss = fm.SellTable1;
-
+                pic = fm.Pic;
                 fc.Owner = this;
                 fc.ShowDialog();
+                fm.Pic.Image = Bitmap.FromFile(@"..\..\Resources\goodee24.png");
                 this.Dispose();
             }
            else if (type == 0 && s.Ages != 0)
@@ -72,8 +75,11 @@ namespace Pos
                 t3 = fm.T3;
                 t4 = fm.T4;
                 t5 = fm.T5;
+                pic = fm.Pic;
                 ss = fm.SellTable1;
+                fm.Pic.Image = Bitmap.FromFile(@"..\..\Resources\goodee24.png");
                 fc.Owner = this;
+
                 fc.ShowDialog();
                 this.Dispose();
             }
@@ -100,6 +106,8 @@ namespace Pos
 
                 fc.Owner = this;
                 fc.ShowDialog();
+                fm.Pic.Image = Bitmap.FromFile(@"..\..\Resources\goodee24.png");
+
                 this.Dispose();
             }
             else
@@ -114,9 +122,11 @@ namespace Pos
                 t3 = fm.T3;
                 t4 = fm.T4;
                 t5 = fm.T5;
+                pic = fm.Pic;
                 ss = fm.SellTable1;
                 fc.Owner = this;
                 fc.ShowDialog();
+
                 this.Dispose();
             }
         }

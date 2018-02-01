@@ -20,17 +20,20 @@ namespace Pos
         private void frmSign_Load(object sender, EventArgs e)
         {
             Sell s = Sell.Load();
+            signPad1.PenWidth = 8;
             if (s.Cardmoeny > 50000)
             {
 
             }
             else
             {
+                btnOk_Click(null, null);
                 this.Visible=false;
+                this.Dispose();
             }
          
-            signPad1.PenWidth = 8;
-            btnOk_Click(null, null);
+          
+         
 
         }
 
@@ -38,6 +41,7 @@ namespace Pos
         {
             Sell s = Sell.Load();
             frmCard fm = (frmCard)Owner;
+            signPad1.Save();
 
            SqlConnection con = DBcontroller.Instance();
             con.Open();
@@ -80,6 +84,7 @@ namespace Pos
 
             con.Close();
             con.Open();
+            MessageBox.Show(fm.Ss.Rows.Count.ToString());
             foreach (DataRow row in fm.Ss.Rows)
             {
                 using (var ccmd = new SqlCommand("InsertSellInfo", con))
@@ -90,6 +95,7 @@ namespace Pos
 
                     decimal salesquantity = 0;
                     decimal tot = -1 * decimal.Parse(row["할인"].ToString());
+
                     salesquantity = tot / decimal.Parse(row["단가"].ToString());
                     ccmd.Parameters.AddWithValue("@barcode", row["바코드"].ToString());
                     ccmd.Parameters.AddWithValue("@quantity", row["수량"].ToString());
@@ -136,7 +142,7 @@ namespace Pos
           
             con.Close();
 
-
+            signPad1.Save();
             this.Dispose();
         }
 

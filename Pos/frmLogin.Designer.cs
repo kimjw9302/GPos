@@ -42,7 +42,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+<<<<<<< HEAD
             this.label1.Location = new System.Drawing.Point(76, 62);
+=======
+            this.label1.Location = new System.Drawing.Point(107, 112);
+>>>>>>> 3f05cb7a26ee0e6a5045dc3bf783c86600e8f223
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(57, 21);
             this.label1.TabIndex = 0;
@@ -51,7 +55,11 @@
             // tboxID
             // 
             this.tboxID.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+<<<<<<< HEAD
             this.tboxID.Location = new System.Drawing.Point(160, 62);
+=======
+            this.tboxID.Location = new System.Drawing.Point(203, 112);
+>>>>>>> 3f05cb7a26ee0e6a5045dc3bf783c86600e8f223
             this.tboxID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tboxID.Name = "tboxID";
             this.tboxID.Size = new System.Drawing.Size(133, 29);
@@ -60,7 +68,11 @@
             // tboxPw
             // 
             this.tboxPw.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+<<<<<<< HEAD
             this.tboxPw.Location = new System.Drawing.Point(160, 113);
+=======
+            this.tboxPw.Location = new System.Drawing.Point(203, 175);
+>>>>>>> 3f05cb7a26ee0e6a5045dc3bf783c86600e8f223
             this.tboxPw.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tboxPw.Name = "tboxPw";
             this.tboxPw.PasswordChar = '*';
@@ -70,12 +82,17 @@
             // 
             // btnLogin
             // 
+            this.btnLogin.AutoSize = true;
             this.btnLogin.BackColor = System.Drawing.Color.Snow;
             this.btnLogin.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
             this.btnLogin.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogin.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+<<<<<<< HEAD
             this.btnLogin.Location = new System.Drawing.Point(25, 159);
+=======
+            this.btnLogin.Location = new System.Drawing.Point(49, 233);
+>>>>>>> 3f05cb7a26ee0e6a5045dc3bf783c86600e8f223
             this.btnLogin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(157, 63);
@@ -86,13 +103,18 @@
             // 
             // btnClose
             // 
+            this.btnClose.AutoSize = true;
             this.btnClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
             this.btnClose.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnClose.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GrayText;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnClose.ForeColor = System.Drawing.Color.White;
+<<<<<<< HEAD
             this.btnClose.Location = new System.Drawing.Point(198, 159);
+=======
+            this.btnClose.Location = new System.Drawing.Point(246, 233);
+>>>>>>> 3f05cb7a26ee0e6a5045dc3bf783c86600e8f223
             this.btnClose.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(157, 63);
@@ -105,7 +127,11 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+<<<<<<< HEAD
             this.label2.Location = new System.Drawing.Point(76, 113);
+=======
+            this.label2.Location = new System.Drawing.Point(107, 175);
+>>>>>>> 3f05cb7a26ee0e6a5045dc3bf783c86600e8f223
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(66, 21);
             this.label2.TabIndex = 6;
@@ -115,7 +141,11 @@
             // 
             this.pictureBox1.ErrorImage = global::Pos.Properties.Resources.goodee24;
             this.pictureBox1.Image = global::Pos.Properties.Resources.goodee24;
+<<<<<<< HEAD
             this.pictureBox1.Location = new System.Drawing.Point(80, -33);
+=======
+            this.pictureBox1.Location = new System.Drawing.Point(111, -7);
+>>>>>>> 3f05cb7a26ee0e6a5045dc3bf783c86600e8f223
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(237, 134);
@@ -128,7 +158,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
+<<<<<<< HEAD
             this.ClientSize = new System.Drawing.Size(382, 241);
+=======
+            this.ClientSize = new System.Drawing.Size(492, 347);
+>>>>>>> 3f05cb7a26ee0e6a5045dc3bf783c86600e8f223
             this.ControlBox = false;
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnClose);
@@ -139,7 +173,6 @@
             this.Controls.Add(this.pictureBox1);
             this.Name = "frmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "GOODEE24";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

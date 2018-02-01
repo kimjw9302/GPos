@@ -52,11 +52,11 @@
             this.rbF = new System.Windows.Forms.RadioButton();
             this.label14 = new System.Windows.Forms.Label();
             this.btnAddrSearch = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnClose = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
+            this.btnClose = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -128,6 +128,7 @@
             this.txtUserNum.Font = new System.Drawing.Font("맑은 고딕", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtUserNum.Location = new System.Drawing.Point(129, 134);
             this.txtUserNum.Name = "txtUserNum";
+            this.txtUserNum.ReadOnly = true;
             this.txtUserNum.Size = new System.Drawing.Size(261, 30);
             this.txtUserNum.TabIndex = 1;
             // 
@@ -260,7 +261,7 @@
             // 
             this.btnRegister.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
             this.btnRegister.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRegister.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnRegister.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnRegister.ForeColor = System.Drawing.Color.White;
             this.btnRegister.Location = new System.Drawing.Point(120, 526);
             this.btnRegister.Name = "btnRegister";
@@ -321,6 +322,51 @@
             this.btnAddrSearch.UseVisualStyleBackColor = false;
             this.btnAddrSearch.Click += new System.EventHandler(this.btnAddrSearch_Click);
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("맑은 고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label11.Location = new System.Drawing.Point(210, 219);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(24, 20);
+            this.label11.TabIndex = 35;
+            this.label11.Text = "년";
+            // 
+            // btnClose
+            // 
+            this.btnClose.BackColor = System.Drawing.Color.OrangeRed;
+            this.btnClose.FlatAppearance.BorderSize = 0;
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnClose.ForeColor = System.Drawing.Color.White;
+            this.btnClose.Location = new System.Drawing.Point(266, 526);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(123, 92);
+            this.btnClose.TabIndex = 34;
+            this.btnClose.Text = "닫기";
+            this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("맑은 고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label13.Location = new System.Drawing.Point(372, 217);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(24, 20);
+            this.label13.TabIndex = 37;
+            this.label13.Text = "일";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("맑은 고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label12.Location = new System.Drawing.Point(293, 218);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(24, 20);
+            this.label12.TabIndex = 36;
+            this.label12.Text = "월";
+            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.label11);
@@ -358,50 +404,6 @@
             this.groupBox1.TabIndex = 33;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "회원 등록";
-            // 
-            // btnClose
-            // 
-            this.btnClose.BackColor = System.Drawing.Color.Red;
-            this.btnClose.FlatAppearance.BorderSize = 0;
-            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.ForeColor = System.Drawing.Color.White;
-            this.btnClose.Location = new System.Drawing.Point(266, 526);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(123, 92);
-            this.btnClose.TabIndex = 34;
-            this.btnClose.Text = "취소";
-            this.btnClose.UseVisualStyleBackColor = false;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("맑은 고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label11.Location = new System.Drawing.Point(210, 219);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(24, 20);
-            this.label11.TabIndex = 35;
-            this.label11.Text = "년";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("맑은 고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label12.Location = new System.Drawing.Point(293, 218);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(24, 20);
-            this.label12.TabIndex = 36;
-            this.label12.Text = "월";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("맑은 고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label13.Location = new System.Drawing.Point(372, 217);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(24, 20);
-            this.label13.TabIndex = 37;
-            this.label13.Text = "일";
             // 
             // frmCustRegister
             // 
@@ -447,10 +449,10 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Button btnAddrSearch;
         internal System.Windows.Forms.TextBox txtAddress;
-        private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }
