@@ -96,3 +96,4 @@ C:\Users\김재웅\Documents\GPos\Pos\obj\Debug\Pos.frmProgressBar.resources
 C:\Users\김재웅\Documents\GPos\Pos\bin\Debug\HtmlAgilityPack.dll
 C:\Users\김재웅\Documents\GPos\Pos\bin\Debug\HtmlAgilityPack.pdb
 C:\Users\김재웅\Documents\GPos\Pos\bin\Debug\HtmlAgilityPack.xml
+C:\Users\김재웅\Documents\GPos\Pos\bin\Debug\KeepAutomation.Barcode.Web.dll

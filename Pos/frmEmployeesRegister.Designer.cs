@@ -86,7 +86,7 @@
             // 
             // btnclose
             // 
-            this.btnclose.BackColor = System.Drawing.Color.Red;
+            this.btnclose.BackColor = System.Drawing.Color.OrangeRed;
             this.btnclose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnclose.Font = new System.Drawing.Font("돋움", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnclose.ForeColor = System.Drawing.Color.White;

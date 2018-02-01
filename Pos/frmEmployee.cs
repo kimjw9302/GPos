@@ -1,4 +1,4 @@
-﻿using Barcode128;
+﻿
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,7 +8,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-
+using KeepAutomation.Barcode.Bean;
 namespace Pos
 {
     public partial class frmEmployee : Form, ISearch, IDelete, ISubmit
@@ -197,10 +197,6 @@ namespace Pos
             graphics.DrawString("_", new Font("고딕", 1, FontStyle.Regular), BlackBrush, 40, 300);
         }
 
-        private void Form1_Paint(object sender, PaintEventArgs e)
-        {
-            GdiOutput(memberNum);
-        }
 
         private void textBox()
         {
@@ -208,16 +204,29 @@ namespace Pos
             {
       
                 memberNum = dgvEmployees.CurrentRow.Cells[0].Value.ToString();
-                MessageBox.Show(memberNum);
                 tboxName.Text = dgvEmployees.CurrentRow.Cells[1].Value.ToString();                
                 tboxPosition.Text = dgvEmployees.CurrentRow.Cells[2].Value.ToString();
                 tboxPhone.Text = dgvEmployees.CurrentRow.Cells[3].Value.ToString();
                 tboxhourlyWage.Text = dgvEmployees.CurrentRow.Cells[4].Value.ToString();
-                claBarcode bcTemp = new claBarcode();
 
-                memberNum = bcTemp.strBarcode(memberNum, 0);
-                memberNum = bcTemp.strBarcodeToBar(memberNum);
-                GdiOutput(memberNum);
+
+                BarCode barcode = new BarCode();
+                barcode.Symbology = KeepAutomation.Barcode.Symbology.Code128A;
+                barcode.CodeToEncode = memberNum;
+                barcode.ChecksumEnabled = true;
+                barcode.X = 1;
+                barcode.Y = 50;
+                barcode.BarCodeWidth = 170;
+                barcode.BarCodeHeight = 120;
+                barcode.Orientation = KeepAutomation.Barcode.Orientation.Degree0;
+                barcode.BarcodeUnit = KeepAutomation.Barcode.BarcodeUnit.Pixel;
+                barcode.DPI = 72;
+                barcode.ImageFormat = System.Drawing.Imaging.ImageFormat.Gif;
+                pboxBarcode.Image = barcode.generateBarcodeToBitmap();
+                //claBarcode bcTemp = new claBarcode();
+                // memberNum = bcTemp.strBarcode(memberNum, 0);
+                //memberNum = bcTemp.strBarcodeToBar(memberNum);
+                //GdiOutput(memberNum);
             }
             else
             {
@@ -230,7 +239,10 @@ namespace Pos
             }
 
         }
+        public void Barcode()
+        {
 
+        }
         private void button1_Click(object sender, EventArgs e)
         {
             submit();

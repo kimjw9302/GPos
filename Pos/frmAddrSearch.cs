@@ -18,7 +18,7 @@ namespace Pos
         private string confmKey = "U01TX0FVVEgyMDE4MDExMTA5NTE0NjEwNzYwNTY="; 
         private string keyword = string.Empty;
         private string url = string.Empty;
-
+        private int i = 0;
         private DataTable addrTable;
         private DataRowCollection rows;
 
@@ -26,9 +26,11 @@ namespace Pos
         {
             InitializeComponent();
         }
-        public frmAddrSearch(string addr) : this()
+        public frmAddrSearch(string addr,int i) : this()
         {
             keyword = addr;
+            this.i = i;
+
         }
         private void frmAddrSearch_Load(object sender, EventArgs e)
         {
@@ -68,9 +70,18 @@ namespace Pos
 
         private void listAddr_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            frmCustRegister beforForm = (frmCustRegister)Owner;
-            beforForm.SearchResult = listAddr.SelectedItem.ToString();
-            
+            if (i == 0)
+            {
+                frmCustRegister beforForm = (frmCustRegister)Owner;
+                beforForm.SearchResult = listAddr.SelectedItem.ToString();
+            }
+            else
+            {
+                frmStoreInfo fsi = (frmStoreInfo)Owner;
+                fsi.SearchResult = listAddr.SelectedItem.ToString();
+            }
+        
+           
             this.Close();
         }
 

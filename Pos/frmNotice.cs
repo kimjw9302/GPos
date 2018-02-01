@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -11,6 +12,7 @@ namespace Pos
 {
     public partial class frmNotice : Form
     {
+        private SqlConnection con;
         private DataTable dataTable;
         private int empId;
 
@@ -50,10 +52,33 @@ namespace Pos
 
         private void btnGo_Click(object sender, EventArgs e)
         {
-            frmOrderRequest for1 =new frmOrderRequest(dataTable, empId);
-            this.Visible = false;
-            for1.ShowDialog();
-            this.Dispose();
+            con = DBcontroller.Instance();
+            con.Open();
+
+            using (var cmd = new SqlCommand("SelectEmployees", con))
+            {
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@empNum", empId);
+
+                var sdr = cmd.ExecuteScalar();
+                if (sdr.ToString() == "1")
+                {
+                    con.Close();
+                    frmOrderRequest for1 = new frmOrderRequest(dataTable, empId);
+                    this.Visible = false;
+                    for1.ShowDialog();
+                    this.Dispose();
+                   
+                }
+                else
+                {
+                    MessageBox.Show("접근이 불가능합니다.");
+                    con.Close();
+                }
+            }
+
+
+
         }
     }
 }

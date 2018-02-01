@@ -217,8 +217,8 @@
             this.pboxBarcode.BackColor = System.Drawing.Color.White;
             this.pboxBarcode.Location = new System.Drawing.Point(569, 331);
             this.pboxBarcode.Name = "pboxBarcode";
-            this.pboxBarcode.Size = new System.Drawing.Size(153, 183);
-            this.pboxBarcode.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pboxBarcode.Size = new System.Drawing.Size(275, 183);
+            this.pboxBarcode.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pboxBarcode.TabIndex = 8;
             this.pboxBarcode.TabStop = false;
             // 

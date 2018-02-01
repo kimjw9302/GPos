@@ -190,5 +190,10 @@ namespace Pos
                 e.Handled = true;
             }
         }
+
+        private void tboxYear_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

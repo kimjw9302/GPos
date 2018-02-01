@@ -6,6 +6,7 @@ using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace Pos
@@ -13,6 +14,15 @@ namespace Pos
     public partial class frmStoreInfo : Form
     {
         SqlConnection con;
+        private string searchResult;
+        string addr;
+        bool temp = false;
+        public string SearchResult
+        {
+            get { return searchResult; }
+            set { searchResult = value; }
+        }
+
         public frmStoreInfo()
         {
             InitializeComponent();
@@ -84,6 +94,68 @@ namespace Pos
                 }
             }
 
+        }
+        private bool SqlCheck(string addr)
+        {
+            //걸러야할 문자
+            string[] sPattern =  {
+            "OR", "SELECT", "INSERT", "DELETE", "UPDATE", "CREATE", "DROP", "EXEC",
+                    "UNION",  "FETCH", "DECLARE", "TRUNCATE"
+            };
+
+            foreach (string s in sPattern)
+            {
+                if (Regex.IsMatch(addr, s, RegexOptions.IgnoreCase))
+                {
+                    temp = true;
+                    break;
+                }
+            }
+            return temp;
+
+        }
+
+        //특수문자 제거
+        private bool SpecialCheck(string addr)
+        {
+            string str = @"[~!@\#$%^&*\()\=+|\\/:;?""<>']";
+            Regex rex = new Regex(str);
+            //MessageBox.Show(" 특스문자 " +rex.IsMatch(addr).ToString());
+            return rex.IsMatch(addr);
+
+        }
+        private void btnAddrSearch_Click(object sender, EventArgs e)
+        {
+            string addr = this.tboxAddr.Text.Trim();
+
+            if (addr == "")
+            {
+                MessageBox.Show(" 주소를 입력해주세요. ", "알림", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (addr.Length > 0)
+            {
+
+                if (SqlCheck(addr))
+                {
+                    MessageBox.Show(addr + "는 입력 할 수없습니다.", "알림", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else if (SpecialCheck(addr))
+                {
+
+                    MessageBox.Show(addr + "는 입력 할 수없습니다.", "알림", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                }
+                else
+                {
+
+                    frmAddrSearch addrSearch = new frmAddrSearch(addr,1);
+                    addrSearch.Owner = this;
+                    addrSearch.ShowDialog();
+                    tboxAddr.Text = SearchResult;
+
+                }
+
+            }
         }
     }
 

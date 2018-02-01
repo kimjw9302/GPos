@@ -128,9 +128,9 @@ namespace Pos
             }
             catch (Exception msg)
             {
+                MessageBox.Show(msg.Message);
                 con.Close();
                 return false;
-                MessageBox.Show(msg.Message);
             }
 
         }
@@ -232,7 +232,7 @@ namespace Pos
                 }
                 else{
 
-                    addrSearch = new frmAddrSearch(addr);
+                    addrSearch = new frmAddrSearch(addr,0);
                     addrSearch.Owner = this;
                     addrSearch.ShowDialog();
                     txtAddress.Text = SearchResult;

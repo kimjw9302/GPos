@@ -35,7 +35,44 @@ namespace Pos
             Image image = new Bitmap(pictureBox1.Width, pictureBox1.Height);
             pictureBox1.Image = image;
         }
+        public void Save()
+        {
+            bool bResult = true;
+            string title = "sign.png";
 
+                using (var bitmap = new Bitmap(pictureBox1.Width, pictureBox1.Height))
+                { 
+                    pictureBox1.DrawToBitmap(bitmap, pictureBox1.ClientRectangle);
+                    System.Drawing.Imaging.ImageFormat imageFormat = null;
+                    var extension = System.IO.Path.GetExtension(title);
+                    switch (extension.ToLower())
+                    {
+                        case ".bmp":
+                            imageFormat = System.Drawing.Imaging.ImageFormat.Bmp;
+                            break;
+                        case ".png":
+                            imageFormat = System.Drawing.Imaging.ImageFormat.Png;
+                            break;
+                       case ".jpeg":
+                     case ".jpg":
+                            imageFormat = System.Drawing.Imaging.ImageFormat.Jpeg;
+                            break;
+                        case ".gif":
+                            imageFormat = System.Drawing.Imaging.ImageFormat.Gif;
+                            break;
+                        default:
+                            bResult = false;
+                            break;
+
+
+                    }
+           if (bResult)
+                        bitmap.Save(title, imageFormat);
+
+                }
+            }
+
+        
         private void pictureBox1_MouseMove(object sender, MouseEventArgs e)
         {
             if (e.Button==MouseButtons.Left)

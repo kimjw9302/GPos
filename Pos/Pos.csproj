@@ -36,6 +36,9 @@
     <Reference Include="HtmlAgilityPack, Version=1.6.15.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
       <HintPath>packages\HtmlAgilityPack.1.6.15\lib\Net40\HtmlAgilityPack.dll</HintPath>
     </Reference>
+    <Reference Include="KeepAutomation.Barcode.Web">
+      <HintPath>..\..\..\Desktop\KA.Barcode.for.NETSuite\barcode\Bin\KeepAutomation.Barcode.Web.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
@@ -53,8 +56,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="barcode_search.cs" />
-    <Compile Include="claBarcode.cs" />
-    <Compile Include="claCodeData.cs" />
     <Compile Include="DBcontroller.cs" />
     <Compile Include="frmAban.cs">
       <SubType>Form</SubType>
@@ -464,6 +465,12 @@
       <Isolated>False</Isolated>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\cal.png" />
+    <EmbeddedResource Include="Resources\power.png" />
+    <EmbeddedResource Include="Resources\rotaiton.png" />
+    <EmbeddedResource Include="Resources\setting.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

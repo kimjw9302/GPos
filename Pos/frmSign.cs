@@ -38,6 +38,7 @@ namespace Pos
         {
             Sell s = Sell.Load();
             frmCard fm = (frmCard)Owner;
+            signPad1.Save();
 
            SqlConnection con = DBcontroller.Instance();
             con.Open();
