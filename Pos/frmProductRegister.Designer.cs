@@ -73,8 +73,6 @@
             // 
             this.group.Controls.Add(this.txtBarcode);
             this.group.Controls.Add(this.btnClose);
-            this.group.Controls.Add(this.cbPlaceTemp);
-            this.group.Controls.Add(this.cbCate2Temp);
             this.group.Controls.Add(this.label6);
             this.group.Controls.Add(this.label5);
             this.group.Controls.Add(this.cbCate1);
@@ -89,6 +87,8 @@
             this.group.Controls.Add(this.label2);
             this.group.Controls.Add(this.label1);
             this.group.Controls.Add(this.txtProductName);
+            this.group.Controls.Add(this.cbPlaceTemp);
+            this.group.Controls.Add(this.cbCate2Temp);
             this.group.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.group.Location = new System.Drawing.Point(23, 45);
             this.group.Name = "group";
@@ -121,9 +121,11 @@
             // 
             // cbPlaceTemp
             // 
+            this.cbPlaceTemp.DropDownHeight = 50;
             this.cbPlaceTemp.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbPlaceTemp.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.cbPlaceTemp.FormattingEnabled = true;
+            this.cbPlaceTemp.ItemHeight = 25;
             this.cbPlaceTemp.Location = new System.Drawing.Point(123, 331);
             this.cbPlaceTemp.Name = "cbPlaceTemp";
             this.cbPlaceTemp.Size = new System.Drawing.Size(300, 33);
@@ -174,8 +176,11 @@
             // 
             // cbPlace
             // 
+            this.cbPlace.DropDownHeight = 150;
+            this.cbPlace.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbPlace.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.cbPlace.FormattingEnabled = true;
+            this.cbPlace.IntegralHeight = false;
             this.cbPlace.Location = new System.Drawing.Point(123, 331);
             this.cbPlace.Name = "cbPlace";
             this.cbPlace.Size = new System.Drawing.Size(300, 33);
@@ -183,11 +188,14 @@
             // 
             // cbCate2
             // 
+            this.cbCate2.DropDownHeight = 150;
+            this.cbCate2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbCate2.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.cbCate2.FormattingEnabled = true;
-            this.cbCate2.Location = new System.Drawing.Point(306, 282);
+            this.cbCate2.IntegralHeight = false;
+            this.cbCate2.Location = new System.Drawing.Point(294, 282);
             this.cbCate2.Name = "cbCate2";
-            this.cbCate2.Size = new System.Drawing.Size(117, 33);
+            this.cbCate2.Size = new System.Drawing.Size(129, 33);
             this.cbCate2.TabIndex = 17;
             // 
             // btnRegister
