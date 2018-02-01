@@ -229,24 +229,7 @@ namespace Pos
         {
             this.Dispose();
         }
-
-        //자동완성
-       
-
-        private void dgvOrder_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
-        {
-            // No
-            //foreach (DataGridViewRow row in dgvOrder.Rows)
-            //{
-
-            //    row.HeaderCell.Value = String.Format("{0}", row.Index + 1);
-
-            //}
-
-            //dgvOrder.AutoResizeRowHeadersWidth(DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders);
-            
-        }
-
+        
         private void frmOrderRequest_Shown(object sender, EventArgs e)
         {
             dgvOrder.CurrentCell = null;
@@ -255,16 +238,36 @@ namespace Pos
 
         private void dgvProducts_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            var rowNum = ((DataGridView)sender).CurrentRow.Index;
-            dgvProducts.Rows[rowNum].DefaultCellStyle.BackColor = Color.Khaki;
+            
+            if (((DataGridView)sender).CurrentCell.ColumnIndex == 0)
+            {
+               
+                if ((bool)((DataGridView)sender).CurrentRow.Cells[0].EditedFormattedValue == false)
+                {
+                    ((DataGridView)sender).CurrentRow.DefaultCellStyle.BackColor = Color.Khaki;
+                }
+                else
+                {
+                    ((DataGridView)sender).CurrentRow.DefaultCellStyle.BackColor = Color.White;
+                }
+            }
+            
         }
 
         private void dgvOrder_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            var rowNum = ((DataGridView)sender).CurrentRow.Index;
-            dgvOrder.Rows[rowNum].DefaultCellStyle.BackColor = Color.Khaki;
+
+            if ((bool)((DataGridView)sender).CurrentRow.Cells[0].EditedFormattedValue == false)
+            {
+                ((DataGridView)sender).CurrentRow.DefaultCellStyle.BackColor = Color.Khaki;
+            }
+            else
+            {
+                ((DataGridView)sender).CurrentRow.DefaultCellStyle.BackColor = Color.White;
+            }
         }
         
+
         private void SpecTableMake()
         {
             detailTable = new DataTable();
@@ -292,6 +295,7 @@ namespace Pos
 
                 for (int i = 0; i < dgvProducts.RowCount; i++)
                 {
+                    MessageBox.Show((string)dgvProducts.Rows[i].Cells[0].Value);
                     //선택된거
                     if ((string)dgvProducts.Rows[i].Cells[0].Value == "1")
                     {
@@ -326,12 +330,18 @@ namespace Pos
 
                 foreach (DataGridViewRow row in dgvOrder.Rows)
                 {
-                    quaTemp += int.Parse(row.Cells[5].Value.ToString());
-                    payTemp += decimal.Parse(row.Cells[6].Value.ToString()) * int.Parse(row.Cells[5].Value.ToString());
+                    quaTemp += int.Parse(row.Cells[6].Value.ToString());
+                    payTemp += decimal.Parse(row.Cells[7].Value.ToString()) * int.Parse(row.Cells[6].Value.ToString());
+                    
                 }
                 
                 txtTotalQua.Text = quaTemp.ToString();
                 txtTotalPay.Text = txtTotalPay.Text = payTemp.ToString().Substring(0, payTemp.ToString().IndexOf('.', 0));
+
+                //삭제
+                productTable.Rows.Clear();
+                dgvProducts.Refresh();
+
             }
             catch (ArgumentOutOfRangeException)
             {
@@ -342,20 +352,21 @@ namespace Pos
 
         private void button2_Click(object sender, EventArgs e)
         {
-
             try
             {
-                foreach (DataGridViewRow item in dgvOrder.SelectedRows)
-                {
-                    quaTemp -= int.Parse(item.Cells[5].Value.ToString());
-                    payTemp -= decimal.Parse(item.Cells[6].Value.ToString()) * int.Parse(item.Cells[5].Value.ToString());
+                //로딩시 셀선택 x
+                dgvProducts.CurrentCell = null;
+                dgvOrder.CurrentCell = null;
 
-                    this.dgvOrder.Rows.Remove(item);
-                    //로딩시 셀선택 x
-                    dgvProducts.CurrentCell = null;
-                    dgvOrder.CurrentCell = null;
+                for (int i = 0; i < dgvOrder.RowCount; i++)
+                {
+                    if ((bool)dgvOrder.Rows[i].Cells[0].EditedFormattedValue == true)
+                    {
+                        this.dgvOrder.Rows.Remove(dgvOrder.Rows[i]);
+                    }
                 }
 
+               
                 txtTotalQua.Text = quaTemp.ToString();
                 txtTotalPay.Text = txtTotalPay.Text = payTemp.ToString().Substring(0, payTemp.ToString().IndexOf('.', 0));
             }
@@ -364,8 +375,6 @@ namespace Pos
                   MessageBox.Show( "삭제할 상품이 없습니다.", "알림", MessageBoxButtons.OK);
             }
             
-           
-
         }
 
 
@@ -558,6 +567,8 @@ namespace Pos
             dgvOrder.DataSource = orderTable;
             dgvProducts.Columns[0].Width = 30;
             dgvProducts.Columns[1].Width = 150;
+            dgvOrder.Columns[0].Width = 30;
+            dgvOrder.Columns[1].Width = 30;
 
             con = DBcontroller.Instance();
             using (var cmd = new SqlCommand("GetProRegInfo", con))
@@ -601,23 +612,8 @@ namespace Pos
 
             if (dt != null)
             {
-                foreach (DataRow item in dt.Rows)
-                {
-                    using (var cmd = new SqlCommand("proSend", con))
-                    {
-                        cmd.CommandType = CommandType.StoredProcedure;
-                        cmd.Parameters.AddWithValue("@barcode", item[0]);
-
-                        adapter = new SqlDataAdapter();
-                        ds = new DataSet();
-                        adapter.SelectCommand = cmd;
-                        adapter.Fill(ds);
-
-                        productTable = ds.Tables[0];
-                        dgvProducts.DataSource = productTable;
-                       
-                    }
-                }
+                productTable = dt;
+                dgvProducts.DataSource = productTable;
             }
 
 
@@ -658,7 +654,7 @@ namespace Pos
             check.HeaderText = " V ";
             check.FalseValue = "0";
             check.TrueValue = "1";
-            dgvProducts.Columns.Insert(0, check);
+            dgvOrder.Columns.Insert(0, check);
 
             orderTable = new DataTable();
             
@@ -674,8 +670,13 @@ namespace Pos
         }
         private void ProductTableMake()
         {
+            check = new DataGridViewCheckBoxColumn();
+            check.HeaderText = " V ";
+            check.FalseValue = "0";
+            check.TrueValue = "1";
+            dgvProducts.Columns.Insert(0, check);
+
             productTable = new DataTable();
-            
             productTable.Columns.Add("상품명");
             productTable.Columns.Add("바코드");
             productTable.Columns.Add("단가");
