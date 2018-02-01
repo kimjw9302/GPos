@@ -23,22 +23,23 @@ namespace Pos
         {
             this.Dispose();
         }
-
-        private void btnImgSelect_Click(object sender, EventArgs e)
-        {
-            openFileDialog1.Title = "이미지 선택";
-            openFileDialog1.FileName = "image";
-            openFileDialog1.Filter = "그림 파일 (*.jpg, *.gif, *.bmp) | *.jpg; *.gif; *.bmp; | 모든 파일 (*.*) | *.*";
-           
-
-        }
+        
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
             if (ValidityCheck() && checkPK())
             {
                 string proName = txtProductName.Text.Trim().Replace(" ", "");
-                string barCode = txtBarcode.Text.Trim().Replace(" ", "").Substring(0,13);
+                string barCode;
+                if (txtBarcode.Text.Length > 13)
+                {
+                    barCode = txtBarcode.Text.Trim().Replace(" ", "").Substring(0, 13);
+                }
+                else
+                {
+                    barCode = txtBarcode.Text.Trim().Replace(" ", "");
+                }
+               
                 decimal unitPrice = decimal.Parse(txtUnitPrice.Text.Trim().Replace(" ", ""));
                 decimal costPrice = decimal.Parse(txtCostPrice.Text.Trim().Replace(" ", ""));
                 string cate1 = "F";
@@ -69,7 +70,7 @@ namespace Pos
                     if (i == 1)
                     {
                         txtBarcode.Text = ""; txtCostPrice.Text = ""; txtProductName.Text = ""; txtUnitPrice.Text = "";
-                        cbCate1.Text = ""; cbCate2.Text = ""; cbPlace.Text = "";
+                        cbCate1.SelectedIndex = 0; cbCate2.Text = ""; cbPlace.Text = ""; 
                         MessageBox.Show("상품 저장");
                         con.Close();
                         return;
@@ -153,6 +154,7 @@ namespace Pos
             InitializeComponent();
         }
 
+        //로딩
         private void frmProductRegister_Load(object sender, EventArgs e)
         {
             con = DBcontroller.Instance();

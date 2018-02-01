@@ -52,11 +52,11 @@
             this.rbF = new System.Windows.Forms.RadioButton();
             this.label14 = new System.Windows.Forms.Label();
             this.btnAddrSearch = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label11 = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -128,6 +128,7 @@
             this.txtUserNum.Font = new System.Drawing.Font("맑은 고딕", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtUserNum.Location = new System.Drawing.Point(129, 134);
             this.txtUserNum.Name = "txtUserNum";
+            this.txtUserNum.ReadOnly = true;
             this.txtUserNum.Size = new System.Drawing.Size(261, 30);
             this.txtUserNum.TabIndex = 1;
             // 
@@ -321,44 +322,6 @@
             this.btnAddrSearch.UseVisualStyleBackColor = false;
             this.btnAddrSearch.Click += new System.EventHandler(this.btnAddrSearch_Click);
             // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.label11);
-            this.groupBox1.Controls.Add(this.btnClose);
-            this.groupBox1.Controls.Add(this.btnAddrSearch);
-            this.groupBox1.Controls.Add(this.txtUserNum);
-            this.groupBox1.Controls.Add(this.label14);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.rbF);
-            this.groupBox1.Controls.Add(this.txtUserName);
-            this.groupBox1.Controls.Add(this.rbM);
-            this.groupBox1.Controls.Add(this.cbYear);
-            this.groupBox1.Controls.Add(this.btnRegister);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.cbMonth);
-            this.groupBox1.Controls.Add(this.txtDetailAddress);
-            this.groupBox1.Controls.Add(this.cbDay);
-            this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.txtAddress);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.cbPhone1);
-            this.groupBox1.Controls.Add(this.txtPhone3);
-            this.groupBox1.Controls.Add(this.txtPhone2);
-            this.groupBox1.Controls.Add(this.label13);
-            this.groupBox1.Controls.Add(this.label12);
-            this.groupBox1.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.groupBox1.Location = new System.Drawing.Point(34, 26);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(500, 667);
-            this.groupBox1.TabIndex = 33;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "회원 등록";
-            // 
             // label11
             // 
             this.label11.AutoSize = true;
@@ -404,6 +367,44 @@
             this.label12.TabIndex = 36;
             this.label12.Text = "월";
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.label11);
+            this.groupBox1.Controls.Add(this.btnClose);
+            this.groupBox1.Controls.Add(this.btnAddrSearch);
+            this.groupBox1.Controls.Add(this.txtUserNum);
+            this.groupBox1.Controls.Add(this.label14);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.rbF);
+            this.groupBox1.Controls.Add(this.txtUserName);
+            this.groupBox1.Controls.Add(this.rbM);
+            this.groupBox1.Controls.Add(this.cbYear);
+            this.groupBox1.Controls.Add(this.btnRegister);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.label9);
+            this.groupBox1.Controls.Add(this.cbMonth);
+            this.groupBox1.Controls.Add(this.txtDetailAddress);
+            this.groupBox1.Controls.Add(this.cbDay);
+            this.groupBox1.Controls.Add(this.label8);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.txtAddress);
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.label7);
+            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.cbPhone1);
+            this.groupBox1.Controls.Add(this.txtPhone3);
+            this.groupBox1.Controls.Add(this.txtPhone2);
+            this.groupBox1.Controls.Add(this.label13);
+            this.groupBox1.Controls.Add(this.label12);
+            this.groupBox1.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.groupBox1.Location = new System.Drawing.Point(34, 26);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(500, 667);
+            this.groupBox1.TabIndex = 33;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "회원 등록";
+            // 
             // frmCustRegister
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -448,10 +449,10 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Button btnAddrSearch;
         internal System.Windows.Forms.TextBox txtAddress;
-        private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }

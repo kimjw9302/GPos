@@ -97,6 +97,7 @@ C:\Users\김재웅\Documents\GPos\Pos\bin\Debug\HtmlAgilityPack.dll
 C:\Users\김재웅\Documents\GPos\Pos\bin\Debug\HtmlAgilityPack.pdb
 C:\Users\김재웅\Documents\GPos\Pos\bin\Debug\HtmlAgilityPack.xml
 C:\Users\김재웅\Documents\GPos\Pos\bin\Debug\KeepAutomation.Barcode.Web.dll
+<<<<<<< HEAD
 C:\Users\gd3-8\Documents\GPos\Pos\bin\Debug\Pos.exe.config
 C:\Users\gd3-8\Documents\GPos\Pos\bin\Debug\Pos.exe
 C:\Users\gd3-8\Documents\GPos\Pos\bin\Debug\Pos.pdb
@@ -148,3 +149,9 @@ C:\Users\gd3-8\Documents\GPos\Pos\obj\Debug\Pos.csproj.GenerateResource.Cache
 C:\Users\gd3-8\Documents\GPos\Pos\obj\Debug\Pos.csproj.CoreCompileInputs.cache
 C:\Users\gd3-8\Documents\GPos\Pos\obj\Debug\Pos.exe
 C:\Users\gd3-8\Documents\GPos\Pos\obj\Debug\Pos.pdb
+=======
+C:\Users\gd3-1\Documents\GPos\Pos\obj\Debug\Pos.frmProgressBar.resources
+C:\Users\gd3-1\Documents\GPos\Pos\bin\Debug\HtmlAgilityPack.dll
+C:\Users\gd3-1\Documents\GPos\Pos\bin\Debug\HtmlAgilityPack.pdb
+C:\Users\gd3-1\Documents\GPos\Pos\bin\Debug\HtmlAgilityPack.xml
+>>>>>>> 6eee367b755789507946312b9f90898f70b9db22
